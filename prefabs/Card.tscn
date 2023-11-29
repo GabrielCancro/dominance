@@ -1,0 +1,180 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/card_m2.png" type="Texture" id=2]
+[ext_resource path="res://assets/money_m.png" type="Texture" id=3]
+[ext_resource path="res://assets/burn.png" type="Texture" id=4]
+[ext_resource path="res://assets/ico_cards/soldier.png" type="Texture" id=5]
+[ext_resource path="res://prefabs/Card.gd" type="Script" id=6]
+
+[sub_resource type="DynamicFont" id=2]
+outline_color = Color( 0.231373, 0.196078, 0.196078, 1 )
+extra_spacing_bottom = -5
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+outline_color = Color( 0.231373, 0.196078, 0.196078, 1 )
+extra_spacing_bottom = -5
+font_data = ExtResource( 1 )
+
+[node name="Card" type="TextureRect"]
+margin_right = 64.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 64, 96 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 6 )
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -29.0
+margin_top = 4.0
+margin_right = 30.0
+margin_bottom = 22.0
+custom_colors/font_color = Color( 0.215686, 0.231373, 0.270588, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 2 )
+text = "SOLDIER"
+align = 1
+autowrap = true
+
+[node name="Ico" type="TextureRect" parent="."]
+margin_left = 1.0
+margin_top = 24.0
+margin_right = 62.0
+margin_bottom = 76.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+
+[node name="GoldBox" type="HBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = -17.0
+margin_right = 52.0
+margin_bottom = -2.0
+custom_constants/separation = -9
+
+[node name="Gold1" type="TextureRect" parent="GoldBox"]
+margin_right = 15.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 15, 15 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="Gold2" type="TextureRect" parent="GoldBox"]
+margin_left = 6.0
+margin_right = 21.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 15, 15 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="Gold3" type="TextureRect" parent="GoldBox"]
+margin_left = 12.0
+margin_right = 27.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 15, 15 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="Gold4" type="TextureRect" parent="GoldBox"]
+margin_left = 18.0
+margin_right = 33.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 15, 15 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="Gold5" type="TextureRect" parent="GoldBox"]
+margin_left = 24.0
+margin_right = 39.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 15, 15 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="Gold6" type="TextureRect" parent="GoldBox"]
+margin_left = 30.0
+margin_right = 45.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 15, 15 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="CardArea" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+focus_mode = 0
+flat = true
+
+[node name="BurnColor" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 0, 0, 0.611765 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Gold1" type="TextureRect" parent="BurnColor"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -15.0
+margin_top = -27.0
+margin_right = 15.0
+margin_bottom = 3.0
+rect_min_size = Vector2( 15, 15 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="Bg" type="ColorRect" parent="BurnColor"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 75.0
+margin_right = -2.0
+margin_bottom = -2.0
+color = Color( 0.513726, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="BurnColor/Bg"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_bottom = -3.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 3 )
+text = "BURN!"
+valign = 1
+autowrap = true
+
+[node name="BurnArea" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 46.0
+margin_top = 74.0
+margin_right = -2.0
+margin_bottom = -2.0
+focus_mode = 0
+flat = true
+
+[node name="Burn" type="TextureRect" parent="BurnArea"]
+modulate = Color( 0.776471, 0.776471, 0.776471, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6

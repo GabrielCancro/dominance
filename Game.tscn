@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/card.png" type="Texture" id=1]
 [ext_resource path="res://assets/stash.png" type="Texture" id=2]
@@ -7,20 +7,13 @@
 [ext_resource path="res://assets/example.png" type="Texture" id=5]
 [ext_resource path="res://assets/grass.png" type="Texture" id=6]
 [ext_resource path="res://assets/card_m.png" type="Texture" id=7]
-[ext_resource path="res://assets/burn.png" type="Texture" id=8]
-[ext_resource path="res://assets/card_m2.png" type="Texture" id=9]
-[ext_resource path="res://assets/money_m.png" type="Texture" id=10]
-[ext_resource path="res://assets/icon_cards/soldier.png" type="Texture" id=11]
+[ext_resource path="res://prefabs/Card.tscn" type="PackedScene" id=8]
+[ext_resource path="res://prefabs/CardDescriptor.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 55
 outline_size = 4
 outline_color = Color( 0.231373, 0.196078, 0.196078, 1 )
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=2]
-outline_color = Color( 0.231373, 0.196078, 0.196078, 1 )
-extra_spacing_bottom = -5
 font_data = ExtResource( 3 )
 
 [node name="Game" type="Control"]
@@ -322,108 +315,23 @@ margin_right = 176.0
 margin_bottom = 48.0
 custom_constants/separation = 8
 
-[node name="Card1" type="TextureRect" parent="RegionBottom/HBoxContainer"]
-margin_right = 64.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 64, 96 )
-texture = ExtResource( 9 )
-expand = true
-stretch_mode = 5
+[node name="Card1" parent="RegionBottom/HBoxContainer" instance=ExtResource( 8 )]
 
-[node name="Desc" type="Label" parent="RegionBottom/HBoxContainer/Card1"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -29.0
-margin_top = 4.0
-margin_right = 30.0
-margin_bottom = 22.0
-custom_colors/font_color = Color( 0.215686, 0.231373, 0.270588, 1 )
-custom_constants/line_spacing = -2
-custom_fonts/font = SubResource( 2 )
-text = "SOLDIER"
-align = 1
-autowrap = true
-
-[node name="Card1" type="TextureRect" parent="RegionBottom/HBoxContainer/Card1"]
-margin_left = 1.0
-margin_top = 24.0
-margin_right = 62.0
-margin_bottom = 76.0
-texture = ExtResource( 11 )
-expand = true
-stretch_mode = 6
-
-[node name="Gold" type="TextureRect" parent="RegionBottom/HBoxContainer/Card1"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 3.0
-margin_top = 78.5
-margin_right = -46.0
-margin_bottom = -2.5
-texture = ExtResource( 10 )
-expand = true
-stretch_mode = 6
-
-[node name="Gold2" type="TextureRect" parent="RegionBottom/HBoxContainer/Card1"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 17.0
-margin_top = 78.5
-margin_right = -32.0
-margin_bottom = -2.5
-texture = ExtResource( 10 )
-expand = true
-stretch_mode = 6
-
-[node name="Burn" type="TextureRect" parent="RegionBottom/HBoxContainer/Card1"]
-modulate = Color( 0.776471, 0.776471, 0.776471, 1 )
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -18.0
-margin_top = -21.0
-margin_right = -2.0
-margin_bottom = -2.0
-texture = ExtResource( 8 )
-expand = true
-stretch_mode = 6
-
-[node name="Card2" type="TextureRect" parent="RegionBottom/HBoxContainer"]
+[node name="Card2" parent="RegionBottom/HBoxContainer" instance=ExtResource( 8 )]
 margin_left = 72.0
 margin_right = 136.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 64, 96 )
-texture = ExtResource( 9 )
-expand = true
-stretch_mode = 5
 
-[node name="Card3" type="TextureRect" parent="RegionBottom/HBoxContainer"]
+[node name="Card3" parent="RegionBottom/HBoxContainer" instance=ExtResource( 8 )]
 margin_left = 144.0
 margin_right = 208.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 64, 96 )
-texture = ExtResource( 9 )
-expand = true
-stretch_mode = 5
 
-[node name="Card4" type="TextureRect" parent="RegionBottom/HBoxContainer"]
+[node name="Card4" parent="RegionBottom/HBoxContainer" instance=ExtResource( 8 )]
 margin_left = 216.0
 margin_right = 280.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 64, 96 )
-texture = ExtResource( 9 )
-expand = true
-stretch_mode = 5
 
-[node name="Card5" type="TextureRect" parent="RegionBottom/HBoxContainer"]
+[node name="Card5" parent="RegionBottom/HBoxContainer" instance=ExtResource( 8 )]
 margin_left = 288.0
 margin_right = 352.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 64, 96 )
-texture = ExtResource( 9 )
-expand = true
-stretch_mode = 5
 
 [node name="RegionWar" type="ColorRect" parent="."]
 anchor_top = 0.5
@@ -440,3 +348,9 @@ anchor_bottom = 1.0
 texture = ExtResource( 5 )
 expand = true
 stretch_mode = 1
+
+[node name="CardDescriptor" parent="." instance=ExtResource( 9 )]
+margin_left = 10.0
+margin_top = -141.0
+margin_right = 266.0
+margin_bottom = -13.0

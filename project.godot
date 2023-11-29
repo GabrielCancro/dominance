@@ -15,6 +15,10 @@ run/main_scene="res://Game.tscn"
 boot_splash/bg_color=Color( 0.0352941, 0.0352941, 0.0352941, 1 )
 config/icon="res://icon.png"
 
+[autoload]
+
+CardData="*res://autoloads/CardData.gd"
+
 [display]
 
 window/size/width=800
