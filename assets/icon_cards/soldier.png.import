@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/money.png-2ec49a69b4dd4ebd96bd669e726aa59f.stex"
+path="res://.import/soldier.png-e47706eceb30dd14587eb34672651b72.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/money.png"
-dest_files=[ "res://.import/money.png-2ec49a69b4dd4ebd96bd669e726aa59f.stex" ]
+source_file="res://assets/icon_cards/soldier.png"
+dest_files=[ "res://.import/soldier.png-e47706eceb30dd14587eb34672651b72.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

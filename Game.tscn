@@ -1,10 +1,16 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/card.png" type="Texture" id=1]
 [ext_resource path="res://assets/stash.png" type="Texture" id=2]
 [ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://prefabs/HandCard.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/example.png" type="Texture" id=5]
 [ext_resource path="res://assets/grass.png" type="Texture" id=6]
+[ext_resource path="res://assets/card_m.png" type="Texture" id=7]
+[ext_resource path="res://assets/burn.png" type="Texture" id=8]
+[ext_resource path="res://assets/card_m2.png" type="Texture" id=9]
+[ext_resource path="res://assets/money_m.png" type="Texture" id=10]
+[ext_resource path="res://assets/icon_cards/soldier.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 55
@@ -12,19 +18,14 @@ outline_size = 4
 outline_color = Color( 0.231373, 0.196078, 0.196078, 1 )
 font_data = ExtResource( 3 )
 
-[node name="Game" type="Control"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -512.0
-margin_top = -600.0
-margin_right = 512.0
+[sub_resource type="DynamicFont" id=2]
+outline_color = Color( 0.231373, 0.196078, 0.196078, 1 )
+extra_spacing_bottom = -5
+font_data = ExtResource( 3 )
 
-[node name="BgColor" type="ColorRect" parent="."]
+[node name="Game" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 99.0
@@ -228,10 +229,12 @@ expand = true
 stretch_mode = 5
 
 [node name="Card" type="TextureRect" parent="."]
-margin_left = 18.0
-margin_top = 416.0
-margin_right = 130.0
-margin_bottom = 580.0
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = -180.0
+margin_right = 128.0
+margin_bottom = -16.0
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 5
@@ -241,15 +244,6 @@ margin_left = 7.0
 margin_top = -8.0
 margin_right = 119.0
 margin_bottom = 156.0
-texture = ExtResource( 1 )
-expand = true
-stretch_mode = 5
-
-[node name="Card2" type="TextureRect" parent="Card"]
-margin_left = 14.0
-margin_top = -16.0
-margin_right = 126.0
-margin_bottom = 148.0
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 5
@@ -267,31 +261,182 @@ align = 1
 valign = 1
 
 [node name="HandCard2" parent="." instance=ExtResource( 4 )]
-margin_left = 227.0
-margin_top = 426.0
-margin_right = 398.0
-margin_bottom = 668.0
+margin_left = 115.0
+margin_top = 306.0
+margin_right = 286.0
+margin_bottom = 548.0
 
 [node name="HandCard" parent="." instance=ExtResource( 4 )]
-margin_left = 350.0
-margin_top = 426.0
-margin_right = 521.0
-margin_bottom = 668.0
+margin_left = 238.0
+margin_top = 306.0
+margin_right = 409.0
+margin_bottom = 548.0
 
 [node name="HandCard3" parent="." instance=ExtResource( 4 )]
-margin_left = 470.0
-margin_top = 426.0
-margin_right = 641.0
-margin_bottom = 668.0
+margin_left = 358.0
+margin_top = 306.0
+margin_right = 529.0
+margin_bottom = 548.0
 
 [node name="HandCard4" parent="." instance=ExtResource( 4 )]
-margin_left = 590.0
-margin_top = 426.0
-margin_right = 761.0
-margin_bottom = 668.0
+margin_left = 478.0
+margin_top = 306.0
+margin_right = 649.0
+margin_bottom = 548.0
 
 [node name="HandCard5" parent="." instance=ExtResource( 4 )]
-margin_left = 711.0
-margin_top = 426.0
-margin_right = 882.0
-margin_bottom = 668.0
+margin_left = 599.0
+margin_top = 306.0
+margin_right = 770.0
+margin_bottom = 548.0
+
+[node name="RegionBottom" type="ColorRect" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -135.0
+margin_bottom = -4.0
+color = Color( 0.121569, 0.129412, 0.129412, 1 )
+
+[node name="Card2" type="TextureRect" parent="RegionBottom"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -368.0
+margin_top = -48.0
+margin_right = -304.0
+margin_bottom = 48.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RegionBottom"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -176.0
+margin_top = -48.0
+margin_right = 176.0
+margin_bottom = 48.0
+custom_constants/separation = 8
+
+[node name="Card1" type="TextureRect" parent="RegionBottom/HBoxContainer"]
+margin_right = 64.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 64, 96 )
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 5
+
+[node name="Desc" type="Label" parent="RegionBottom/HBoxContainer/Card1"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -29.0
+margin_top = 4.0
+margin_right = 30.0
+margin_bottom = 22.0
+custom_colors/font_color = Color( 0.215686, 0.231373, 0.270588, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 2 )
+text = "SOLDIER"
+align = 1
+autowrap = true
+
+[node name="Card1" type="TextureRect" parent="RegionBottom/HBoxContainer/Card1"]
+margin_left = 1.0
+margin_top = 24.0
+margin_right = 62.0
+margin_bottom = 76.0
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 6
+
+[node name="Gold" type="TextureRect" parent="RegionBottom/HBoxContainer/Card1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = 78.5
+margin_right = -46.0
+margin_bottom = -2.5
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 6
+
+[node name="Gold2" type="TextureRect" parent="RegionBottom/HBoxContainer/Card1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 17.0
+margin_top = 78.5
+margin_right = -32.0
+margin_bottom = -2.5
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 6
+
+[node name="Burn" type="TextureRect" parent="RegionBottom/HBoxContainer/Card1"]
+modulate = Color( 0.776471, 0.776471, 0.776471, 1 )
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -18.0
+margin_top = -21.0
+margin_right = -2.0
+margin_bottom = -2.0
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
+
+[node name="Card2" type="TextureRect" parent="RegionBottom/HBoxContainer"]
+margin_left = 72.0
+margin_right = 136.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 64, 96 )
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 5
+
+[node name="Card3" type="TextureRect" parent="RegionBottom/HBoxContainer"]
+margin_left = 144.0
+margin_right = 208.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 64, 96 )
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 5
+
+[node name="Card4" type="TextureRect" parent="RegionBottom/HBoxContainer"]
+margin_left = 216.0
+margin_right = 280.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 64, 96 )
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 5
+
+[node name="Card5" type="TextureRect" parent="RegionBottom/HBoxContainer"]
+margin_left = 288.0
+margin_right = 352.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 64, 96 )
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 5
+
+[node name="RegionWar" type="ColorRect" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -164.0
+margin_bottom = 46.0
+color = Color( 0.121569, 0.129412, 0.129412, 1 )
+
+[node name="Example" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 1
