@@ -19,4 +19,13 @@ func disappear(node,to=Vector2(0,0)):
 	yield(tween,"tween_completed")
 	node.queue_free()
 
+func to_alpha(node,to=1):
+	tween.interpolate_property(node,"modulate:a",node.modulate.a,to,.3,Tween.TRANS_QUAD,Tween.EASE_OUT)
+	tween.start()
 
+func add_mouse_focuser(btn,border_node):
+	btn.connect("mouse_entered",self,"on_mouse_focuser",[border_node,true])
+	btn.connect("mouse_exited",self,"on_mouse_focuser",[border_node,false])
+
+func on_mouse_focuser(border_node,val):
+	border_node.visible = val

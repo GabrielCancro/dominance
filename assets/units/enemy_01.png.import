@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/warrior.png-6fc9a9bdfa70456378d6e5bc8780ef84.stex"
+path="res://.import/enemy_01.png-5d6b45c82bda74c3836dec12b525b13a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ico_cards/warrior.png"
-dest_files=[ "res://.import/warrior.png-6fc9a9bdfa70456378d6e5bc8780ef84.stex" ]
+source_file="res://assets/units/enemy_01.png"
+dest_files=[ "res://.import/enemy_01.png-5d6b45c82bda74c3836dec12b525b13a.stex" ]
 
 [params]
 
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

@@ -1,4 +1,4 @@
-extends TextureRect
+extends Control
 
 var data
 
@@ -10,10 +10,8 @@ func _ready():
 	$BurnArea.connect("mouse_entered",self,"on_mouse_burn_enter")
 	$BurnArea.connect("mouse_exited",self,"on_mouse_burn_exit")
 	$BurnArea.connect("button_down",self,"on_click_burn")
-	
-	
 	$BurnColor.visible = false
-	on_mouse_exit()
+	$BorderColor.visible = false
 
 func set_data(_code):
 	data = CardData.get_card_data(_code)
@@ -28,29 +26,25 @@ func set_data(_code):
 	if data.cost>=6: $GoldBox.add_constant_override ("separation", -9)
 
 func on_mouse_enter():
-	print("ENTER ON CARD ",data.code)
 	CardData.show_card_description(self)
-	modulate = Color(1,1,1,1)
+	$BorderColor.visible = true
 
 func on_mouse_exit():
-	print("EXIT FROM CARD ",data.code)
 	CardData.hide_card_description(self)
-	modulate = Color(.6,.6,.7,1)
+	$BorderColor.visible = false
 
 func on_mouse_burn_enter():
 	$BurnColor.visible = true
-	modulate = Color(1,1,1,1)
+	$BorderColor.visible = true
 
 func on_mouse_burn_exit():
 	$BurnColor.visible = false
-	modulate = Color(.6,.6,.7,1)
+	$BorderColor.visible = false
 
 func on_click_card():
-	set_enable_card(false)
 	CardData.use_card(self)
 
 func on_click_burn():
-	set_enable_card(false)
 	CardData.burn_card(self)
 
 func set_enable_card(val):

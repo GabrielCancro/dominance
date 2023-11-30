@@ -17,19 +17,33 @@ outline_color = Color( 0.231373, 0.196078, 0.196078, 1 )
 extra_spacing_bottom = -5
 font_data = ExtResource( 1 )
 
-[node name="Card" type="TextureRect"]
+[node name="Card" type="Control"]
 margin_right = 64.0
 margin_bottom = 96.0
 rect_min_size = Vector2( 64, 96 )
+script = ExtResource( 6 )
+
+[node name="BorderColor" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.0
+margin_top = -2.0
+margin_right = 2.0
+margin_bottom = 2.0
+color = Color( 1, 0.960784, 0.643137, 1 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 texture = ExtResource( 2 )
 expand = true
-stretch_mode = 5
-script = ExtResource( 6 )
+stretch_mode = 6
 
 [node name="Title" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -29.0
+margin_left = -30.0
 margin_top = 4.0
 margin_right = 30.0
 margin_bottom = 22.0
@@ -117,6 +131,20 @@ anchor_bottom = 1.0
 focus_mode = 0
 flat = true
 
+[node name="BurnIco" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -17.0
+margin_top = -18.0
+margin_right = -2.0
+margin_bottom = -3.0
+rect_min_size = Vector2( 15, 15 )
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+
 [node name="BurnColor" type="ColorRect" parent="."]
 visible = false
 anchor_right = 1.0
@@ -125,20 +153,6 @@ color = Color( 1, 0, 0, 0.611765 )
 __meta__ = {
 "_edit_group_": true
 }
-
-[node name="Gold1" type="TextureRect" parent="BurnColor"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -15.0
-margin_top = -27.0
-margin_right = 15.0
-margin_bottom = 3.0
-rect_min_size = Vector2( 15, 15 )
-texture = ExtResource( 3 )
-expand = true
-stretch_mode = 6
 
 [node name="Bg" type="ColorRect" parent="BurnColor"]
 anchor_right = 1.0
@@ -149,10 +163,25 @@ margin_right = -2.0
 margin_bottom = -2.0
 color = Color( 0.513726, 0, 0, 1 )
 
+[node name="Gold1" type="TextureRect" parent="BurnColor/Bg"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -17.0
+margin_top = -17.0
+margin_right = -2.0
+margin_bottom = -2.0
+rect_min_size = Vector2( 15, 15 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
 [node name="Label" type="Label" parent="BurnColor/Bg"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 2.0
+margin_left = 3.0
+margin_right = -16.0
 margin_bottom = -3.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_constants/line_spacing = -2
@@ -164,20 +193,9 @@ autowrap = true
 [node name="BurnArea" type="Button" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 46.0
-margin_top = 74.0
-margin_right = -2.0
-margin_bottom = -2.0
+margin_top = 75.0
 focus_mode = 0
 flat = true
-
-[node name="Burn" type="TextureRect" parent="BurnArea"]
-modulate = Color( 0.776471, 0.776471, 0.776471, 1 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 4 )
-expand = true
-stretch_mode = 6
 
 [node name="DisableMouse" type="ColorRect" parent="."]
 visible = false

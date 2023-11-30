@@ -52,14 +52,20 @@ func card_deck_to_hand():
 			return new_card
 
 func use_card(card_node):
+	if card_node.data.cost>TempGoldNode.gold:
+		TempGoldNode.show_low_gold()
+		return
 	for i in range(hand_cards.size()):
 		if hand_cards[i]!=card_node: continue
 		else:
+			TempGoldNode.add_gold(-card_node.data.cost)
+			card_node.set_enable_card(false)
 			Effects.disappear(card_node,Vector2(0,-50))
 			hand_cards[i] = null
 			return null
 
 func burn_card(card_node):
+	card_node.set_enable_card(false)
 	for i in range(hand_cards.size()):
 		if hand_cards[i]!=card_node: continue
 		else:
