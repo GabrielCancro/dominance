@@ -11,13 +11,14 @@ config_version=4
 [application]
 
 config/name="Dominance"
-run/main_scene="res://Game.tscn"
+run/main_scene="res://scenes/Game.tscn"
 boot_splash/bg_color=Color( 0.0352941, 0.0352941, 0.0352941, 1 )
 config/icon="res://icon.png"
 
 [autoload]
 
 CardData="*res://autoloads/CardData.gd"
+Effects="*res://autoloads/Effects.gd"
 
 [display]
 

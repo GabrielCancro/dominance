@@ -6,8 +6,12 @@ func _ready():
 	set_data("soldier")
 	$CardArea.connect("mouse_entered",self,"on_mouse_enter")
 	$CardArea.connect("mouse_exited",self,"on_mouse_exit")
+	$CardArea.connect("button_down",self,"on_click_card")
 	$BurnArea.connect("mouse_entered",self,"on_mouse_burn_enter")
 	$BurnArea.connect("mouse_exited",self,"on_mouse_burn_exit")
+	$BurnArea.connect("button_down",self,"on_click_burn")
+	
+	
 	$BurnColor.visible = false
 	on_mouse_exit()
 
@@ -40,3 +44,14 @@ func on_mouse_burn_enter():
 func on_mouse_burn_exit():
 	$BurnColor.visible = false
 	modulate = Color(.6,.6,.7,1)
+
+func on_click_card():
+	set_enable_card(false)
+	CardData.use_card(self)
+
+func on_click_burn():
+	set_enable_card(false)
+	CardData.burn_card(self)
+
+func set_enable_card(val):
+	$DisableMouse.visible = !val
