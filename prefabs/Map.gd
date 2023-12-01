@@ -21,7 +21,9 @@ func add_unit(x,y):
 	unit.get_node("EnemyArea").connect("button_down",self,"unit_walk",[unit])
 
 func unit_walk(unit):
-	if unit.map_position.x<=1: return
-	unit.map_position.x -= 1
-	var des = get_grid_node(unit.map_position).rect_global_position
-	Effects.move_to(unit,des)
+	if unit.map_position.x<=1: 
+		UnitManager.attack_tower(unit)
+	else:
+		unit.map_position.x -= 1
+		var des = get_grid_node(unit.map_position).rect_global_position
+		Effects.move_to(unit,des)

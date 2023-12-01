@@ -29,3 +29,11 @@ func add_mouse_focuser(btn,border_node):
 
 func on_mouse_focuser(border_node,val):
 	border_node.visible = val
+
+func shake(node,power=2,time=.5):
+	var ini_pos = node.rect_position
+	randomize()
+	while time>0:
+		node.rect_position = ini_pos + Vector2(rand_range(-power,power),rand_range(-power/2,power/2))
+		time -= .025
+		yield(get_tree().create_timer(.025),"timeout")

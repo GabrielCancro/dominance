@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/card.png-c12f80167372a8ea75cae1cb137b9cb2.stex"
+path="res://.import/tower_2b.png-1d6e5722e7c323d4dbb0ff57e886c767.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/card.png"
-dest_files=[ "res://.import/card.png-c12f80167372a8ea75cae1cb137b9cb2.stex" ]
+source_file="res://assets/tower_2b.png"
+dest_files=[ "res://.import/tower_2b.png-1d6e5722e7c323d4dbb0ff57e886c767.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
