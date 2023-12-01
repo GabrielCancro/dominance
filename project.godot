@@ -20,6 +20,7 @@ config/icon="res://icon.png"
 CardData="*res://autoloads/CardData.gd"
 Effects="*res://autoloads/Effects.gd"
 CardUsage="*res://autoloads/CardUsage.gd"
+UnitManager="*res://autoloads/UnitManager.gd"
 
 [display]
 
