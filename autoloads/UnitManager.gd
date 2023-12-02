@@ -3,7 +3,8 @@ extends Node
 var unit_descriptor
 var TowerNode
 var UnitData = {
-	"slime":{"atk":2,"hp":3,"spd":1, "img":null}
+	"slime":{"atk":2,"hp":3,"spd":1, "img":null},
+	"soldier":{"atk":2,"hp":3,"spd":1, "img":null}
 }
 
 func _ready():
