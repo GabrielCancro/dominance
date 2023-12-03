@@ -3,9 +3,10 @@ extends Node
 var unit_descriptor
 var TowerNode
 var UnitData = {
-	"slime":{"atk":2,"hp":3,"spd":1, "img":null, "team":2},
-	"soldier":{"atk":2,"hp":3,"spd":1, "img":null, "team":1}
+	"slime":{"atk":1,"hp":3,"spd":1, "img":null, "team":2},
+	"soldier":{"atk":1,"hp":3,"spd":1, "img":null, "team":1}
 }
+
 
 func _ready():
 	init_units()
@@ -29,6 +30,3 @@ func show_unit_description(unit_node):
 func hide_unit_description(unit_node):
 	if unit_descriptor && unit_descriptor.unit_target == unit_node:
 		unit_descriptor.hide_panel()
-
-func attack_tower(unit_node):
-	TowerNode.add_hp(-unit_node.data.atk)

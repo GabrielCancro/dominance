@@ -235,8 +235,58 @@ margin_top = -36.5
 margin_right = -270.5
 margin_bottom = 43.5
 
-[node name="btn1" type="Button" parent="."]
-margin_left = -11.0
+[node name="btn4" type="Button" parent="."]
+margin_left = 238.0
+margin_top = 150.0
+margin_right = 262.0
+margin_bottom = 170.0
+
+[node name="CreateButtons" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="btn1" type="Button" parent="CreateButtons"]
+margin_left = -21.0
 margin_top = 13.0
-margin_right = 13.0
+margin_right = 3.0
 margin_bottom = 33.0
+text = ">"
+
+[node name="btn2" type="Button" parent="CreateButtons"]
+margin_left = -21.0
+margin_top = 60.0
+margin_right = 3.0
+margin_bottom = 80.0
+text = ">"
+
+[node name="btn3" type="Button" parent="CreateButtons"]
+margin_left = -21.0
+margin_top = 106.0
+margin_right = 3.0
+margin_bottom = 126.0
+text = ">"
+
+[node name="ColorRect" type="ColorRect" parent="CreateButtons"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -661.0
+margin_top = 10.0
+margin_right = 661.0
+margin_bottom = 456.0
+mouse_default_cursor_shape = 3
+color = Color( 0.0703125, 0.0703125, 0.0703125, 0.705882 )
+
+[node name="ColorRect2" type="ColorRect" parent="CreateButtons"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -661.0
+margin_top = -600.0
+margin_right = 661.0
+margin_bottom = -154.0
+mouse_default_cursor_shape = 3
+color = Color( 0.0703125, 0.0703125, 0.0703125, 0.705882 )

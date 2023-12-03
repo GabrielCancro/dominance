@@ -10,6 +10,8 @@ var Cards = [
 	{"code":"warrior", "ico":null, "cost":4, "title":"Guerrero", "desc":"Esta es otra unidad diferente"}
 ]
 var deck_cards = []
+signal use_card(code)
+signal burn_card(code)
 
 func _ready():
 	#INITIALIZE CARDS
@@ -42,14 +44,18 @@ func card_deck_to_hand():
 		else: 
 			print("CREATE NEW CARD")
 			var new_card = preload("res://prefabs/Card.tscn").instance()
-			new_card.rect_global_position = DeckNode.rect_global_position
-			new_card.rect_position = Vector2(0,0)
 			get_node("/root/Game/RegionBottom").add_child(new_card)
+			new_card.rect_global_position = DeckNode.rect_global_position
 			new_card.set_data( deck_cards.pop_front() )
 			DeckNode.get_node("Label").text = str( deck_cards.size() )
 			hand_cards[i] = new_card
 			Effects.move_to(new_card,HandBoxNode.get_child(i).rect_global_position)
 			return new_card
+	return null
+
+func get_cards():
+	while card_deck_to_hand():
+		yield(get_tree().create_timer(.2),"timeout")
 
 func use_card(card_node):
 	if card_node.data.cost>TempGoldNode.gold:
@@ -62,6 +68,8 @@ func use_card(card_node):
 			card_node.set_enable_card(false)
 			Effects.disappear(card_node,Vector2(0,-50))
 			hand_cards[i] = null
+			if(CardUsage.has_method("use_card_"+card_node.data.code)): CardUsage.call("use_card_"+card_node.data.code,card_node.data.code)
+			else: CardUsage.use_default_card(card_node.data.code)
 			return null
 
 func burn_card(card_node):
@@ -72,4 +80,5 @@ func burn_card(card_node):
 			Effects.disappear(card_node,Vector2(0,30))
 			hand_cards[i] = null
 			TempGoldNode.add_gold(1)
+			emit_signal("burn_card")
 			return null
