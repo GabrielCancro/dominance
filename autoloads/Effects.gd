@@ -11,6 +11,12 @@ func move_to(node,dest):
 	tween.interpolate_property(node,"rect_global_position",node.rect_global_position,dest,.3,Tween.TRANS_QUAD,Tween.EASE_OUT)
 	tween.start()
 
+func move_to_yoyo(node,dest):
+	var start_pos = node.rect_global_position
+	tween.interpolate_property(node,"rect_global_position",node.rect_global_position,dest,.2,Tween.TRANS_QUAD,Tween.EASE_IN)
+	tween.interpolate_property(node,"rect_global_position",dest,start_pos,.2,Tween.TRANS_QUAD,Tween.EASE_OUT,.25)
+	tween.start()
+
 func disappear(node,to=Vector2(0,0)):
 	var dest = node.rect_global_position + to
 	tween.interpolate_property(node,"rect_global_position",node.rect_global_position,dest,.3,Tween.TRANS_QUAD,Tween.EASE_OUT)
@@ -34,6 +40,12 @@ func shake(node,power=2,time=.5):
 	var ini_pos = node.rect_position
 	randomize()
 	while time>0:
+		if !is_instance_valid(node): return
 		node.rect_position = ini_pos + Vector2(rand_range(-power,power),rand_range(-power/2,power/2))
 		time -= .025
 		yield(get_tree().create_timer(.025),"timeout")
+
+func colorization(node,color):
+	var start_color = node.modulate
+	tween.interpolate_property(node,"modulate",color,start_color,.4,Tween.TRANS_QUAD,Tween.EASE_IN)
+	tween.start()

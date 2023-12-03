@@ -3,8 +3,8 @@ extends Node
 var unit_descriptor
 var TowerNode
 var UnitData = {
-	"slime":{"atk":2,"hp":3,"spd":1, "img":null},
-	"soldier":{"atk":2,"hp":3,"spd":1, "img":null}
+	"slime":{"atk":2,"hp":3,"spd":1, "img":null, "team":2},
+	"soldier":{"atk":2,"hp":3,"spd":1, "img":null, "team":1}
 }
 
 func _ready():
@@ -18,7 +18,7 @@ func init_units():
 		data.img = load("res://assets/units/"+k+".png")
 
 func create_new_unit(code):
-	var unit_node = preload("res://prefabs/Enemy.tscn").instance()
+	var unit_node = preload("res://prefabs/Unit.tscn").instance()
 	unit_node.set_data( UnitData[code] )
 	return unit_node
 

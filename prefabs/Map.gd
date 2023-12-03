@@ -11,6 +11,10 @@ func _ready():
 	$btn1.connect("button_down",self,"create_unit_left")
 
 func get_grid_node(pos):
+	if pos.x<=0: return null
+	if pos.y<=0: return null
+	if pos.x>8: return null
+	if pos.y>3: return null
 	var grid_node = $Grid.get_child((pos.x-1)+(pos.y-1)*grid_size.x)
 	return grid_node
 
@@ -23,16 +27,17 @@ func add_unit(type,x,y):
 	return unit
 
 func move_to(unit,pos):
-	if pos.x<1: pos.x = 1
-	if pos.y<1: pos.y = 1
-	if pos.x>8: pos.x = 8
-	if pos.y>3: pos.y = 3
 	unit.map_position = pos
 	var des = get_grid_node(unit.map_position).rect_global_position
 	Effects.move_to(unit,des)
 
 func unit_walk(unit):
-	if unit.map_position.x<=1: 
+	var obj = get_unit_around(unit)
+	if(obj):
+		var dest = unit.rect_global_position+(obj.rect_global_position-unit.rect_global_position)/2
+		Effects.move_to_yoyo(unit,dest)
+		obj.damage(unit.data.atk)
+	elif unit.map_position.x<=1: 
 		UnitManager.attack_tower(unit)
 	else:
 		move_to(unit,unit.map_position+Vector2(-1,0))
@@ -56,3 +61,11 @@ func check_unit_pos(pos,ignoreNode=null):
 func create_unit_left():
 	var u = add_unit("soldier",1,1);
 	unit_push(u);
+
+func get_unit_around(unit):
+	var en = check_unit_pos(unit.map_position+Vector2(-1,0));
+	if !en: en = check_unit_pos(unit.map_position+Vector2(+1,0));
+	if !en: en = check_unit_pos(unit.map_position+Vector2(0,-1));
+	if !en: en = check_unit_pos(unit.map_position+Vector2(0,+1));
+	if en && en.data.team!=unit.data.team: return en
+	return null

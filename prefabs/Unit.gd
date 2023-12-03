@@ -11,7 +11,7 @@ func _ready():
 	$EnemyArea.connect("mouse_exited",self,"on_mouse_exit")
 
 func set_data(_data):
-	data = _data
+	data = _data.duplicate(true)
 	$Image.texture = data.img
 
 func on_mouse_enter():
@@ -19,3 +19,11 @@ func on_mouse_enter():
 
 func on_mouse_exit():
 	UnitManager.hide_unit_description(self)
+
+func damage(dam):
+	data.hp -= dam
+	Effects.shake(self,1,.3)
+	Effects.colorization(self,Color(1,.2,.2,1))
+	if data.hp<=0: 
+		yield(get_tree().create_timer(.5),"timeout")
+		Effects.disappear(self)
