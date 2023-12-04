@@ -40,6 +40,7 @@ func on_end_turn():
 
 func start_new_turn():
 	Sounds.play_sound("turn2")
+	$DayCounter.add_day()
 	$EndTurn.disabled = false
 	$EndTurn.modulate = Color(1,1,1,1)
 	yield(get_tree().create_timer(1),"timeout")
