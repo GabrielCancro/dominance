@@ -22,6 +22,7 @@ func on_mouse_exit():
 
 func damage(dam):
 	data.hp -= dam
+	Sounds.play_sound("hit1")
 	Effects.shake(self,1,.3)
 	Effects.colorization(self,Color(1,.2,.2,1))
 	if data.hp<=0: 

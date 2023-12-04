@@ -43,6 +43,7 @@ func card_deck_to_hand():
 		if hand_cards[i]: continue
 		else: 
 			print("CREATE NEW CARD")
+			Sounds.play_sound("card1")
 			var new_card = preload("res://prefabs/Card.tscn").instance()
 			get_node("/root/Game/RegionBottom").add_child(new_card)
 			new_card.rect_global_position = DeckNode.rect_global_position
@@ -66,10 +67,13 @@ func use_card(card_node):
 		else:
 			TempGoldNode.add_gold(-card_node.data.cost)
 			card_node.set_enable_card(false)
+			var code = card_node.data.code
 			Effects.disappear(card_node,Vector2(0,-50))
+			Sounds.play_sound("card2")
+			yield(get_tree().create_timer(.4),"timeout")
 			hand_cards[i] = null
-			if(CardUsage.has_method("use_card_"+card_node.data.code)): CardUsage.call("use_card_"+card_node.data.code,card_node.data.code)
-			else: CardUsage.use_default_card(card_node.data.code)
+			if(CardUsage.has_method("use_card_"+code)): CardUsage.call("use_card_"+code,code)
+			else: CardUsage.use_default_card(code)
 			return null
 
 func burn_card(card_node):
@@ -77,8 +81,10 @@ func burn_card(card_node):
 	for i in range(hand_cards.size()):
 		if hand_cards[i]!=card_node: continue
 		else:
+			Sounds.play_sound("burn1")
 			Effects.disappear(card_node,Vector2(0,30))
 			hand_cards[i] = null
-			TempGoldNode.add_gold(1)
 			emit_signal("burn_card")
+			yield(get_tree().create_timer(.3),"timeout")
+			TempGoldNode.add_gold(1)
 			return null
