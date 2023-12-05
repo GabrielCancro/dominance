@@ -1,6 +1,7 @@
 extends Control
 
 var data
+var is_usable = true
 
 func _ready():
 	set_data("soldier")
@@ -15,7 +16,6 @@ func _ready():
 
 func set_data(_code):
 	data = CardData.get_card_data(_code)
-	data = CardData.get_rnd_card()
 	$Title.text = data.title
 	$Ico.texture = data.ico
 	for g in $GoldBox.get_children():
@@ -24,6 +24,9 @@ func set_data(_code):
 	if data.cost>=4: $GoldBox.add_constant_override ("separation", -7)
 	if data.cost>=5: $GoldBox.add_constant_override ("separation", -8)
 	if data.cost>=6: $GoldBox.add_constant_override ("separation", -9)
+	
+	$BurnArea.visible = data.burn
+	$BurnIco.visible = data.burn
 
 func on_mouse_enter():
 	CardData.show_card_description(self)
@@ -34,18 +37,25 @@ func on_mouse_exit():
 	$BorderColor.visible = false
 
 func on_mouse_burn_enter():
+	if !is_usable: return
 	$BurnColor.visible = true
 	$BorderColor.visible = true
 
 func on_mouse_burn_exit():
+	if !is_usable: return
 	$BurnColor.visible = false
 	$BorderColor.visible = false
 
 func on_click_card():
+	if !is_usable: return
 	CardData.use_card(self)
 
 func on_click_burn():
+	if !is_usable: return
 	CardData.burn_card(self)
 
 func set_enable_card(val):
 	$DisableMouse.visible = !val
+
+func set_usable_card(val):
+	is_usable = val

@@ -26,7 +26,7 @@ func disappear(node,to=Vector2(0,0)):
 	node.queue_free()
 
 func to_alpha(node,to=1):
-	tween.interpolate_property(node,"modulate:a",node.modulate.a,to,.3,Tween.TRANS_QUAD,Tween.EASE_OUT)
+	tween.interpolate_property(node,"modulate:a",node.modulate.a,to,.2,Tween.TRANS_QUAD,Tween.EASE_OUT)
 	tween.start()
 
 func add_mouse_focuser(btn,border_node):
