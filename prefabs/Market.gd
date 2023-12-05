@@ -2,6 +2,7 @@ extends Control
 
 func _ready():
 	visible = false
+	$Title.text = Lang.get_string("market")
 	get_node("Card1/CardArea").connect("button_down",self,"on_click_card",[$Card1])
 	get_node("Card2/CardArea").connect("button_down",self,"on_click_card",[$Card2])
 	get_node("Card3/CardArea").connect("button_down",self,"on_click_card",[$Card3])

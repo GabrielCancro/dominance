@@ -8,7 +8,7 @@ func _ready():
 
 func set_target(card_node):
 	card_target = card_node
-	$Desc.text = card_node.data.desc
+	$Desc.text = Lang.get_card_desc(card_node.data.code)
 	rect_global_position = card_node.rect_global_position
 	rect_global_position.x -= rect_size.x/2
 	rect_global_position.x += card_node.rect_size.x/2

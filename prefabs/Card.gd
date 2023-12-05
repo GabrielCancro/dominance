@@ -16,7 +16,7 @@ func _ready():
 
 func set_data(_code):
 	data = CardData.get_card_data(_code)
-	$Title.text = data.title
+	$Title.text = Lang.get_card_name(_code)
 	$Ico.texture = data.ico
 	for g in $GoldBox.get_children():
 		g.visible = (g.get_index()<data.cost)

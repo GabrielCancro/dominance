@@ -7,11 +7,11 @@ var DiscardNode
 var HandBoxNode
 var TempGoldNode
 var Cards = [
-	{"code":"soldier", "ico":null, "cost":2, "title":"Soldado", "burn":true, "desc":"Invoca un soldado que defiende tu castillo"},
-	{"code":"warrior", "ico":null, "cost":4, "title":"Guerrero", "burn":true, "desc":"Esta es otra unidad diferente"},
-	{"code":"market", "ico":null, "cost":4, "title":"Mercado", "burn":true, "desc":"Elige una entre tres cartas nuevas y agregala a tu descarte"},
-	{"code":"wind", "ico":null, "cost":2, "title":"Vendabal", "burn":true, "desc":"50% de impulsar a cada enemigo un casillero hacia atras"},
-	{"code":"gold", "ico":null, "cost":0, "title":"Oro", "burn":false, "desc":"Ganas dos monedas de oro para usar en este turno"},
+	{"code":"soldier", "ico":null, "cost":2, "title":"Soldado", "burn":true},
+	{"code":"warrior", "ico":null, "cost":4, "title":"Guerrero", "burn":true},
+	{"code":"market", "ico":null, "cost":4, "title":"Mercado", "burn":true},
+	{"code":"wind", "ico":null, "cost":2, "title":"Vendabal", "burn":true},
+	{"code":"gold", "ico":null, "cost":0, "title":"Oro", "burn":false},
 ]
 
 signal use_card(code)
@@ -38,18 +38,11 @@ func hide_card_description(card_node):
 	if card_descriptor && card_descriptor.card_target == card_node:
 		card_descriptor.hide_panel()
 
-func card_deck_to_hand():
+func _card_deck_to_hand():
 	print("DECK TO HAND")
 	for i in range(hand_cards.size()):
 		if hand_cards[i]: continue
-		else: 
-			if(DeckNode.cards.size()<=0):
-				var size = DiscardNode.cards.size()
-				for c in range(size):
-					yield(get_tree().create_timer(.2),"timeout")
-					DeckNode.add_card( DiscardNode.pull_card() )
-				DeckNode.cards.shuffle()
-				yield(get_tree().create_timer(.7),"timeout")
+		else:
 			print("CREATE NEW CARD")
 			Sounds.play_sound("card1")
 			var new_card = preload("res://prefabs/Card.tscn").instance()
@@ -62,7 +55,15 @@ func card_deck_to_hand():
 	return null
 
 func get_cards():
-	while card_deck_to_hand():
+	while _card_deck_to_hand():
+		if(DeckNode.cards.size()<=0): 
+			yield(get_tree().create_timer(1),"timeout")
+			var size = DiscardNode.cards.size()
+			for i in size: 
+				DeckNode.add_card( DiscardNode.pull_card() )
+				yield(get_tree().create_timer(.2),"timeout")
+			DeckNode.cards.shuffle()
+			yield(get_tree().create_timer(1),"timeout")
 		yield(get_tree().create_timer(.2),"timeout")
 
 func use_card(card_node):
