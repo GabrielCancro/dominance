@@ -32,9 +32,11 @@ func add_unit(type,x,y):
 	return unit
 
 func move_to(unit,pos):
-	unit.map_position = pos
-	var des = get_grid_node(unit.map_position).rect_global_position
-	Effects.move_to(unit,des)
+	var des = get_grid_node(pos).rect_global_position
+	if des:
+		Sounds.play_sound("step1")
+		unit.map_position = pos
+		Effects.move_to(unit,des)
 
 func unit_try_attack(unit):
 	var obj = get_unit_around(unit)
@@ -64,6 +66,7 @@ func check_unit_pos(pos,ignoreNode=null):
 func create_unit_left(line):
 	var u = add_unit(unit_code_to_create,1,line);
 	unit_push(u);
+	Sounds.play_sound("unit1")
 	$CreateButtons.visible = false
 
 func get_unit_around(unit):

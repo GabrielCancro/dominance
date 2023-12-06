@@ -56,25 +56,30 @@ func _card_deck_to_hand():
 
 func get_cards():
 	while _card_deck_to_hand():
-		if(DeckNode.cards.size()<=0): 
-			yield(get_tree().create_timer(1),"timeout")
-			var size = DiscardNode.cards.size()
-			for i in size: 
-				DeckNode.add_card( DiscardNode.pull_card() )
-				yield(get_tree().create_timer(.2),"timeout")
-			DeckNode.cards.shuffle()
-			yield(get_tree().create_timer(1),"timeout")
+		if(DeckNode.cards.size()<=0):
+			yield(get_tree().create_timer(.7),"timeout")
+			var start_discard_pos = DiscardNode.rect_global_position
+			Effects.move_to(DiscardNode,DeckNode.rect_global_position) 
+			yield(get_tree().create_timer(.5),"timeout")
+			DeckNode.set_card_array( DiscardNode.get_all_cards() )
+			DiscardNode.rect_global_position = start_discard_pos
+			yield(get_tree().create_timer(.3),"timeout")
 		yield(get_tree().create_timer(.2),"timeout")
+	yield(get_tree().create_timer(.2),"timeout")
+	Global.set_stop_mouse(false)
 
 func use_card(card_node):
+	Global.set_stop_mouse(true)
 	if card_node.data.cost>TempGoldNode.gold:
+		yield(get_tree().create_timer(.3),"timeout")
 		TempGoldNode.show_low_gold()
+		yield(get_tree().create_timer(.4),"timeout")
+		Global.set_stop_mouse(false)
 		return
 	for i in range(hand_cards.size()):
 		if hand_cards[i]!=card_node: continue
 		else:
 			TempGoldNode.add_gold(-card_node.data.cost)
-			card_node.set_enable_card(false)
 			var code = card_node.data.code
 			Effects.disappear(card_node,Vector2(0,-50))
 			Sounds.play_sound("card2")
@@ -83,10 +88,11 @@ func use_card(card_node):
 			if(CardUsage.has_method("use_card_"+code)): CardUsage.call("use_card_"+code,code)
 			else: CardUsage.use_default_card(code)
 			DiscardNode.add_card(code)
-			return null
+			break
+	Global.set_stop_mouse(false)
 
 func burn_card(card_node):
-	card_node.set_enable_card(false)
+	Global.set_stop_mouse(true)
 	for i in range(hand_cards.size()):
 		if hand_cards[i]!=card_node: continue
 		else:
@@ -97,4 +103,5 @@ func burn_card(card_node):
 			emit_signal("burn_card")
 			yield(get_tree().create_timer(.3),"timeout")
 			TempGoldNode.add_gold(1)
-			return null
+			break
+	Global.set_stop_mouse(false)

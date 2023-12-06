@@ -50,6 +50,13 @@ func colorization(node,color):
 	tween.interpolate_property(node,"modulate",color,start_color,.4,Tween.TRANS_QUAD,Tween.EASE_IN)
 	tween.start()
 
+func shine(node):
+	var start_color = node.modulate
+	var shine_color = Color(5,5,5,5)
+	tween.interpolate_property(node,"modulate",start_color,shine_color,.2,Tween.TRANS_QUAD,Tween.EASE_IN)
+	tween.interpolate_property(node,"modulate",shine_color,start_color,.2,Tween.TRANS_QUAD,Tween.EASE_OUT,.3)
+	tween.start()
+
 func scaled_from(node):
 	var start_scale = node.rect_scale
 	tween.interpolate_property(node,"rect_scale",node.rect_scale*1.2,start_scale,.4,Tween.TRANS_QUAD,Tween.EASE_IN)

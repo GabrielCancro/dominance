@@ -6,13 +6,23 @@ var cards = []
 func _ready():
 	CardData.DiscardNode = self
 	cards.shuffle()
-	$Label.text = str( cards.size() )
+	update_ui()
 
 func add_card(code):
 	cards.append(code)
-	$Label.text = str( cards.size() )
+	update_ui()
 
 func pull_card():
 	var c = cards.pop_front()
-	$Label.text = str( cards.size() )
+	update_ui()
 	return c
+
+func get_all_cards():
+	var c = cards.duplicate()
+	cards = []
+	update_ui()
+	return c
+
+func update_ui():
+	$Label.text = str( cards.size() )
+	visible = !cards.empty()

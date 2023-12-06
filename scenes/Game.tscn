@@ -36,6 +36,16 @@ margin_top = -164.0
 margin_bottom = 1.0
 color = Color( 0.12549, 0.133333, 0.168627, 1 )
 
+[node name="DeckSlot" type="TextureRect" parent="RegionBottom"]
+margin_left = 112.0
+margin_top = 51.0
+margin_right = 176.0
+margin_bottom = 147.0
+rect_min_size = Vector2( 64, 96 )
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 5
+
 [node name="Deck" parent="RegionBottom" instance=ExtResource( 8 )]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -45,6 +55,16 @@ margin_left = -288.0
 margin_top = -32.0
 margin_right = -224.0
 margin_bottom = 64.0
+
+[node name="DiscardSlot" type="TextureRect" parent="RegionBottom"]
+margin_left = 614.0
+margin_top = 53.0
+margin_right = 678.0
+margin_bottom = 149.0
+rect_min_size = Vector2( 64, 96 )
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 5
 
 [node name="Discard" parent="RegionBottom" instance=ExtResource( 13 )]
 margin_left = 614.0
@@ -163,9 +183,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -192.0
+margin_left = -216.0
 margin_top = -130.0
-margin_right = 304.0
+margin_right = 280.0
 margin_bottom = 10.0
 
 [node name="DayCounter" parent="." instance=ExtResource( 11 )]
@@ -186,3 +206,8 @@ margin_bottom = 59.0
 visible = false
 
 [node name="CardDescriptor" parent="." instance=ExtResource( 7 )]
+
+[node name="StopMouse" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.235294, 0.407843, 0.862745, 0.0980392 )

@@ -4,6 +4,7 @@ extends Control
 func _ready():
 	Sounds.set_audio_scene(self)
 	CardData.HandBoxNode = $RegionBottom/HandCards
+	Global.StopMouseNode = $StopMouse
 	#CardUsage.connect("end_use_card",self,"check_empty_hand")
 	#CardData.connect("burn_card",self,"check_empty_hand")
 	$EndTurn.connect("button_down",self,"on_end_turn")
@@ -20,8 +21,8 @@ func _ready():
 #	CardData.get_cards() 
 
 func on_end_turn():
-	$EndTurn.disabled = true
-	$EndTurn.modulate = Color(.3,.3,.3,1)
+	Global.set_stop_mouse(true)
+	$EndTurn.modulate = Color(.3,.3,.3,.3)
 	for i in range(CardData.hand_cards.size()):
 		var c = CardData.hand_cards[i]
 		if(c!=null): 
@@ -39,11 +40,11 @@ func on_end_turn():
 	
 
 func start_new_turn():
+	Global.set_stop_mouse(true)
 	Sounds.play_sound("turn1")
 	$DayCounter.add_day()
-	$EndTurn.disabled = false
-	$EndTurn.modulate = Color(1,1,1,1)
 	yield(get_tree().create_timer(1),"timeout")
+	$EndTurn.modulate = Color(1,1,1,1)
 	CardData.get_cards()
 	
 

@@ -23,6 +23,7 @@ CardUsage="*res://autoloads/CardUsage.gd"
 UnitManager="*res://autoloads/UnitManager.gd"
 Sounds="*res://autoloads/Sounds.gd"
 Lang="*res://autoloads/Lang.gd"
+Global="*res://autoloads/Global.gd"
 
 [display]
 
@@ -34,6 +35,13 @@ window/stretch/aspect="keep_height"
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[importer_defaults]
+
+ogg_vorbis={
+"loop": false,
+"loop_offset": 0
+}
 
 [physics]
 

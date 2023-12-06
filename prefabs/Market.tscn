@@ -30,9 +30,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -158.0
-margin_top = -46.0
+margin_top = -63.0
 margin_right = 158.0
-margin_bottom = 126.0
+margin_bottom = 109.0
 color = Color( 0.501961, 0.501961, 0.501961, 1 )
 
 [node name="BorderColor2" type="ColorRect" parent="BorderColor"]
@@ -50,9 +50,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -74.0
-margin_top = -34.0
+margin_top = -51.0
 margin_right = 74.0
-margin_bottom = -14.0
+margin_bottom = -31.0
 custom_colors/font_color = Color( 0.694118, 0.694118, 0.694118, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 1 )
@@ -64,22 +64,22 @@ autowrap = true
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = -120.0
-margin_top = 8.0
+margin_top = -9.0
 margin_right = -56.0
-margin_bottom = 104.0
+margin_bottom = 87.0
 
 [node name="Card2" parent="." instance=ExtResource( 1 )]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = -32.0
-margin_top = 8.0
+margin_top = -9.0
 margin_right = 32.0
-margin_bottom = 104.0
+margin_bottom = 87.0
 
 [node name="Card3" parent="." instance=ExtResource( 1 )]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 56.0
-margin_top = 8.0
+margin_top = -9.0
 margin_right = 120.0
-margin_bottom = 104.0
+margin_bottom = 87.0

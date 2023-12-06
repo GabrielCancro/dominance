@@ -276,7 +276,6 @@ margin_left = -661.0
 margin_top = 10.0
 margin_right = 661.0
 margin_bottom = 456.0
-mouse_default_cursor_shape = 3
 color = Color( 0.0703125, 0.0703125, 0.0703125, 0.705882 )
 
 [node name="ColorRect2" type="ColorRect" parent="CreateButtons"]
@@ -288,5 +287,4 @@ margin_left = -661.0
 margin_top = -600.0
 margin_right = 661.0
 margin_bottom = -154.0
-mouse_default_cursor_shape = 3
 color = Color( 0.0703125, 0.0703125, 0.0703125, 0.705882 )
