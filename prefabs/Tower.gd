@@ -1,7 +1,7 @@
 extends Control
 
-var hp = 25
-var hpm = 25
+var hp = 8
+var hpm = 8
 
 func _ready():
 	UnitManager.TowerNode = self

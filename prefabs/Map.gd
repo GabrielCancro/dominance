@@ -13,7 +13,6 @@ func _ready():
 	$CreateButtons/btn2.connect("button_down",self,"create_unit_left",[2])
 	$CreateButtons/btn3.connect("button_down",self,"create_unit_left",[3])
 	$CreateButtons.visible = false
-	$btn4.connect("button_down",self,"move_enemies")
 
 func get_grid_node(pos):
 	if pos.x<=0: return null
@@ -81,7 +80,6 @@ func get_unit_around(unit):
 	return en
 
 func move_enemies():
-	$btn4.visible = false
 	print("+++++++++++")
 	for u in $Units.get_children():
 		if !is_instance_valid(u): continue
@@ -103,7 +101,6 @@ func move_allies():
 			if !is_instance_valid(u): continue
 			if( unit_try_attack(u) ):
 				yield(get_tree().create_timer(.6),"timeout")
-	$btn4.visible = true
 	emit_signal("end_all_moves")
 
 func attack_tower(unit):

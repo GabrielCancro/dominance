@@ -3,6 +3,7 @@ extends Node
 var language = "es"
 var Texts = {
 	"market":{"es":"Mercado","en":"Market"},
+	"cost":{"es":"Costo","en":"Cost"},
 	
 	"card_soldier_name":{"es":"Soldado","en":"Soldier"},
 	"card_soldier_desc":{"es":"Invoca un soldado que defiende tu castillo","en":"-"},
@@ -13,7 +14,9 @@ var Texts = {
 	"card_market_name":{"es":"Mercado","en":"Market"},
 	"card_market_desc":{"es":"Elige una entre tres cartas nuevas y agregala a tu descarte","en":"-"},
 	"card_wind_name":{"es":"Viento","en":"Wind"},
-	"card_wind_desc":{"es":"50% de impulsar a cada enemigo un casillero hacia atras","en":"-"},
+	"card_wind_desc":{"es":"50/100 de impulsar a cada enemigo un casillero hacia atras","en":"-"},
+	"card_teasure_name":{"es":"Tesoro","en":"Wind"},
+	"card_teasure_desc":{"es":"Guarda una moneda en tu alijo. Podrás usar las monedas del alijo en cualquier turno","en":"-"},
 }
 
 func get_string(code):

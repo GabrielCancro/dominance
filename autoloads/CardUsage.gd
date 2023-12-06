@@ -21,6 +21,9 @@ func use_card_market(code):
 func use_card_warrior(code):
 	get_node("/root/Game/Map").show_create_unit_ui("soldier")
 
+func use_card_teasure(code):
+	get_node("/root/Game/RegionBottom/Stash").add_stash_gold(1)
+
 func use_card_wind(code):
 	Global.set_stop_mouse(true)
 	randomize()

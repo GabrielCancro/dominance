@@ -235,12 +235,6 @@ margin_top = -36.5
 margin_right = -270.5
 margin_bottom = 43.5
 
-[node name="btn4" type="Button" parent="."]
-margin_left = 238.0
-margin_top = 150.0
-margin_right = 262.0
-margin_bottom = 170.0
-
 [node name="CreateButtons" type="Control" parent="."]
 visible = false
 anchor_right = 1.0

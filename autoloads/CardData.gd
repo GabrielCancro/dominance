@@ -7,11 +7,12 @@ var DiscardNode
 var HandBoxNode
 var TempGoldNode
 var Cards = [
-	{"code":"soldier", "ico":null, "cost":2, "title":"Soldado", "burn":true},
+	{"code":"soldier", "ico":null, "cost":4, "title":"Soldado", "burn":true},
 	{"code":"warrior", "ico":null, "cost":4, "title":"Guerrero", "burn":true},
-	{"code":"market", "ico":null, "cost":4, "title":"Mercado", "burn":true},
+	{"code":"market", "ico":null, "cost":6, "title":"Mercado", "burn":true},
 	{"code":"wind", "ico":null, "cost":2, "title":"Vendabal", "burn":true},
 	{"code":"gold", "ico":null, "cost":0, "title":"Oro", "burn":false},
+	{"code":"teasure", "ico":null, "cost":2, "title":"Tesoro", "burn":true},
 ]
 
 signal use_card(code)

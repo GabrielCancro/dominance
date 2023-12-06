@@ -18,12 +18,15 @@ func set_data(_code):
 	data = CardData.get_card_data(_code)
 	$Title.text = Lang.get_card_name(_code)
 	$Ico.texture = data.ico
-	for g in $GoldBox.get_children():
-		g.visible = (g.get_index()<data.cost)
-	$GoldBox.add_constant_override ("separation", -1)
-	if data.cost>=4: $GoldBox.add_constant_override ("separation", -7)
-	if data.cost>=5: $GoldBox.add_constant_override ("separation", -8)
-	if data.cost>=6: $GoldBox.add_constant_override ("separation", -9)
+	
+	$GoldBox.visible = (data.cost<5)
+	if $GoldBox.visible:
+		for g in $GoldBox.get_children():
+			g.visible = (g.get_index()<data.cost)
+		$GoldBox.add_constant_override ("separation", -1)
+		if data.cost>=4: $GoldBox.add_constant_override ("separation", -7)
+	$CostGold.visible = !$GoldBox.visible
+	$CostGold/Cost.text = "x"+str(data.cost)
 	
 	$BurnArea.visible = data.burn
 	$BurnIco.visible = data.burn

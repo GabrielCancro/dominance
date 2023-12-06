@@ -1,10 +1,11 @@
 extends Button
 
 #var cards = ["soldier","soldier","market","gold","gold","gold","wind"]
-var cards = ["wind","soldier","market","gold","gold","gold","wind"]
+var cards = ["wind","soldier","market","gold","gold","teasure"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	randomize()
 	CardData.DeckNode = self
 	cards.shuffle()
 	update_ui()
