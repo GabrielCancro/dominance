@@ -6,9 +6,6 @@ signal end_all_moves
 
 func _ready():
 	yield(get_tree().create_timer(.5),"timeout")
-	add_unit("slime",8,1)
-	add_unit("slime",7,2)
-	add_unit("slime",8,3)
 	$CreateButtons/btn1.connect("button_down",self,"create_unit_left",[1])
 	$CreateButtons/btn2.connect("button_down",self,"create_unit_left",[2])
 	$CreateButtons/btn3.connect("button_down",self,"create_unit_left",[3])
@@ -30,12 +27,21 @@ func add_unit(type,x,y):
 	#.get_node("EnemyArea").connect("button_down",self,"unit_walk",[unit])
 	return unit
 
+func add_enemy_rnd_line(type):
+	var arr = [1,2,3]
+	arr.shuffle()
+	for i in range(arr.size()):
+		if !check_unit_pos(Vector2(8,arr[i]),null): 
+			add_unit(type,8,arr[i])
+			return true
+	return false
+
 func move_to(unit,pos):
-	var des = get_grid_node(pos).rect_global_position
-	if des:
+	var grid = get_grid_node(pos)
+	if grid:
 		Sounds.play_sound("step1")
 		unit.map_position = pos
-		Effects.move_to(unit,des)
+		Effects.move_to(unit,grid.rect_global_position)
 
 func unit_try_attack(unit):
 	var obj = get_unit_around(unit)
@@ -111,3 +117,9 @@ func attack_tower(unit):
 func show_create_unit_ui(unit_code):
 	unit_code_to_create = unit_code
 	$CreateButtons.visible = true
+
+func get_units_amount_team(_team):
+	var count = 0
+	for u in $Units.get_children():
+		if u.data.team==_team: count += 1
+	return count

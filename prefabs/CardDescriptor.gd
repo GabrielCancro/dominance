@@ -5,6 +5,9 @@ var card_target
 func _ready():
 	CardData.card_descriptor = self
 	modulate.a = 0
+	
+func _process(delta):
+	if !is_instance_valid(card_target): hide_panel()
 
 func set_target(card_node):
 	card_target = card_node

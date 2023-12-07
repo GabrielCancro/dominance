@@ -7,12 +7,13 @@ var DiscardNode
 var HandBoxNode
 var TempGoldNode
 var Cards = [
-	{"code":"soldier", "ico":null, "cost":4, "title":"Soldado", "burn":true},
-	{"code":"warrior", "ico":null, "cost":4, "title":"Guerrero", "burn":true},
-	{"code":"market", "ico":null, "cost":6, "title":"Mercado", "burn":true},
-	{"code":"wind", "ico":null, "cost":2, "title":"Vendabal", "burn":true},
-	{"code":"gold", "ico":null, "cost":0, "title":"Oro", "burn":false},
-	{"code":"teasure", "ico":null, "cost":2, "title":"Tesoro", "burn":true},
+	{"code":"soldier", "ico":null, "cost":4,"burn":true},
+	{"code":"warrior", "ico":null, "cost":4, "burn":true},
+	{"code":"market", "ico":null, "cost":6, "burn":true},
+	{"code":"wind", "ico":null, "cost":2, "burn":true},
+	{"code":"gold", "ico":null, "cost":0, "burn":false},
+	{"code":"teasure", "ico":null, "cost":2, "burn":true},
+	{"code":"house", "ico":null, "cost":3, "burn":true},
 ]
 
 signal use_card(code)
@@ -40,11 +41,11 @@ func hide_card_description(card_node):
 		card_descriptor.hide_panel()
 
 func _card_deck_to_hand():
-	print("DECK TO HAND")
+	#print("DECK TO HAND")
 	for i in range(hand_cards.size()):
 		if hand_cards[i]: continue
 		else:
-			print("CREATE NEW CARD")
+			#print("CREATE NEW CARD")
 			Sounds.play_sound("card1")
 			var new_card = preload("res://prefabs/Card.tscn").instance()
 			get_node("/root/Game/RegionBottom").add_child(new_card)
@@ -80,16 +81,18 @@ func use_card(card_node):
 	for i in range(hand_cards.size()):
 		if hand_cards[i]!=card_node: continue
 		else:
-			TempGoldNode.add_gold(-card_node.data.cost)
 			var code = card_node.data.code
-			Effects.disappear(card_node,Vector2(0,-50))
-			Sounds.play_sound("card2")
-			yield(get_tree().create_timer(.4),"timeout")
-			hand_cards[i] = null
-			if(CardUsage.has_method("use_card_"+code)): CardUsage.call("use_card_"+code,code)
-			else: CardUsage.use_default_card(code)
-			DiscardNode.add_card(code)
-			break
+			var success_usage = false
+			if(CardUsage.has_method("use_card_"+code)): success_usage = CardUsage.call("use_card_"+code,code)
+			else: success_usage = CardUsage.use_default_card(code)
+			if(success_usage):
+				TempGoldNode.add_gold(-card_node.data.cost)
+				Effects.disappear(card_node,Vector2(0,-50))
+				Sounds.play_sound("card2")
+				hand_cards[i] = null
+				DiscardNode.add_card(code)
+				break
+		yield(get_tree().create_timer(.4),"timeout")
 	Global.set_stop_mouse(false)
 
 func burn_card(card_node):

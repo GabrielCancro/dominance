@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://prefabs/Stash.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefabs/Map.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://prefabs/DayCounter.tscn" type="PackedScene" id=11]
 [ext_resource path="res://prefabs/Market.tscn" type="PackedScene" id=12]
 [ext_resource path="res://prefabs/Discard.tscn" type="PackedScene" id=13]
+[ext_resource path="res://prefabs/Houses.tscn" type="PackedScene" id=14]
 
 [sub_resource type="DynamicFont" id=3]
 outline_color = Color( 0.231373, 0.196078, 0.196078, 1 )
@@ -51,9 +52,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -288.0
-margin_top = -32.0
+margin_top = -35.0
 margin_right = -224.0
-margin_bottom = 64.0
+margin_bottom = 61.0
 rect_min_size = Vector2( 64, 96 )
 texture = ExtResource( 10 )
 expand = true
@@ -65,19 +66,19 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -288.0
-margin_top = -32.0
+margin_top = -35.0
 margin_right = -224.0
-margin_bottom = 64.0
+margin_bottom = 61.0
 
 [node name="DiscardSlot" type="TextureRect" parent="RegionBottom"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 214.0
-margin_top = -32.0
-margin_right = 278.0
-margin_bottom = 64.0
+margin_left = 210.0
+margin_top = -35.0
+margin_right = 274.0
+margin_bottom = 61.0
 rect_min_size = Vector2( 64, 96 )
 texture = ExtResource( 10 )
 expand = true
@@ -106,10 +107,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 214.0
-margin_top = -32.0
-margin_right = 278.0
-margin_bottom = 64.0
+margin_left = 210.0
+margin_top = -35.0
+margin_right = 274.0
+margin_bottom = 61.0
 
 [node name="HandCards" type="HBoxContainer" parent="RegionBottom"]
 anchor_left = 0.5
@@ -117,9 +118,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -176.0
-margin_top = -32.0
+margin_top = -35.0
 margin_right = 176.0
-margin_bottom = 64.0
+margin_bottom = 61.0
 custom_constants/separation = 8
 __meta__ = {
 "_edit_group_": true
@@ -174,10 +175,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 300.0
-margin_top = -23.0
-margin_right = 385.0
-margin_bottom = 39.0
+margin_left = 294.0
+margin_top = -29.0
+margin_right = 379.0
+margin_bottom = 33.0
 
 [node name="TempGold" parent="RegionBottom" instance=ExtResource( 9 )]
 anchor_left = 0.5
@@ -231,6 +232,8 @@ margin_top = -138.0
 margin_right = 268.0
 margin_bottom = 2.0
 
+[node name="Houses" parent="." instance=ExtResource( 14 )]
+
 [node name="DayCounter" parent="." instance=ExtResource( 11 )]
 anchor_left = 1.0
 anchor_right = 1.0
@@ -251,7 +254,30 @@ visible = false
 [node name="CardDescriptor" parent="." instance=ExtResource( 7 )]
 
 [node name="StopMouse" type="ColorRect" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.235294, 0.407843, 0.862745, 0.0980392 )
+color = Color( 1, 1, 1, 0 )
+
+[node name="b1" type="ColorRect" parent="StopMouse"]
+anchor_right = 1.0
+margin_bottom = 10.0
+color = Color( 0.188235, 0.211765, 0.337255, 1 )
+
+[node name="b2" type="ColorRect" parent="StopMouse"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -10.0
+color = Color( 0.188235, 0.211765, 0.337255, 1 )
+
+[node name="b3" type="ColorRect" parent="StopMouse"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -10.0
+color = Color( 0.188235, 0.211765, 0.337255, 1 )
+
+[node name="b4" type="ColorRect" parent="StopMouse"]
+anchor_bottom = 1.0
+margin_right = 10.0
+color = Color( 0.188235, 0.211765, 0.337255, 1 )
