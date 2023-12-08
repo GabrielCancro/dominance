@@ -1,14 +1,7 @@
 extends Node
 
-signal end_use_card()
-
 func _ready():
 	pass # Replace with function body.
-
-func use_default_card(code):
-	print(code)
-	emit_signal("end_use_card")
-	return true
 
 func use_card_soldier(code):
 	var cn_units = get_node("/root/Game/Map").get_units_amount_team(1)
@@ -29,8 +22,7 @@ func use_card_market(code):
 	return true
 
 func use_card_warrior(code):
-	get_node("/root/Game/Map").show_create_unit_ui("soldier")
-	return true
+	return use_card_soldier("soldier")
 
 func use_card_teasure(code):
 	get_node("/root/Game/RegionBottom/Stash").add_stash_gold(1)
@@ -38,6 +30,7 @@ func use_card_teasure(code):
 
 func use_card_wind(code):
 	Global.set_stop_mouse(true)
+	yield(get_tree().create_timer(.4),"timeout")
 	randomize()
 	for u in get_node("/root/Game/Map/Units").get_children():
 		if u.data.team==1: continue
@@ -45,6 +38,7 @@ func use_card_wind(code):
 		yield(get_tree().create_timer(.4),"timeout")
 		if(randf()>.5): get_node("/root/Game/Map").move_to(u,u.map_position+Vector2(1,0))
 		yield(get_tree().create_timer(.4),"timeout")
+	yield(get_tree().create_timer(.4),"timeout")
 	Global.set_stop_mouse(false)
 	return true
 

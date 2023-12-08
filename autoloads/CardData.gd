@@ -9,7 +9,7 @@ var TempGoldNode
 var Cards = [
 	{"code":"soldier", "ico":null, "cost":4,"burn":true},
 	{"code":"warrior", "ico":null, "cost":4, "burn":true},
-	{"code":"market", "ico":null, "cost":6, "burn":true},
+	{"code":"market", "ico":null, "cost":4, "burn":true},
 	{"code":"wind", "ico":null, "cost":2, "burn":true},
 	{"code":"gold", "ico":null, "cost":0, "burn":false},
 	{"code":"teasure", "ico":null, "cost":2, "burn":true},
@@ -78,21 +78,17 @@ func use_card(card_node):
 		yield(get_tree().create_timer(.4),"timeout")
 		Global.set_stop_mouse(false)
 		return
-	for i in range(hand_cards.size()):
-		if hand_cards[i]!=card_node: continue
-		else:
-			var code = card_node.data.code
-			var success_usage = false
-			if(CardUsage.has_method("use_card_"+code)): success_usage = CardUsage.call("use_card_"+code,code)
-			else: success_usage = CardUsage.use_default_card(code)
-			if(success_usage):
-				TempGoldNode.add_gold(-card_node.data.cost)
-				Effects.disappear(card_node,Vector2(0,-50))
-				Sounds.play_sound("card2")
-				hand_cards[i] = null
-				DiscardNode.add_card(code)
-				break
-		yield(get_tree().create_timer(.4),"timeout")
+	var code = card_node.data.code
+	if(CardUsage.has_method("use_card_"+code)): 
+		var success_usage = CardUsage.call("use_card_"+code,code)
+		print("USaGE ",success_usage)
+		if(success_usage):
+			TempGoldNode.add_gold(-card_node.data.cost)
+			Effects.disappear(card_node,Vector2(0,-50))
+			Sounds.play_sound("card2")
+			hand_cards[hand_cards.find(card_node)] = null
+			DiscardNode.add_card(code)
+	yield(get_tree().create_timer(.4),"timeout")
 	Global.set_stop_mouse(false)
 
 func burn_card(card_node):

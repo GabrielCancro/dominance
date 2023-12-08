@@ -16,7 +16,7 @@ var Texts = {
 	"card_wind_name":{"es":"Viento","en":"Wind"},
 	"card_wind_desc":{"es":"50/100 de impulsar a cada enemigo un casillero hacia atras","en":"-"},
 	"card_teasure_name":{"es":"Tesoro","en":"Wind"},
-	"card_teasure_desc":{"es":"Guarda una moneda en tu alijo. Podres usarlas en cualquier turno presionando sobre tu alijo","en":"-"},
+	"card_teasure_desc":{"es":"Guarda una moneda en tu alijo. Puedes usarlas en cualquier turno","en":"-"},
 	"card_house_name":{"es":"Casa","en":"House"},
 	"card_house_desc":{"es":"Construye una casa cercana a tu fortaleza, cada casa da alojamiento a una unidad","en":"-"},
 }

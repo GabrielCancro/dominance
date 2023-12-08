@@ -1,6 +1,9 @@
 extends Control
 
+var market_cards = ["gold","house","wind","teasure","soldier"]
+
 func _ready():
+	randomize()
 	visible = false
 	$Title.text = Lang.get_string("market")
 	get_node("Card1/CardArea").connect("button_down",self,"on_click_card",[$Card1])
@@ -9,11 +12,11 @@ func _ready():
 
 func show_market():
 	modulate.a = 0
-	$Card1.set_data( CardData.get_rnd_card().code )
+	$Card1.set_data( _get_market_rnd_card() )
 	$Card1.set_usable_card(false)
-	$Card2.set_data( CardData.get_rnd_card().code )
+	$Card2.set_data( _get_market_rnd_card() )
 	$Card2.set_usable_card(false)
-	$Card3.set_data( CardData.get_rnd_card().code )
+	$Card3.set_data( _get_market_rnd_card() )
 	$Card3.set_usable_card(false)
 	visible = true
 	Effects.to_alpha(self,1)
@@ -31,3 +34,6 @@ func on_click_card(card_node):
 	card_node.rect_global_position = start_pos
 	visible = false
 	Global.set_stop_mouse(false)
+
+func _get_market_rnd_card():
+	return market_cards[ randi()%market_cards.size() ]

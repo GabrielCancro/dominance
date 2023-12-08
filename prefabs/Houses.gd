@@ -10,13 +10,18 @@ func add_house():
 	if is_max():
 		show_max_house()
 		return false
-	Sounds.play_sound("step1")
+	Sounds.play_sound("build1")
 	amount += 1
+	_update_houses(true)
 	return true
 
-func _update_houses():
+func _update_houses(fx=false):
+	$MaxLabel.visible = is_max()
+	var last
 	for h in $Builds.get_children():
 		h.visible = (h.get_index()<amount)
+		if h.visible: last = h
+	if fx: Effects.scaled_from(last)
 
 func is_max():
 	return (amount>=6)
@@ -24,17 +29,11 @@ func is_max():
 func show_low_house():
 	if($LowHouseLabel.visible): return
 	$LowHouseLabel.visible = true
-	$LowHouseLabel.text = "low houses"
 	Sounds.play_sound("fail1")
 	Effects.shake($LowHouseLabel,2,.7)
 	yield(get_tree().create_timer(.7),"timeout")
 	$LowHouseLabel.visible = false
 
 func show_max_house():
-	if($LowHouseLabel.visible): return
-	$LowHouseLabel.text = "MANY HOUSES!!"
-	$LowHouseLabel.visible = true
 	Sounds.play_sound("fail1")
-	Effects.shake($LowHouseLabel,2,.7)
-	yield(get_tree().create_timer(.7),"timeout")
-	$LowHouseLabel.visible = false
+	Effects.shake($MaxLabel,2,.7)

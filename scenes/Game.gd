@@ -9,6 +9,7 @@ func _ready():
 	#CardData.connect("burn_card",self,"check_empty_hand")
 	$EndTurn.connect("button_down",self,"on_end_turn")
 	$BtnMarket.connect("button_down",self,"on_click_market")
+	Global.set_stop_mouse(true)
 	yield(get_tree().create_timer(1),"timeout")
 	start_new_turn()
 
@@ -40,7 +41,6 @@ func on_end_turn():
 	
 
 func start_new_turn():
-	Global.set_stop_mouse(true)
 	Sounds.play_sound("turn1")
 	$DayCounter.add_day()
 	yield(get_tree().create_timer(1),"timeout")

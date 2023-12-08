@@ -1,7 +1,7 @@
 extends Button
 
 #var cards = ["soldier","soldier","market","gold","gold","gold","wind"]
-var cards = ["wind","soldier","market","gold","gold","teasure","house"]
+var cards = ["wind","wind","soldier","soldier","market","gold","gold","teasure","house","house"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

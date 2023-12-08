@@ -36,16 +36,18 @@ func add_enemy_rnd_line(type):
 			return true
 	return false
 
-func move_to(unit,pos):
+func move_to(unit,pos,forced=false):
 	var grid = get_grid_node(pos)
 	if grid:
+		if check_unit_pos(pos) && !forced: return false
 		Sounds.play_sound("step1")
 		unit.map_position = pos
 		Effects.move_to(unit,grid.rect_global_position)
+		return true
 
 func unit_try_attack(unit):
 	var obj = get_unit_around(unit)
-	if(obj): 
+	if is_instance_valid(obj): 
 		var dest = unit.rect_global_position+(obj.rect_global_position-unit.rect_global_position)/2
 		Effects.move_to_yoyo(unit,dest)
 		obj.damage(unit.data.atk)
@@ -58,7 +60,7 @@ func unit_push(unit):
 		if(unit_to_push.map_position.x==8): 
 			unit_to_push.queue_free()
 			return
-		move_to(unit_to_push,unit_to_push.map_position+Vector2(1,0))
+		move_to(unit_to_push,unit_to_push.map_position+Vector2(1,0),true)
 		yield(get_tree().create_timer(.2),"timeout")
 		unit_push(unit_to_push);
 
