@@ -5,13 +5,14 @@ var max_days = 30
 
 var no_created_monsters = []
 var monsters = [
+	{"day":1,"units":["slime_small"]},
 	{"day":2,"units":["slime"]},
-	{"day":4,"units":["slime"]},
-	{"day":8,"units":["slime","slime"]},
+	{"day":4,"units":["slime_small"]},
+	{"day":8,"units":["slime","slime_small"]},
 	{"day":11,"units":["slime"]},
-	{"day":14,"units":["slime"]},
-	{"day":18,"units":["slime","slime"]},
-	{"day":22,"units":["slime","slime"]},
+	{"day":14,"units":["slime_small"]},
+	{"day":18,"units":["slime","slime_small"]},
+	{"day":22,"units":["slime","slime_small"]},
 	{"day":24,"units":["slime"]},
 	{"day":26,"units":["slime"]},
 	{"day":28,"units":["slime","slime"]},
@@ -34,7 +35,7 @@ func create_monsters():
 		for m in monsters[0].units: 
 			var created = get_node("../Map").add_enemy_rnd_line(m)
 			if !created: no_created_monsters.append(m)
-		monsters.pop_back()
+		monsters.pop_front()
 	print(monsters)
 
 func create_no_created_monsters():

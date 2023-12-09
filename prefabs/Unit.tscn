@@ -34,8 +34,12 @@ expand = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idle = SubResource( 1 )
 
-[node name="EnemyArea" type="Button" parent="."]
+[node name="UnitArea" type="Button" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = 4.0
+margin_right = -3.0
+margin_bottom = -3.0
 focus_mode = 0
 flat = true

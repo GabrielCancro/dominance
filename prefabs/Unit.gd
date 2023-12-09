@@ -7,8 +7,8 @@ func _ready():
 	randomize()
 	$AnimationPlayer.play("Idle")
 	$AnimationPlayer.seek( randf() )
-	$EnemyArea.connect("mouse_entered",self,"on_mouse_enter")
-	$EnemyArea.connect("mouse_exited",self,"on_mouse_exit")
+	$UnitArea.connect("mouse_entered",self,"on_mouse_enter")
+	$UnitArea.connect("mouse_exited",self,"on_mouse_exit")
 
 func set_data(_data):
 	data = _data.duplicate(true)

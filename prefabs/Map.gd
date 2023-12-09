@@ -2,7 +2,9 @@ extends Control
 
 var grid_size = Vector2(8,3)
 var unit_code_to_create = ""
+var team_unit_to_select
 signal end_all_moves
+signal selected_unit(unit)
 
 func _ready():
 	yield(get_tree().create_timer(.5),"timeout")
@@ -25,6 +27,7 @@ func add_unit(type,x,y):
 	unit.map_position = Vector2(x,y)
 	unit.rect_global_position = get_grid_node(unit.map_position).rect_global_position
 	#.get_node("EnemyArea").connect("button_down",self,"unit_walk",[unit])
+	unit.get_node("UnitArea").connect("button_down",self,"on_unit_click",[unit])
 	return unit
 
 func add_enemy_rnd_line(type):
@@ -44,6 +47,7 @@ func move_to(unit,pos,forced=false):
 		unit.map_position = pos
 		Effects.move_to(unit,grid.rect_global_position)
 		return true
+	return false
 
 func unit_try_attack(unit):
 	var obj = get_unit_around(unit)
@@ -98,7 +102,13 @@ func move_enemies():
 				attack_tower(u)
 				yield(get_tree().create_timer(.6),"timeout")
 			else:
-				move_to(u,u.map_position+Vector2(-1,0))
+				var mov = u.map_position+Vector2(-u.data.spd,0)
+				for i in range(u.data.spd):
+					var try = u.map_position+Vector2(-u.data.spd+i,0)
+					var u2 = check_unit_pos( try )
+					if u2 && u2.data.team == 1: mov.x += 1
+					elif !get_grid_node(mov): mov.x += 1
+				move_to(u,mov)
 				yield(get_tree().create_timer(.2),"timeout")
 	yield(get_tree().create_timer(.3),"timeout")
 	move_allies()
@@ -120,8 +130,20 @@ func show_create_unit_ui(unit_code):
 	unit_code_to_create = unit_code
 	$CreateButtons.visible = true
 
+func show_select_unit_panel(team = -1):
+	team_unit_to_select = team
+	$SelectUnitPanel/Label.text = Lang.get_string("select_unit_team_"+str(team))
+	$SelectUnitPanel.visible = true
+
 func get_units_amount_team(_team):
 	var count = 0
 	for u in $Units.get_children():
 		if u.data.team==_team: count += 1
 	return count
+
+func on_unit_click(unit):
+	print(unit.data)
+	if !$SelectUnitPanel.visible: return
+	if team_unit_to_select==-1 || unit.data.team==team_unit_to_select:
+		$SelectUnitPanel.visible = false
+		emit_signal("selected_unit",unit)

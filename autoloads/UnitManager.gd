@@ -3,8 +3,10 @@ extends Node
 var unit_descriptor
 var TowerNode
 var UnitData = {
-	"slime":{"atk":1,"hp":2,"spd":1, "img":null, "team":2},
-	"soldier":{"atk":1,"hp":3,"spd":1, "img":null, "team":1}
+	"slime":{"atk":1,"hp":3,"spd":1, "img":null, "team":2},
+	"slime_small":{"atk":1,"hp":2,"spd":2, "img":null, "team":2},
+	"militia":{"atk":1,"hp":2,"spd":1, "img":null, "team":1},
+	"soldier":{"atk":1,"hp":4,"spd":1, "img":null, "team":1}
 }
 
 

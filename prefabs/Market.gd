@@ -1,6 +1,15 @@
 extends Control
 
-var market_cards = ["gold","house","wind","teasure","soldier"]
+var market_cards = [
+	"gold",
+	"house",
+	"militia",
+	"wind",
+	"teasure",
+	"soldier",
+	"advance",
+	"thundre",
+]
 
 func _ready():
 	randomize()
