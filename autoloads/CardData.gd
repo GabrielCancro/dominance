@@ -78,18 +78,22 @@ func use_card(card_node):
 		yield(get_tree().create_timer(.3),"timeout")
 		TempGoldNode.show_low_gold()
 		yield(get_tree().create_timer(.4),"timeout")
-		Global.set_stop_mouse(false)
-		return
-	var code = card_node.data.code
-	if(CardUsage.has_method("use_card_"+code)): 
-		var success_usage = CardUsage.call("use_card_"+code,code)
-		print("USaGE ",success_usage)
-		if(success_usage):
-			TempGoldNode.add_gold(-card_node.data.cost)
-			Effects.disappear(card_node,Vector2(0,-50))
-			Sounds.play_sound("card2")
-			hand_cards[hand_cards.find(card_node)] = null
-			DiscardNode.add_card(code)
+	else:
+		var code = card_node.data.code
+		var conditions_ok = true
+		if(CardUsage.has_method("condition_card_"+code)): 
+			conditions_ok = CardUsage.call("condition_card_"+code,code)
+		if(conditions_ok && CardUsage.has_method("use_card_"+code)): 
+				TempGoldNode.add_gold(-card_node.data.cost)
+				Effects.move_to(card_node,card_node.rect_global_position+Vector2(0,-60))
+				Sounds.play_sound("card2")
+				yield(get_tree().create_timer(.2),"timeout")
+				CardUsage.call("use_card_"+code,code)
+				yield(CardUsage,"end_usage")
+				yield(get_tree().create_timer(.2),"timeout")
+				Effects.disappear(card_node)
+				hand_cards[hand_cards.find(card_node)] = null
+				DiscardNode.add_card(code)
 	yield(get_tree().create_timer(.4),"timeout")
 	Global.set_stop_mouse(false)
 

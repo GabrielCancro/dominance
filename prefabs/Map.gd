@@ -5,6 +5,7 @@ var unit_code_to_create = ""
 var team_unit_to_select
 signal end_all_moves
 signal selected_unit(unit)
+signal unit_created
 
 func _ready():
 	yield(get_tree().create_timer(.5),"timeout")
@@ -79,6 +80,7 @@ func create_unit_left(line):
 	unit_push(u);
 	Sounds.play_sound("unit1")
 	$CreateButtons.visible = false
+	emit_signal("unit_created")
 
 func get_unit_around(unit):
 	var en = check_unit_pos(unit.map_position+Vector2(-1,0));
@@ -95,21 +97,25 @@ func move_enemies():
 	print("+++++++++++")
 	for u in $Units.get_children():
 		if !is_instance_valid(u): continue
-		if u.data.team==2: 
-			if( unit_try_attack(u) ): 
-				yield(get_tree().create_timer(.6),"timeout")
-			elif u.map_position.x<=1:
-				attack_tower(u)
-				yield(get_tree().create_timer(.6),"timeout")
-			else:
-				var mov = u.map_position+Vector2(-u.data.spd,0)
-				for i in range(u.data.spd):
-					var try = u.map_position+Vector2(-u.data.spd+i,0)
-					var u2 = check_unit_pos( try )
-					if u2 && u2.data.team == 1: mov.x += 1
-					elif !get_grid_node(mov): mov.x += 1
-				move_to(u,mov)
-				yield(get_tree().create_timer(.2),"timeout")
+		var just_attack = false
+		if u.data.team!=2: continue
+		if( unit_try_attack(u) ): 
+			just_attack = true
+			yield(get_tree().create_timer(.6),"timeout")
+		elif u.map_position.x<=1:
+			attack_tower(u)
+			yield(get_tree().create_timer(.6),"timeout")
+		else:
+			var mov = u.map_position+Vector2(-u.data.spd,0)
+			for i in range(u.data.spd):
+				var try = u.map_position+Vector2(-u.data.spd+i,0)
+				var u2 = check_unit_pos( try )
+				if u2 && u2.data.team == 1: mov.x += 1
+				elif !get_grid_node(mov): mov.x += 1
+			move_to(u,mov)
+			yield(get_tree().create_timer(.2),"timeout")
+		if( !just_attack && unit_try_attack(u) ): 
+			yield(get_tree().create_timer(.6),"timeout")
 	yield(get_tree().create_timer(.3),"timeout")
 	move_allies()
 

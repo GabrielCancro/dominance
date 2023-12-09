@@ -38,7 +38,7 @@ func on_end_turn():
 	yield($Map,"end_all_moves")
 	yield(get_tree().create_timer(.5),"timeout")
 	start_new_turn()
-	
+
 
 func start_new_turn():
 	Sounds.play_sound("turn1")
