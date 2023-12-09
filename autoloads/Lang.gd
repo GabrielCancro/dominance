@@ -7,6 +7,9 @@ var Texts = {
 	"select_unit_team_-1":{"es":"Elige una unidad","en":"Choose a unit"},
 	"select_unit_team_1":{"es":"Elige un aliado","en":"Choose a ally"},
 	"select_unit_team_2":{"es":"Elige un enemigo","en":"Choose a enemy"},
+	"end_turn_button":{"es":"Terminar","en":"End"},
+	"discards_slot":{"es":"Descarte","en":"Discards"},
+	"stash_empty":{"es":"Vacio","en":"Empty"},	
 	
 	"card_soldier_name":{"es":"Soldado","en":"Soldier"},
 	"card_soldier_desc":{"es":"Invoca un soldado resistente para defenderte","en":"-"},

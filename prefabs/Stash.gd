@@ -5,6 +5,7 @@ var stash_gold = 0
 func _ready():
 	add_stash_gold(0)
 	Effects.add_mouse_focuser(self,$BorderColor)
+	$EmptyLabel.text = Lang.get_string("stash_empty")
 	connect("button_down",self,"on_click")
 
 func add_stash_gold(val=1):

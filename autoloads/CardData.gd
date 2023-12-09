@@ -85,13 +85,13 @@ func use_card(card_node):
 			conditions_ok = CardUsage.call("condition_card_"+code,code)
 		if(conditions_ok && CardUsage.has_method("use_card_"+code)): 
 				TempGoldNode.add_gold(-card_node.data.cost)
-				Effects.move_to(card_node,card_node.rect_global_position+Vector2(0,-60))
+				Effects.move_to(card_node,card_node.rect_global_position+Vector2(0,-40))
 				Sounds.play_sound("card2")
 				yield(get_tree().create_timer(.2),"timeout")
 				CardUsage.call("use_card_"+code,code)
 				yield(CardUsage,"end_usage")
 				yield(get_tree().create_timer(.2),"timeout")
-				Effects.disappear(card_node)
+				Effects.disappear(card_node,Vector2(0,-20))
 				hand_cards[hand_cards.find(card_node)] = null
 				DiscardNode.add_card(code)
 	yield(get_tree().create_timer(.4),"timeout")

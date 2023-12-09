@@ -10,6 +10,9 @@ func _ready():
 	$EndTurn.connect("button_down",self,"on_end_turn")
 	$BtnMarket.connect("button_down",self,"on_click_market")
 	Global.set_stop_mouse(true)
+	$EndTurn.modulate = Color(1,1,1,.15)
+	$EndTurn/Label.text = Lang.get_string("end_turn_button")
+	$RegionBottom/DiscardSlot/Label.text = Lang.get_string("discards_slot")
 	yield(get_tree().create_timer(1),"timeout")
 	start_new_turn()
 
@@ -23,7 +26,7 @@ func _ready():
 
 func on_end_turn():
 	Global.set_stop_mouse(true)
-	$EndTurn.modulate = Color(.3,.3,.3,.3)
+	$EndTurn.modulate = Color(1,1,1,.15)
 	for i in range(CardData.hand_cards.size()):
 		var c = CardData.hand_cards[i]
 		if(c!=null): 

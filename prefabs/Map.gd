@@ -94,11 +94,11 @@ func get_unit_around(unit):
 	return en
 
 func move_enemies():
-	print("+++++++++++")
 	for u in $Units.get_children():
 		if !is_instance_valid(u): continue
-		var just_attack = false
+		if u.is_dead: continue
 		if u.data.team!=2: continue
+		var just_attack = false
 		if( unit_try_attack(u) ): 
 			just_attack = true
 			yield(get_tree().create_timer(.6),"timeout")
@@ -114,17 +114,20 @@ func move_enemies():
 				elif !get_grid_node(mov): mov.x += 1
 			move_to(u,mov)
 			yield(get_tree().create_timer(.2),"timeout")
-		if( !just_attack && unit_try_attack(u) ): 
-			yield(get_tree().create_timer(.6),"timeout")
+		if !just_attack:
+			yield(get_tree().create_timer(.3),"timeout")
+			if unit_try_attack(u): 
+				yield(get_tree().create_timer(.3),"timeout")
 	yield(get_tree().create_timer(.3),"timeout")
 	move_allies()
 
 func move_allies():
 	for u in $Units.get_children():
-		if u.data.team==1:
-			if !is_instance_valid(u): continue
-			if( unit_try_attack(u) ):
-				yield(get_tree().create_timer(.6),"timeout")
+		if !is_instance_valid(u): continue
+		if u.is_dead: continue
+		if u.data.team!=1: continue
+		if( unit_try_attack(u) ):
+			yield(get_tree().create_timer(.6),"timeout")
 	emit_signal("end_all_moves")
 
 func attack_tower(unit):

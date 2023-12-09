@@ -5,6 +5,7 @@ signal end_usage
 func _ready():
 	pass # Replace with function body.
 
+#Todos los usos deben demorar al menos 0.1, sino se bloquea el manager de cartas
 func condition_card_soldier(code):
 	var cn_units = get_node("/root/Game/Map").get_units_amount_team(1)
 	var cn_houses = get_node("/root/Game/Houses").amount
@@ -29,14 +30,17 @@ func use_card_militia(code):
 
 func use_card_gold(code):
 	get_node("/root/Game/RegionBottom/TempGold").add_gold(2)
+	yield(get_tree().create_timer(.3),"timeout")
 	emit_signal("end_usage")
 
 func use_card_market(code):
 	get_node("/root/Game/Market").show_market()
+	yield(get_tree().create_timer(.3),"timeout")
 	emit_signal("end_usage")
 
 func use_card_teasure(code):
 	get_node("/root/Game/RegionBottom/Stash").add_stash_gold(1)
+	yield(get_tree().create_timer(.3),"timeout")
 	emit_signal("end_usage")
 
 func use_card_wind(code):

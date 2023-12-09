@@ -1,6 +1,7 @@
 extends Control
 
 var map_position = Vector2(0,0)
+var is_dead = false
 var data
 
 func _ready():
@@ -25,6 +26,7 @@ func damage(dam):
 	Sounds.play_sound("hit1")
 	Effects.shake(self,1,.3)
 	Effects.colorization(self,Color(1,.2,.2,1))
-	if data.hp<=0: 
+	if data.hp<=0:
+		is_dead = true 
 		yield(get_tree().create_timer(.5),"timeout")
 		Effects.disappear(self)
