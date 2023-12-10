@@ -39,7 +39,7 @@ func on_click_card(card_node):
 	Effects.to_alpha(self,0)
 	CardData.DiscardNode.add_card(card_node.data.code)
 	card_node.on_mouse_exit()
-	yield(get_tree().create_timer(.5),"timeout")	
+	yield(get_tree().create_timer(.5),"timeout")
 	card_node.rect_global_position = start_pos
 	visible = false
 	Global.set_stop_mouse(false)

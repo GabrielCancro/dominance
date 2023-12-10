@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/heart__slot_m.png-586766a0ce7b4ebe28e4de2adcade55f.stex"
+path="res://.import/bgblack.png-24613ea6e7929be8bdc21b3fad7bf329.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/heart__slot_m.png"
-dest_files=[ "res://.import/heart__slot_m.png-586766a0ce7b4ebe28e4de2adcade55f.stex" ]
+source_file="res://assets/bgblack.png"
+dest_files=[ "res://.import/bgblack.png-24613ea6e7929be8bdc21b3fad7bf329.stex" ]
 
 [params]
 

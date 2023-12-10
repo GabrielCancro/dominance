@@ -14,6 +14,7 @@ func add_hp(val=1):
 
 func damage(dam):
 	hp -= dam
+	Sounds.play_sound("tower1")
 	Effects.shake(self,1,.3)
 	Effects.colorization(self,Color(1,.2,.2,1))
 	$hp.text = str(hp)+"/"+str(hpm)

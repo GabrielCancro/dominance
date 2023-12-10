@@ -11,8 +11,9 @@ config_version=4
 [application]
 
 config/name="Dominance"
-run/main_scene="res://scenes/Game.tscn"
-boot_splash/bg_color=Color( 0.0352941, 0.0352941, 0.0352941, 1 )
+run/main_scene="res://scenes/Menu.tscn"
+boot_splash/image="res://assets/bgblack.png"
+boot_splash/bg_color=Color( 0.0823529, 0.0823529, 0.0980392, 1 )
 config/icon="res://icon.png"
 
 [autoload]
@@ -29,6 +30,8 @@ Global="*res://autoloads/Global.gd"
 
 window/size/width=800
 window/size/height=450
+window/size/test_width=800
+window/size/test_height=450
 window/stretch/mode="2d"
 window/stretch/aspect="keep_height"
 

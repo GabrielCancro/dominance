@@ -12,10 +12,11 @@ var monsters = [
 	{"day":11,"units":["slime"]},
 	{"day":14,"units":["slime_small"]},
 	{"day":18,"units":["slime","slime_small"]},
-	{"day":22,"units":["slime","slime_small"]},
-	{"day":24,"units":["slime"]},
-	{"day":26,"units":["slime"]},
-	{"day":28,"units":["slime","slime"]},
+	{"day":22,"units":["slime"]},
+	{"day":24,"units":["slime","slime_small"]},
+	{"day":26,"units":["slime_small"]},
+	{"day":28,"units":["slime"]},
+	{"day":30,"units":["slime_small","slime_big"]},
 ]
 
 # Called when the node enters the scene tree for the first time.

@@ -25,6 +25,7 @@ func _ready():
 #	CardData.get_cards() 
 
 func on_end_turn():
+	Sounds.play_sound("button1")
 	Global.set_stop_mouse(true)
 	$EndTurn.modulate = Color(1,1,1,.15)
 	for i in range(CardData.hand_cards.size()):

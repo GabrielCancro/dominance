@@ -13,6 +13,7 @@ func _ready():
 	$CreateButtons/btn2.connect("button_down",self,"create_unit_left",[2])
 	$CreateButtons/btn3.connect("button_down",self,"create_unit_left",[3])
 	$CreateButtons.visible = false
+	#add_unit("slime_big",7,2)
 
 func get_grid_node(pos):
 	if pos.x<=0: return null
@@ -27,7 +28,6 @@ func add_unit(type,x,y):
 	$Units.add_child(unit)
 	unit.map_position = Vector2(x,y)
 	unit.rect_global_position = get_grid_node(unit.map_position).rect_global_position
-	#.get_node("EnemyArea").connect("button_down",self,"unit_walk",[unit])
 	unit.get_node("UnitArea").connect("button_down",self,"on_unit_click",[unit])
 	return unit
 
@@ -52,7 +52,7 @@ func move_to(unit,pos,forced=false):
 
 func unit_try_attack(unit):
 	var obj = get_unit_around(unit)
-	if is_instance_valid(obj): 
+	if is_instance_valid(obj) && !obj.is_dead: 
 		var dest = unit.rect_global_position+(obj.rect_global_position-unit.rect_global_position)/2
 		Effects.move_to_yoyo(unit,dest)
 		obj.damage(unit.data.atk)
@@ -99,21 +99,15 @@ func move_enemies():
 		if u.is_dead: continue
 		if u.data.team!=2: continue
 		var just_attack = false
-		if( unit_try_attack(u) ): 
-			just_attack = true
+		if( unit_try_attack(u) ):
 			yield(get_tree().create_timer(.6),"timeout")
 		elif u.map_position.x<=1:
 			attack_tower(u)
 			yield(get_tree().create_timer(.6),"timeout")
 		else:
-			var mov = u.map_position+Vector2(-u.data.spd,0)
 			for i in range(u.data.spd):
-				var try = u.map_position+Vector2(-u.data.spd+i,0)
-				var u2 = check_unit_pos( try )
-				if u2 && u2.data.team == 1: mov.x += 1
-				elif !get_grid_node(mov): mov.x += 1
-			move_to(u,mov)
-			yield(get_tree().create_timer(.2),"timeout")
+				var is_moving = move_to(u,u.map_position+Vector2(-1,0))
+				if is_moving: yield(get_tree().create_timer(.4),"timeout")
 		if !just_attack:
 			yield(get_tree().create_timer(.3),"timeout")
 			if unit_try_attack(u): 

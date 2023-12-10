@@ -16,6 +16,7 @@ var Cards = [
 	{"code":"house", "ico":null, "cost":4, "burn":true},
 	{"code":"advance", "ico":null, "cost":4, "burn":true},
 	{"code":"thundre", "ico":null, "cost":4, "burn":true},
+	{"code":"chest", "ico":null, "cost":2, "burn":true},
 ]
 
 signal use_card(code)
@@ -88,7 +89,7 @@ func use_card(card_node):
 				Effects.move_to(card_node,card_node.rect_global_position+Vector2(0,-40))
 				Sounds.play_sound("card2")
 				yield(get_tree().create_timer(.2),"timeout")
-				CardUsage.call("use_card_"+code,code)
+				CardUsage.call("use_card_"+code,card_node)
 				yield(CardUsage,"end_usage")
 				yield(get_tree().create_timer(.2),"timeout")
 				Effects.disappear(card_node,Vector2(0,-20))

@@ -9,13 +9,16 @@ var Texts = {
 	"select_unit_team_2":{"es":"Elige un enemigo","en":"Choose a enemy"},
 	"end_turn_button":{"es":"Terminar","en":"End"},
 	"discards_slot":{"es":"Descarte","en":"Discards"},
-	"stash_empty":{"es":"Vacio","en":"Empty"},	
+	"stash_empty":{"es":"Vacio","en":"Empty"},
+	"menu_start_game":{"es":"Comenzar \nnueva aventura","en":"Start new adventure"},
+	"menu_lang":{"es":"Idioma \nespanol","en":"Language \nenglish"},
+	"menu_scale":{"es":"Escalado","en":"Scale "},
 	
 	"card_soldier_name":{"es":"Soldado","en":"Soldier"},
 	"card_soldier_desc":{"es":"Invoca un soldado resistente para defenderte","en":"-"},
 	"card_militia_name":{"es":"Milicia","en":"Warrior"},
 	"card_militia_desc":{"es":"Invoca un guerrero para defenderte","en":"-"},
-	"card_gold_name":{"es":"Gold","en":"Oro"},
+	"card_gold_name":{"es":"Oro","en":"Gold"},
 	"card_gold_desc":{"es":"Ganas dos monedas de oro para usar en este turno","en":"-"},
 	"card_market_name":{"es":"Mercado","en":"Market"},
 	"card_market_desc":{"es":"Elige una entre tres cartas nuevas y agregala a tu descarte","en":"-"},
@@ -29,6 +32,8 @@ var Texts = {
 	"card_advance_desc":{"es":"Eliges una unidad aliada para avanzar una casilla, si queda cerca de un enemigo lo ataca","en":"-"},
 	"card_thundre_name":{"es":"Trueno","en":"Thundre"},
 	"card_thundre_desc":{"es":"Un rayo de tormenta cae y golpea una unidad enemiga sin posibilidad de fallo","en":"-"},
+	"card_chest_name":{"es":"Cofre","en":"Chest"},
+	"card_chest_desc":{"es":"Descarta TODA tu mano y obtienes por cada carta exepto esta, una moneda para tu alijo ","en":"-"},
 }
 
 func get_string(code):
