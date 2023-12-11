@@ -9,6 +9,7 @@ var market_cards = [
 	"soldier",
 	"advance",
 	"thundre",
+	"chest"
 ]
 
 func _ready():

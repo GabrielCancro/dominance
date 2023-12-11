@@ -46,118 +46,122 @@ focus_mode = 0
 flat = true
 
 [node name="Hpbar" type="HBoxContainer" parent="."]
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-margin_top = -11.0
-margin_bottom = -6.0
-custom_constants/separation = -2
+margin_left = -79.0
+margin_top = -13.0
+margin_right = 79.0
+margin_bottom = 2.0
+mouse_filter = 2
+custom_constants/separation = -4
 alignment = 1
 
 [node name="hp1" type="TextureRect" parent="Hpbar"]
-margin_left = 1.0
-margin_right = 8.0
-margin_bottom = 7.0
-rect_min_size = Vector2( 7, 7 )
+margin_left = 11.0
+margin_right = 26.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 15, 15 )
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 
 [node name="hp2" type="TextureRect" parent="Hpbar"]
-margin_left = 6.0
-margin_right = 13.0
-margin_bottom = 7.0
-rect_min_size = Vector2( 7, 7 )
+margin_left = 22.0
+margin_right = 37.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 15, 15 )
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 
 [node name="hp3" type="TextureRect" parent="Hpbar"]
-margin_left = 11.0
-margin_right = 18.0
-margin_bottom = 7.0
-rect_min_size = Vector2( 7, 7 )
+margin_left = 33.0
+margin_right = 48.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 15, 15 )
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 
 [node name="hp4" type="TextureRect" parent="Hpbar"]
-margin_left = 16.0
-margin_right = 23.0
-margin_bottom = 7.0
-rect_min_size = Vector2( 7, 7 )
+margin_left = 44.0
+margin_right = 59.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 15, 15 )
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 
 [node name="hp5" type="TextureRect" parent="Hpbar"]
-margin_left = 21.0
-margin_right = 28.0
-margin_bottom = 7.0
-rect_min_size = Vector2( 7, 7 )
+margin_left = 55.0
+margin_right = 70.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 15, 15 )
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 
 [node name="hp6" type="TextureRect" parent="Hpbar"]
-margin_left = 26.0
-margin_right = 33.0
-margin_bottom = 7.0
-rect_min_size = Vector2( 7, 7 )
+margin_left = 66.0
+margin_right = 81.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 15, 15 )
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 
 [node name="hp7" type="TextureRect" parent="Hpbar"]
-margin_left = 31.0
-margin_right = 38.0
-margin_bottom = 7.0
-rect_min_size = Vector2( 7, 7 )
+margin_left = 77.0
+margin_right = 92.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 15, 15 )
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 
 [node name="hp8" type="TextureRect" parent="Hpbar"]
-margin_left = 36.0
-margin_right = 43.0
-margin_bottom = 7.0
-rect_min_size = Vector2( 7, 7 )
+margin_left = 88.0
+margin_right = 103.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 15, 15 )
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 
 [node name="hp9" type="TextureRect" parent="Hpbar"]
-margin_left = 41.0
-margin_right = 48.0
-margin_bottom = 7.0
-rect_min_size = Vector2( 7, 7 )
+margin_left = 99.0
+margin_right = 114.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 15, 15 )
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 
 [node name="hp10" type="TextureRect" parent="Hpbar"]
-margin_left = 46.0
-margin_right = 53.0
-margin_bottom = 7.0
-rect_min_size = Vector2( 7, 7 )
+margin_left = 110.0
+margin_right = 125.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 15, 15 )
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 
 [node name="hp11" type="TextureRect" parent="Hpbar"]
-margin_left = 51.0
-margin_right = 58.0
-margin_bottom = 7.0
-rect_min_size = Vector2( 7, 7 )
+margin_left = 121.0
+margin_right = 136.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 15, 15 )
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 
 [node name="hp12" type="TextureRect" parent="Hpbar"]
-margin_left = 56.0
-margin_right = 63.0
-margin_bottom = 7.0
-rect_min_size = Vector2( 7, 7 )
+margin_left = 132.0
+margin_right = 147.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 15, 15 )
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6

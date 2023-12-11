@@ -8,7 +8,8 @@ var cards = [
 	"gold","gold",
 	"teasure",
 	"house","house",
-	"thundre","thundre","thundre",
+	"thundre",
+	"chest"
 ]
 
 # Called when the node enters the scene tree for the first time.
