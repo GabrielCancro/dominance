@@ -69,7 +69,7 @@ margin_right = 10.0
 color = Color( 0.188235, 0.211765, 0.337255, 1 )
 
 [node name="BG" type="Control" parent="."]
-modulate = Color( 1, 1, 1, 0.596078 )
+modulate = Color( 0.431373, 0.431373, 0.431373, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -245,8 +245,99 @@ align = 1
 valign = 1
 autowrap = true
 
-[node name="Upgrade" parent="." instance=ExtResource( 12 )]
-margin_left = 87.0
-margin_top = 172.0
-margin_right = 151.0
-margin_bottom = 236.0
+[node name="upg1" parent="." instance=ExtResource( 12 )]
+modulate = Color( 0.945098, 0.945098, 0.945098, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -222.0
+margin_top = 42.0
+margin_right = -158.0
+margin_bottom = 106.0
+
+[node name="upg2" parent="." instance=ExtResource( 12 )]
+modulate = Color( 0.945098, 0.945098, 0.945098, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -320.0
+margin_top = -52.0
+margin_right = -256.0
+margin_bottom = 12.0
+
+[node name="upg3" parent="." instance=ExtResource( 12 )]
+modulate = Color( 0.945098, 0.945098, 0.945098, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -239.0
+margin_top = -150.0
+margin_right = -175.0
+margin_bottom = -86.0
+
+[node name="upg4" parent="." instance=ExtResource( 12 )]
+modulate = Color( 0.945098, 0.945098, 0.945098, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 153.0
+margin_top = 42.0
+margin_right = 217.0
+margin_bottom = 106.0
+
+[node name="upg5" parent="." instance=ExtResource( 12 )]
+modulate = Color( 0.945098, 0.945098, 0.945098, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 248.0
+margin_top = -52.0
+margin_right = 312.0
+margin_bottom = 12.0
+
+[node name="upg6" parent="." instance=ExtResource( 12 )]
+modulate = Color( 0.945098, 0.945098, 0.945098, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 155.0
+margin_top = -150.0
+margin_right = 219.0
+margin_bottom = -86.0
+
+[node name="btn_clear" type="Button" parent="."]
+modulate = Color( 0.72549, 0.72549, 0.72549, 1 )
+margin_left = 664.0
+margin_top = 14.0
+margin_right = 785.0
+margin_bottom = 58.0
+custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
+custom_fonts/font = SubResource( 2 )
+flat = true
+
+[node name="Panel" type="NinePatchRect" parent="btn_clear"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 32, 32 )
+patch_margin_left = 13
+patch_margin_top = 19
+patch_margin_right = 13
+patch_margin_bottom = 19
+
+[node name="Label" type="Label" parent="btn_clear"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 3 )
+text = "Clear data"
+align = 1
+valign = 1
+autowrap = true

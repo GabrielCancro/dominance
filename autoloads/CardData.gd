@@ -7,7 +7,7 @@ var DiscardNode
 var HandBoxNode
 var TempGoldNode
 var Cards = [
-	{"code":"militia", "ico":null, "cost":3, "burn":true},
+	{"code":"militia", "ico":null, "cost":4, "burn":true},
 	{"code":"soldier", "ico":null, "cost":5,"burn":true},
 	{"code":"market", "ico":null, "cost":4, "burn":true},
 	{"code":"wind", "ico":null, "cost":2, "burn":true},

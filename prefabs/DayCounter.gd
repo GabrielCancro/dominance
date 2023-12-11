@@ -1,7 +1,7 @@
 extends Control
 
 var day = 0
-var max_days = 30
+var max_days = 60
 
 var no_created_monsters = []
 var monsters = [
@@ -17,9 +17,18 @@ var monsters = [
 	{"day":26,"units":["slime_small"]},
 	{"day":28,"units":["slime"]},
 	{"day":30,"units":["slime_small","slime_big"]},
+
+	{"day":38,"units":["slime","slime_small"]},
+	{"day":41,"units":["slime"]},
+	{"day":44,"units":["slime_small","slime_small"]},
+	{"day":48,"units":["slime","slime_big"]},
+	{"day":52,"units":["slime"]},
+	{"day":54,"units":["slime","slime_small"]},
+	{"day":56,"units":["slime_small"]},
+	{"day":58,"units":["slime"]},
+	{"day":60,"units":["slime_small","slime_small","slime_big","slime_big"]},
 ]
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 

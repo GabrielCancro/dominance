@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://prefabs/Stash.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefabs/Map.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://prefabs/Houses.tscn" type="PackedScene" id=14]
 [ext_resource path="res://assets/descriptor_m.png" type="Texture" id=15]
 [ext_resource path="res://popups/LosePopup.tscn" type="PackedScene" id=16]
+[ext_resource path="res://popups/TutorialPopup.tscn" type="PackedScene" id=17]
 
 [sub_resource type="DynamicFont" id=3]
 outline_color = Color( 0.231373, 0.196078, 0.196078, 1 )
@@ -322,4 +323,7 @@ color = Color( 0.188235, 0.211765, 0.337255, 1 )
 
 [node name="LosePopup" parent="." instance=ExtResource( 16 )]
 pause_mode = 2
+visible = false
+
+[node name="TutorialPopup" parent="." instance=ExtResource( 17 )]
 visible = false

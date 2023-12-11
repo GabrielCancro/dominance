@@ -5,24 +5,16 @@ func _ready():
 	Sounds.set_audio_scene(self)
 	CardData.HandBoxNode = $RegionBottom/HandCards
 	Global.StopMouseNode = $StopMouse
-	#CardUsage.connect("end_use_card",self,"check_empty_hand")
-	#CardData.connect("burn_card",self,"check_empty_hand")
 	$EndTurn.connect("button_down",self,"on_end_turn")
 	$BtnMarket.connect("button_down",self,"on_click_market")
 	Global.set_stop_mouse(true)
 	$EndTurn.modulate = Color(1,1,1,.15)
 	$EndTurn/Label.text = Lang.get_string("end_turn_button")
 	$RegionBottom/DiscardSlot/Label.text = Lang.get_string("discards_slot")
+
+func start_game():
 	yield(get_tree().create_timer(1),"timeout")
 	start_new_turn()
-
-#func check_empty_hand():
-#	for i in range(CardData.hand_cards.size()): 
-#		if(CardData.hand_cards[i]!=null): return
-#	yield(get_tree().create_timer(1),"timeout")
-#	CardData.TempGoldNode.set_gold(0)
-#	yield(get_tree().create_timer(1),"timeout")
-#	CardData.get_cards() 
 
 func on_end_turn():
 	Sounds.play_sound("button1")

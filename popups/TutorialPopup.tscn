@@ -1,0 +1,204 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/burn.png" type="Texture" id=2]
+[ext_resource path="res://assets/money_m.png" type="Texture" id=3]
+[ext_resource path="res://popups/TutorialPopup.gd" type="Script" id=4]
+[ext_resource path="res://assets/descriptor_m.png" type="Texture" id=5]
+[ext_resource path="res://assets/sun.png" type="Texture" id=6]
+[ext_resource path="res://assets/ico_cards/market.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+extra_spacing_bottom = -2
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+extra_spacing_bottom = -2
+font_data = ExtResource( 1 )
+
+[node name="Tutorial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.784314 )
+
+[node name="Panel" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -232.0
+margin_top = -170.0
+margin_right = 233.0
+margin_bottom = 67.0
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.164706, 0.176471, 0.203922, 1 )
+
+[node name="Label" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -134.0
+margin_top = 6.0
+margin_right = 134.0
+margin_bottom = 36.0
+custom_colors/font_color = Color( 0.937988, 0.937988, 0.937988, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 1 )
+text = "dominance"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label1" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -164.0
+margin_top = -66.0
+margin_right = 216.0
+margin_bottom = -36.0
+custom_colors/font_color = Color( 0.8, 0.8, 0.8, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 2 )
+text = "en cada turno recibes cinco cartas, cada una de ellas con efectos diferentes"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Label1"]
+margin_left = -60.5
+margin_top = -9.5
+margin_right = -10.5
+margin_bottom = 40.5
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="Label2" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -164.0
+margin_top = -16.0
+margin_right = 216.0
+margin_bottom = 28.0
+custom_colors/font_color = Color( 0.8, 0.8, 0.8, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 2 )
+text = "Para usar una carta debes pagar su coste en monedas de oro, puedes obtener monedas quemando las cartas que no utilices"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/Label2"]
+margin_left = -51.5
+margin_top = 3.5
+margin_right = -31.5
+margin_bottom = 23.5
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="TextureRect5" type="TextureRect" parent="Panel/Label2"]
+margin_left = -60.5
+margin_top = 11.5
+margin_right = -40.5
+margin_bottom = 31.5
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="TextureRect3" type="TextureRect" parent="Panel/Label2"]
+margin_left = -46.5
+margin_top = 9.5
+margin_right = -6.5
+margin_bottom = 49.5
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+
+[node name="Label3" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -164.0
+margin_top = 52.0
+margin_right = 216.0
+margin_bottom = 82.0
+custom_colors/font_color = Color( 0.8, 0.8, 0.8, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 2 )
+text = "El objetivo es resistir durante 60 dias y eliminar a todos los enemigos"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureRect4" type="TextureRect" parent="Panel/Label3"]
+margin_left = -56.5
+margin_top = -3.5
+margin_right = -16.5
+margin_bottom = 36.5
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+
+[node name="btn_menu" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.5
+margin_top = 53.5
+margin_right = 64.5
+margin_bottom = 90.5
+custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
+custom_fonts/font = SubResource( 3 )
+flat = true
+
+[node name="Panel" type="NinePatchRect" parent="btn_menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 32, 32 )
+patch_margin_left = 13
+patch_margin_top = 19
+patch_margin_right = 13
+patch_margin_bottom = 19
+
+[node name="Label" type="Label" parent="btn_menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 4 )
+text = "Comenzar"
+align = 1
+valign = 1
+autowrap = true

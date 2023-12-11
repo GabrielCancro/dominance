@@ -25,6 +25,8 @@ UnitManager="*res://autoloads/UnitManager.gd"
 Sounds="*res://autoloads/Sounds.gd"
 Lang="*res://autoloads/Lang.gd"
 Global="*res://autoloads/Global.gd"
+Saves="*res://autoloads/Saves.gd"
+UpgradeData="*res://autoloads/UpgradeData.gd"
 
 [display]
 

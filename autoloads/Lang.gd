@@ -1,6 +1,5 @@
 extends Node
 
-var language = "es"
 var Texts = {
 	"market":{"es":"Mercado","en":"Market"},
 	"cost":{"es":"Costo","en":"Cost"},
@@ -13,6 +12,11 @@ var Texts = {
 	"menu_start_game":{"es":"Comenzar \nnueva aventura","en":"Start new adventure"},
 	"menu_lang":{"es":"Idioma \nespanol","en":"Language \nenglish"},
 	"menu_scale":{"es":"Escalado","en":"Scale "},
+	"lose_game":{"es":"Fuiste derrotado","en":"You were defeated "},
+	"choose_upg":{"es":"Has resistido lo suficiente como para obtener una mejora","en":"You have lasted long enough to receive a upgrade"},
+	"upg_all_obtained":{"es":"Ya tienes todas las mejoras!","en":"You have all the upgrades!"},
+	"back_to_main":{"es":"Volver al menu","en":"Back to menu"},
+	"start":{"es":"Comenzar","en":"Start"},
 	
 	"card_soldier_name":{"es":"Soldado","en":"Soldier"},
 	"card_soldier_desc":{"es":"Invoca un soldado resistente para defenderte","en":"-"},
@@ -34,13 +38,24 @@ var Texts = {
 	"card_thundre_desc":{"es":"Un rayo de tormenta cae y golpea una unidad enemiga sin posibilidad de fallo","en":"-"},
 	"card_chest_name":{"es":"Cofre","en":"Chest"},
 	"card_chest_desc":{"es":"Descarta TODA tu mano y obtienes por cada carta exepto esta, una moneda para tu alijo ","en":"-"},
+
+	"upgrade_upg1":{"es":"Empiezas la partida con cinco monedas en tu alijo","en":"Desc"},
+	"upgrade_upg2":{"es":"La carta de trueno cuesta una moneda menos","en":"Desc"},
+	"upgrade_upg3":{"es":"Comienzas la partida con una casa extra ya edificada","en":"Desc"},
+	"upgrade_upg4":{"es":"se agrega una carta de curacion a tu mazo inicial ","en":"Desc"},
+	"upgrade_upg5":{"es":"La carta milicia cuestan una moneda menos","en":"Desc"},
+	"upgrade_upg6":{"es":"Obtienes una moneda directo a tu alijo cada cinco dias","en":"Desc"},
+	
+	"tutorial_1":{"es":"En cada turno recibes cinco cartas, cada una de ellas con efectos diferentes","en":"On each turn you receive five cards, each of them with different effects"},
+	"tutorial_2":{"es":"Para usar una carta debes pagar su coste en monedas de oro, puedes obtener monedas quemando las cartas que no utilices","en":"To use a card you must pay its cost in gold coins, you can obtain coins by burning the cards you do not use"},
+	"tutorial_3":{"es":"El objetivo es resistir durante 60 dias y eliminar a todos los enemigos","en":"The objective is to resist for 60 days and eliminate all enemies"},
 }
 
 func get_string(code):
-	return Texts[code][language]
+	return Texts[code][Saves.savedData.language]
 
 func get_card_name(code):
-	return Texts["card_"+code+"_name"][language]
+	return Texts["card_"+code+"_name"][Saves.savedData.language]
 
 func get_card_desc(code):
-	return Texts["card_"+code+"_desc"][language]
+	return Texts["card_"+code+"_desc"][Saves.savedData.language]

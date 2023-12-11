@@ -13,7 +13,7 @@ func _ready():
 	$CreateButtons/btn2.connect("button_down",self,"create_unit_left",[2])
 	$CreateButtons/btn3.connect("button_down",self,"create_unit_left",[3])
 	$CreateButtons.visible = false
-	add_unit("slime_big",1,2)
+	#add_unit("slime_big",1,2)
 
 func get_grid_node(pos):
 	if pos.x<=0: return null
