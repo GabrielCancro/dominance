@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/descriptor_m.png" type="Texture" id=2]
+[ext_resource path="res://assets/ico_cards/chest.png" type="Texture" id=3]
+[ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://prefabs/Upgrade.gd" type="Script" id=5]
+[ext_resource path="res://assets/upgrade_m.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+extra_spacing_top = 4
+extra_spacing_bottom = 3
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 14
+outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+font_data = ExtResource( 4 )
+
+[node name="Upgrade" type="Control"]
+margin_right = 64.0
+margin_bottom = 64.0
+script = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.0
+margin_top = -2.0
+margin_right = 2.0
+margin_bottom = 2.0
+color = Color( 0.796078, 0.796078, 0.796078, 1 )
+
+[node name="bg" type="TextureRect" parent="."]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 6 )
+expand = true
+
+[node name="ico" type="TextureRect" parent="."]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="Area" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+
+[node name="Upgrade" type="NinePatchRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -103.0
+margin_right = 103.0
+margin_bottom = 85.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 32, 32 )
+patch_margin_left = 8
+patch_margin_top = 24
+patch_margin_right = 8
+patch_margin_bottom = 24
+
+[node name="Label" type="Label" parent="Upgrade"]
+anchor_right = 1.0
+margin_bottom = 25.0
+custom_colors/font_color = Color( 0.937988, 0.937988, 0.937988, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 1 )
+text = "grandes riquezas"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="Upgrade"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -89.0
+margin_top = -20.5
+margin_right = 94.0
+margin_bottom = 40.5
+custom_colors/font_color = Color( 0.807843, 0.807843, 0.807843, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 2 )
+text = "comienzas la partida con 3 monedas en tu cofre que podras usar en cualquier turno"
+align = 1
+valign = 1
+autowrap = true

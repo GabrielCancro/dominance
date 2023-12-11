@@ -10,7 +10,7 @@ func set_audio_scene(_scene):
 
 func play_sound(id):
 	var audio = AudioStreamPlayer.new()
-	scene.add_child(audio)
+	add_child(audio)
 	audio.stream = load("res://assets/sfx/"+id+".ogg")
 	audio.play()
 	yield(audio,"finished")

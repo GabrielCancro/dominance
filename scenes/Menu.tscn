@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/descriptor_m.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/ico_cards/thundre.png" type="Texture" id=9]
 [ext_resource path="res://assets/ico_cards/market.png" type="Texture" id=10]
 [ext_resource path="res://assets/ico_cards/soldier.png" type="Texture" id=11]
+[ext_resource path="res://prefabs/Upgrade.tscn" type="PackedScene" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -243,3 +244,9 @@ ingles"
 align = 1
 valign = 1
 autowrap = true
+
+[node name="Upgrade" parent="." instance=ExtResource( 12 )]
+margin_left = 87.0
+margin_top = 172.0
+margin_right = 151.0
+margin_bottom = 236.0

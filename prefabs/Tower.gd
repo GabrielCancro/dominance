@@ -1,6 +1,6 @@
 extends Control
 
-var hp = 4
+var hp = 1
 var hpm = 4
 
 func _ready():

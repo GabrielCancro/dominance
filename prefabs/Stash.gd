@@ -10,6 +10,7 @@ func _ready():
 
 func add_stash_gold(val=1):
 	stash_gold += val
+	if val>0: Sounds.play_sound("stash1")
 	$GoldLabel.text = "x"+str(stash_gold)
 	$EmptyLabel.visible = (stash_gold<=0)
 	$GoldLabel.visible = (stash_gold>0)

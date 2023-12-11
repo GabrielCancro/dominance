@@ -13,7 +13,7 @@ func _ready():
 	$CreateButtons/btn2.connect("button_down",self,"create_unit_left",[2])
 	$CreateButtons/btn3.connect("button_down",self,"create_unit_left",[3])
 	$CreateButtons.visible = false
-	#add_unit("slime_big",7,2)
+	add_unit("slime_big",1,2)
 
 func get_grid_node(pos):
 	if pos.x<=0: return null
@@ -104,11 +104,14 @@ func move_enemies():
 		elif u.map_position.x<=1:
 			attack_tower(u)
 			yield(get_tree().create_timer(.6),"timeout")
+			if $Tower.hp<=0:
+				yield(get_tree().create_timer(1),"timeout")
+				get_node("../LosePopup").show_popup()
+				return
 		else:
 			for i in range(u.data.spd):
 				var is_moving = move_to(u,u.map_position+Vector2(-1,0))
 				if is_moving: yield(get_tree().create_timer(.4),"timeout")
-		if !just_attack:
 			yield(get_tree().create_timer(.3),"timeout")
 			if unit_try_attack(u): 
 				yield(get_tree().create_timer(.3),"timeout")
