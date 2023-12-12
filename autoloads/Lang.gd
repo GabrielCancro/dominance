@@ -13,10 +13,10 @@ var Texts = {
 	"menu_lang":{"es":"Idioma \nespanol","en":"Language \nenglish"},
 	"menu_scale":{"es":"Escalado","en":"Scale "},
 	"lose_game":{"es":"Fuiste derrotado","en":"You were defeated "},
-	"choose_upg":{"es":"Has resistido lo suficiente como para obtener una mejora","en":"You have lasted long enough to receive a upgrade"},
-	"upg_all_obtained":{"es":"Ya tienes todas las mejoras!","en":"You have all the upgrades!"},
 	"back_to_main":{"es":"Volver al menu","en":"Back to menu"},
 	"start":{"es":"Comenzar","en":"Start"},
+	"points":{"es":"Puntos","en":"Points"},
+	"upgrades":{"es":"Mejoras","en":"Upgrades"},
 	
 	"card_soldier_name":{"es":"Soldado","en":"Soldier"},
 	"card_soldier_desc":{"es":"Invoca un soldado resistente para defenderte","en":"-"},
@@ -45,6 +45,8 @@ var Texts = {
 	"upgrade_upg4":{"es":"se agrega una carta de curacion a tu mazo inicial ","en":"Desc"},
 	"upgrade_upg5":{"es":"La carta milicia cuestan una moneda menos","en":"Desc"},
 	"upgrade_upg6":{"es":"Obtienes una moneda directo a tu alijo cada cinco dias","en":"Desc"},
+	"upgrade_upg7":{"es":"Aún no sabemos que hace esto","en":"Desc"},
+	"upgrade_upg8":{"es":"Aún no sabemos que hace esto","en":"Desc"},
 	
 	"tutorial_1":{"es":"En cada turno recibes cinco cartas, cada una de ellas con efectos diferentes","en":"On each turn you receive five cards, each of them with different effects"},
 	"tutorial_2":{"es":"Para usar una carta debes pagar su coste en monedas de oro, puedes obtener monedas quemando las cartas que no utilices","en":"To use a card you must pay its cost in gold coins, you can obtain coins by burning the cards you do not use"},

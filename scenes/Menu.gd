@@ -7,7 +7,8 @@ func _ready():
 	$VBox/btn1.connect("button_down",self,"on_click_button",["start"])
 	$VBox/btn2.connect("button_down",self,"on_click_button",["lang"])
 	$btn_clear.connect("button_down",Saves,"clear_data")
-	$upgrades.connect("button_down",self,"on_upgrades_click")
+	$Upg/upgrades.connect("button_down",self,"on_upgrades_click")
+	update_upgrades_button()
 
 func localizate():
 	$VBox/btn1/Label.text = Lang.get_string("menu_start_game")
@@ -25,3 +26,9 @@ func on_click_button(code):
 func on_upgrades_click():
 	print("CLICK UPGRADES")
 	get_tree().change_scene("res://scenes/Upgrade.tscn")
+
+func update_upgrades_button():
+	if Saves.savedData.points>0: $Upg.color.a = 1
+	else: $Upg.color.a = 0
+	$Upg/TextureProgress.max_value = 20
+	$Upg/TextureProgress.value = Saves.savedData.days

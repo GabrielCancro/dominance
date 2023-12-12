@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/ico_cards/thundre.png" type="Texture" id=1]
+[ext_resource path="res://assets/ico_cards/book.png" type="Texture" id=1]
 [ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://prefabs/Upgrade.gd" type="Script" id=5]
 [ext_resource path="res://assets/upgrade_m.png" type="Texture" id=6]
@@ -21,6 +21,7 @@ flat = true
 script = ExtResource( 5 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -2.0

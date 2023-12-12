@@ -6,6 +6,7 @@ func _ready():
 	CardData.HandBoxNode = $RegionBottom/HandCards
 	Global.StopMouseNode = $StopMouse
 	$EndTurn.connect("button_down",self,"on_end_turn")
+	$QuitGame.connect("button_down",self,"on_quit_game")
 	$BtnMarket.connect("button_down",self,"on_click_market")
 	Global.set_stop_mouse(true)
 	$EndTurn.modulate = Color(1,1,1,.15)
@@ -41,6 +42,15 @@ func start_new_turn():
 	yield(get_tree().create_timer(1),"timeout")
 	$EndTurn.modulate = Color(1,1,1,1)
 	CardData.get_cards()
+	if $DayCounter.day>1:
+		Saves.savedData.days += 1
+		if(Saves.savedData.days>20):
+			Saves.savedData.days -= 20
+			Saves.savedData.points += 1
+		Saves.save_store_data()
 
 func on_click_market():
 	$Market.show_market()
+
+func on_quit_game():
+	get_tree().change_scene("res://scenes/Menu.tscn")

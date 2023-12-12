@@ -2,8 +2,10 @@ extends Node
 
 var default_data = { 
 	"upgrades":[], 
-	"resume": null,
+	"resume":null,
 	"language":"en",
+	"points":1,
+	"days":0
 }
 var savedData = {}
 

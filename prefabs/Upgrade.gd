@@ -14,7 +14,10 @@ func select():
 	
 func unselect():
 	$ColorRect.visible = false
-	
+
+func blu_shine():
+	$bg.modulate = Color(1,1,.7,1)
+
 func on_click():
 	print("UPGRADE CLICK")
 	emit_signal("on_select",self)
