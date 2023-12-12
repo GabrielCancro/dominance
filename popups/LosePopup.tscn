@@ -101,12 +101,10 @@ custom_constants/separation = 106
 alignment = 1
 
 [node name="Upgrade1" parent="Panel/HBox" instance=ExtResource( 3 )]
-rect_min_size = Vector2( 64, 64 )
 
 [node name="Upgrade2" parent="Panel/HBox" instance=ExtResource( 3 )]
 margin_left = 170.0
 margin_right = 234.0
-rect_min_size = Vector2( 64, 64 )
 
 [node name="btn_menu" type="Button" parent="."]
 anchor_left = 0.5

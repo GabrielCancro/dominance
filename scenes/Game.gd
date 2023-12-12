@@ -35,14 +35,12 @@ func on_end_turn():
 	yield(get_tree().create_timer(.5),"timeout")
 	start_new_turn()
 
-
 func start_new_turn():
 	Sounds.play_sound("turn1")
 	$DayCounter.add_day()
 	yield(get_tree().create_timer(1),"timeout")
 	$EndTurn.modulate = Color(1,1,1,1)
 	CardData.get_cards()
-	
 
 func on_click_market():
 	$Market.show_market()

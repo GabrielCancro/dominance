@@ -7,11 +7,11 @@ func _ready():
 	$VBox/btn1.connect("button_down",self,"on_click_button",["start"])
 	$VBox/btn2.connect("button_down",self,"on_click_button",["lang"])
 	$btn_clear.connect("button_down",Saves,"clear_data")
+	$upgrades.connect("button_down",self,"on_upgrades_click")
 
 func localizate():
 	$VBox/btn1/Label.text = Lang.get_string("menu_start_game")
 	$VBox/btn2/Label.text = Lang.get_string("menu_lang")
-	update_upgrades()
 
 func on_click_button(code):
 	if code=="start":
@@ -22,9 +22,6 @@ func on_click_button(code):
 		Saves.save_store_data()
 		localizate()
 
-func update_upgrades():
-	for i in range(6):
-		var code = "upg"+str(i+1)
-		var node = get_node(code)
-		node.visible = (Saves.savedData.upgrades.find(code) != -1)
-		node.set_data(code)
+func on_upgrades_click():
+	print("CLICK UPGRADES")
+	get_tree().change_scene("res://scenes/Upgrade.tscn")

@@ -104,6 +104,7 @@ func use_card_chest(card_node):
 		if c==null: continue 
 		if !is_instance_valid(c): continue
 		if c==card_node: continue
+		CardData.DiscardNode.add_card(c.data.code)
 		Effects.disappear(c,Vector2(0,30))
 		CardData.hand_cards[i] = null
 		yield(get_tree().create_timer(.2),"timeout")

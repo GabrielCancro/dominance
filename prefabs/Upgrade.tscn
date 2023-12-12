@@ -12,9 +12,12 @@ extra_spacing_top = -1
 extra_spacing_bottom = -1
 font_data = ExtResource( 4 )
 
-[node name="Upgrade" type="Control"]
+[node name="Upgrade" type="Button"]
 margin_right = 64.0
 margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+focus_mode = 0
+flat = true
 script = ExtResource( 5 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -40,11 +43,6 @@ margin_bottom = 56.0
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
-
-[node name="Area" type="Button" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-flat = true
 
 [node name="Upgrade" type="ColorRect" parent="."]
 visible = false
