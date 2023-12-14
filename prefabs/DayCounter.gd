@@ -8,7 +8,7 @@ var monsters = [
 	{"day":1,"units":["slime_small"]},
 	{"day":2,"units":["slime"]},
 	{"day":4,"units":["slime_small"]},
-	{"day":8,"units":["slime","slime_small"]},
+	{"day":8,"units":["slime_small"]},
 	{"day":11,"units":["slime"]},
 	{"day":14,"units":["slime_small"]},
 	{"day":18,"units":["slime","slime_small"]},
