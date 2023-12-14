@@ -44,9 +44,6 @@ func start_new_turn():
 	CardData.get_cards()
 	if $DayCounter.day>1:
 		Saves.savedData.days += 1
-		if(Saves.savedData.days>20):
-			Saves.savedData.days -= 20
-			Saves.savedData.points += 1
 		Saves.save_store_data()
 
 func on_click_market():

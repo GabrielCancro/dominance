@@ -30,5 +30,4 @@ func on_upgrades_click():
 func update_upgrades_button():
 	if Saves.savedData.points>0: $Upg.color.a = 1
 	else: $Upg.color.a = 0
-	$Upg/TextureProgress.max_value = 20
-	$Upg/TextureProgress.value = Saves.savedData.days
+	$Upg/Label.text = str(Saves.savedData.days)

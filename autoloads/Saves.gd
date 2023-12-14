@@ -4,7 +4,6 @@ var default_data = {
 	"upgrades":[], 
 	"resume":null,
 	"language":"en",
-	"points":1,
 	"days":0
 }
 var savedData = {}

@@ -1,14 +1,14 @@
 extends Node
 
 var UPGRADES = {
-	"upg1":{"texture":preload("res://assets/ico_cards/chest.png")},
-	"upg2":{"texture":preload("res://assets/ico_cards/thundre.png")},
-	"upg3":{"texture":preload("res://assets/ico_cards/house.png")},
-	"upg4":{"texture":preload("res://assets/ico_cards/heal.png")},
-	"upg5":{"texture":preload("res://assets/ico_cards/militia.png")},
-	"upg6":{"texture":preload("res://assets/ico_cards/teasure.png")},
-	"upg7":{"texture":preload("res://assets/ico_cards/market.png")},
-	"upg8":{"texture":preload("res://assets/ico_cards/soldier.png")},
+	"upg1":{"texture":preload("res://assets/ico_cards/chest.png"),"cost":3},
+	"upg2":{"texture":preload("res://assets/ico_cards/thundre.png"),"cost":3},
+	"upg3":{"texture":preload("res://assets/ico_cards/house.png"),"cost":3},
+	"upg4":{"texture":preload("res://assets/ico_cards/heal.png"),"cost":3},
+	"upg5":{"texture":preload("res://assets/ico_cards/militia.png"),"cost":30},
+	"upg6":{"texture":preload("res://assets/ico_cards/teasure.png"),"cost":30},
+	"upg7":{"texture":preload("res://assets/ico_cards/market.png"),"cost":30},
+	"upg8":{"texture":preload("res://assets/ico_cards/soldier.png"),"cost":30},
 }
 
 func add_upgrade(code):
