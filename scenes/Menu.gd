@@ -28,6 +28,4 @@ func on_upgrades_click():
 	get_tree().change_scene("res://scenes/Upgrade.tscn")
 
 func update_upgrades_button():
-	if Saves.savedData.points>0: $Upg.color.a = 1
-	else: $Upg.color.a = 0
 	$Upg/Label.text = str(Saves.savedData.days)

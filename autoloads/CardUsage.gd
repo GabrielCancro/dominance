@@ -28,7 +28,12 @@ func condition_card_militia(card_node):
 func use_card_militia(card_node):
 	use_card_soldier(card_node)
 
-func use_card_gold(card_node):
+func use_card_gold1(card_node):
+	get_node("/root/Game/RegionBottom/TempGold").add_gold(1)
+	yield(get_tree().create_timer(.1),"timeout")
+	emit_signal("end_usage")
+
+func use_card_gold2(card_node):
 	get_node("/root/Game/RegionBottom/TempGold").add_gold(2)
 	yield(get_tree().create_timer(.1),"timeout")
 	emit_signal("end_usage")
@@ -90,7 +95,13 @@ func use_card_thundre(card_node):
 	Global.magic_thundre(unit)
 	yield(Global,"end_magic")
 	emit_signal("end_usage")
-	
+
+func condition_card_house(card_node):
+	if get_node("/root/Game/Houses").is_max():
+		get_node("/root/Game/Houses").show_max_house()
+		return false
+	else: return true
+
 func use_card_house(card_node):
 	get_node("/root/Game/Houses").add_house()
 	yield(get_tree().create_timer(.3),"timeout")

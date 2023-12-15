@@ -1,11 +1,7 @@
 extends Control
 
 var market_cards = [
-	"gold",
-	"house",
-	"militia",
-	"wind",
-	"teasure",
+	"gold2",
 	"soldier",
 	"advance",
 	"thundre",
@@ -16,18 +12,29 @@ func _ready():
 	randomize()
 	visible = false
 	$Title.text = Lang.get_string("market")
-	get_node("Card1/CardArea").connect("button_down",self,"on_click_card",[$Card1])
-	get_node("Card2/CardArea").connect("button_down",self,"on_click_card",[$Card2])
-	get_node("Card3/CardArea").connect("button_down",self,"on_click_card",[$Card3])
+	get_node("HBox/Card1/CardArea").connect("button_down",self,"on_click_card",[$HBox/Card1])
+	get_node("HBox/Card2/CardArea").connect("button_down",self,"on_click_card",[$HBox/Card2])
+	get_node("HBox/Card3/CardArea").connect("button_down",self,"on_click_card",[$HBox/Card3])
 
 func show_market():
 	modulate.a = 0
-	$Card1.set_data( _get_market_rnd_card() )
-	$Card1.set_usable_card(false)
-	$Card2.set_data( _get_market_rnd_card() )
-	$Card2.set_usable_card(false)
-	$Card3.set_data( _get_market_rnd_card() )
-	$Card3.set_usable_card(false)
+	$HBox/Card1.visible = false
+	$HBox/Card2.visible = false
+	$HBox/Card3.visible = false
+	market_cards.shuffle()
+	print("MaRKeT ",market_cards)
+	if market_cards.size()>0:
+		$HBox/Card1.visible = true
+		$HBox/Card1.set_data( market_cards[0] )
+		$HBox/Card1.set_usable_card(false)
+	if market_cards.size()>1:
+		$HBox/Card2.visible = true
+		$HBox/Card2.set_data( market_cards[1] )
+		$HBox/Card2.set_usable_card(false)
+	if market_cards.size()>2:
+		$HBox/Card3.visible = true
+		$HBox/Card3.set_data( market_cards[2] )
+		$HBox/Card3.set_usable_card(false)
 	visible = true
 	Effects.to_alpha(self,1)
 
@@ -38,6 +45,9 @@ func on_click_card(card_node):
 	yield(get_tree().create_timer(.5),"timeout")
 	Sounds.play_sound("card1")
 	Effects.to_alpha(self,0)
+	market_cards.remove(card_node.data.code)
+	print("MaRKeT ",market_cards)
+	if(market_cards.size()==0): CardData.DiscardNode.cards.pop_back()
 	CardData.DiscardNode.add_card(card_node.data.code)
 	card_node.on_mouse_exit()
 	yield(get_tree().create_timer(.5),"timeout")

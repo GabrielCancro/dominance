@@ -42,9 +42,6 @@ func start_new_turn():
 	yield(get_tree().create_timer(1),"timeout")
 	$EndTurn.modulate = Color(1,1,1,1)
 	CardData.get_cards()
-	if $DayCounter.day>1:
-		Saves.savedData.days += 1
-		Saves.save_store_data()
 
 func on_click_market():
 	$Market.show_market()

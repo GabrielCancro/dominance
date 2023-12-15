@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/descriptor_m.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Menu.gd" type="Script" id=3]
 [ext_resource path="res://assets/ico_cards/teasure.png" type="Texture" id=4]
-[ext_resource path="res://assets/ico_cards/gold.png" type="Texture" id=5]
+[ext_resource path="res://assets/ico_cards/gold2.png" type="Texture" id=5]
 [ext_resource path="res://assets/ico_cards/house.png" type="Texture" id=6]
 [ext_resource path="res://assets/ico_cards/chest.png" type="Texture" id=7]
 [ext_resource path="res://assets/ico_cards/wind.png" type="Texture" id=8]
@@ -300,7 +300,7 @@ margin_left = -337.0
 margin_top = -190.0
 margin_right = -269.0
 margin_bottom = -122.0
-color = Color( 0.733333, 0.776471, 0.203922, 1 )
+color = Color( 1, 1, 1, 0 )
 
 [node name="upgrades" parent="Upg" instance=ExtResource( 12 )]
 anchor_left = 0.5

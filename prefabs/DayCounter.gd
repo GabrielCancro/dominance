@@ -33,11 +33,15 @@ func _ready():
 	pass # Replace with function body.
 
 func add_day():
+	Effects.scaled_from(self)
+	if day>=max_days: return
 	day += 1
+	if day>1:
+		Saves.savedData.days += 1
+		Saves.save_store_data()
 	create_no_created_monsters()
 	create_monsters()
-	$Label.text = str( min(max_days,day) )
-	Effects.scaled_from(self)
+	$Label.text = str(day)
 
 func create_monsters():
 	if monsters.empty(): return

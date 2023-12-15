@@ -7,6 +7,7 @@ func _ready():
 	CardData.DiscardNode = self
 	cards.shuffle()
 	update_ui()
+	connect("button_down",self,"on_click")
 
 func add_card(code):
 	cards.append(code)
@@ -26,3 +27,6 @@ func get_all_cards():
 func update_ui():
 	$Label.text = str( cards.size() )
 	visible = !cards.empty()
+
+func on_click():
+	print("DISCARD ",cards)

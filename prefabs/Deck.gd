@@ -5,11 +5,9 @@ var cards = [
 	"wind","wind",
 	"militia","militia",
 	"market",
-	"gold","gold",
+	"gold2","gold2",
 	"teasure",
-	"house","house",
-	"thundre",
-	"chest"
+	"house","house","house","house","house","house",
 ]
 
 # Called when the node enters the scene tree for the first time.
@@ -18,6 +16,7 @@ func _ready():
 	CardData.DeckNode = self
 	cards.shuffle()
 	update_ui()
+	connect("button_down",self,"on_click")
 
 func add_card(code):
 	cards.append(code)
@@ -36,3 +35,6 @@ func set_card_array(arr):
 func update_ui():
 	$Label.text = str( cards.size() )
 	visible = !cards.empty()
+
+func on_click():
+	print("DECK ",cards)
