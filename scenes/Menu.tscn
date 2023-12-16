@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/descriptor_m.png" type="Texture" id=2]
@@ -31,6 +31,12 @@ size = 20
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=4]
+outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+extra_spacing_bottom = -2
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 22
 outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
 extra_spacing_bottom = -2
 font_data = ExtResource( 1 )
@@ -350,5 +356,22 @@ custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 4 )
 text = "80"
 align = 1
+valign = 1
+autowrap = true
+
+[node name="LabelMole" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -95.0
+margin_top = -46.0
+margin_right = -19.0
+margin_bottom = -9.0
+custom_colors/font_color = Color( 0.643137, 0.643137, 0.643137, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 5 )
+text = "v1.01"
+align = 2
 valign = 1
 autowrap = true

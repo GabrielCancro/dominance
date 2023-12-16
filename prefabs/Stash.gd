@@ -1,6 +1,6 @@
 extends Button
 
-var stash_gold = 100
+var stash_gold = 0
 
 func _ready():
 	add_stash_gold(0)

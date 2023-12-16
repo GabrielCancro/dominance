@@ -10,10 +10,15 @@ func _ready():
 	$btn_menu/Label.text = Lang.get_string("back_to_main")
 	
 	for upg in $Grid.get_children():
+		$Grid.remove_child(upg)
+		upg.queue_free()
+	
+	for code in UpgradeData.UPGRADES.keys():
+		var upg = preload("res://prefabs/Upgrade.tscn").instance()
+		$Grid.add_child(upg)
 		upg.connect("mouse_entered",self,"on_mouse_entered",[upg])
 		upg.connect("mouse_exited",self,"on_mouse_exited",[upg])
 		upg.connect("button_down",self,"on_button_down",[upg])
-		var code = UpgradeData.UPGRADES.keys()[upg.get_index()]
 		upg.set_data(code)
 		if(Saves.savedData.upgrades.find(code)!=-1): upg.blu_shine()
 		if(upg.get_index()>=2+Saves.savedData.upgrades.size()*2): upg.modulate.a = .3

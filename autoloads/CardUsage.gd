@@ -80,7 +80,7 @@ func use_card_advance(card_node):
 	yield(get_tree().create_timer(.7),"timeout")
 	emit_signal("end_usage")
 
-func contidiot_card_thundre(card_node):
+func condition_card_thundre(card_node):
 	if get_node("/root/Game/Map").get_units_amount_team(2)<=0:
 		Sounds.play_sound("fail1")
 		return false
@@ -121,4 +121,22 @@ func use_card_chest(card_node):
 		yield(get_tree().create_timer(.2),"timeout")
 		get_node("/root/Game/RegionBottom/Stash").add_stash_gold(1)
 	yield(get_tree().create_timer(.2),"timeout")
+	emit_signal("end_usage")
+
+func condition_card_heal(card_node):
+	if get_node("/root/Game/Map").get_units_amount_team(1)<=0:
+		Sounds.play_sound("fail1")
+		return false
+	return true
+
+func use_card_heal(card_node):
+	var mapNode = get_node("/root/Game/Map")
+	Global.set_stop_mouse(false)
+	mapNode.show_select_unit_panel(1)
+	var unit = yield(mapNode,"selected_unit")
+	Global.set_stop_mouse(true)
+	Effects.shine(unit)
+	yield(get_tree().create_timer(.3),"timeout")
+	unit.add_hp(1)
+	yield(get_tree().create_timer(.7),"timeout")
 	emit_signal("end_usage")

@@ -44,3 +44,8 @@ func update_hp(show=false):
 		h.visible = h.get_index()<data.hpm
 		if h.get_index()<data.hp: h.texture = preload("res://assets/heart_m.png")
 		else: h.texture = preload("res://assets/heart_slot_m.png")
+
+func add_hp(val):
+	data.hp += val
+	if data.hp>data.hpm: data.hpm = data.hp
+	update_hp(true)

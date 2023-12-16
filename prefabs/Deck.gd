@@ -7,7 +7,7 @@ var cards = [
 	"market",
 	"gold2","gold2",
 	"teasure",
-	"house","house","house","house","house","house",
+	"house",
 ]
 
 # Called when the node enters the scene tree for the first time.
@@ -18,8 +18,9 @@ func _ready():
 	update_ui()
 	connect("button_down",self,"on_click")
 
-func add_card(code):
+func add_card(code,_shuffle=false):
 	cards.append(code)
+	if _shuffle: cards.shuffle()
 	update_ui()
 
 func pull_card():

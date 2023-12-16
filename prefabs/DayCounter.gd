@@ -68,7 +68,8 @@ func check_win():
 
 func add_rand_enemies():
 	if day%2==0 || day%3==0:
-		var arr = ["slime","slime_small"].shuffle()
+		var arr = ["slime","slime_small"]
+		arr.shuffle()
 		var created = get_node("../Map").add_enemy_rnd_line(arr[0])
 		if !created: no_created_monsters.append(arr[0])
 	if day%10==0:

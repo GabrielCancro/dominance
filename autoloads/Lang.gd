@@ -62,9 +62,13 @@ var Texts = {
 		"en":"-"},
 	"card_chest_name":{"es":"Cofre","en":"Chest"},
 	"card_chest_desc":{"es":
-		"Descarta TODA tu mano y obtienes por cada carta exepto esta, una moneda para tu alijo ",
+		"Descarta TODA tu mano y obtienes por cada carta exepto esta, una moneda para tu alijo",
 		"en":"-"},
-
+	"card_heal_name":{"es":"Sanar","en":"Heal"},
+	"card_heal_desc":{"es":
+		"Aumenta en un punto la vida a una de tus unidades",
+		"en":"-"},
+	
 	"upgrade_upg1":{
 		"es":"Empiezas la partida con cinco monedas en tu alijo",
 		"en":"Desc"},
@@ -75,7 +79,7 @@ var Texts = {
 		"es":"Comienzas la partida con una casa extra ya edificada",
 		"en":"Desc"},
 	"upgrade_upg4":{
-		"es":"se agrega una carta de curacion a tu mazo inicial ",
+		"es":"Se agrega una carta de curacion a tu mazo inicial ",
 		"en":"Desc"},
 	"upgrade_upg5":{
 		"es":"La carta milicia cuestan una moneda menos",
@@ -84,10 +88,10 @@ var Texts = {
 		"es":"Obtienes una moneda directo a tu alijo cada cinco dias",
 		"en":"Desc"},
 	"upgrade_upg7":{
-		"es":"Aún no sabemos que hace esto",
+		"es":"La carta de Mercado cuesta una moneda menos",
 		"en":"Desc"},
 	"upgrade_upg8":{
-		"es":"Aún no sabemos que hace esto",
+		"es":"La carta de Soldado cuesta una moneda menos",
 		"en":"Desc"},
 	
 	"tutorial_1":{

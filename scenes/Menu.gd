@@ -9,6 +9,7 @@ func _ready():
 	$btn_clear.connect("button_down",Saves,"clear_data")
 	$Upg/upgrades.connect("button_down",self,"on_upgrades_click")
 	$LabelInvasion.text = "invasion "+str(Saves.savedData.level)
+	$LabelInvasion.visible = (Saves.savedData.level>1)
 	update_upgrades_button()
 
 func localizate():
@@ -16,6 +17,7 @@ func localizate():
 	$VBox/btn2/Label.text = Lang.get_string("menu_lang")
 
 func on_click_button(code):
+	Sounds.play_sound("button1")
 	if code=="start":
 		get_tree().change_scene("res://scenes/Game.tscn")
 	elif code=="lang":
@@ -26,6 +28,7 @@ func on_click_button(code):
 
 func on_upgrades_click():
 	print("CLICK UPGRADES")
+	Sounds.play_sound("button1")
 	get_tree().change_scene("res://scenes/Upgrade.tscn")
 
 func update_upgrades_button():

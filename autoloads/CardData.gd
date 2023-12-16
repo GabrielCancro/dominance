@@ -18,6 +18,7 @@ var Cards = [
 	{"code":"advance", "ico":null, "cost":4, "burn":true},
 	{"code":"thundre", "ico":null, "cost":4, "burn":true},
 	{"code":"chest", "ico":null, "cost":2, "burn":true},
+	{"code":"heal", "ico":null, "cost":3, "burn":true},
 ]
 
 signal use_card(code)
@@ -26,6 +27,9 @@ signal burn_card(code)
 func _ready():
 	#INITIALIZE CARDS
 	for c in Cards: c["ico"] = load("res://assets/ico_cards/"+c["code"]+".png")
+
+func init_card_manager():
+	hand_cards = [null,null,null,null,null]
 
 func get_card_data(_code):
 	for c in Cards: 
@@ -84,7 +88,7 @@ func use_card(card_node):
 		var code = card_node.data.code
 		var conditions_ok = true
 		if(CardUsage.has_method("condition_card_"+code)): 
-			conditions_ok = CardUsage.call("condition_card_"+code,code)
+			conditions_ok = CardUsage.call("condition_card_"+code,card_node)
 		if(conditions_ok && CardUsage.has_method("use_card_"+code)): 
 				TempGoldNode.add_gold(-card_node.data.cost)
 				Effects.move_to(card_node,card_node.rect_global_position+Vector2(0,-40))
