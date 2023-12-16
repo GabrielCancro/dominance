@@ -15,7 +15,7 @@
 [ext_resource path="res://prefabs/Discard.tscn" type="PackedScene" id=13]
 [ext_resource path="res://prefabs/Houses.tscn" type="PackedScene" id=14]
 [ext_resource path="res://assets/descriptor_m.png" type="Texture" id=15]
-[ext_resource path="res://popups/LosePopup.tscn" type="PackedScene" id=16]
+[ext_resource path="res://popups/EndPopup.tscn" type="PackedScene" id=16]
 [ext_resource path="res://popups/TutorialPopup.tscn" type="PackedScene" id=17]
 
 [sub_resource type="DynamicFont" id=3]
@@ -340,7 +340,7 @@ anchor_bottom = 1.0
 margin_right = 10.0
 color = Color( 0.188235, 0.211765, 0.337255, 1 )
 
-[node name="LosePopup" parent="." instance=ExtResource( 16 )]
+[node name="EndPopup" parent="." instance=ExtResource( 16 )]
 pause_mode = 2
 visible = false
 

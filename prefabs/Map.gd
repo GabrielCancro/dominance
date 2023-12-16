@@ -108,7 +108,7 @@ func move_enemies():
 			yield(get_tree().create_timer(.6),"timeout")
 			if $Tower.hp<=0:
 				yield(get_tree().create_timer(1),"timeout")
-				get_node("../LosePopup").show_popup()
+				get_node("../EndPopup").show_popup(false)
 				return
 		else:
 			for i in range(u.data.spd):

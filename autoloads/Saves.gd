@@ -4,6 +4,7 @@ var default_data = {
 	"upgrades":[], 
 	"resume":null,
 	"language":"en",
+	"level":1,
 	"days":0
 }
 var savedData = {}
@@ -28,6 +29,7 @@ func load_store_data():
 		loaded_data = default_data.duplicate(true)
 		save_store_data()
 	savedData = loaded_data
+	if !savedData.has("level"): savedData.level = 1
 	print("LOAD ",loaded_data)
 
 func now_date():

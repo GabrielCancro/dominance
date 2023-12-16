@@ -8,6 +8,7 @@ func _ready():
 	$VBox/btn2.connect("button_down",self,"on_click_button",["lang"])
 	$btn_clear.connect("button_down",Saves,"clear_data")
 	$Upg/upgrades.connect("button_down",self,"on_upgrades_click")
+	$LabelInvasion.text = "invasion "+str(Saves.savedData.level)
 	update_upgrades_button()
 
 func localizate():
@@ -28,4 +29,5 @@ func on_upgrades_click():
 	get_tree().change_scene("res://scenes/Upgrade.tscn")
 
 func update_upgrades_button():
+	$Upg.visible = (Saves.savedData.level>1) 
 	$Upg/Label.text = str(Saves.savedData.days)

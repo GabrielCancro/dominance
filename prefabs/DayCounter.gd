@@ -1,13 +1,15 @@
 extends Control
 
 var day = 0
-var max_days = 60
+var level = 1
+var max_days = 0
 
 var no_created_monsters = []
 var monsters = [
-	{"day":1,"units":["slime_small"]},
-	{"day":2,"units":["slime"]},
-	{"day":4,"units":["slime_small"]},
+	{"day":1,"units":["slime"]},
+	{"day":2,"units":["slime_small"]},
+	{"day":4,"units":["slime","slime_small"]},
+	{"day":6,"units":["slime"]},
 	{"day":8,"units":["slime_small"]},
 	{"day":11,"units":["slime"]},
 	{"day":14,"units":["slime_small"]},
@@ -30,27 +32,28 @@ var monsters = [
 ]
 
 func _ready():
-	pass # Replace with function body.
+	level = Saves.savedData.level
+	max_days = 20 + (level-1)*10
+	$Label2.text = str(max_days)
 
 func add_day():
-	Effects.scaled_from(self)
+	Effects.scaled_from($Image)
+	check_win()
 	if day>=max_days: return
 	day += 1
-	if day>1:
-		Saves.savedData.days += 1
-		Saves.save_store_data()
 	create_no_created_monsters()
-	create_monsters()
+#	create_monsters()
+	add_rand_enemies()
 	$Label.text = str(day)
 
-func create_monsters():
-	if monsters.empty(): return
-	if monsters[0].day<=day:
-		for m in monsters[0].units: 
-			var created = get_node("../Map").add_enemy_rnd_line(m)
-			if !created: no_created_monsters.append(m)
-		monsters.pop_front()
-	print(monsters)
+#func create_monsters():
+#	if monsters.empty(): return
+#	if monsters[0].day<=day:
+#		for m in monsters[0].units: 
+#			var created = get_node("../Map").add_enemy_rnd_line(m)
+#			if !created: no_created_monsters.append(m)
+#		monsters.pop_front()
+#	print(monsters)
 
 func create_no_created_monsters():
 	var new_no_created_monsters = []
@@ -58,3 +61,19 @@ func create_no_created_monsters():
 		var created = get_node("../Map").add_enemy_rnd_line(m)
 		if !created: new_no_created_monsters.append(m)
 	no_created_monsters = new_no_created_monsters
+
+func check_win():
+	if day>=max_days && get_node("../Map").get_units_amount_team()<=0:
+		get_node("../EndPopup").show_popup(true)
+
+func add_rand_enemies():
+	if day%2==0 || day%3==0:
+		var arr = ["slime","slime_small"].shuffle()
+		var created = get_node("../Map").add_enemy_rnd_line(arr[0])
+		if !created: no_created_monsters.append(arr[0])
+	if day%10==0:
+		var created = get_node("../Map").add_enemy_rnd_line("slime_big")
+		if !created: no_created_monsters.append("slime_big")
+	if level>=3 && day%16==0:
+		var created = get_node("../Map").add_enemy_rnd_line("slime_big")
+		if !created: no_created_monsters.append("slime_big")

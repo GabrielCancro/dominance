@@ -12,7 +12,9 @@ var Texts = {
 	"menu_start_game":{"es":"Comenzar \nnueva aventura","en":"Start new adventure"},
 	"menu_lang":{"es":"Idioma \nespanol","en":"Language \nenglish"},
 	"menu_scale":{"es":"Escalado","en":"Scale "},
-	"lose_game":{"es":"Fuiste derrotado","en":"You were defeated "},
+	"lose_game":{"es":"Fuiste derrotado","en":"You were defeated"},
+	"win_game":{"es":"Has resistido","en":"You have survived"},
+	
 	"back_to_main":{"es":"Volver al menu","en":"Back to menu"},
 	"start":{"es":"Comenzar","en":"Start"},
 	"points":{"es":"Puntos","en":"Points"},
@@ -95,8 +97,15 @@ var Texts = {
 		"es":"Para usar una carta debes pagar su coste en monedas de oro, puedes obtener monedas quemando las cartas que no utilices",
 		"en":"To use a card you must pay its cost in gold coins, you can obtain coins by burning the cards you do not use"},
 	"tutorial_3":{
-		"es":"El objetivo es resistir durante 60 dias y eliminar a todos los enemigos",
-		"en":"The objective is to resist for 60 days and eliminate all enemies"},
+		"es":"El objetivo es resistir el paso de los dias y eliminar a todos los enemigos",
+		"en":"The objective is to resist the passing of the days and eliminate all enemies"},
+	
+	"win_text":{
+		"es":"Gracias por jugar a dominance, fue un trabajo dificil pero estamos contentos de que lo disfrutes!",
+		"en":"Thank you for playing dominance, it was a difficult job but we are glad you enjoyed it!"},
+		
+		
+		
 }
 
 func get_string(code):

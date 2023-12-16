@@ -20,14 +20,14 @@ outline_color = Color( 0.231373, 0.196078, 0.196078, 1 )
 extra_spacing_char = 4
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=2]
-size = 20
-font_data = ExtResource( 1 )
-
 [sub_resource type="DynamicFont" id=3]
 size = 24
 outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
 extra_spacing_bottom = -2
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=4]
@@ -183,6 +183,21 @@ align = 1
 valign = 1
 autowrap = true
 
+[node name="LabelInvasion" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -190.0
+margin_top = 72.0
+margin_right = 191.0
+margin_bottom = 119.0
+custom_colors/font_color = Color( 0.643137, 0.643137, 0.643137, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 3 )
+text = "invasion 1"
+align = 1
+valign = 1
+autowrap = true
+
 [node name="VBox" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -260,10 +275,11 @@ autowrap = true
 modulate = Color( 0.72549, 0.72549, 0.72549, 1 )
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -137.0
-margin_top = 16.0
-margin_right = -16.0
-margin_bottom = 60.0
+margin_left = -87.0
+margin_top = 17.0
+margin_right = 51.0
+margin_bottom = 61.0
+rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
 custom_fonts/font = SubResource( 2 )
 flat = true
@@ -279,14 +295,12 @@ patch_margin_right = 13
 patch_margin_bottom = 19
 
 [node name="Label" type="Label" parent="btn_clear"]
-anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -121.0
-margin_bottom = 44.0
+anchor_bottom = 1.0
 custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 3 )
-text = "Clear data"
+text = "clear data"
 align = 1
 valign = 1
 autowrap = true
