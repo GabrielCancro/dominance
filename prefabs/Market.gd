@@ -1,11 +1,11 @@
 extends Control
 
 var market_cards = [
-	"gold2",
-	"soldier",
-	"advance",
-	"thundre",
-	"chest"
+	"gold2","gold2",
+	"soldier","soldier",
+	"advance","advance",
+	"thundre","thundre",
+	"chest","chest",
 ]
 
 func _ready():
@@ -45,7 +45,8 @@ func on_click_card(card_node):
 	yield(get_tree().create_timer(.5),"timeout")
 	Sounds.play_sound("card1")
 	Effects.to_alpha(self,0)
-	market_cards.remove(card_node.data.code)
+	print("CARD SELECTED ",card_node.data)
+	market_cards.erase(card_node.data.code)
 	print("MaRKeT ",market_cards)
 	if(market_cards.size()==0): CardData.DiscardNode.cards.pop_back()
 	CardData.DiscardNode.add_card(card_node.data.code)

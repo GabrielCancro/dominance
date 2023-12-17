@@ -101,15 +101,15 @@ func move_enemies():
 		if u.is_dead: continue
 		if u.data.team!=2: continue
 		var just_attack = false
-		if( unit_try_attack(u) ):
-			yield(get_tree().create_timer(.6),"timeout")
-		elif u.map_position.x<=1:
+		if u.map_position.x<=1:
 			attack_tower(u)
 			yield(get_tree().create_timer(.6),"timeout")
 			if $Tower.hp<=0:
 				yield(get_tree().create_timer(1),"timeout")
 				get_node("../EndPopup").show_popup(false)
 				return
+		elif( unit_try_attack(u) ):
+			yield(get_tree().create_timer(.6),"timeout")
 		else:
 			for i in range(u.data.spd):
 				var is_moving = move_to(u,u.map_position+Vector2(-1,0))

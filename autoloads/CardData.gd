@@ -66,6 +66,7 @@ func _card_deck_to_hand():
 
 func get_cards():
 	while _card_deck_to_hand():
+		yield(get_tree().create_timer(.2),"timeout")
 		if(DeckNode.cards.size()<=0):
 			yield(get_tree().create_timer(.7),"timeout")
 			var start_discard_pos = DiscardNode.rect_global_position
@@ -74,8 +75,7 @@ func get_cards():
 			DeckNode.set_card_array( DiscardNode.get_all_cards() )
 			DiscardNode.rect_global_position = start_discard_pos
 			yield(get_tree().create_timer(.3),"timeout")
-		yield(get_tree().create_timer(.2),"timeout")
-	yield(get_tree().create_timer(.2),"timeout")
+	yield(get_tree().create_timer(.4),"timeout")
 	Global.set_stop_mouse(false)
 
 func use_card(card_node):

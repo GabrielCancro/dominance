@@ -14,6 +14,10 @@ var Texts = {
 	"menu_scale":{"es":"Escalado","en":"Scale "},
 	"lose_game":{"es":"Fuiste derrotado","en":"You were defeated"},
 	"win_game":{"es":"Has resistido","en":"You have survived"},
+	"exit_battle_title":{"es":"Abandonar partida","en":"Retreat from battle"},
+	"exit_battle_text":{"es":"Si te retiras de esta batalla solo obtendras","en":"If you withdraw from this battle you will only get"},
+	"exit_battle_continue":{"es":"Continuar jugando","en":"Continue playing"},
+	"exit_battle_quit":{"es":"Abandonar partida","en":"Quit battle"},
 	
 	"back_to_main":{"es":"Volver al menu","en":"Back to menu"},
 	"start":{"es":"Comenzar","en":"Start"},

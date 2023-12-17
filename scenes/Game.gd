@@ -25,6 +25,7 @@ func on_end_turn():
 	Sounds.play_sound("button1")
 	Global.set_stop_mouse(true)
 	$EndTurn.modulate = Color(1,1,1,.15)
+	if check_win(): return
 	for i in range(CardData.hand_cards.size()):
 		var c = CardData.hand_cards[i]
 		if(is_instance_valid(c)): 
@@ -38,6 +39,7 @@ func on_end_turn():
 	$Map.move_enemies()
 	yield($Map,"end_all_moves")
 	yield(get_tree().create_timer(.5),"timeout")
+	if check_win(): return
 	start_new_turn()
 
 func start_new_turn():
@@ -55,4 +57,10 @@ func on_click_market():
 
 func on_quit_game():
 	Sounds.play_sound("button1")
-	get_tree().change_scene("res://scenes/Menu.tscn")
+	$ExitBattlePopup.show_popup()
+
+func check_win():
+	if $DayCounter.day>=$DayCounter.max_days && $Map.get_units_amount_team(2)<=0:
+		$EndPopup.show_popup(true)
+		return true
+	return false
