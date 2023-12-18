@@ -13,8 +13,10 @@ func _ready():
 	$CreateButtons/btn2.connect("button_down",self,"create_unit_left",[2])
 	$CreateButtons/btn3.connect("button_down",self,"create_unit_left",[3])
 	$CreateButtons.visible = false
+	add_unit("wolf",6,1)
+	add_unit("orc",7,2)
 	add_unit("wolf",7,1)
-	add_unit("orc",8,2)
+	add_unit("wolf",8,1)
 #	add_unit("slime_big",1,3)
 
 func get_grid_node(pos):
@@ -82,6 +84,7 @@ func create_unit_left(line):
 	unit_push(u);
 	Sounds.play_sound("unit1")
 	$CreateButtons.visible = false
+	Global.set_stop_mouse(true)
 	emit_signal("unit_created")
 
 func get_unit_around(unit):
@@ -135,10 +138,13 @@ func attack_tower(unit):
 	$Tower.damage(unit.data.atk)
 
 func show_create_unit_ui(unit_code):
+	yield(get_tree().create_timer(.2),"timeout")
+	Global.set_stop_mouse(false)
 	unit_code_to_create = unit_code
 	$CreateButtons.visible = true
 
 func show_select_unit_panel(team = -1):
+	Global.set_stop_mouse(false)
 	team_unit_to_select = team
 	$SelectUnitPanel/Label.text = Lang.get_string("select_unit_team_"+str(team))
 	$SelectUnitPanel.visible = true
@@ -154,4 +160,5 @@ func on_unit_click(unit):
 	if !$SelectUnitPanel.visible: return
 	if team_unit_to_select==-1 || unit.data.team==team_unit_to_select:
 		$SelectUnitPanel.visible = false
+		Global.set_stop_mouse(true)
 		emit_signal("selected_unit",unit)

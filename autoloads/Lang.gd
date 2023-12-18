@@ -74,6 +74,10 @@ var Texts = {
 	"card_heal_desc":{"es":
 		"Aumenta en un punto la vida a una de tus unidades",
 		"en":"-"},
+	"card_explode_name":{"es":"Explotar","en":"Explode"},
+	"card_explode_desc":{
+		"es":"Una fuerte explosion de fuego hire a un enemigo",
+		"en":"-"},
 	
 	"upg_stash":{
 		"es":"Empiezas la partida con cinco monedas en tu alijo",

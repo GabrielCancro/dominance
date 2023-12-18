@@ -16,10 +16,8 @@ func condition_card_soldier(card_node):
 		return false
 	
 func use_card_soldier(card_node):
-	Global.set_stop_mouse(false)
 	get_node("/root/Game/Map").show_create_unit_ui(card_node.data.code)
 	yield(get_node("/root/Game/Map"),"unit_created")
-	Global.set_stop_mouse(true)
 	emit_signal("end_usage")
 
 func condition_card_militia(card_node):
@@ -44,7 +42,7 @@ func use_card_market(card_node):
 	emit_signal("end_usage")
 
 func use_card_teasure(card_node):
-	get_node("/root/Game/RegionBottom/Stash").add_stash_gold(1)
+	get_node("/root/Game/RegionBottom/Stash").add_stash_gold(2)
 	yield(get_tree().create_timer(.3),"timeout")
 	emit_signal("end_usage")
 
@@ -90,12 +88,12 @@ func condition_card_thundre(card_node):
 
 func use_card_thundre(card_node):
 	var mapNode = get_node("/root/Game/Map")
-	Global.set_stop_mouse(false)
 	mapNode.show_select_unit_panel(2)
 	var unit = yield(mapNode,"selected_unit")
-	Global.set_stop_mouse(true)
-	Global.magic_thundre(unit)
-	yield(Global,"end_magic")
+	var th = preload("res://prefabs/magics/MagicThundre.tscn").instance()
+	mapNode.add_child(th)
+	th.start_magic(unit)
+	yield(th,"end_magic")
 	emit_signal("end_usage")
 
 func condition_card_house(card_node):
@@ -141,4 +139,20 @@ func use_card_heal(card_node):
 	yield(get_tree().create_timer(.3),"timeout")
 	unit.add_hp(1)
 	yield(get_tree().create_timer(.7),"timeout")
+	emit_signal("end_usage")
+
+func condition_card_explode(card_node):
+	if get_node("/root/Game/Map").get_units_amount_team(2)<=0:
+		Sounds.play_sound("fail1")
+		return false
+	return true
+	
+func use_card_explode(card_node):
+	var mapNode = get_node("/root/Game/Map")
+	mapNode.show_select_unit_panel(2)
+	var unit = yield(mapNode,"selected_unit")
+	var th = preload("res://prefabs/magics/MagicFire.tscn").instance()
+	mapNode.add_child(th)
+	th.start_magic(unit)
+	yield(th,"end_magic")
 	emit_signal("end_usage")
