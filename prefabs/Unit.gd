@@ -11,6 +11,7 @@ func _ready():
 	$AnimationPlayer.seek( randf() )
 	$UnitArea.connect("mouse_entered",self,"on_mouse_enter")
 	$UnitArea.connect("mouse_exited",self,"on_mouse_exit")
+	$Hpbar.visible = false
 
 func _process(delta):
 	if hp_timer>0: hp_timer -= delta

@@ -78,6 +78,10 @@ var Texts = {
 	"card_explode_desc":{
 		"es":"Una fuerte explosion de fuego hire a un enemigo",
 		"en":"-"},
+	"card_train_name":{"es":"Entrenar","en":"Train"},
+	"card_train_desc":{
+		"es":"Mejora una de tus milicias convitiendola en un soldado",
+		"en":"-"},
 	
 	"upg_stash":{
 		"es":"Empiezas la partida con cinco monedas en tu alijo",

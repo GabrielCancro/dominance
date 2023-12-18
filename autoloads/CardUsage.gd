@@ -156,3 +156,24 @@ func use_card_explode(card_node):
 	th.start_magic(unit)
 	yield(th,"end_magic")
 	emit_signal("end_usage")
+
+var aux_unit
+func condition_card_train(card_node):
+	for u in get_node("/root/Game/Map/Units").get_children():
+		if u.data.team==2: continue
+		if u.data.name!="militia": continue
+		aux_unit = u
+		return true
+	return false
+
+func use_card_train(card_node):
+	var pos = aux_unit.map_position
+	yield(get_tree().create_timer(.3),"timeout")
+	Effects.to_alpha(aux_unit,0)
+	yield(get_tree().create_timer(.8),"timeout")
+	aux_unit.queue_free()
+	yield(get_tree().create_timer(.2),"timeout")
+	var new_unit = get_node("/root/Game/Map").add_unit("soldier",pos.x,pos.y)
+	Effects.shine(new_unit)
+	yield(get_tree().create_timer(.6),"timeout")
+	emit_signal("end_usage")
