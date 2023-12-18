@@ -27,19 +27,25 @@ func show_market():
 		$HBox/Card1.visible = true
 		$HBox/Card1.set_data( market_cards[0] )
 		$HBox/Card1.set_usable_card(false)
+		$HBox/Card1.set_enable_card(true)
 	if market_cards.size()>1:
 		$HBox/Card2.visible = true
 		$HBox/Card2.set_data( market_cards[1] )
 		$HBox/Card2.set_usable_card(false)
+		$HBox/Card2.set_enable_card(true)
 	if market_cards.size()>2:
 		$HBox/Card3.visible = true
 		$HBox/Card3.set_data( market_cards[2] )
 		$HBox/Card3.set_usable_card(false)
+		$HBox/Card3.set_enable_card(true)
 	visible = true
 	Effects.to_alpha(self,1)
 
 func on_click_card(card_node):
 	Global.set_stop_mouse(true)
+	$HBox/Card1.set_enable_card(false)
+	$HBox/Card2.set_enable_card(false)
+	$HBox/Card3.set_enable_card(false)
 	var start_pos = card_node.rect_global_position
 	Effects.move_to(card_node,CardData.DiscardNode.rect_global_position)
 	yield(get_tree().create_timer(.5),"timeout")

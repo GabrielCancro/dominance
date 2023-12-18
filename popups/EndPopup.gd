@@ -10,7 +10,9 @@ func show_popup(win=false):
 	var days = get_node("/root/Game/DayCounter").day
 	if !win: days = floor(days*.5)
 	$lbl_days.text = str(days)
-	if win: Saves.savedData.level += 1
+	if win: 
+		Sounds.play_sound("win1")
+		Saves.savedData.level += 1
 	Saves.savedData.days += days
 	Saves.save_store_data()
 	if win: $Label.text = Lang.get_string( "win_game" )

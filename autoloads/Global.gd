@@ -11,6 +11,7 @@ func set_stop_mouse(val):
 #	StopMouseNode.visible = val
 	if val: amount += 1
 	else: amount -= 1
+	if amount<0: amount = 0
 	print("STOP MOUSE ",amount)
 	StopMouseNode.visible = (amount>0)
 

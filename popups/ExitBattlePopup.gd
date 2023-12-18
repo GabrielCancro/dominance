@@ -10,8 +10,8 @@ func _ready():
 func show_popup():
 	Global.set_stop_mouse(false)
 	days = get_node("/root/Game/DayCounter").day
-	days = max(0,days-10)
-	days = floor(days*0.8)
+	days = max(0,days-5)
+	days = floor(days*0.5)
 	$lbl_days.text = str(days)
 	
 	$Label.text = Lang.get_string( "exit_battle_title" )

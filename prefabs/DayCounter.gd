@@ -28,10 +28,12 @@ func create_no_created_monsters():
 func add_rand_enemies():
 	if level<=1:
 		if day%3==0: add_enemy(["slime_small"])
-		if day%5==0: add_enemy(["slime","slime_small"])
+	elif level<=2:
+		if day%3==0: add_enemy(["slime_small"])
+		if day%8==0: add_enemy(["slime"])
 	elif level<=3:
-		if day%3==0: add_enemy(["slime","slime_small"])
-		if day%5==0: add_enemy(["slime","slime_small"])
+		if day%4==0: add_enemy(["slime"])
+		if day%7==0: add_enemy(["slime_small"])
 	elif level<=5:
 		if day%3==0: add_enemy(["slime","slime_small"])
 		if day%5==0: add_enemy(["slime","slime_small"])

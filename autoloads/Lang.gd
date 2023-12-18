@@ -12,6 +12,8 @@ var Texts = {
 	"menu_start_game":{"es":"Comenzar \nnueva aventura","en":"Start new adventure"},
 	"menu_lang":{"es":"Idioma \nespanol","en":"Language \nenglish"},
 	"menu_scale":{"es":"Escalado","en":"Scale "},
+	"menu_fullscreen":{"es":"Pantalla \ncompleta","en":"Fullscreen"},
+	"menu_quit":{"es":"Salir","en":"Quit"},
 	"lose_game":{"es":"Fuiste derrotado","en":"You were defeated"},
 	"win_game":{"es":"Has resistido","en":"You have survived"},
 	"exit_battle_title":{"es":"Abandonar partida","en":"Retreat from battle"},

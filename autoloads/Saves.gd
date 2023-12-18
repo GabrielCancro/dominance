@@ -5,7 +5,8 @@ var default_data = {
 	"resume":null,
 	"language":"en",
 	"level":1,
-	"days":0
+	"days":0,
+	"fullscreen": true
 }
 var savedData = {}
 
