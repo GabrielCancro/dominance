@@ -6,9 +6,12 @@ func _ready():
 	$btn_menu.connect("button_down",self,"on_back")
 	$Descriptor.visible = false
 	$lbl_title.text = Lang.get_string("upgrades")
-	$lbl_days.text = str(Saves.savedData.days)
 	$btn_menu/Label.text = Lang.get_string("back_to_main")
-	
+	#Saves.savedData.days = 50
+	update_ui()
+
+func update_ui():
+	$lbl_days.text = str(Saves.savedData.days)
 	for upg in $Grid.get_children():
 		$Grid.remove_child(upg)
 		upg.queue_free()
@@ -33,7 +36,7 @@ func on_mouse_entered(upg_node):
 	$Descriptor/LabelCost.text = str(UpgradeData.get_upg_data(upg_node.code).cost)
 
 func on_mouse_exited(upg_node):
-	if(upg_node.modulate.a<1): return
+	if(!is_instance_valid(upg_node) || upg_node.modulate.a<1): return
 	upg_node.unselect()
 	if upg_node==current_selected: 
 		current_selected = null
@@ -45,10 +48,9 @@ func on_button_down(upg_node):
 	if(Saves.savedData.days<UpgradeData.get_upg_data(upg_node.code).cost): return
 	Saves.savedData.days -= UpgradeData.get_upg_data(upg_node.code).cost
 	UpgradeData.add_upgrade(upg_node.code)
-	get_tree().change_scene("res://scenes/Upgrade.tscn")
 	Saves.save_store_data()
 	Sounds.play_sound("button1")
-	print(Saves.savedData.upgrades)
+	update_ui()
 
 func on_back():
 	Sounds.play_sound("button1")

@@ -5,7 +5,9 @@ var TowerNode
 var UnitData = {
 	"slime":{"atk":1,"hp":3,"spd":2, "img":null, "team":2},
 	"slime_small":{"atk":1,"hp":2,"spd":2, "img":null, "team":2},
-	"slime_big":{"atk":1,"hp":5,"spd":2, "img":null, "team":2},
+	"slime_big":{"atk":1,"hp":5,"spd":1, "img":null, "team":2},
+	"wolf":{"atk":1,"hp":2,"spd":3, "img":null, "team":2},
+	"orc":{"atk":1,"hp":5,"spd":2, "img":null, "team":2},
 	"militia":{"atk":1,"hp":2,"spd":1, "img":null, "team":1},
 	"soldier":{"atk":1,"hp":4,"spd":1, "img":null, "team":1}
 }

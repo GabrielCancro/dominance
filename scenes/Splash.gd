@@ -2,6 +2,7 @@ extends Control
 
 
 func _ready():
+	$skip.connect("button_down",self,"on_skip")
 	Saves.load_store_data()
 	if Saves.savedData.has("fullscreen"): OS.window_fullscreen = Saves.savedData.fullscreen
 	$Label.modulate.a = 0
@@ -16,4 +17,7 @@ func _ready():
 	tween.start()
 	
 	yield(get_tree().create_timer(7),"timeout")
+	get_tree().change_scene("res://scenes/Menu.tscn")
+
+func on_skip():
 	get_tree().change_scene("res://scenes/Menu.tscn")

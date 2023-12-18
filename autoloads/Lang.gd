@@ -75,30 +75,30 @@ var Texts = {
 		"Aumenta en un punto la vida a una de tus unidades",
 		"en":"-"},
 	
-	"upgrade_upg1":{
+	"upg_stash":{
 		"es":"Empiezas la partida con cinco monedas en tu alijo",
-		"en":"Desc"},
-	"upgrade_upg2":{
-		"es":"La carta de trueno cuesta una moneda menos",
-		"en":"Desc"},
-	"upgrade_upg3":{
+		"en":"You start the game with five coins in your stash"},
+	"upg_thundre_gold":{
+		"es":"La carta de Trueno cuesta una moneda menos",
+		"en":"Thunder card costs one coin less"},
+	"upg_house":{
 		"es":"Comienzas la partida con una casa extra ya edificada",
-		"en":"Desc"},
-	"upgrade_upg4":{
-		"es":"Se agrega una carta de curacion a tu mazo inicial ",
-		"en":"Desc"},
-	"upgrade_upg5":{
-		"es":"La carta milicia cuestan una moneda menos",
-		"en":"Desc"},
-	"upgrade_upg6":{
+		"en":"You start the game with an extra house already built"},
+	"upg_heal":{
+		"es":"Se agrega una carta de curacion a tu mazo inicial",
+		"en":"A heal card is added to your starting deck"},
+	"upg_militia_gold":{
+		"es":"La carta Milicia cuestan una moneda menos",
+		"en":"The Militia card costs one coin less"},
+	"upg_gold_five_days":{
 		"es":"Obtienes una moneda directo a tu alijo cada cinco dias",
-		"en":"Desc"},
-	"upgrade_upg7":{
+		"en":"You get a coin directly to your stash every five days"},
+	"upg_market_gold":{
 		"es":"La carta de Mercado cuesta una moneda menos",
-		"en":"Desc"},
-	"upgrade_upg8":{
+		"en":"The Market card costs one coin less"},
+	"upg_soldier_gold":{
 		"es":"La carta de Soldado cuesta una moneda menos",
-		"en":"Desc"},
+		"en":"The Soldier card costs one coin less"},
 	
 	"tutorial_1":{
 		"es":"En cada turno recibes cinco cartas, cada una de ellas con efectos diferentes",
