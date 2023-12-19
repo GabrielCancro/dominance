@@ -29,59 +29,63 @@ var Texts = {
 	"card_soldier_name":{"es":"Soldado","en":"Soldier"},
 	"card_soldier_desc":{"es":
 		"Invoca un soldado resistente para defenderte",
-		"en":"-"},
+		"en":"Summon a resilient soldier to defend you"},
 	"card_militia_name":{"es":"Milicia","en":"Warrior"},
 	"card_militia_desc":{
 		"es":"Invoca un guerrero para defenderte",
-		"en":"-"},
+		"en":"Summon a warrior to defend you"},
 	"card_gold1_name":{"es":"Oro","en":"Gold"},
 	"card_gold1_desc":{
 		"es":"Ganas una moneda de oro para usar en este turno",
-		"en":"-"},
+		"en":"You gain a gold coin to use this turn"},
 	"card_gold2_name":{"es":"Oro","en":"Gold"},
 	"card_gold2_desc":{
 		"es":"Ganas dos monedas de oro para usar en este turno",
-		"en":"-"},
+		"en":"You gain two gold coins to use this turn"},
 	"card_market_name":{"es":"Mercado","en":"Market"},
 	"card_market_desc":{
 		"es":"Elige una entre tres cartas nuevas y agregala a tu descarte",
-		"en":"-"},
+		"en":"Choose one of three new cards and add it to your discard"},
 	"card_wind_name":{"es":"Viento","en":"Wind"},
 	"card_wind_desc":{"es":
-		"50/100 de impulsar a cada enemigo un casillero hacia atras",
-		"en":"-"},
+		"50/100 de impulsar a cada enemigo un o dos casillero hacia atras",
+		"en":"50/100 to push each enemy back one or two squares"},
 	"card_teasure_name":{"es":"Tesoro","en":"Teasure"},
 	"card_teasure_desc":{"es":
 		"Guarda una moneda en tu alijo. Puedes usarlas en cualquier turno",
-		"en":"-"},
+		"en":"Keep a coin in your stash. You can use them in any turn"},
 	"card_house_name":{"es":"Casa","en":"House"},
 	"card_house_desc":{
 		"es":"Construye una casa cercana a tu fortaleza, cada casa da alojamiento a una unidad",
-		"en":"-"},
+		"en":"Build a house near your fortress, each house houses one unit"},
 	"card_advance_name":{"es":"Avanzar","en":"Advance"},
 	"card_advance_desc":{
 		"es":"Eliges una unidad aliada para avanzar una casilla, si queda cerca de un enemigo lo ataca",
-		"en":"-"},
+		"en":"You choose an allied unit to advance one square, if it is close to an enemy it attacks it"},
 	"card_thundre_name":{"es":"Trueno","en":"Thundre"},
 	"card_thundre_desc":{
 		"es":"Un rayo de tormenta cae y golpea una unidad enemiga sin posibilidad de fallo",
-		"en":"-"},
+		"en":"A storm bolt strikes and hits an enemy unit with no chance of miss"},
 	"card_chest_name":{"es":"Cofre","en":"Chest"},
 	"card_chest_desc":{"es":
 		"Descarta TODA tu mano y obtienes por cada carta exepto esta, una moneda para tu alijo",
-		"en":"-"},
+		"en":"Discard your ENTIRE hand and for each card except this one you get a coin for your stash"},
 	"card_heal_name":{"es":"Sanar","en":"Heal"},
 	"card_heal_desc":{"es":
 		"Aumenta en un punto la vida a una de tus unidades",
-		"en":"-"},
+		"en":"Increases the health of one of your units by one point"},
 	"card_explode_name":{"es":"Explotar","en":"Explode"},
 	"card_explode_desc":{
-		"es":"Una fuerte explosion de fuego hire a un enemigo",
-		"en":"-"},
+		"es":"Una fuerte explosion de fuego hire a un enemigo y a cualquier unidad adyacente a el",
+		"en":"A strong explosion of fire hits an enemy and any units adjacent to it."},
 	"card_train_name":{"es":"Entrenar","en":"Train"},
 	"card_train_desc":{
 		"es":"Mejora una de tus milicias convitiendola en un soldado",
-		"en":"-"},
+		"en":"Upgrade one of your militias by turning it into a soldier"},
+	"card_torment_name":{"es":"Tormenta","en":"Torment"},
+	"card_torment_desc":{
+		"es":"Una secuencia de hasta tres truenos golpea a tres unidades enemigas diferentes",
+		"en":"A sequence of up to three thunderclaps hits three different enemy units"},
 	
 	"upg_stash":{
 		"es":"Empiezas la partida con cinco monedas en tu alijo",
@@ -107,6 +111,12 @@ var Texts = {
 	"upg_soldier_gold":{
 		"es":"La carta de Soldado cuesta una moneda menos",
 		"en":"The Soldier card costs one coin less"},
+	"upg_magics":{
+		"es":"Agrega las cartas Tormenta y Explotar al Mercado",
+		"en":"Adds Storm and Explode cards to the Market"},
+	"upg_train":{
+		"es":"Agrega la carta Entrenar a tu mazo, esta carta te permite convertir milicias en soldados mas resistentes",
+		"en":"Add the Train card to your deck, this card allows you to convert militias into more resistant soldiers"},
 	
 	"tutorial_1":{
 		"es":"En cada turno recibes cinco cartas, cada una de ellas con efectos diferentes",

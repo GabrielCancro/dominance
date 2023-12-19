@@ -4,13 +4,15 @@ signal end_apply_upgrades
 
 var UPGRADES = {
 	"upg_stash":{"cost":15},
-	"upg_thundre_gold":{"cost":30},
 	"upg_house":{"cost":15},
-	"upg_heal":{"cost":20},
-	"upg_militia_gold":{"cost":15},
-	"upg_gold_five_days":{"cost":20},
-	"upg_market_gold":{"cost":30},
-	"upg_soldier_gold":{"cost":30},
+	"upg_heal":{"cost":15},
+	"upg_militia_gold":{"cost":17},
+	"upg_gold_five_days":{"cost":10},
+	"upg_thundre_gold":{"cost":20},
+	"upg_soldier_gold":{"cost":20},
+	"upg_market_gold":{"cost":20},
+	"upg_magics":{"cost":15},
+	"upg_train":{"cost":15},
 }
 
 func add_upgrade(code):
@@ -42,7 +44,6 @@ func apply_upgrades():
 	yield(get_tree().create_timer(.2),"timeout")
 	emit_signal("end_apply_upgrades")
 
-
 func apply_upg_stash():
 	get_node("/root/Game/RegionBottom/Stash").add_stash_gold(5)
 
@@ -66,3 +67,10 @@ func apply_upg_market_gold():
 
 func apply_upg_soldier_gold():
 	CardData.get_card_data("soldier").cost = 4
+
+func apply_upg_magics():
+	get_node("/root/Game/Market").market_cards.append("torment")
+	get_node("/root/Game/Market").market_cards.append("explode")
+
+func apply_upg_train():
+	get_node("/root/Game/RegionBottom/Deck").add_card("train",true)

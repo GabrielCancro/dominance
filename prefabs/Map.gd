@@ -13,9 +13,9 @@ func _ready():
 	$CreateButtons/btn2.connect("button_down",self,"create_unit_left",[2])
 	$CreateButtons/btn3.connect("button_down",self,"create_unit_left",[3])
 	$CreateButtons.visible = false
+#	add_unit("wolf",2,1)
+#	add_unit("orc",4,2)
 #	add_unit("wolf",6,1)
-#	add_unit("orc",7,2)
-#	add_unit("wolf",7,1)
 #	add_unit("wolf",8,1)
 #	add_unit("slime_big",1,3)
 

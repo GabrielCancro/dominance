@@ -20,7 +20,8 @@ var Cards = [
 	{"code":"chest", "ico":null, "cost":2, "burn":true},
 	{"code":"heal", "ico":null, "cost":3, "burn":true},
 	{"code":"explode", "ico":null, "cost":6, "burn":true},
-	{"code":"train", "ico":null, "cost":1, "burn":true},
+	{"code":"train", "ico":null, "cost":3, "burn":true},
+	{"code":"torment", "ico":null, "cost":6, "burn":true},
 ]
 
 signal use_card(code)

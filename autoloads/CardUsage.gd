@@ -55,8 +55,12 @@ func use_card_wind(card_node):
 		if get_node("/root/Game/Map").check_unit_pos(u.map_position+Vector2(1,0)): continue
 		Effects.shine(u)
 		yield(get_tree().create_timer(.4),"timeout")
-		if(randf()>.5): get_node("/root/Game/Map").move_to(u,u.map_position+Vector2(1,0))
-		yield(get_tree().create_timer(.4),"timeout")
+		if(randf()<.50): 
+			get_node("/root/Game/Map").move_to(u,u.map_position+Vector2(1,0))
+			yield(get_tree().create_timer(.4),"timeout")
+		if(randf()<.50): 
+			get_node("/root/Game/Map").move_to(u,u.map_position+Vector2(1,0))
+			yield(get_tree().create_timer(.4),"timeout")
 	yield(get_tree().create_timer(.4),"timeout")
 	emit_signal("end_usage")
 
@@ -68,10 +72,8 @@ func condition_card_advance(card_node):
 
 func use_card_advance(card_node):
 	var mapNode = get_node("/root/Game/Map")
-	Global.set_stop_mouse(false)
 	mapNode.show_select_unit_panel(1)
 	var unit = yield(mapNode,"selected_unit")
-	Global.set_stop_mouse(true)
 	Effects.shine(unit)
 	yield(get_tree().create_timer(.7),"timeout")
 	var moved = mapNode.move_to(unit,unit.map_position+Vector2(1,0))
@@ -131,10 +133,8 @@ func condition_card_heal(card_node):
 
 func use_card_heal(card_node):
 	var mapNode = get_node("/root/Game/Map")
-	Global.set_stop_mouse(false)
 	mapNode.show_select_unit_panel(1)
 	var unit = yield(mapNode,"selected_unit")
-	Global.set_stop_mouse(true)
 	Effects.shine(unit)
 	yield(get_tree().create_timer(.3),"timeout")
 	unit.add_hp(1)
@@ -176,4 +176,26 @@ func use_card_train(card_node):
 	var new_unit = get_node("/root/Game/Map").add_unit("soldier",pos.x,pos.y)
 	Effects.shine(new_unit)
 	yield(get_tree().create_timer(.6),"timeout")
+	emit_signal("end_usage")
+
+func condition_card_orment(card_node):
+	if get_node("/root/Game/Map").get_units_amount_team(2)<=0:
+		Sounds.play_sound("fail1")
+		return false
+	return true
+
+func use_card_torment(card_node):
+	var enemies = []
+	for u in get_node("/root/Game/Map/Units").get_children():
+		if u.data.team!=1: enemies.append(u)
+	var mapNode = get_node("/root/Game/Map")
+	enemies.shuffle()
+	for i in range(3):
+		yield(get_tree().create_timer(.2),"timeout")
+		var th = preload("res://prefabs/magics/MagicThundre.tscn").instance()
+		mapNode.add_child(th)
+		th.start_magic(enemies.pop_front())
+		yield(get_tree().create_timer(.3),"timeout")
+		if enemies.size()<=0: break
+	yield(get_tree().create_timer(.4),"timeout")
 	emit_signal("end_usage")

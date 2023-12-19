@@ -2,6 +2,7 @@ extends Node
 
 var default_data = { 
 	"upgrades":[], 
+	"upgrades_unlocked":[], 
 	"resume":null,
 	"language":"en",
 	"level":1,

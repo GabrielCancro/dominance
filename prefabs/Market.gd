@@ -3,11 +3,9 @@ extends Control
 var market_cards = [
 	"gold2","gold2",
 	"soldier","soldier",
-	"advance","advance",
 	"thundre","thundre",
-	"chest","chest",
-	"explode",
-	"train"
+	"advance","advance",
+	"chest",
 ]
 
 func _ready():

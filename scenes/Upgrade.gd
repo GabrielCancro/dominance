@@ -3,11 +3,15 @@ extends Control
 var current_selected
 
 func _ready():
+	randomize()
 	$btn_menu.connect("button_down",self,"on_back")
 	$Descriptor.visible = false
 	$lbl_title.text = Lang.get_string("upgrades")
 	$btn_menu/Label.text = Lang.get_string("back_to_main")
 	#Saves.savedData.days = 50
+	if Saves.savedData.upgrades_unlocked.size()<=0:
+		unlock_new_upgrade()
+		unlock_new_upgrade()
 	update_ui()
 
 func update_ui():
@@ -24,7 +28,8 @@ func update_ui():
 		upg.connect("button_down",self,"on_button_down",[upg])
 		upg.set_data(code)
 		if(Saves.savedData.upgrades.find(code)!=-1): upg.blu_shine()
-		if(upg.get_index()>=2+Saves.savedData.upgrades.size()*2): upg.modulate.a = .3
+		elif (Saves.savedData.upgrades_unlocked.find(code)!=-1): upg.modulate.a = 1
+		else: upg.modulate.a = .3
 
 func on_mouse_entered(upg_node):
 	if(upg_node.modulate.a<1): return
@@ -48,6 +53,9 @@ func on_button_down(upg_node):
 	if(Saves.savedData.days<UpgradeData.get_upg_data(upg_node.code).cost): return
 	Saves.savedData.days -= UpgradeData.get_upg_data(upg_node.code).cost
 	UpgradeData.add_upgrade(upg_node.code)
+	Saves.savedData.upgrades_unlocked.erase(upg_node.code)
+	unlock_new_upgrade()
+	unlock_new_upgrade()
 	Saves.save_store_data()
 	Sounds.play_sound("button1")
 	update_ui()
@@ -55,3 +63,12 @@ func on_button_down(upg_node):
 func on_back():
 	Sounds.play_sound("button1")
 	get_tree().change_scene("res://scenes/Menu.tscn")
+
+func unlock_new_upgrade():
+	var upgs = UpgradeData.get_non_obtained_upgrades()
+	for u in Saves.savedData.upgrades_unlocked: upgs.erase(u)
+	if upgs.size()<=0: return
+	upgs.shuffle()
+	Saves.savedData.upgrades_unlocked.append(upgs[0])
+	print("UNLOCKED ",upgs[0])
+	Saves.save_store_data()
