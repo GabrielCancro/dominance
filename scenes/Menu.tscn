@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/descriptor_m.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://prefabs/Upgrade.tscn" type="PackedScene" id=12]
 [ext_resource path="res://prefabs/Transition.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/sun.png" type="Texture" id=14]
+[ext_resource path="res://assets/sfx/ambient.mp3" type="AudioStream" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -439,3 +440,8 @@ autowrap = true
 
 [node name="Transition" parent="." instance=ExtResource( 13 )]
 visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = -4.0
+autoplay = true

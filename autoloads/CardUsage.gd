@@ -173,12 +173,13 @@ func use_card_train(card_node):
 	yield(get_tree().create_timer(.8),"timeout")
 	aux_unit.queue_free()
 	yield(get_tree().create_timer(.2),"timeout")
+	Sounds.play_sound("unit1")
 	var new_unit = get_node("/root/Game/Map").add_unit("soldier",pos.x,pos.y)
 	Effects.shine(new_unit)
 	yield(get_tree().create_timer(.6),"timeout")
 	emit_signal("end_usage")
 
-func condition_card_orment(card_node):
+func condition_card_torment(card_node):
 	if get_node("/root/Game/Map").get_units_amount_team(2)<=0:
 		Sounds.play_sound("fail1")
 		return false
