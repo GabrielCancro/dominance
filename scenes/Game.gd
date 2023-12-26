@@ -46,7 +46,7 @@ func start_new_turn():
 	Sounds.play_sound("turn1")
 	$DayCounter.add_day()
 	yield(get_tree().create_timer(1),"timeout")
-	if(Saves.savedData.upgrades.find("upg6")!=-1 && $DayCounter.day%5==0):
+	if(Saves.savedData.upgrades.find("upg_gold_five_days")!=-1 && $DayCounter.day%5==0):
 		$RegionBottom/Stash.add_stash_gold(1)
 		yield(get_tree().create_timer(1),"timeout")
 	$EndTurn.modulate = Color(1,1,1,1)

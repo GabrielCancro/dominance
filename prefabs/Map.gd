@@ -13,11 +13,17 @@ func _ready():
 	$CreateButtons/btn2.connect("button_down",self,"create_unit_left",[2])
 	$CreateButtons/btn3.connect("button_down",self,"create_unit_left",[3])
 	$CreateButtons.visible = false
-#	add_unit("wolf",2,1)
-#	add_unit("orc",4,2)
-#	add_unit("wolf",6,1)
-#	add_unit("wolf",8,1)
-#	add_unit("slime_big",1,3)
+#	add_unit("wolf",5,3)
+#	add_unit("orc",6,2)
+#	add_unit("slime_small",7,1)
+#	add_unit("slime",7,2)
+#	add_unit("slime_big",8,1)
+#	add_unit("wolf",8,3)
+#	add_unit("militia",1,1)
+#	add_unit("militia",1,2)
+#	add_unit("militia",1,3)
+#	add_unit("soldier",2,2)
+#	add_unit("soldier",2,3)
 
 func get_grid_node(pos):
 	if pos.x<=0: return null

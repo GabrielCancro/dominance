@@ -136,6 +136,7 @@ func use_card_heal(card_node):
 	mapNode.show_select_unit_panel(1)
 	var unit = yield(mapNode,"selected_unit")
 	Effects.shine(unit)
+	Sounds.play_sound("healt1")
 	yield(get_tree().create_timer(.3),"timeout")
 	unit.add_hp(1)
 	yield(get_tree().create_timer(.7),"timeout")
