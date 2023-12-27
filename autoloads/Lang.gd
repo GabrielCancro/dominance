@@ -9,10 +9,10 @@ var Texts = {
 	"end_turn_button":{"es":"Terminar","en":"End"},
 	"discards_slot":{"es":"Descarte","en":"Discards"},
 	"stash_empty":{"es":"Vacio","en":"Empty"},
-	"menu_start_game":{"es":"Comenzar \nnueva aventura","en":"Start new adventure"},
-	"menu_lang":{"es":"Idioma \nespanol","en":"Language \nenglish"},
+	"menu_start_game":{"es":"Comenzar\naventura","en":"Start\nadventure"},
+	"menu_lang":{"es":"Idioma\nespanol","en":"Language\nenglish"},
 	"menu_scale":{"es":"Escalado","en":"Scale "},
-	"menu_fullscreen":{"es":"Pantalla \ncompleta","en":"Fullscreen"},
+	"menu_fullscreen":{"es":"Pantalla\ncompleta","en":"Fullscreen"},
 	"menu_quit":{"es":"Salir","en":"Quit"},
 	"lose_game":{"es":"Fuiste derrotado","en":"You were defeated"},
 	"win_game":{"es":"Has resistido","en":"You have survived"},
@@ -20,6 +20,13 @@ var Texts = {
 	"exit_battle_text":{"es":"Si te retiras de esta batalla solo obtendras","en":"If you withdraw from this battle you will only get"},
 	"exit_battle_continue":{"es":"Continuar jugando","en":"Continue playing"},
 	"exit_battle_quit":{"es":"Abandonar partida","en":"Quit battle"},
+	"title_clear_data":{"es":"Borrar datos","en":"Clear data"},
+	"btn_yes":{"es":"Si","en":"Yes"},
+	"btn_no":{"es":"No","en":"No"},
+	"warning_clear_data":{
+		"es":"Si borras los datos guardados perderas todos tus progresos y mejoras.\nEstas seguro de querer hacer esto?",
+		"en":"If you delete your saved data you will lose all your progress and improvements.\nAre you sure you want to do this?"
+	},
 	
 	"back_to_main":{"es":"Volver al menu","en":"Back to menu"},
 	"start":{"es":"Comenzar","en":"Start"},
