@@ -50,6 +50,7 @@ func on_mouse_exited(upg_node):
 func on_button_down(upg_node):
 	if(Saves.savedData.upgrades.find(upg_node.code)!=-1): return
 	if(upg_node.modulate.a<1): return
+	if(current_selected!=upg_node): return
 	if(Saves.savedData.days<UpgradeData.get_upg_data(upg_node.code).cost): return
 	Saves.savedData.days -= UpgradeData.get_upg_data(upg_node.code).cost
 	UpgradeData.add_upgrade(upg_node.code)

@@ -45,7 +45,7 @@ func on_mouse_burn_enter():
 	$BorderColor.visible = true
 
 func on_mouse_burn_exit():
-	if !is_usable: return
+	if !is_usable || !$BorderColor.visible: return
 	$BurnColor.visible = false
 	$BorderColor.visible = false
 
