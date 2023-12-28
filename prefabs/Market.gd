@@ -42,6 +42,7 @@ func show_market():
 	Effects.to_alpha(self,1)
 
 func on_click_card(card_node):
+	if !card_node.get_node("BorderColor").visible: return
 	Global.set_stop_mouse(true)
 	$HBox/Card1.set_enable_card(false)
 	$HBox/Card2.set_enable_card(false)

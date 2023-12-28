@@ -29,17 +29,29 @@ func add_rand_enemies():
 	if level==1:
 		if day%3==0: add_enemy(["slime_small"])
 	elif level==2:
+		if day==2: add_enemy(["slime_small"])
+		if day==10: add_enemy(["slime_small","slime"])
 		if day%4==0: add_enemy(["slime_small"])
 		if day%7==0: add_enemy(["slime"])
 	elif level==3:
+		if day==6: add_enemy(["wolf"])
+		if day==10: add_enemy(["wolf"])
+		if day==18: add_enemy(["wolf"])
 		if day%4==0: add_enemy(["slime","slime_small"])
 		if day%7==0: add_enemy(["slime_small","slime","wolf"])
-	elif level<=5:
+	elif level==4:
 		if day%3==0: add_enemy(["slime","slime_small"])
 		if day%7==0: add_enemy(["slime","wolf"])
 		if day%15==0: add_enemy(["slime_big"])
-	else:
+	elif level==5:
+		if day==1: add_enemy(["slime_small"])
+		if day==10: add_enemy(["orc"])
+		if day==18: add_enemy(["orc"])
 		if day%3==0: add_enemy(["slime","slime_small"])
+		if day%7==0: add_enemy(["slime","wolf"])
+		if day%15==0: add_enemy(["slime_big","orc"])
+	else:
+		if day%3==0: add_enemy(["slime_small","wolf"])
 		if day%5==0: add_enemy(["slime","wolf"])
 		if day%9==0: add_enemy(["slime_big","orc"])
 

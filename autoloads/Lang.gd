@@ -27,6 +27,8 @@ var Texts = {
 		"es":"Si borras los datos guardados perderas todos tus progresos y mejoras.\nEstas seguro de querer hacer esto?",
 		"en":"If you delete your saved data you will lose all your progress and improvements.\nAre you sure you want to do this?"
 	},
+	"end_battle":{"es":"Batalla final","en":"Last Battle"},
+	"endless_mode":{"es":"Modo infinito","en":"Endless mode"},
 	
 	"back_to_main":{"es":"Volver al menu","en":"Back to menu"},
 	"start":{"es":"Comenzar","en":"Start"},
@@ -59,8 +61,8 @@ var Texts = {
 		"en":"50/100 to push each enemy back one or two squares"},
 	"card_teasure_name":{"es":"Tesoro","en":"Teasure"},
 	"card_teasure_desc":{"es":
-		"Guarda una moneda en tu alijo. Puedes usarlas en cualquier turno",
-		"en":"Keep a coin in your stash. You can use them in any turn"},
+		"Guarda dos monedas en tu alijo. Puedes usarlas en cualquier turno",
+		"en":"Keep two coins in your stash. You can use them in any turn"},
 	"card_house_name":{"es":"Casa","en":"House"},
 	"card_house_desc":{
 		"es":"Construye una casa cercana a tu fortaleza, cada casa da alojamiento a una unidad",
