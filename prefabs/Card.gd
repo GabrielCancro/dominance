@@ -50,7 +50,7 @@ func on_mouse_burn_exit():
 	$BorderColor.visible = false
 
 func on_click_card():
-	if !is_usable: return
+	if !is_usable || !$BorderColor.visible: return
 	CardData.use_card(self)
 
 func on_click_burn():

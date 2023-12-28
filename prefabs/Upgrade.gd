@@ -19,5 +19,6 @@ func blu_shine():
 	$bg.modulate = Color(1,1,.7,1)
 
 func on_click():
+	if(!$ColorRect.visible): return
 	print("UPGRADE CLICK")
 	emit_signal("on_select",self)
