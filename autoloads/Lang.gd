@@ -9,7 +9,7 @@ var Texts = {
 	"end_turn_button":{"es":"Terminar","en":"End"},
 	"discards_slot":{"es":"Descarte","en":"Discards"},
 	"stash_empty":{"es":"Vacio","en":"Empty"},
-	"menu_start_game":{"es":"Comenzar\naventura","en":"Start\nadventure"},
+	"menu_start_game":{"es":"Comenzar","en":"Start"},
 	"menu_lang":{"es":"Idioma\nespanol","en":"Language\nenglish"},
 	"menu_scale":{"es":"Escalado","en":"Scale "},
 	"menu_fullscreen":{"es":"Pantalla\ncompleta","en":"Fullscreen"},
@@ -61,8 +61,8 @@ var Texts = {
 		"en":"50/100 to push each enemy back one or two squares"},
 	"card_teasure_name":{"es":"Tesoro","en":"Teasure"},
 	"card_teasure_desc":{"es":
-		"Guarda dos monedas en tu alijo. Puedes usarlas en cualquier turno",
-		"en":"Keep two coins in your stash. You can use them in any turn"},
+		"Guarda una moneda en tu alijo. Puedes usarlas en cualquier turno",
+		"en":"Keep a coin in your stash. You can use them in any turn"},
 	"card_house_name":{"es":"Casa","en":"House"},
 	"card_house_desc":{
 		"es":"Construye una casa cercana a tu fortaleza, cada casa da alojamiento a una unidad",
@@ -138,11 +138,9 @@ var Texts = {
 		"en":"The objective is to resist the passing of the days and eliminate all enemies"},
 	
 	"win_text":{
-		"es":"Gracias por jugar a dominance, fue un trabajo dificil pero estamos contentos de que lo disfrutes!",
-		"en":"Thank you for playing dominance, it was a difficult job but we are glad you enjoyed it!"},
-		
-		
-		
+		"es":"Has resistido el ataque, es hora de reagruparse y mejorar nuestro equipamiento",
+		"en":"You have resisted the attack, it's time to regroup and upgrade our equipment"},
+
 }
 
 func get_string(code):

@@ -9,7 +9,6 @@ func _ready():
 	$VBox/btn4.connect("button_down",self,"on_click_button",["quit"])
 	$btn_clear.connect("button_down",self,"on_click_button",["clear_data"])
 	$Upg/upgrades.connect("button_down",self,"on_upgrades_click")
-	$LabelInvasion.visible = (Saves.savedData.level>1)
 	update_upgrades_button()
 
 func localizate():
@@ -18,9 +17,7 @@ func localizate():
 	$VBox/btn3/Label.text = Lang.get_string("menu_fullscreen")
 	$VBox/btn4/Label.text = Lang.get_string("menu_quit")
 	$btn_clear/Label.text = Lang.get_string("title_clear_data")
-	$LabelInvasion.text = "invasion: "+str(Saves.savedData.level)
-	if Saves.savedData.level==5: $LabelInvasion.text = Lang.get_string("end_battle")
-	if Saves.savedData.level>5: $LabelInvasion.text = Lang.get_string("endless_mode")+": "+str(Saves.savedData.level-5)
+	$PathBattles.update_level()
 
 func on_click_button(code):
 	Sounds.play_sound("button1")

@@ -1,0 +1,6 @@
+03/01/23
+-carta tesoro ahora da guarda una moneda y no tiene coste
+-se reparó la mejora de moneda cada cinco dias
+-se ajustó texto de victoria
+-se agregó indicador de numero de batallas
+-se agreg{o boton de help ?

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/descriptor_m.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://prefabs/Transition.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/sun.png" type="Texture" id=14]
 [ext_resource path="res://assets/sfx/ambient.mp3" type="AudioStream" id=15]
+[ext_resource path="res://prefabs/PathBattles.tscn" type="PackedScene" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -22,15 +23,15 @@ outline_color = Color( 0.231373, 0.196078, 0.196078, 1 )
 extra_spacing_char = 4
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 1 )
+
 [sub_resource type="DynamicFont" id=3]
 size = 20
 outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
 extra_spacing_top = 1
 extra_spacing_bottom = 1
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 20
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=4]
@@ -182,7 +183,10 @@ margin_bottom = 181.0
 texture = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="."]
-anchor_right = 1.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -400.0
+margin_right = 400.0
 margin_bottom = 119.0
 custom_colors/font_color = Color( 0.847059, 0.847059, 0.847059, 1 )
 custom_constants/line_spacing = -2
@@ -192,20 +196,13 @@ align = 1
 valign = 1
 autowrap = true
 
-[node name="LabelInvasion" type="Label" parent="."]
+[node name="PathBattles" parent="." instance=ExtResource( 16 )]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -190.0
-margin_top = 72.0
-margin_right = 191.0
-margin_bottom = 119.0
-custom_colors/font_color = Color( 0.643137, 0.643137, 0.643137, 1 )
-custom_constants/line_spacing = -2
-custom_fonts/font = SubResource( 3 )
-text = "invasion 1"
-align = 1
-valign = 1
-autowrap = true
+margin_left = -79.5
+margin_top = 80.0
+margin_right = 79.5
+margin_bottom = 96.0
 
 [node name="VBox" type="VBoxContainer" parent="."]
 anchor_left = 0.5
@@ -433,7 +430,7 @@ margin_bottom = -9.0
 custom_colors/font_color = Color( 0.643137, 0.643137, 0.643137, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 5 )
-text = "v0.015"
+text = "v0.017"
 align = 2
 valign = 1
 autowrap = true

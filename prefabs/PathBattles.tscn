@@ -1,0 +1,100 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://prefabs/PathBattles.gd" type="Script" id=1]
+[ext_resource path="res://assets/path1.png" type="Texture" id=2]
+[ext_resource path="res://assets/path3.png" type="Texture" id=3]
+[ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+extra_spacing_top = 1
+extra_spacing_bottom = 1
+font_data = ExtResource( 4 )
+
+[node name="PathBattles" type="Control"]
+margin_right = 159.0
+margin_bottom = 16.0
+script = ExtResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+modulate = Color( 0.745098, 0.745098, 0.745098, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+alignment = 1
+
+[node name="p1" type="TextureRect" parent="HBoxContainer"]
+margin_left = 7.0
+margin_right = 23.0
+margin_bottom = 16.0
+texture = ExtResource( 2 )
+
+[node name="l1" type="TextureRect" parent="HBoxContainer"]
+margin_left = 23.0
+margin_right = 39.0
+margin_bottom = 16.0
+texture = ExtResource( 3 )
+
+[node name="p2" type="TextureRect" parent="HBoxContainer"]
+margin_left = 39.0
+margin_right = 55.0
+margin_bottom = 16.0
+texture = ExtResource( 2 )
+
+[node name="l2" type="TextureRect" parent="HBoxContainer"]
+margin_left = 55.0
+margin_right = 71.0
+margin_bottom = 16.0
+texture = ExtResource( 3 )
+
+[node name="p3" type="TextureRect" parent="HBoxContainer"]
+margin_left = 71.0
+margin_right = 87.0
+margin_bottom = 16.0
+texture = ExtResource( 2 )
+
+[node name="l3" type="TextureRect" parent="HBoxContainer"]
+margin_left = 87.0
+margin_right = 103.0
+margin_bottom = 16.0
+texture = ExtResource( 3 )
+
+[node name="p4" type="TextureRect" parent="HBoxContainer"]
+margin_left = 103.0
+margin_right = 119.0
+margin_bottom = 16.0
+texture = ExtResource( 2 )
+
+[node name="l4" type="TextureRect" parent="HBoxContainer"]
+margin_left = 119.0
+margin_right = 135.0
+margin_bottom = 16.0
+texture = ExtResource( 3 )
+
+[node name="p5" type="TextureRect" parent="HBoxContainer"]
+margin_left = 135.0
+margin_right = 151.0
+margin_bottom = 16.0
+texture = ExtResource( 2 )
+
+[node name="LabelInvasion" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -77.0
+margin_top = 22.0
+margin_right = 77.0
+margin_bottom = 44.0
+custom_colors/font_color = Color( 0.643137, 0.643137, 0.643137, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 1 )
+text = "invasion 1/5"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Button" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+focus_mode = 0
+flat = true

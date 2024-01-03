@@ -1,5 +1,7 @@
 extends Control
 
+var gameStarted = false
+
 func _ready():
 	$btn_menu.connect("button_down",self,"on_click")
 	visible = true
@@ -11,5 +13,6 @@ func _ready():
 
 func on_click():
 	Sounds.play_sound("button1")
-	get_node("/root/Game").start_game()
-	queue_free()
+	if !gameStarted: get_node("/root/Game").start_game()
+	gameStarted = true
+	visible = false

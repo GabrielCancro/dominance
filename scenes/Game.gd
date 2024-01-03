@@ -1,12 +1,14 @@
 extends Control
 
-# Called when the node enters the scene tree for the first time.
+var lastDayEnded = false
+
 func _ready():
 	Sounds.set_audio_scene(self)
 	CardData.HandBoxNode = $RegionBottom/HandCards
 	Global.StopMouseNode = $StopMouse
 	$EndTurn.connect("button_down",self,"on_end_turn")
 	$QuitGame.connect("button_down",self,"on_quit_game")
+	$HelpGame.connect("button_down",self,"on_help_game")
 	$BtnMarket.connect("button_down",self,"on_click_market")
 	Global.set_stop_mouse(true)
 	$EndTurn.modulate = Color(1,1,1,.15)
@@ -46,9 +48,10 @@ func start_new_turn():
 	Sounds.play_sound("turn1")
 	$DayCounter.add_day()
 	yield(get_tree().create_timer(1),"timeout")
-	if(Saves.savedData.upgrades.find("upg_gold_five_days")!=-1 && $DayCounter.day%5==0):
+	if(Saves.savedData.upgrades.find("upg_gold_five_days")!=-1 && $DayCounter.day%5==0 && !lastDayEnded):
 		$RegionBottom/Stash.add_stash_gold(1)
 		yield(get_tree().create_timer(1),"timeout")
+	lastDayEnded = ($DayCounter.day==$DayCounter.max_days)
 	$EndTurn.modulate = Color(1,1,1,1)
 	CardData.get_cards()
 
@@ -58,6 +61,9 @@ func on_click_market():
 func on_quit_game():
 	Sounds.play_sound("button1")
 	$ExitBattlePopup.show_popup()
+
+func on_help_game():
+	$TutorialPopup.visible = true
 
 func check_win():
 	if $DayCounter.day>=$DayCounter.max_days && $Map.get_units_amount_team(2)<=0:

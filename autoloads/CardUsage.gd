@@ -42,8 +42,8 @@ func use_card_market(card_node):
 	emit_signal("end_usage")
 
 func use_card_teasure(card_node):
-	get_node("/root/Game/RegionBottom/Stash").add_stash_gold(2)
-	yield(get_tree().create_timer(.3),"timeout")
+	get_node("/root/Game/RegionBottom/Stash").add_stash_gold(1)
+	yield(get_tree().create_timer(.2),"timeout")
 	emit_signal("end_usage")
 
 func use_card_wind(card_node):
