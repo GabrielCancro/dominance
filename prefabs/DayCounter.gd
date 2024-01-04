@@ -8,6 +8,7 @@ var no_created_monsters = []
 func _ready():
 	level = Saves.savedData.level
 	max_days = 20 + (level-1)*5
+	if max_days>40: max_days = 40
 	$Label2.text = str(max_days)
 
 func add_day():

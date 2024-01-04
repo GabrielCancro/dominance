@@ -15,18 +15,16 @@ func start_magic(unit):
 	Effects.shake(self)
 	yield(get_tree().create_timer(.3),"timeout")
 	Effects.to_alpha(self,0)
-	yield(get_tree().create_timer(.4),"timeout")
+	Effects.to_scale(self,1.8)
+	yield(get_tree().create_timer(.3),"timeout")
 	unit.damage(2)
-	yield(get_tree().create_timer(.4),"timeout")
+	yield(get_tree().create_timer(.2),"timeout")
 	
-	var u = get_node("/root/Game/Map").check_unit_pos(unit.map_position+Vector2(-1,0))
-	if u: u.damage(1)
-	u = get_node("/root/Game/Map").check_unit_pos(unit.map_position+Vector2(+1,0))
-	if u: u.damage(1)
-	u = get_node("/root/Game/Map").check_unit_pos(unit.map_position+Vector2(0,-1))
-	if u: u.damage(1)
-	u = get_node("/root/Game/Map").check_unit_pos(unit.map_position+Vector2(0,+1))
-	if u: u.damage(1)
+	for x in range(3):
+		for y in range(3):
+			if x==1 && y==1: continue
+			var u = get_node("/root/Game/Map").check_unit_pos(unit.map_position+Vector2(x-1,y-1))
+			if u: u.damage(1)
 	
 	yield(get_tree().create_timer(.4),"timeout")
 	emit_signal("end_magic")

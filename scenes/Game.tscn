@@ -39,7 +39,7 @@ size = 36
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=6]
-size = 22
+size = 28
 outline_color = Color( 0.576471, 0.576471, 0.576471, 1 )
 font_data = ExtResource( 6 )
 
@@ -265,11 +265,11 @@ flat = true
 
 [node name="HelpGame" type="Button" parent="."]
 modulate = Color( 0.72549, 0.72549, 0.72549, 1 )
-margin_left = 45.0
-margin_top = 13.0
-margin_right = 84.0
-margin_bottom = 55.0
-custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
+margin_left = 53.0
+margin_top = 14.0
+margin_right = 92.0
+margin_bottom = 56.0
+custom_colors/font_color = Color( 0.576471, 0.576471, 0.576471, 1 )
 custom_fonts/font = SubResource( 6 )
 text = "?"
 flat = true

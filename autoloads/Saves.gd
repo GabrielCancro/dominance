@@ -33,7 +33,7 @@ func load_store_data():
 	savedData = loaded_data
 	if !savedData.has("level"): savedData.level = 1
 	print("LOAD ",loaded_data)
-#	savedData.level = 6
+#	savedData.level = 60
 #	savedData.days = 100
 
 func now_date():

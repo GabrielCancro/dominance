@@ -32,6 +32,7 @@ var Texts = {
 	
 	"back_to_main":{"es":"Volver al menu","en":"Back to menu"},
 	"start":{"es":"Comenzar","en":"Start"},
+	"ok":{"es":"Ok","en":"Ok"},
 	"points":{"es":"Puntos","en":"Points"},
 	"upgrades":{"es":"Mejoras","en":"Upgrades"},
 	
@@ -56,13 +57,13 @@ var Texts = {
 		"es":"Elige una entre tres cartas nuevas y agregala a tu descarte",
 		"en":"Choose one of three new cards and add it to your discard"},
 	"card_wind_name":{"es":"Viento","en":"Wind"},
-	"card_wind_desc":{"es":
-		"50/100 de impulsar a cada enemigo un o dos casillero hacia atras",
-		"en":"50/100 to push each enemy back one or two squares"},
+	"card_wind_desc":{
+		"es":"50 porciento de impulsar a cada enemigo un o dos casillero hacia atras",
+		"en":"50 percent to push each enemy back one or two squares"},
 	"card_teasure_name":{"es":"Tesoro","en":"Teasure"},
 	"card_teasure_desc":{"es":
-		"Guarda una moneda en tu alijo. Puedes usarlas en cualquier turno",
-		"en":"Keep a coin in your stash. You can use them in any turn"},
+		"Guarda dos monedas en tu alijo. Puedes usarlas en cualquier turno",
+		"en":"Keep two coins in your stash. You can use them on any turn"},
 	"card_house_name":{"es":"Casa","en":"House"},
 	"card_house_desc":{
 		"es":"Construye una casa cercana a tu fortaleza, cada casa da alojamiento a una unidad",
@@ -85,8 +86,8 @@ var Texts = {
 		"en":"Increases the health of one of your units by one point"},
 	"card_explode_name":{"es":"Explotar","en":"Explode"},
 	"card_explode_desc":{
-		"es":"Una fuerte explosion de fuego hire a un enemigo y a cualquier unidad adyacente a el",
-		"en":"A strong explosion of fire hits an enemy and any units adjacent to it."},
+		"es":"Una fuerte explosion de fuego hire a un enemigo central y a cualquier unidad cercana a el",
+		"en":"A strong explosion of fire hits a central enemy and any units near it"},
 	"card_train_name":{"es":"Entrenar","en":"Train"},
 	"card_train_desc":{
 		"es":"Mejora una de tus milicias convitiendola en un soldado",
