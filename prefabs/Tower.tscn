@@ -21,6 +21,8 @@ margin_top = -1.0
 margin_right = 63.0
 margin_bottom = 79.0
 texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
 
 [node name="hp" type="Label" parent="."]
 anchor_top = 1.0
@@ -28,7 +30,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -111.0
 margin_bottom = -73.0
-custom_colors/font_color = Color( 0.717647, 0.717647, 0.717647, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 1 )
 text = "30/30"

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/stash.png-702115140ae638e778316b0f6f4d2e4f.stex"
+path="res://.import/money_m_slot.png-e4fa56a67e6a3356e6ce19a6334a8e46.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/stash.png"
-dest_files=[ "res://.import/stash.png-702115140ae638e778316b0f6f4d2e4f.stex" ]
+source_file="res://assets/olds/money_m_slot.png"
+dest_files=[ "res://.import/money_m_slot.png-e4fa56a67e6a3356e6ce19a6334a8e46.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
