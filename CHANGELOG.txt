@@ -1,3 +1,9 @@
+05/01/23 v0.018
+-se ajustó carta tesoro
+-se corrigieron errores de texto
+-se mejoró el rango de la carta explode
+-se limitaron la partidas a maximo de 40 turnos
+
 03/01/23 v0.017
 -carta tesoro ahora da guarda una moneda y no tiene coste
 -se reparó la mejora de moneda cada cinco dias
