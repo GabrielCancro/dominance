@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/thundre_fx.png-49da6b2abb3bdcb2267a1685c152761d.stex"
+path="res://.import/Rayo-489x774.png-b4bdbabff63c4f4657fb603c0477c974.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fx/thundre_fx.png"
-dest_files=[ "res://.import/thundre_fx.png-49da6b2abb3bdcb2267a1685c152761d.stex" ]
+source_file="res://assets/fx/Rayo-489x774.png"
+dest_files=[ "res://.import/Rayo-489x774.png-b4bdbabff63c4f4657fb603c0477c974.stex" ]
 
 [params]
 

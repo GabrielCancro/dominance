@@ -11,8 +11,9 @@ func _ready():
 	$HelpGame.connect("button_down",self,"on_help_game")
 	$BtnMarket.connect("button_down",self,"on_click_market")
 	Global.set_stop_mouse(true)
-	$EndTurn.modulate = Color(1,1,1,.15)
+	$EndTurn.modulate = Color(1,1,1,.7)
 	$EndTurn/Label.text = Lang.get_string("end_turn_button")
+	Effects.add_mouse_focuser($EndTurn,$EndTurn/BorderColor)
 	$RegionBottom/DiscardSlot/Label.text = Lang.get_string("discards_slot")
 
 func start_game():
@@ -26,7 +27,7 @@ func start_game():
 func on_end_turn():
 	Sounds.play_sound("button1")
 	Global.set_stop_mouse(true)
-	$EndTurn.modulate = Color(1,1,1,.15)
+	$EndTurn.modulate = Color(1,1,1,.7)
 	if check_win(): return
 	for i in range(CardData.hand_cards.size()):
 		var c = CardData.hand_cards[i]

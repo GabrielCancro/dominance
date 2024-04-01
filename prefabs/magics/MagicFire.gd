@@ -7,15 +7,15 @@ func _ready():
 
 func start_magic(unit):
 	Sounds.play_sound("fire1")
-	yield(get_tree().create_timer(.3),"timeout")
 	rect_position = unit.rect_position
-	yield(get_tree().create_timer(.2),"timeout")
+	yield(get_tree().create_timer(.1),"timeout")
 	visible = true
-	$AnimatedSprite.playing = true
+	$AnimatedSprite.frame = 0
+	$AnimatedSprite.play("default")
 	Effects.shake(self)
-	yield(get_tree().create_timer(.3),"timeout")
+	yield(get_tree().create_timer(.8),"timeout")
 	Effects.to_alpha(self,0)
-	Effects.to_scale(self,1.8)
+	Effects.to_scale(self,1.2)
 	yield(get_tree().create_timer(.3),"timeout")
 	unit.damage(2)
 	yield(get_tree().create_timer(.2),"timeout")

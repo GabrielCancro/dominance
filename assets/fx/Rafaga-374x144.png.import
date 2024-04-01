@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/explode_sheet.png-e90c93c56667bd1ba647316b52d97889.stex"
+path="res://.import/Rafaga-374x144.png-27e2b5ac0ec769b59ba10662a2235546.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fx/explode_sheet.png"
-dest_files=[ "res://.import/explode_sheet.png-e90c93c56667bd1ba647316b52d97889.stex" ]
+source_file="res://assets/fx/Rafaga-374x144.png"
+dest_files=[ "res://.import/Rafaga-374x144.png-27e2b5ac0ec769b59ba10662a2235546.stex" ]
 
 [params]
 
