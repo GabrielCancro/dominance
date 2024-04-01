@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/sun.png" type="Texture" id=2]
 [ext_resource path="res://prefabs/DayCounter.gd" type="Script" id=3]
+[ext_resource path="res://assets/ui/ui_flag2.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/ui_sun.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -21,22 +22,38 @@ margin_bottom = 48.0
 rect_pivot_offset = Vector2( 48, 24 )
 script = ExtResource( 3 )
 
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = -4.0
+margin_right = 50.0
+margin_bottom = 21.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+
 [node name="Image" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 8.0
+margin_right = 13.0
+margin_bottom = 5.0
 rect_pivot_offset = Vector2( 24, 24 )
-texture = ExtResource( 2 )
+texture = ExtResource( 5 )
 expand = true
 stretch_mode = 6
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 33.0
-margin_top = -6.0
-margin_right = 52.0
-margin_bottom = -6.0
+margin_left = 36.0
+margin_top = 2.0
+margin_right = 55.0
+margin_bottom = 2.0
 custom_colors/font_color = Color( 0.937988, 0.937988, 0.937988, 1 )
+custom_colors/font_color_shadow = Color( 0.184314, 0.196078, 0.266667, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 1 )
 text = "1"
@@ -47,11 +64,11 @@ autowrap = true
 [node name="Label2" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 34.0
-margin_top = 35.0
-margin_right = 50.0
-margin_bottom = 1.0
-custom_colors/font_color = Color( 0.529412, 0.529412, 0.529412, 1 )
+margin_left = 37.0
+margin_top = 41.0
+margin_right = 53.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0.792157, 0.792157, 0.792157, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 2 )
 text = "40"
@@ -62,14 +79,14 @@ autowrap = true
 [node name="Label3" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 34.0
-margin_top = 20.0
-margin_right = 50.0
-margin_bottom = -14.0
-custom_colors/font_color = Color( 0.529412, 0.529412, 0.529412, 1 )
+margin_left = 38.0
+margin_top = 30.0
+margin_right = 54.0
+margin_bottom = -4.0
+custom_colors/font_color = Color( 0.792157, 0.792157, 0.792157, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 2 )
-text = "___"
+text = "----"
 align = 1
 valign = 1
 autowrap = true
