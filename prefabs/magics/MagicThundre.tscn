@@ -41,7 +41,7 @@ margin_bottom = 48.0
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 43.9375, -34.0729 )
-scale = Vector2( 0.143405, 0.143405 )
+position = Vector2( 53.9375, -75.2263 )
+scale = Vector2( 0.249744, 0.249744 )
 frames = SubResource( 7 )
 frame = 2

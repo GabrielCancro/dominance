@@ -78,7 +78,7 @@ var Texts = {
 		"en":"A storm bolt strikes and hits an enemy unit with no chance of miss"},
 	"card_chest_name":{"es":"Cofre","en":"Chest"},
 	"card_chest_desc":{"es":
-		"Descarta TODA tu mano y obtienes por cada carta exepto esta, una moneda para tu alijo",
+		"Descarta TODA tu mano y obtienes por cada carta excepto esta, una moneda para tu alijo",
 		"en":"Discard your ENTIRE hand and for each card except this one you get a coin for your stash"},
 	"card_heal_name":{"es":"Sanar","en":"Heal"},
 	"card_heal_desc":{"es":
