@@ -16,6 +16,6 @@ func add_stash_gold(val=1):
 	$GoldLabel.visible = (stash_gold>0)
 
 func on_click():
-	if stash_gold>0:
+	if stash_gold>0 and CardData.TempGoldNode.gold<6:
 		add_stash_gold(-1)
 		CardData.TempGoldNode.add_gold(1)

@@ -53,11 +53,11 @@ func use_card_wind(card_node):
 	for u in get_node("/root/Game/Map/Units").get_children():
 		if u.data.team==1: continue
 		if u.map_position.x>=8: continue
+		if get_node("/root/Game/Map").check_unit_pos(u.map_position+Vector2(1,0)): continue
 		Effects.shine(u)
 		var th = preload("res://prefabs/magics/MagicWind.tscn").instance()
 		get_node("/root/Game/Map").add_child(th)
-		th.start_magic(u)
-		if get_node("/root/Game/Map").check_unit_pos(u.map_position+Vector2(1,0)): continue
+		th.start_magic(u)		
 		yield(get_tree().create_timer(.4),"timeout")
 		if(randf()<.50): 
 			get_node("/root/Game/Map").move_to(u,u.map_position+Vector2(1,0))
