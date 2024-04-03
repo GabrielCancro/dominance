@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/descriptor_m.png" type="Texture" id=1]
 [ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/sun.png" type="Texture" id=3]
 [ext_resource path="res://popups/EndPopup.gd" type="Script" id=4]
+[ext_resource path="res://assets/ui/ui_btn_bg_1.png" type="Texture" id=5]
+[ext_resource path="res://popups/WoodPanelUI.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -41,16 +43,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.901961 )
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="WoodPanelUi" parent="." instance=ExtResource( 6 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -154.0
-margin_top = -203.5
-margin_right = 154.0
-margin_bottom = 203.5
-color = Color( 0.054902, 0.054902, 0.054902, 1 )
+margin_left = -177.5
+margin_top = -225.0
+margin_right = 177.5
+margin_bottom = 225.0
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
@@ -77,12 +78,13 @@ anchor_bottom = 0.5
 margin_left = -64.5
 margin_top = 135.5
 margin_right = 64.5
-margin_bottom = 172.5
+margin_bottom = 185.5
 custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
 custom_fonts/font = SubResource( 3 )
 flat = true
 
 [node name="Panel" type="NinePatchRect" parent="btn_menu"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 1 )
@@ -91,6 +93,13 @@ patch_margin_left = 13
 patch_margin_top = 19
 patch_margin_right = 13
 patch_margin_bottom = 19
+
+[node name="BgButton1" type="TextureRect" parent="btn_menu"]
+modulate = Color( 0.92549, 0.92549, 0.92549, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+expand = true
 
 [node name="Label" type="Label" parent="btn_menu"]
 anchor_right = 1.0
