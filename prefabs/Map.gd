@@ -13,6 +13,7 @@ func _ready():
 	$CreateButtons/btn2.connect("button_down",self,"create_unit_left",[2])
 	$CreateButtons/btn3.connect("button_down",self,"create_unit_left",[3])
 	$CreateButtons.visible = false
+	$CreateButtons/AnimationPlayer.play("Nueva Animación")
 #	add_unit("wolf",5,3)
 #	add_unit("orc",6,2)
 #	add_unit("slime_small",7,1)

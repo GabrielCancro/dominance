@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://prefabs/Card.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://prefabs/Market.gd" type="Script" id=3]
+[ext_resource path="res://popups/WoodPanelUI.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -24,25 +25,15 @@ margin_right = -1.0
 margin_bottom = -1.0
 color = Color( 0, 0, 0, 0.901961 )
 
-[node name="BorderColor" type="ColorRect" parent="."]
+[node name="WoodPanelUi" parent="." instance=ExtResource( 4 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -158.0
-margin_top = -63.0
-margin_right = 158.0
-margin_bottom = 109.0
-color = Color( 0.501961, 0.501961, 0.501961, 1 )
-
-[node name="BorderColor2" type="ColorRect" parent="BorderColor"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 1.0
-margin_top = 1.0
-margin_right = -1.0
-margin_bottom = -1.0
-color = Color( 0.0901961, 0.0901961, 0.0901961, 1 )
+margin_left = -162.5
+margin_top = -93.5
+margin_right = 162.5
+margin_bottom = 101.5
 
 [node name="Title" type="Label" parent="."]
 anchor_left = 0.5
@@ -50,9 +41,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -74.0
-margin_top = -51.0
+margin_top = -75.0
 margin_right = 74.0
-margin_bottom = -31.0
+margin_bottom = -55.0
 custom_colors/font_color = Color( 0.694118, 0.694118, 0.694118, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 1 )
@@ -65,10 +56,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -116.0
-margin_top = -9.0
-margin_right = 116.0
-margin_bottom = 87.0
+margin_left = -140.0
+margin_top = -40.0
+margin_right = 140.0
+margin_bottom = 72.0
 custom_constants/separation = 20
 alignment = 1
 
@@ -79,25 +70,25 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 0.0
 margin_top = 0.0
-margin_right = 64.0
-margin_bottom = 96.0
+margin_right = 80.0
+margin_bottom = 112.0
 
 [node name="Card2" parent="HBox" instance=ExtResource( 1 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 84.0
+margin_left = 100.0
 margin_top = 0.0
-margin_right = 148.0
-margin_bottom = 96.0
+margin_right = 180.0
+margin_bottom = 112.0
 
 [node name="Card3" parent="HBox" instance=ExtResource( 1 )]
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 168.0
+margin_left = 200.0
 margin_top = 0.0
-margin_right = 232.0
-margin_bottom = 96.0
+margin_right = 280.0
+margin_bottom = 112.0

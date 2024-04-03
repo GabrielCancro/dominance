@@ -23,7 +23,7 @@ focus_mode = 0
 flat = true
 script = ExtResource( 3 )
 
-[node name="BorderColor" type="ColorRect" parent="."]
+[node name="OldBorderColor" type="ColorRect" parent="."]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -32,6 +32,20 @@ margin_top = -2.0
 margin_right = 2.0
 margin_bottom = 2.0
 color = Color( 0.164706, 0.196078, 0.27451, 1 )
+
+[node name="BorderColor" type="TextureRect" parent="."]
+visible = false
+modulate = Color( 0.403922, 0.415686, 0.568627, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = -2.0
+margin_right = 9.0
+margin_bottom = 2.0
+rect_min_size = Vector2( 15, 15 )
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
 
 [node name="StashIco" type="TextureRect" parent="."]
 anchor_right = 1.0
