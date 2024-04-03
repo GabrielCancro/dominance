@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://prefabs/Upgrade.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://assets/descriptor_m.png" type="Texture" id=3]
+[ext_resource path="res://assets/ui/ui_btn_bg_1.png" type="Texture" id=3]
 [ext_resource path="res://scenes/Upgrade.gd" type="Script" id=4]
 [ext_resource path="res://assets/sun.png" type="Texture" id=5]
 [ext_resource path="res://prefabs/Transition.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/sfx/ambient.mp3" type="AudioStream" id=7]
+[ext_resource path="res://assets/bg_wood.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -42,6 +43,35 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
+
+[node name="TextureRect2" type="TextureRect" parent="Background"]
+modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -300.0
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 7
+
+[node name="TextureRect3" type="TextureRect" parent="Background"]
+modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 150.0
+margin_bottom = -150.0
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 7
+flip_v = true
+
+[node name="TextureRect4" type="TextureRect" parent="Background"]
+modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 300.0
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 7
 
 [node name="StopMouse" type="ColorRect" parent="Background"]
 anchor_right = 1.0
@@ -90,9 +120,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -29.0
-margin_top = -150.0
-margin_right = -4.0
-margin_bottom = -125.0
+margin_top = -154.0
+margin_right = 6.0
+margin_bottom = -119.0
 texture = ExtResource( 5 )
 expand = true
 
@@ -207,10 +237,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 132.0
-margin_top = 21.0
-margin_right = 149.0
-margin_bottom = 38.0
+margin_left = 128.0
+margin_top = 17.5
+margin_right = 152.0
+margin_bottom = 41.5
 texture = ExtResource( 5 )
 expand = true
 
@@ -242,15 +272,12 @@ custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
 custom_fonts/font = SubResource( 3 )
 flat = true
 
-[node name="Panel" type="NinePatchRect" parent="btn_menu"]
+[node name="BgButton1" type="TextureRect" parent="btn_menu"]
+modulate = Color( 0.92549, 0.92549, 0.92549, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 32, 32 )
-patch_margin_left = 13
-patch_margin_top = 19
-patch_margin_right = 13
-patch_margin_bottom = 19
+expand = true
 
 [node name="Label" type="Label" parent="btn_menu"]
 anchor_right = 1.0
