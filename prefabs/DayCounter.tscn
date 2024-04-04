@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/font/AbyssinicaSIL-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://prefabs/DayCounter.gd" type="Script" id=3]
 [ext_resource path="res://assets/ui/ui_flag2.png" type="Texture" id=4]
 [ext_resource path="res://assets/ui/ui_sun.png" type="Texture" id=5]
@@ -9,12 +9,13 @@
 size = 24
 outline_color = Color( 0.211765, 0.219608, 0.0470588, 1 )
 extra_spacing_bottom = -2
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
+size = 18
 outline_color = Color( 0.211765, 0.219608, 0.0470588, 1 )
 extra_spacing_bottom = -2
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 
 [node name="DayCounter" type="Control"]
 margin_right = 48.0
@@ -49,9 +50,7 @@ stretch_mode = 6
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 36.0
-margin_top = 2.0
 margin_right = 55.0
-margin_bottom = 2.0
 custom_colors/font_color = Color( 0.937988, 0.937988, 0.937988, 1 )
 custom_colors/font_color_shadow = Color( 0.184314, 0.196078, 0.266667, 1 )
 custom_constants/line_spacing = -2
@@ -65,9 +64,9 @@ autowrap = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 37.0
-margin_top = 41.0
+margin_top = 36.0
 margin_right = 53.0
-margin_bottom = 7.0
+margin_bottom = 5.0
 custom_colors/font_color = Color( 0.792157, 0.792157, 0.792157, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 2 )
@@ -80,9 +79,9 @@ autowrap = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 38.0
-margin_top = 30.0
+margin_top = 25.0
 margin_right = 54.0
-margin_bottom = -4.0
+margin_bottom = -6.0
 custom_colors/font_color = Color( 0.792157, 0.792157, 0.792157, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 2 )

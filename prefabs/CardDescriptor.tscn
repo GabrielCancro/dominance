@@ -2,7 +2,7 @@
 
 [ext_resource path="res://prefabs/CardDescriptor.gd" type="Script" id=1]
 [ext_resource path="res://assets/descriptor_m.png" type="Texture" id=2]
-[ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/font/AbyssinicaSIL-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/ui/ui_arrow.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
@@ -49,6 +49,7 @@ margin_left = 8.0
 margin_right = -8.0
 margin_bottom = -4.0
 custom_colors/font_color = Color( 0.937988, 0.937988, 0.937988, 1 )
+custom_colors/font_color_shadow = Color( 0.134232, 0.191834, 0.296875, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 1 )
 text = "Invoca un soldado que defendera tu castillo hasta la muerte, esto es una larga descripcióon para ver el limite"
