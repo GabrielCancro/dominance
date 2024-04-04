@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/ui/ui_btn_bg_1.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://assets/sun.png" type="Texture" id=14]
 [ext_resource path="res://assets/sfx/ambient.mp3" type="AudioStream" id=15]
 [ext_resource path="res://prefabs/PathBattles.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/font/AbyssinicaSIL-Regular.ttf" type="DynamicFontData" id=17]
 
 [sub_resource type="DynamicFont" id=2]
 size = 20
@@ -26,18 +27,19 @@ size = 20
 outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
 extra_spacing_top = 1
 extra_spacing_bottom = 1
-font_data = ExtResource( 1 )
+font_data = ExtResource( 17 )
 
 [sub_resource type="DynamicFont" id=4]
+size = 20
 outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
 extra_spacing_bottom = -2
-font_data = ExtResource( 1 )
+font_data = ExtResource( 17 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 22
 outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
 extra_spacing_bottom = -2
-font_data = ExtResource( 1 )
+font_data = ExtResource( 17 )
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -267,11 +269,11 @@ autowrap = true
 modulate = Color( 0.72549, 0.72549, 0.72549, 1 )
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -87.0
+margin_left = -119.0
 margin_top = 17.0
-margin_right = 51.0
+margin_right = 19.0
 margin_bottom = 61.0
-rect_scale = Vector2( 0.5, 0.5 )
+rect_scale = Vector2( 0.75, 0.75 )
 custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
 custom_fonts/font = SubResource( 2 )
 flat = true
@@ -323,9 +325,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -25.0
+margin_left = -27.0
 margin_top = 34.0
-margin_right = 3.0
+margin_right = 1.0
 margin_bottom = 62.0
 texture = ExtResource( 14 )
 expand = true
@@ -333,10 +335,10 @@ expand = true
 [node name="Label" type="Label" parent="Upg"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -5.0
-margin_top = 75.0
-margin_right = 26.0
-margin_bottom = 89.0
+margin_left = -3.0
+margin_top = 72.0
+margin_right = 28.0
+margin_bottom = 91.0
 custom_colors/font_color = Color( 0.776471, 0.823529, 0.145098, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 4 )
