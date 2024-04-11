@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/font/AbyssinicaSIL-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://prefabs/DayCounter.gd" type="Script" id=3]
@@ -17,13 +17,21 @@ outline_color = Color( 0.211765, 0.219608, 0.0470588, 1 )
 extra_spacing_bottom = -2
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=3]
+size = 31
+outline_size = 1
+outline_color = Color( 0.101961, 0.129412, 0.227451, 1 )
+extra_spacing_bottom = -2
+font_data = ExtResource( 2 )
+
 [node name="DayCounter" type="Control"]
-margin_right = 48.0
-margin_bottom = 48.0
+margin_right = 70.0
+margin_bottom = 70.0
 rect_pivot_offset = Vector2( 48, 24 )
 script = ExtResource( 3 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
@@ -35,6 +43,7 @@ expand = true
 stretch_mode = 6
 
 [node name="Image" type="TextureRect" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 15.0
@@ -47,6 +56,7 @@ expand = true
 stretch_mode = 6
 
 [node name="Label" type="Label" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 36.0
@@ -61,6 +71,7 @@ valign = 1
 autowrap = true
 
 [node name="Label2" type="Label" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 37.0
@@ -76,6 +87,7 @@ valign = 1
 autowrap = true
 
 [node name="Label3" type="Label" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 38.0
@@ -86,6 +98,28 @@ custom_colors/font_color = Color( 0.792157, 0.792157, 0.792157, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 2 )
 text = "----"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+value = 25.0
+texture_under = ExtResource( 5 )
+texture_progress = ExtResource( 5 )
+fill_mode = 3
+tint_under = Color( 0, 0.337255, 1, 1 )
+nine_patch_stretch = true
+
+[node name="Label4" type="Label" parent="TextureProgress"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0.776471, 0.776471, 0.776471, 1 )
+custom_colors/font_color_shadow = Color( 0.184314, 0.196078, 0.266667, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 3 )
+text = "1"
 align = 1
 valign = 1
 autowrap = true

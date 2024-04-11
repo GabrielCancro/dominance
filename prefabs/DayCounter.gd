@@ -18,6 +18,9 @@ func add_day():
 	create_no_created_monsters()
 	add_rand_enemies()
 	$Label.text = str(day)
+	$TextureProgress/Label4.text = str(max_days-day)
+	$TextureProgress.max_value = max_days
+	$TextureProgress.value = day
 
 func create_no_created_monsters():
 	var new_no_created_monsters = []
