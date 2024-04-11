@@ -67,3 +67,8 @@ func scaled_from(node):
 	var start_scale = node.rect_scale
 	tween.interpolate_property(node,"rect_scale",node.rect_scale*1.2,start_scale,.4,Tween.TRANS_QUAD,Tween.EASE_IN)
 	tween.start()
+
+func spark_light(pos):
+	var node = preload("res://prefabs/effects/fx_shine_light.tscn").instance()
+	get_node("/root").add_child(node)
+	node.rect_position = pos

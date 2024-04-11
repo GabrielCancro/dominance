@@ -45,5 +45,5 @@ func on_upgrades_click():
 	get_tree().change_scene("res://scenes/Upgrade.tscn")
 
 func update_upgrades_button():
-	$Upg.visible = (Saves.savedData.level>1 || Saves.savedData.days>0) 
+	#$Upg.visible = (Saves.savedData.level>1 || Saves.savedData.days>0) 
 	$Upg/Label.text = str(Saves.savedData.days)

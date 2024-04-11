@@ -6,7 +6,7 @@ var default_data = {
 	"resume":null,
 	"language":"en",
 	"level":1,
-	"days":0,
+	"days":100,
 	"fullscreen": true
 }
 var savedData = {}
@@ -43,4 +43,5 @@ func now_date():
 func clear_data():
 	savedData = default_data.duplicate(true)
 	save_store_data()
-	get_tree().quit()
+	get_tree().change_scene("res://scenes/Splash.tscn")
+	#get_tree().quit()
