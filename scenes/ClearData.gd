@@ -17,4 +17,4 @@ func on_yes():
 
 func on_no():
 	Sounds.play_sound("button1")
-	get_tree().change_scene("res://scenes/Menu.tscn")
+	get_tree().change_scene("res://scenes/Options.tscn")

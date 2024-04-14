@@ -52,8 +52,8 @@ script = ExtResource( 3 )
 [node name="Title" type="TextureRect" parent="."]
 modulate = Color( 0.92549, 0.92549, 0.92549, 1 )
 anchor_right = 1.0
-margin_top = 24.0
-margin_bottom = 144.0
+margin_top = 28.0
+margin_bottom = 177.0
 texture = ExtResource( 11 )
 expand = true
 stretch_mode = 6
@@ -148,10 +148,10 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -70.0
-margin_top = -49.5
+margin_top = -5.5
 margin_right = 70.0
-margin_bottom = 201.5
-custom_constants/vseparation = -3
+margin_bottom = 245.5
+custom_constants/vseparation = 6
 
 [node name="btn1" type="Button" parent="VBox"]
 margin_right = 140.0
@@ -181,9 +181,9 @@ valign = 1
 autowrap = true
 
 [node name="btn2" type="Button" parent="VBox"]
-margin_top = 62.0
+margin_top = 71.0
 margin_right = 140.0
-margin_bottom = 127.0
+margin_bottom = 136.0
 rect_min_size = Vector2( 140, 65 )
 focus_mode = 0
 custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
@@ -203,13 +203,14 @@ anchor_bottom = 1.0
 custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 3 )
-text = "Lenguaje
-ingles"
+text = "Options"
 align = 1
 valign = 1
 autowrap = true
 
 [node name="btn3" type="Button" parent="VBox"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
 margin_top = 124.0
 margin_right = 140.0
 margin_bottom = 189.0
@@ -238,9 +239,9 @@ valign = 1
 autowrap = true
 
 [node name="btn4" type="Button" parent="VBox"]
-margin_top = 186.0
+margin_top = 142.0
 margin_right = 140.0
-margin_bottom = 251.0
+margin_bottom = 207.0
 rect_min_size = Vector2( 140, 65 )
 focus_mode = 0
 custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
@@ -261,37 +262,6 @@ custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 3 )
 text = "Salir"
-align = 1
-valign = 1
-autowrap = true
-
-[node name="btn_clear" type="Button" parent="."]
-modulate = Color( 0.72549, 0.72549, 0.72549, 1 )
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -119.0
-margin_top = 17.0
-margin_right = 19.0
-margin_bottom = 61.0
-rect_scale = Vector2( 0.75, 0.75 )
-custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
-custom_fonts/font = SubResource( 2 )
-flat = true
-
-[node name="BgButton1" type="TextureRect" parent="btn_clear"]
-modulate = Color( 0.92549, 0.92549, 0.92549, 1 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 2 )
-expand = true
-
-[node name="Label" type="Label" parent="btn_clear"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
-custom_constants/line_spacing = -2
-custom_fonts/font = SubResource( 3 )
-text = "clear data"
 align = 1
 valign = 1
 autowrap = true

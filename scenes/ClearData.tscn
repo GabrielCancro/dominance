@@ -27,9 +27,10 @@ size = 20
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=4]
+size = 20
 outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
 extra_spacing_bottom = -2
-font_data = ExtResource( 2 )
+font_data = ExtResource( 5 )
 
 [node name="ClearData" type="Control"]
 anchor_right = 1.0
@@ -141,10 +142,12 @@ patch_margin_bottom = 19
 [node name="Label" type="Label" parent="btn_yes"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -1.0
+margin_bottom = -1.0
 custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 4 )
-text = "yes"
+text = "Yes"
 align = 1
 valign = 1
 autowrap = true
@@ -188,10 +191,12 @@ patch_margin_bottom = 19
 [node name="Label" type="Label" parent="btn_no"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -1.0
+margin_bottom = -1.0
 custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 4 )
-text = "no"
+text = "No"
 align = 1
 valign = 1
 autowrap = true
