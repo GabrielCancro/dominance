@@ -15,7 +15,6 @@ func localizate():
 	$VBox/btn2/Label.text = Lang.get_string("menu_options")
 	#$VBox/btn3/Label.text = Lang.get_string("menu_fullscreen")
 	$VBox/btn4/Label.text = Lang.get_string("menu_quit")
-	$btn_clear/Label.text = Lang.get_string("title_clear_data")
 	$PathBattles.update_level()
 
 func on_click_button(code):

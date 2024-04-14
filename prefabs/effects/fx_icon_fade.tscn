@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/ico_cards/chest.png" type="Texture" id=1]
+[ext_resource path="res://prefabs/effects/fx_icon_fade.gd" type="Script" id=2]
+
+[node name="fx_icon_fade" type="TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -294.0
+margin_top = 20.0
+margin_right = -224.0
+margin_bottom = 90.0
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]
