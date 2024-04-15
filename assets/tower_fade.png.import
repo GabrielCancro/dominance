@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bg_card.png-d3d69c4d9ec621151f69e0381b513169.stex"
+path="res://.import/tower_fade.png-d1fdf430de7f40e93e8a798d9cc8e70b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/upgrades/bg_card.png"
-dest_files=[ "res://.import/bg_card.png-d3d69c4d9ec621151f69e0381b513169.stex" ]
+source_file="res://assets/tower_fade.png"
+dest_files=[ "res://.import/tower_fade.png-d1fdf430de7f40e93e8a798d9cc8e70b.stex" ]
 
 [params]
 

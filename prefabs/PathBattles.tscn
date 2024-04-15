@@ -79,6 +79,7 @@ margin_bottom = 16.0
 texture = ExtResource( 2 )
 
 [node name="LabelInvasion" type="Label" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -77.0

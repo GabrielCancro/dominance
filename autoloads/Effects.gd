@@ -72,3 +72,13 @@ func spark_light(pos):
 	var node = preload("res://prefabs/effects/fx_shine_light.tscn").instance()
 	get_node("/root").add_child(node)
 	node.rect_position = pos
+
+func fx_add_enemy(node):
+	node.modulate.a = 0
+	yield(get_tree().create_timer(.1),"timeout")
+	var start_pos = node.rect_global_position + Vector2(50,0)
+	var end_pos = node.rect_global_position
+	tween.interpolate_property(node,"rect_global_position",start_pos,end_pos,.5,Tween.TRANS_QUAD,Tween.EASE_OUT)
+	tween.interpolate_property(node,"modulate:a",0,1,.5,Tween.TRANS_QUAD,Tween.EASE_OUT)
+	tween.start()
+	

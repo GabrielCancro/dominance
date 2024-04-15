@@ -36,6 +36,7 @@ func get_grid_node(pos):
 
 func add_unit(type,x,y):
 	var unit = UnitManager.create_new_unit(type)
+	if x==8: Effects.fx_add_enemy(unit)
 	$Units.add_child(unit)
 	unit.map_position = Vector2(x,y)
 	unit.rect_global_position = get_grid_node(unit.map_position).rect_global_position

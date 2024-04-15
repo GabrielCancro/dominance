@@ -15,6 +15,8 @@ var Texts = {
 	"menu_fullscreen":{"es":"Pantalla\ncompleta","en":"Fullscreen"},
 	"menu_quit":{"es":"Salir","en":"Quit"},
 	"menu_options":{"es":"Opciones","en":"Options"},
+	"menu_upgrades":{"es":"Mejoras","en":"Upgrades"},
+	"menu_invasion":{"es":"Invasión","en":"Invasion"},
 	"lose_game":{"es":"Fuiste derrotado","en":"You were defeated"},
 	"win_game":{"es":"Has resistido","en":"You have survived"},
 	"exit_battle_title":{"es":"Abandonar partida","en":"Retreat from battle"},
@@ -29,7 +31,7 @@ var Texts = {
 		"en":"If you delete your saved data you will lose all your progress and improvements.\nAre you sure you want to do this?"
 	},
 	"end_battle":{"es":"Batalla final","en":"Last Battle"},
-	"endless_mode":{"es":"Modo infinito","en":"Endless mode"},
+	"endless_mode":{"es":"Sinfin","en":"Endless"},
 	
 	"back_to_main":{"es":"Volver al menu","en":"Back to menu"},
 	"start":{"es":"Comenzar","en":"Start"},
