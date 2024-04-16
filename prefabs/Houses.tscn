@@ -5,6 +5,7 @@
 [ext_resource path="res://assets/font/AbyssinicaSIL-Regular.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=2]
+size = 18
 outline_color = Color( 0.0196078, 0.0196078, 0.0196078, 1 )
 extra_spacing_bottom = -5
 font_data = ExtResource( 3 )
@@ -99,14 +100,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -25.5
-margin_top = -17.0
-margin_right = 25.5
-margin_bottom = 6.0
-custom_colors/font_color = Color( 0.662745, 0.662745, 0.662745, 1 )
+margin_left = -19.5
+margin_top = -24.0
+margin_right = 31.5
+margin_bottom = -1.0
+custom_colors/font_color = Color( 0.882353, 1, 0.913725, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 2 )
-text = "MAX"
+text = "max"
 align = 1
 valign = 1
 

@@ -7,7 +7,7 @@ var images = ["chest","explode","gold","house","market","militia","thundre","sol
 func _ready():
 	randomize()
 	modulate.a = 0
-	yield(get_tree().create_timer(.1),"timeout")
+	yield(get_tree().create_timer(1.5),"timeout")
 	start_position = rect_global_position
 	play_new_ico()
 

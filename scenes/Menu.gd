@@ -13,6 +13,21 @@ func _ready():
 	$InvasionUIButton/Label.text = str(Saves.savedData.level)
 	if Saves.savedData.level>5: 
 		$InvasionUIButton/Label.text = Lang.get_string("endless_mode")+" "+str(Saves.savedData.level-5)
+	if Global.main_menu_never_showed==true: first_play_effects()
+
+func first_play_effects():
+	Global.main_menu_never_showed = false
+	$UpgradesUIButton.modulate.a = 0
+	$InvasionUIButton.modulate.a = 0
+	$Title.modulate.a = 0
+	$VBox.modulate.a = 0
+	yield(get_tree().create_timer(.5),"timeout")
+	Effects.appear_from_bottom($Title)
+	yield(get_tree().create_timer(1.0),"timeout")
+	Effects.appear_from_bottom($UpgradesUIButton)
+	Effects.appear_from_bottom($InvasionUIButton)
+	yield(get_tree().create_timer(.5),"timeout")
+	Effects.appear_from_bottom($VBox)
 
 func localizate():
 	$VBox/btn1/Label.text = Lang.get_string("menu_start_game")
@@ -36,9 +51,15 @@ func on_click_button(code):
 		get_tree().quit()
 
 func on_upgrades_click():
-	print("CLICK UPGRADES")
-	Sounds.play_sound("button1")
-	get_tree().change_scene("res://scenes/Upgrade.tscn")
+	if Saves.savedData.level==1 && Saves.savedData.days == 0:
+		$UpgradesUIButton.disabled = true
+		Effects.shake($UpgradesUIButton/Label)
+		yield(get_tree().create_timer(.8),"timeout")
+		$UpgradesUIButton.disabled = false
+	else:
+		print("CLICK UPGRADES")
+		Sounds.play_sound("button1")
+		get_tree().change_scene("res://scenes/Upgrade.tscn")
 
 func on_invasion_click():
 	$InvasionUIButton.disabled = true

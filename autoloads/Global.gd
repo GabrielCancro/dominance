@@ -2,6 +2,7 @@ extends Node
 
 var StopMouseNode
 var amount = 0
+var main_menu_never_showed = true
 signal end_magic
 
 func _ready():

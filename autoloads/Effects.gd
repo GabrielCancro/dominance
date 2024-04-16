@@ -50,6 +50,7 @@ func shake(node,power=2,time=.5):
 		node.rect_position = ini_pos + Vector2(rand_range(-power,power),rand_range(-power/2,power/2))
 		time -= .025
 		yield(get_tree().create_timer(.025),"timeout")
+	node.rect_position = ini_pos
 
 func colorization(node,color):
 	var start_color = node.modulate
@@ -82,3 +83,9 @@ func fx_add_enemy(node):
 	tween.interpolate_property(node,"modulate:a",0,1,.5,Tween.TRANS_QUAD,Tween.EASE_OUT)
 	tween.start()
 	
+func appear_from_bottom(node):
+	var start_pos = node.rect_global_position + Vector2(0,+20)
+	var end_pos = node.rect_global_position
+	tween.interpolate_property(node,"rect_global_position",start_pos,end_pos,1,Tween.TRANS_QUAD,Tween.EASE_OUT)
+	tween.interpolate_property(node,"modulate:a",0,1,1,Tween.TRANS_QUAD,Tween.EASE_OUT)
+	tween.start()
