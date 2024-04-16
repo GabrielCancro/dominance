@@ -12,7 +12,7 @@ func _ready():
 	$BtnMarket.connect("button_down",self,"on_click_market")
 	Global.set_stop_mouse(true)
 	$EndTurn.modulate = Color(1,1,1,.7)
-	$EndTurn/Label.text = Lang.get_string("end_turn_button")
+	$EndTurn/BorderColor/Label.text = Lang.get_string("end_turn_button")
 	Effects.add_mouse_focuser($EndTurn,$EndTurn/BorderColor)
 	$RegionBottom/DiscardSlot/Label.text = Lang.get_string("discards_slot")
 

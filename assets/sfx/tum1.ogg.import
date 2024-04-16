@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/tum1.ogg-e2d9c12d7d35a0de37a5656a9fa591bc.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/tum1.ogg"
+dest_files=[ "res://.import/tum1.ogg-e2d9c12d7d35a0de37a5656a9fa591bc.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

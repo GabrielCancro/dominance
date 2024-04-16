@@ -37,8 +37,10 @@ func on_mouse_entered(upg_node):
 	current_selected = upg_node
 	upg_node.select()
 	$Descriptor.visible = true
+	$Descriptor/LabelCost.visible = true
 	$Descriptor/Label.text = UpgradeData.get_upg_data(upg_node.code).desc
 	$Descriptor/LabelCost.text = str(UpgradeData.get_upg_data(upg_node.code).cost)
+	if Saves.savedData.upgrades.find(upg_node.code)!=-1: $Descriptor/LabelCost.visible = false
 
 func on_mouse_exited(upg_node):
 	if(!is_instance_valid(upg_node) || upg_node.modulate.a<1): return

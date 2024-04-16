@@ -282,8 +282,12 @@ margin_right = 2.0
 margin_bottom = -30.0
 color = Color( 0.164706, 0.196078, 0.27451, 1 )
 
-[node name="BorderColor" type="TextureRect" parent="EndTurn"]
+[node name="BorderColor" type="Control" parent="EndTurn"]
 visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="BorderColor" type="TextureRect" parent="EndTurn/BorderColor"]
 modulate = Color( 0.27451, 0.317647, 1, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -295,28 +299,27 @@ texture = ExtResource( 23 )
 expand = true
 stretch_mode = 5
 
+[node name="Label" type="Label" parent="EndTurn/BorderColor"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -53.5
+margin_top = -33.0
+margin_right = 56.5
+margin_bottom = -3.0
+custom_colors/font_color = Color( 0.67451, 0.701961, 0.823529, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "Finalizar Turno"
+align = 1
+autowrap = true
+
 [node name="Campfire" type="TextureRect" parent="EndTurn"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 23 )
 expand = true
 stretch_mode = 5
-
-[node name="Label" type="Label" parent="EndTurn"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -55.0
-margin_top = -45.0
-margin_right = 55.0
-margin_bottom = -8.0
-custom_colors/font_color = Color( 0.695313, 0.695313, 0.695313, 1 )
-custom_fonts/font = SubResource( 8 )
-text = "Finalizar Turn"
-align = 1
-valign = 1
-autowrap = true
 
 [node name="QuitGame" type="Button" parent="."]
 margin_left = 21.0

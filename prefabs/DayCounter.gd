@@ -7,9 +7,10 @@ var no_created_monsters = []
 
 func _ready():
 	level = Saves.savedData.level
-	max_days = 20 + (level-1)*5
-	if max_days>40: max_days = 40
-	$Label2.text = str(max_days)
+	max_days = 21 + (level-1)*5
+	if max_days>41: max_days = 41
+	$TextureProgress/Label4.text = str(max_days-1)
+	$TextureProgress.value = 0
 
 func add_day():
 	Effects.scaled_from($Image)

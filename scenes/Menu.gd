@@ -27,12 +27,14 @@ func first_play_effects():
 	$InvasionUIButton.modulate.a = 0
 	$Title.modulate.a = 0
 	$VBox.modulate.a = 0
+	$VBox.visible = false
 	yield(get_tree().create_timer(.5),"timeout")
 	Effects.appear_from_bottom($Title)
 	yield(get_tree().create_timer(1.0),"timeout")
 	Effects.appear_from_bottom($UpgradesUIButton)
 	Effects.appear_from_bottom($InvasionUIButton)
 	yield(get_tree().create_timer(.5),"timeout")
+	$VBox.visible = true
 	Effects.appear_from_bottom($VBox)
 
 func localizate():
@@ -64,5 +66,6 @@ func on_upgrades_click():
 func on_invasion_click():
 	$InvasionUIButton.disabled = true
 	Effects.scaled_from($VBox/btn1)
+	Sounds.play_sound("tum1")
 	yield(get_tree().create_timer(.5),"timeout")
 	$InvasionUIButton.disabled = false
