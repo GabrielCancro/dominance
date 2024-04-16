@@ -13,9 +13,15 @@ func _ready():
 	$InvasionUIButton/Label.text = str(Saves.savedData.level)
 	if Saves.savedData.level>5: 
 		$InvasionUIButton/Label.text = Lang.get_string("endless_mode")+" "+str(Saves.savedData.level-5)
-	if Global.main_menu_never_showed==true: first_play_effects()
+	if Saves.savedData.level==1 && Saves.savedData.days == 0:
+		$UpgradesUIButton.visible = false
+		$InvasionUIButton.visible = false
+		$BG/TextureRect.rect_position += Vector2(30,170)
+		$BG/TextureRect2.rect_position += Vector2(-30,170)
+	first_play_effects()
 
 func first_play_effects():
+	if !Global.main_menu_never_showed: return
 	Global.main_menu_never_showed = false
 	$UpgradesUIButton.modulate.a = 0
 	$InvasionUIButton.modulate.a = 0
@@ -51,15 +57,9 @@ func on_click_button(code):
 		get_tree().quit()
 
 func on_upgrades_click():
-	if Saves.savedData.level==1 && Saves.savedData.days == 0:
-		$UpgradesUIButton.disabled = true
-		Effects.shake($UpgradesUIButton/Label)
-		yield(get_tree().create_timer(.8),"timeout")
-		$UpgradesUIButton.disabled = false
-	else:
-		print("CLICK UPGRADES")
-		Sounds.play_sound("button1")
-		get_tree().change_scene("res://scenes/Upgrade.tscn")
+	print("CLICK UPGRADES")
+	Sounds.play_sound("button1")
+	get_tree().change_scene("res://scenes/Upgrade.tscn")
 
 func on_invasion_click():
 	$InvasionUIButton.disabled = true

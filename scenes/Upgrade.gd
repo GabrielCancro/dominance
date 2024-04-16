@@ -51,7 +51,10 @@ func on_button_down(upg_node):
 	if(Saves.savedData.upgrades.find(upg_node.code)!=-1): return
 	if(upg_node.modulate.a<1): return
 	if(current_selected!=upg_node): return
-	if(Saves.savedData.days<UpgradeData.get_upg_data(upg_node.code).cost): return
+	if(Saves.savedData.days<UpgradeData.get_upg_data(upg_node.code).cost): 
+		Effects.shake($lbl_days)
+		Sounds.play_sound("fail1")
+		return
 	Saves.savedData.days -= UpgradeData.get_upg_data(upg_node.code).cost
 	UpgradeData.add_upgrade(upg_node.code)
 	Saves.savedData.upgrades_unlocked.erase(upg_node.code)
