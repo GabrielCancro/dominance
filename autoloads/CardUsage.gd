@@ -114,7 +114,6 @@ func use_card_house(card_node):
 	emit_signal("end_usage")
 
 func use_card_chest(card_node):
-	var gold = 0
 	yield(get_tree().create_timer(.4),"timeout")
 	for i in CardData.hand_cards.size():
 		var c = CardData.hand_cards[i]

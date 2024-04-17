@@ -2,7 +2,7 @@ extends TextureRect
 
 var start_position
 var mov = 100
-var images = ["chest","explode","gold","house","market","militia","thundre","soldier","wind"]
+var images = ["chest","explode","gold1","house","market","militia","thundre","soldier","wind"]
 
 func _ready():
 	randomize()
