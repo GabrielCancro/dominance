@@ -39,6 +39,7 @@ var Texts = {
 	"points":{"es":"Puntos","en":"Points"},
 	"upgrades":{"es":"Mejoras","en":"Upgrades"},
 	"need_houses":{"es":"Faltan Casas","en":"Need Houses"},
+	"max_houses":{"es":"Máximo Alcanzado","en":"Max Builded"},
 	
 	"card_soldier_name":{"es":"Soldado","en":"Soldier"},
 	"card_soldier_desc":{"es":

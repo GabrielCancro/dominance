@@ -114,6 +114,12 @@ func use_card_thundre(card_node):
 	yield(th,"end_magic")
 	emit_signal("end_usage")
 
+func warning_card_house(card_node):
+	if get_node("/root/Game/Houses").is_max():
+		card_node.set_warning("max_houses")
+	else: 
+		card_node.set_warning(null)
+
 func condition_card_house(card_node):
 	if get_node("/root/Game/Houses").is_max():
 		get_node("/root/Game/Houses").show_max_house()
