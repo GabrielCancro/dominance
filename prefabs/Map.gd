@@ -41,6 +41,7 @@ func add_unit(type,x,y):
 	unit.map_position = Vector2(x,y)
 	unit.rect_global_position = get_grid_node(unit.map_position).rect_global_position
 	unit.get_node("UnitArea").connect("button_down",self,"on_unit_click",[unit])
+	get_node("/root/Game/Houses")._update_houses()
 	return unit
 
 func add_enemy_rnd_line(type):

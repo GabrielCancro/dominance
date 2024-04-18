@@ -6,7 +6,8 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 18
-outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+outline_size = 2
+outline_color = Color( 0.301961, 0.301961, 0.415686, 1 )
 extra_spacing_bottom = -2
 font_data = ExtResource( 2 )
 
@@ -29,10 +30,9 @@ stretch_mode = 6
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -111.0
-margin_bottom = -73.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+margin_top = -109.0
+margin_bottom = -71.0
+custom_colors/font_color = Color( 0.848953, 0.848953, 0.921875, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 1 )
 text = "30/30"

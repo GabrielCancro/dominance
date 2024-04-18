@@ -37,6 +37,7 @@ func damage(dam):
 	if data.hp<=0:
 		is_dead = true 
 		yield(get_tree().create_timer(.5),"timeout")
+		get_node("/root/Game/Houses")._update_houses(false,1)
 		Effects.disappear(self)
 
 func update_hp(show=false):
