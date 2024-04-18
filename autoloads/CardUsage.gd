@@ -6,6 +6,11 @@ func _ready():
 	pass # Replace with function body.
 
 #Todos los usos deben demorar al menos 0.1, sino se bloquea el manager de cartas
+func warning_card_soldier(card_node):
+	var h = get_node("/root/Game/Houses").amount
+	var u = get_node("/root/Game/Houses").units
+	print("SOLDIER CARD WARNING!!! ",u,"/",h)
+
 func condition_card_soldier(card_node):
 	var cn_units = get_node("/root/Game/Map").get_units_amount_team(1)
 	var cn_houses = get_node("/root/Game/Houses").amount
@@ -19,6 +24,11 @@ func use_card_soldier(card_node):
 	get_node("/root/Game/Map").show_create_unit_ui(card_node.data.code)
 	yield(get_node("/root/Game/Map"),"unit_created")
 	emit_signal("end_usage")
+
+func warning_card_militia(card_node):
+	var h = get_node("/root/Game/Houses").amount
+	var u = get_node("/root/Game/Houses").units
+	print("SOLDIER CARD WARNING!!! ",u,"/",h)
 
 func condition_card_militia(card_node):
 	return condition_card_soldier(card_node)

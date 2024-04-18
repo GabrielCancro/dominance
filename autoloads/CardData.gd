@@ -64,6 +64,7 @@ func _card_deck_to_hand():
 			new_card.set_data( DeckNode.pull_card() )
 			hand_cards[i] = new_card
 			Effects.move_to(new_card,HandBoxNode.get_child(i).rect_global_position)
+			update_cards_warnings()
 			return new_card
 	return null
 
@@ -104,6 +105,7 @@ func use_card(card_node):
 				hand_cards[hand_cards.find(card_node)] = null
 				DiscardNode.add_card(code)
 	yield(get_tree().create_timer(.4),"timeout")
+	update_cards_warnings()
 	Global.set_stop_mouse(false)
 
 func burn_card(card_node):
@@ -120,3 +122,9 @@ func burn_card(card_node):
 			TempGoldNode.add_gold(1)
 			break
 	Global.set_stop_mouse(false)
+
+func update_cards_warnings():
+	for card in hand_cards:
+		if !is_instance_valid(card): continue
+		if(CardUsage.has_method("warning_card_"+card.data.code)): 
+			CardUsage.call("warning_card_"+card.data.code,card)

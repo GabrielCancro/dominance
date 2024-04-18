@@ -1,6 +1,7 @@
 extends Control
 
 var amount = 1
+var units = 0
 
 func _ready():
 	$LowHouseLabel.visible = false
@@ -17,8 +18,8 @@ func add_house():
 
 func _update_houses(fx=false,delay=0):
 	if delay>0: yield(get_tree().create_timer(delay),"timeout")
-	var cn_units = get_node("/root/Game/Map").get_units_amount_team(1)
-	$MaxLabel.text = str(cn_units)+"/"+str(amount)
+	units = get_node("/root/Game/Map").get_units_amount_team(1)
+	$MaxLabel.text = str(units)+"/"+str(amount)
 	var last
 	for h in $Builds.get_children():
 		h.visible = (h.get_index()<amount)
