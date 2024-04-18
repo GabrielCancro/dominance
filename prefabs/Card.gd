@@ -13,6 +13,7 @@ func _ready():
 	$BurnArea.connect("button_down",self,"on_click_burn")
 	$BurnColor.visible = false
 	$BorderColor.visible = false
+	set_warning()
 
 func set_data(_code):
 	data = CardData.get_card_data(_code)
@@ -62,3 +63,7 @@ func set_enable_card(val):
 
 func set_usable_card(val):
 	is_usable = val
+
+func set_warning(text_code=null):
+	$Warning.visible = (text_code!=null)
+	if $Warning.visible: $Warning.text = Lang.get_string(text_code)

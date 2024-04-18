@@ -9,7 +9,8 @@ func _ready():
 func warning_card_soldier(card_node):
 	var h = get_node("/root/Game/Houses").amount
 	var u = get_node("/root/Game/Houses").units
-	print("SOLDIER CARD WARNING!!! ",u,"/",h)
+	if u>=h: card_node.set_warning("need_houses")
+	else: card_node.set_warning(null)
 
 func condition_card_soldier(card_node):
 	var cn_units = get_node("/root/Game/Map").get_units_amount_team(1)
@@ -28,7 +29,8 @@ func use_card_soldier(card_node):
 func warning_card_militia(card_node):
 	var h = get_node("/root/Game/Houses").amount
 	var u = get_node("/root/Game/Houses").units
-	print("SOLDIER CARD WARNING!!! ",u,"/",h)
+	if u>=h: card_node.set_warning("need_houses")
+	else: card_node.set_warning(null)
 
 func condition_card_militia(card_node):
 	return condition_card_soldier(card_node)

@@ -38,6 +38,7 @@ var Texts = {
 	"ok":{"es":"Ok","en":"Ok"},
 	"points":{"es":"Puntos","en":"Points"},
 	"upgrades":{"es":"Mejoras","en":"Upgrades"},
+	"need_houses":{"es":"Faltan Casas","en":"Need Houses"},
 	
 	"card_soldier_name":{"es":"Soldado","en":"Soldier"},
 	"card_soldier_desc":{"es":
