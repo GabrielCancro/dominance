@@ -46,7 +46,7 @@ custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 1 )
 text = "Gabriel Cancro
 &	
-Leonardo Rodriguez"
+Leonel Rodriguez"
 align = 1
 valign = 1
 autowrap = true
