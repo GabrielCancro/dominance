@@ -61,7 +61,6 @@ func use_card_teasure(card_node):
 func use_card_wind(card_node):
 	yield(get_tree().create_timer(.4),"timeout")
 	randomize()
-	emit_signal("end_usage")
 	for u in get_node("/root/Game/Map/Units").get_children():
 		if u.data.team==1: continue
 		if u.map_position.x>=8: continue
@@ -69,7 +68,7 @@ func use_card_wind(card_node):
 		Effects.shine(u)
 		var th = preload("res://prefabs/magics/MagicWind.tscn").instance()
 		get_node("/root/Game/Map").add_child(th)
-		th.start_magic(u)		
+		th.start_magic(u)
 		yield(get_tree().create_timer(.4),"timeout")
 		if(randf()<.50): 
 			get_node("/root/Game/Map").move_to(u,u.map_position+Vector2(1,0))
