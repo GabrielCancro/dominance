@@ -65,7 +65,8 @@ func on_button_down(upg_node):
 	Saves.save_store_data()
 	Sounds.play_sound("button1")
 	
-	Effects.spark_light(upg_node.rect_global_position+upg_node.rect_size/2)
+	##Effects.spark_light(upg_node.rect_global_position+upg_node.rect_size/2)
+	Effects.rectangle_shine_fx(upg_node)
 	$lbl_days.text = str(Saves.savedData.days)
 	yield(get_tree().create_timer(.8),"timeout")
 	update_ui()

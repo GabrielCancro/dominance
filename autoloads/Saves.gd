@@ -21,7 +21,7 @@ func save_store_data():
 	file.close()
 	print("SAVE ",savedData)
 
-func load_store_data():      
+func load_store_data():     
 	var file = File.new()
 	file.open("user://store_app_data.res", File.READ)
 	var loaded_data = str2var(file.get_as_text())
@@ -29,6 +29,7 @@ func load_store_data():
 	#if(loaded_data && loaded_data.size()!=savedData.size()): loaded_data = null
 	if(!loaded_data): 
 		loaded_data = default_data.duplicate(true)
+		if("es" in OS.get_locale()): loaded_data.language = "es"
 		save_store_data()
 	savedData = loaded_data
 	if !savedData.has("level"): savedData.level = 1

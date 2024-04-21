@@ -8,7 +8,9 @@ func _ready():
 	Global.StopMouseNode = $StopMouse
 	$EndTurn.connect("button_down",self,"on_end_turn")
 	$QuitGame.connect("button_down",self,"on_quit_game")
+	Effects.add_mouse_focuser($QuitGame,$QuitGame/BorderColor)
 	$HelpGame.connect("button_down",self,"on_help_game")
+	Effects.add_mouse_focuser($HelpGame,$HelpGame/BorderColor)
 	$BtnMarket.connect("button_down",self,"on_click_market")
 	Global.set_stop_mouse(true)
 	$EndTurn.modulate = Color(1,1,1,.7)

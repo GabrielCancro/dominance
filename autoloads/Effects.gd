@@ -36,6 +36,7 @@ func to_scale(node,to=1):
 	tween.start()
 
 func add_mouse_focuser(btn,border_node):
+	border_node.visible = false
 	btn.connect("mouse_entered",self,"on_mouse_focuser",[border_node,true])
 	btn.connect("mouse_exited",self,"on_mouse_focuser",[border_node,false])
 
@@ -73,6 +74,11 @@ func spark_light(pos):
 	var node = preload("res://prefabs/effects/fx_shine_light.tscn").instance()
 	get_node("/root").add_child(node)
 	node.rect_position = pos
+
+func rectangle_shine_fx(node):
+	var fx = preload("res://prefabs/effects/fx_rect_light.tscn").instance()
+	get_node("/root").add_child(fx)
+	fx.set_effect(node)
 
 func fx_add_enemy(node):
 	node.modulate.a = 0

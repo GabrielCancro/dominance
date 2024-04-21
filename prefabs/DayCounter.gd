@@ -14,7 +14,9 @@ func _ready():
 
 func add_day():
 	Effects.scaled_from($Image)
-	if day>=max_days: return
+	if day>=max_days: 
+		$TextureProgress/Label4.text = ""
+		return
 	day += 1
 	create_no_created_monsters()
 	add_rand_enemies()
