@@ -105,7 +105,8 @@ autowrap = true
 [node name="TextureProgress" type="TextureProgress" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-value = 25.0
+rect_pivot_offset = Vector2( 35, 36 )
+value = 100.0
 texture_under = ExtResource( 5 )
 texture_progress = ExtResource( 5 )
 fill_mode = 3

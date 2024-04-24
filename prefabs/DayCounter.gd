@@ -10,10 +10,10 @@ func _ready():
 	max_days = 21 + (level-1)*5
 	if max_days>41: max_days = 41
 	$TextureProgress/Label4.text = str(max_days-1)
-	$TextureProgress.value = 0
+	$TextureProgress.value = 9999
 
 func add_day():
-	Effects.scaled_from($Image)
+	Effects.scaled_from($TextureProgress)
 	if day>=max_days: 
 		$TextureProgress/Label4.text = ""
 		return
@@ -23,7 +23,7 @@ func add_day():
 	$Label.text = str(day)
 	$TextureProgress/Label4.text = str(max_days-day)
 	$TextureProgress.max_value = max_days
-	$TextureProgress.value = day
+	#$TextureProgress.value = day
 
 func create_no_created_monsters():
 	var new_no_created_monsters = []
