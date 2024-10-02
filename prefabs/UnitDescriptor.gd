@@ -16,6 +16,7 @@ func set_target(unit_node):
 	rect_global_position.y -= 70
 
 func show_panel():
+	visible = true
 	$Tween.remove_all()
 	$Tween.interpolate_property(self,"modulate:a",modulate.a,1,.2)
 	$Tween.start()
@@ -25,3 +26,4 @@ func hide_panel():
 	$Tween.interpolate_property(self,"modulate:a",modulate.a,0,.2)
 	$Tween.start()
 	yield($Tween,"tween_all_completed")
+	visible = false
