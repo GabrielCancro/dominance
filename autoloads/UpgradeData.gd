@@ -28,7 +28,7 @@ func get_non_obtained_upgrades():
 func get_upg_data(code):
 	var data = UPGRADES[code]
 	data["desc"] = Lang.get_string(code)
-	data["texture"] = load("res://assets/upgrades/"+code+".png")
+	data["texture"] = load("res://assets/upgrades/"+code+".jpg")
 	return data
 
 func get_amount_unobtained():

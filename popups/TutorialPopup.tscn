@@ -6,7 +6,7 @@
 [ext_resource path="res://popups/TutorialPopup.gd" type="Script" id=4]
 [ext_resource path="res://assets/descriptor_m.png" type="Texture" id=5]
 [ext_resource path="res://assets/sun.png" type="Texture" id=6]
-[ext_resource path="res://assets/ico_cards/market.png" type="Texture" id=7]
+[ext_resource path="res://assets/card_m.png" type="Texture" id=7]
 [ext_resource path="res://assets/ui/ui_btn_bg_1.png" type="Texture" id=8]
 [ext_resource path="res://popups/WoodPanelUI.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/font/Anton-Regular.ttf" type="DynamicFontData" id=10]
@@ -106,10 +106,21 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="Panel/Label1"]
-margin_left = -60.5
-margin_top = -9.5
-margin_right = -10.5
-margin_bottom = 40.5
+margin_left = -60.0
+margin_top = -14.0
+margin_right = -25.0
+margin_bottom = 36.0
+rect_rotation = -2.01232
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/Label1"]
+margin_left = -44.0
+margin_top = -6.0
+margin_right = -9.0
+margin_bottom = 44.0
+rect_rotation = 5.29539
 texture = ExtResource( 7 )
 expand = true
 stretch_mode = 6

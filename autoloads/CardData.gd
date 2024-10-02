@@ -29,7 +29,7 @@ signal burn_card(code)
 
 func _ready():
 	#INITIALIZE CARDS
-	for c in Cards: c["ico"] = load("res://assets/ico_cards/"+c["code"]+".png")
+	for c in Cards: c["ico"] = load("res://assets/ico_cards/"+c["code"]+".jpg")
 
 func init_card_manager():
 	hand_cards = [null,null,null,null,null]

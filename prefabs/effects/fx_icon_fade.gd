@@ -14,7 +14,7 @@ func _ready():
 func play_new_ico():
 	$Tween.remove_all()
 	yield(get_tree().create_timer(rand_range(0,.5)),"timeout")
-	texture = load("res://assets/ico_cards/"+images[randi()%images.size()]+".png")
+	texture = load("res://assets/ico_cards/"+images[randi()%images.size()]+".jpg")
 	rect_global_position = start_position
 	var to_pos = start_position + Vector2(rand_range(-mov,mov),rand_range(-mov,mov))
 	$Tween.interpolate_property(self,"modulate:a",0,.5,1,Tween.TRANS_QUAD,Tween.EASE_IN_OUT,0)

@@ -23,16 +23,16 @@ outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
 extra_spacing_bottom = -2
 font_data = ExtResource( 8 )
 
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 2 )
+
 [sub_resource type="DynamicFont" id=5]
 size = 18
 outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
 extra_spacing_top = 1
 extra_spacing_bottom = 1
 font_data = ExtResource( 8 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 20
-font_data = ExtResource( 2 )
 
 [node name="Upgrade" type="Control"]
 anchor_right = 1.0
@@ -60,9 +60,9 @@ autowrap = true
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -3.0
-margin_top = 85.0
+margin_top = 81.0
 margin_right = 28.0
-margin_bottom = 104.0
+margin_bottom = 100.0
 custom_colors/font_color = Color( 0.870588, 0.929412, 0.12549, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 4 )
@@ -88,118 +88,73 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -192.0
-margin_top = -101.0
-margin_right = 192.0
-margin_bottom = 43.0
-custom_constants/vseparation = 16
-custom_constants/hseparation = 16
+margin_left = -252.0
+margin_top = -107.0
+margin_right = 252.0
+margin_bottom = 91.0
+custom_constants/vseparation = 6
+custom_constants/hseparation = 6
 columns = 5
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="upg1" parent="Grid" instance=ExtResource( 1 )]
+margin_right = 96.0
+margin_bottom = 96.0
 
 [node name="upg2" parent="Grid" instance=ExtResource( 1 )]
-margin_left = 80.0
-margin_right = 144.0
+margin_left = 102.0
+margin_right = 198.0
+margin_bottom = 96.0
 
 [node name="upg3" parent="Grid" instance=ExtResource( 1 )]
-margin_left = 160.0
-margin_right = 224.0
+margin_left = 204.0
+margin_right = 300.0
+margin_bottom = 96.0
 
 [node name="upg4" parent="Grid" instance=ExtResource( 1 )]
-margin_left = 240.0
-margin_right = 304.0
+margin_left = 306.0
+margin_right = 402.0
+margin_bottom = 96.0
 
 [node name="upg5" parent="Grid" instance=ExtResource( 1 )]
-margin_left = 320.0
-margin_right = 384.0
+margin_left = 408.0
+margin_right = 504.0
+margin_bottom = 96.0
 
 [node name="upg6" parent="Grid" instance=ExtResource( 1 )]
-margin_top = 80.0
-margin_bottom = 144.0
+margin_top = 102.0
+margin_right = 96.0
+margin_bottom = 198.0
 
 [node name="upg7" parent="Grid" instance=ExtResource( 1 )]
-margin_left = 80.0
-margin_top = 80.0
-margin_right = 144.0
-margin_bottom = 144.0
+margin_left = 102.0
+margin_top = 102.0
+margin_right = 198.0
+margin_bottom = 198.0
 focus_mode = 2
 
 [node name="upg8" parent="Grid" instance=ExtResource( 1 )]
-margin_left = 160.0
-margin_top = 80.0
-margin_right = 224.0
-margin_bottom = 144.0
+margin_left = 204.0
+margin_top = 102.0
+margin_right = 300.0
+margin_bottom = 198.0
 focus_mode = 2
 
 [node name="upg9" parent="Grid" instance=ExtResource( 1 )]
-margin_left = 240.0
-margin_top = 80.0
-margin_right = 304.0
-margin_bottom = 144.0
+margin_left = 306.0
+margin_top = 102.0
+margin_right = 402.0
+margin_bottom = 198.0
 focus_mode = 2
 
 [node name="upg10" parent="Grid" instance=ExtResource( 1 )]
-margin_left = 320.0
-margin_top = 80.0
-margin_right = 384.0
-margin_bottom = 144.0
+margin_left = 408.0
+margin_top = 102.0
+margin_right = 504.0
+margin_bottom = 198.0
 focus_mode = 2
-
-[node name="Descriptor" type="ColorRect" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -198.0
-margin_top = 59.5
-margin_right = 198.0
-margin_bottom = 126.5
-color = Color( 0.0980392, 0.109804, 0.12549, 1 )
-
-[node name="Label" type="Label" parent="Descriptor"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 5.0
-margin_right = -5.0
-custom_colors/font_color = Color( 0.807843, 0.807843, 0.807843, 1 )
-custom_constants/line_spacing = -2
-custom_fonts/font = SubResource( 5 )
-text = "comienzas la partida con 3 monedas en tu cofre que podras usar en cualquier turnoodras usar en cualquier "
-align = 1
-valign = 1
-autowrap = true
-
-[node name="LabelCost" type="Label" parent="Descriptor"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = 152.0
-margin_top = 55.5
-margin_right = 183.0
-margin_bottom = 72.5
-custom_colors/font_color = Color( 0.733333, 0.776471, 0.203922, 1 )
-custom_constants/line_spacing = -2
-custom_fonts/font = SubResource( 4 )
-text = "30"
-align = 1
-valign = 1
-autowrap = true
-
-[node name="TextureRect" type="TextureRect" parent="Descriptor/LabelCost"]
-modulate = Color( 0.92549, 0.92549, 0.92549, 1 )
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -36.5
-margin_top = -11.0
-margin_right = -11.5
-margin_bottom = 14.0
-texture = ExtResource( 5 )
-expand = true
 
 [node name="btn_menu" type="Button" parent="."]
 anchor_left = 0.5
@@ -235,6 +190,60 @@ text = "Volver al menu"
 align = 1
 valign = 1
 autowrap = true
+
+[node name="Descriptor" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -198.0
+margin_top = 107.0
+margin_right = 198.0
+margin_bottom = 204.0
+color = Color( 0.0980392, 0.109804, 0.12549, 1 )
+
+[node name="Label" type="Label" parent="Descriptor"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = -4.0
+margin_right = -5.0
+margin_bottom = -4.0
+custom_colors/font_color = Color( 0.807843, 0.807843, 0.807843, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 5 )
+text = "comienzas la partida con 3 monedas en tu cofre que podras usar en cualquier turnoodras usar en cualquier "
+align = 1
+valign = 1
+autowrap = true
+
+[node name="LabelCost" type="Label" parent="Descriptor"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 165.0
+margin_top = 74.5
+margin_right = 196.0
+margin_bottom = 93.5
+custom_colors/font_color = Color( 0.733333, 0.776471, 0.203922, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 4 )
+text = "30"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="Descriptor/LabelCost"]
+modulate = Color( 0.92549, 0.92549, 0.92549, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -36.5
+margin_top = -11.0
+margin_right = -11.5
+margin_bottom = 14.0
+texture = ExtResource( 5 )
+expand = true
 
 [node name="Transition" parent="." instance=ExtResource( 6 )]
 visible = false
