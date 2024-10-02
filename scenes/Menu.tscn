@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/ui/ui_btn_bg_1.png" type="Texture" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://assets/font/Anton-Regular.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/tower_fade.png" type="Texture" id=5]
 [ext_resource path="res://assets/sun_fade_gray.png" type="Texture" id=6]
-[ext_resource path="res://prefabs/effects/fx_icon_fade.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/campfire_fade.png" type="Texture" id=8]
 [ext_resource path="res://popups/WoodPanelUI.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/Title.png" type="Texture" id=11]
@@ -52,29 +51,6 @@ rect_pivot_offset = Vector2( -202, -322 )
 script = ExtResource( 3 )
 
 [node name="WoodPanelUi" parent="." instance=ExtResource( 9 )]
-
-[node name="BG" type="Control" parent="."]
-modulate = Color( 0.431373, 0.431373, 0.431373, 1 )
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -400.0
-margin_top = -225.0
-margin_right = 400.0
-margin_bottom = 225.0
-
-[node name="TextureRect" parent="BG" instance=ExtResource( 7 )]
-margin_left = 18.0
-margin_top = 33.0
-margin_right = 168.0
-margin_bottom = 183.0
-
-[node name="TextureRect2" parent="BG" instance=ExtResource( 7 )]
-margin_left = 629.0
-margin_top = 35.0
-margin_right = 779.0
-margin_bottom = 185.0
 
 [node name="Title" type="TextureRect" parent="."]
 modulate = Color( 0.92549, 0.92549, 0.92549, 1 )
@@ -408,7 +384,7 @@ margin_bottom = -9.0
 custom_colors/font_color = Color( 0.643137, 0.643137, 0.643137, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 5 )
-text = "v0.022"
+text = "v0.023"
 align = 2
 valign = 1
 autowrap = true
