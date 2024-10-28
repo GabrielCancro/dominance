@@ -66,7 +66,7 @@ func on_quit_game():
 	$ExitBattlePopup.show_popup()
 
 func on_help_game():
-	$TutorialPopup.visible = true
+	$TutorialPopup.show_tuto(0)
 
 func check_win():
 	if $DayCounter.day>=$DayCounter.max_days && $Map.get_units_amount_team(2)<=0:

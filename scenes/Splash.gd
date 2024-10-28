@@ -18,7 +18,8 @@ func _ready():
 	tween.start()
 	
 	yield(get_tree().create_timer(7),"timeout")
-	get_tree().change_scene("res://scenes/Menu.tscn")
+	on_skip()
 
 func on_skip():
-	get_tree().change_scene("res://scenes/Menu.tscn")
+	if Global.demo: get_tree().change_scene("res://scenes/DemoMenu.tscn")
+	else: get_tree().change_scene("res://scenes/Menu.tscn")

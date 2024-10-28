@@ -21,6 +21,10 @@ func show_popup():
 
 	Effects.to_alpha(self,1)
 	visible = true
+	
+	if Global.demo:
+		$Label2.visible = false
+		$lbl_days.visible = false
 
 func on_back():
 	Sounds.play_sound("button1")
@@ -30,4 +34,5 @@ func on_quit():
 	Saves.savedData.days += days
 	Saves.save_store_data()
 	Sounds.play_sound("button1")
-	get_tree().change_scene("res://scenes/Menu.tscn")
+	if Global.demo: get_tree().change_scene("res://scenes/DemoMenu.tscn")
+	else: get_tree().change_scene("res://scenes/Menu.tscn")

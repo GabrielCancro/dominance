@@ -61,20 +61,21 @@ texture = ExtResource( 11 )
 expand = true
 stretch_mode = 6
 
-[node name="VBox" type="GridContainer" parent="."]
+[node name="VBox" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -70.0
-margin_top = -36.0
+margin_top = -73.0
 margin_right = 70.0
-margin_bottom = 185.0
-custom_constants/vseparation = 13
+margin_bottom = 219.0
+alignment = 1
 
 [node name="btn1" type="Button" parent="VBox"]
+margin_top = 44.0
 margin_right = 140.0
-margin_bottom = 65.0
+margin_bottom = 109.0
 rect_min_size = Vector2( 140, 65 )
 rect_pivot_offset = Vector2( 70, 33 )
 focus_mode = 0
@@ -101,9 +102,9 @@ valign = 1
 autowrap = true
 
 [node name="btn2" type="Button" parent="VBox"]
-margin_top = 78.0
+margin_top = 113.0
 margin_right = 140.0
-margin_bottom = 143.0
+margin_bottom = 178.0
 rect_min_size = Vector2( 140, 65 )
 focus_mode = 0
 custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
@@ -130,10 +131,9 @@ autowrap = true
 
 [node name="btn3" type="Button" parent="VBox"]
 visible = false
-modulate = Color( 1, 1, 1, 0 )
-margin_top = 124.0
+margin_top = 182.0
 margin_right = 140.0
-margin_bottom = 189.0
+margin_bottom = 247.0
 rect_min_size = Vector2( 140, 65 )
 focus_mode = 0
 custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
@@ -141,7 +141,6 @@ custom_fonts/font = SubResource( 2 )
 flat = true
 
 [node name="BgButton1" type="TextureRect" parent="VBox/btn3"]
-modulate = Color( 0.92549, 0.92549, 0.92549, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 2 )
@@ -159,9 +158,9 @@ valign = 1
 autowrap = true
 
 [node name="btn4" type="Button" parent="VBox"]
-margin_top = 156.0
+margin_top = 182.0
 margin_right = 140.0
-margin_bottom = 221.0
+margin_bottom = 247.0
 rect_min_size = Vector2( 140, 65 )
 focus_mode = 0
 custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )

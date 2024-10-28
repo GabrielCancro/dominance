@@ -15,6 +15,9 @@ func _ready():
 		gameStarted = true
 		visible = false
 
+func show_tuto(val):
+	visible = true
+
 func on_click():
 	Sounds.play_sound("button1")
 	if !gameStarted: get_node("/root/Game").start_game()
