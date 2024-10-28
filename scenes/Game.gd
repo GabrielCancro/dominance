@@ -17,6 +17,7 @@ func _ready():
 	$EndTurn/BorderColor/Label.text = Lang.get_string("end_turn_button")
 	Effects.add_mouse_focuser($EndTurn,$EndTurn/BorderColor)
 	$RegionBottom/DiscardSlot/Label.text = Lang.get_string("discards_slot")
+	start_game()
 
 func start_game():
 	CardData.init_card_manager()
@@ -25,6 +26,8 @@ func start_game():
 	yield(UpgradeData,"end_apply_upgrades")
 	yield(get_tree().create_timer(.5),"timeout")
 	start_new_turn()
+	yield(get_tree().create_timer(3.5),"timeout")
+	$TutorialPopup.show_tuto("all")
 
 func on_end_turn():
 	Sounds.play_sound("button1")
@@ -66,7 +69,7 @@ func on_quit_game():
 	$ExitBattlePopup.show_popup()
 
 func on_help_game():
-	$TutorialPopup.show_tuto(0)
+	$TutorialPopup.show_tuto("all")
 
 func check_win():
 	if $DayCounter.day>=$DayCounter.max_days && $Map.get_units_amount_team(2)<=0:
