@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/burn.png" type="Texture" id=2]
@@ -11,6 +11,17 @@
 [ext_resource path="res://popups/WoodPanelUI.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/font/Anton-Regular.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://assets/font/AbyssinicaSIL-Regular.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://assets/cuted.png" type="Texture" id=12]
+[ext_resource path="res://assets/ui/ui_arrow.png" type="Texture" id=13]
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+extra_spacing_bottom = -2
+font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -22,13 +33,10 @@ font_data = ExtResource( 10 )
 outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
 font_data = ExtResource( 11 )
 
-[sub_resource type="DynamicFont" id=3]
-size = 20
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=4]
-outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
-extra_spacing_bottom = -2
+[sub_resource type="DynamicFont" id=5]
+size = 18
+outline_size = 4
+outline_color = Color( 0.12549, 0.133333, 0.156863, 1 )
 font_data = ExtResource( 11 )
 
 [node name="Tutorial" type="Control"]
@@ -36,34 +44,32 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Panels" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.784314 )
 
-[node name="WoodPanelUi" parent="." instance=ExtResource( 9 )]
+[node name="all" type="Control" parent="Panels"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -232.5
+margin_top = -118.5
+margin_right = 232.5
+margin_bottom = 118.5
+
+[node name="WoodPanelUi" parent="Panels/all" instance=ExtResource( 9 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -244.0
-margin_top = -185.0
+margin_top = -133.0
 margin_right = 247.0
-margin_bottom = 79.0
+margin_bottom = 131.0
 
-[node name="Panel_all" type="Control" parent="."]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -232.0
-margin_top = -170.0
-margin_right = 233.0
-margin_bottom = 67.0
-
-[node name="ColorRect" type="ColorRect" parent="Panel_all"]
-visible = false
+[node name="ColorRect" type="ColorRect" parent="Panels/all"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -1.0
@@ -72,7 +78,49 @@ margin_right = 6.0
 margin_bottom = 2.0
 color = Color( 0, 0, 0, 0.478431 )
 
-[node name="Label" type="Label" parent="Panel_all"]
+[node name="btn" type="Button" parent="Panels/all"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.5
+margin_top = 100.5
+margin_right = 64.5
+margin_bottom = 150.5
+custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
+custom_fonts/font = SubResource( 3 )
+flat = true
+
+[node name="Panel" type="NinePatchRect" parent="Panels/all/btn"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 32, 32 )
+patch_margin_left = 13
+patch_margin_top = 19
+patch_margin_right = 13
+patch_margin_bottom = 19
+
+[node name="BgButton1" type="TextureRect" parent="Panels/all/btn"]
+modulate = Color( 0.92549, 0.92549, 0.92549, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Label" type="Label" parent="Panels/all/btn"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 4 )
+text = "OK"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label" type="Label" parent="Panels/all"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -134.0
@@ -87,7 +135,7 @@ align = 1
 valign = 1
 autowrap = true
 
-[node name="Label1" type="Label" parent="Panel_all"]
+[node name="Label1" type="Label" parent="Panels/all"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -106,7 +154,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="TextureRect" type="TextureRect" parent="Panel_all/Label1"]
+[node name="TextureRect" type="TextureRect" parent="Panels/all/Label1"]
 margin_left = -60.0
 margin_top = -14.0
 margin_right = -25.0
@@ -116,7 +164,7 @@ texture = ExtResource( 7 )
 expand = true
 stretch_mode = 6
 
-[node name="TextureRect2" type="TextureRect" parent="Panel_all/Label1"]
+[node name="TextureRect2" type="TextureRect" parent="Panels/all/Label1"]
 margin_left = -44.0
 margin_top = -6.0
 margin_right = -9.0
@@ -126,7 +174,7 @@ texture = ExtResource( 7 )
 expand = true
 stretch_mode = 6
 
-[node name="Label2" type="Label" parent="Panel_all"]
+[node name="Label2" type="Label" parent="Panels/all"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -145,7 +193,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="TextureRect2" type="TextureRect" parent="Panel_all/Label2"]
+[node name="TextureRect2" type="TextureRect" parent="Panels/all/Label2"]
 margin_left = -51.5
 margin_top = 3.5
 margin_right = -31.5
@@ -154,7 +202,7 @@ texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 
-[node name="TextureRect5" type="TextureRect" parent="Panel_all/Label2"]
+[node name="TextureRect5" type="TextureRect" parent="Panels/all/Label2"]
 margin_left = -60.5
 margin_top = 11.5
 margin_right = -40.5
@@ -163,7 +211,7 @@ texture = ExtResource( 3 )
 expand = true
 stretch_mode = 6
 
-[node name="TextureRect3" type="TextureRect" parent="Panel_all/Label2"]
+[node name="TextureRect3" type="TextureRect" parent="Panels/all/Label2"]
 margin_left = -46.5
 margin_top = 9.5
 margin_right = -6.5
@@ -172,7 +220,7 @@ texture = ExtResource( 2 )
 expand = true
 stretch_mode = 6
 
-[node name="Label3" type="Label" parent="Panel_all"]
+[node name="Label3" type="Label" parent="Panels/all"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -191,7 +239,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="TextureRect4" type="TextureRect" parent="Panel_all/Label3"]
+[node name="TextureRect4" type="TextureRect" parent="Panels/all/Label3"]
 margin_left = -56.5
 margin_top = -3.5
 margin_right = -16.5
@@ -200,27 +248,42 @@ texture = ExtResource( 6 )
 expand = true
 stretch_mode = 6
 
-[node name="Panel_burn" type="Control" parent="."]
+[node name="tower" type="Control" parent="Panels"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CutedTexture" type="TextureRect" parent="Panels/tower"]
+modulate = Color( 0, 0, 0, 0.862745 )
+margin_left = -1079.0
+margin_top = -681.0
+margin_right = 1298.0
+margin_bottom = 1016.0
+texture = ExtResource( 12 )
+expand = true
+
+[node name="Label1" type="Label" parent="Panels/tower"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -232.0
-margin_top = -170.0
-margin_right = 233.0
-margin_bottom = 67.0
+margin_left = -182.5
+margin_top = -129.5
+margin_right = 136.5
+margin_bottom = -20.5
+custom_colors/font_color = Color( 0.921569, 0.921569, 0.921569, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 5 )
+text = "Bienvenido a dominance!
+Esta es tu torre. Tu objetivo es defenderla y cuidarla de los monstruos."
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="ColorRect" type="ColorRect" parent="Panel_burn"]
+[node name="Label" type="Label" parent="Panels/tower"]
 visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -1.0
-margin_top = -4.0
-margin_right = 6.0
-margin_bottom = 2.0
-color = Color( 0, 0, 0, 0.478431 )
-
-[node name="Label" type="Label" parent="Panel_burn"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -134.0
@@ -235,95 +298,23 @@ align = 1
 valign = 1
 autowrap = true
 
-[node name="Label1" type="Label" parent="Panel_burn"]
+[node name="btn" type="Button" parent="Panels/tower"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -164.0
-margin_top = -42.0
-margin_right = 216.0
-margin_bottom = -10.0
-custom_colors/font_color = Color( 0.8, 0.8, 0.8, 1 )
-custom_constants/line_spacing = -2
-custom_fonts/font = SubResource( 2 )
-text = "Si no tienes oro suficiente, puede quemar una carta para obtener una moneda de oro."
-valign = 1
-autowrap = true
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureRect" type="TextureRect" parent="Panel_burn/Label1"]
-margin_left = -60.0
-margin_top = -14.0
-margin_right = -25.0
-margin_bottom = 36.0
-rect_rotation = -2.01232
-texture = ExtResource( 7 )
-expand = true
-stretch_mode = 6
-
-[node name="TextureRect2" type="TextureRect" parent="Panel_burn/Label1"]
-margin_left = -35.5
-margin_top = 11.5
-margin_right = -15.5
-margin_bottom = 31.5
-texture = ExtResource( 3 )
-expand = true
-stretch_mode = 6
-
-[node name="TextureRect5" type="TextureRect" parent="Panel_burn/Label1"]
-margin_left = -44.5
-margin_top = 19.5
-margin_right = -24.5
-margin_bottom = 39.5
-texture = ExtResource( 3 )
-expand = true
-stretch_mode = 6
-
-[node name="Label2" type="Label" parent="Panel_burn"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -172.0
-margin_top = 24.0
-margin_right = 208.0
-margin_bottom = 68.0
-custom_colors/font_color = Color( 0.8, 0.8, 0.8, 1 )
-custom_constants/line_spacing = -2
-custom_fonts/font = SubResource( 2 )
-text = "Presiona en la parte inferior de la carta, en el icono de fuego para quemarla."
-valign = 1
-autowrap = true
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TextureRect3" type="TextureRect" parent="Panel_burn/Label2"]
-margin_left = 346.0
-margin_top = 18.0
-margin_right = 407.0
-margin_bottom = 79.0
-texture = ExtResource( 2 )
-expand = true
-stretch_mode = 6
-
-[node name="btn_menu" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -64.5
-margin_top = 48.5
-margin_right = 64.5
-margin_bottom = 98.5
+margin_left = -184.0
+margin_top = -28.0
+margin_right = -109.0
+margin_bottom = 6.0
 custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
 custom_fonts/font = SubResource( 3 )
 flat = true
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Panel" type="NinePatchRect" parent="btn_menu"]
+[node name="Panel" type="NinePatchRect" parent="Panels/tower/btn"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -334,20 +325,221 @@ patch_margin_top = 19
 patch_margin_right = 13
 patch_margin_bottom = 19
 
-[node name="BgButton1" type="TextureRect" parent="btn_menu"]
+[node name="BgButton1" type="TextureRect" parent="Panels/tower/btn"]
 modulate = Color( 0.92549, 0.92549, 0.92549, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 8 )
 expand = true
 
-[node name="Label" type="Label" parent="btn_menu"]
+[node name="Label" type="Label" parent="Panels/tower/btn"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 4 )
-text = "Comenzar"
+text = "OK"
 align = 1
 valign = 1
 autowrap = true
+
+[node name="gold" type="Control" parent="Panels"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CutedTexture" type="TextureRect" parent="Panels/gold"]
+modulate = Color( 0, 0, 0, 0.862745 )
+margin_left = -315.0
+margin_top = -327.0
+margin_right = 1105.0
+margin_bottom = 1089.0
+texture = ExtResource( 12 )
+expand = true
+
+[node name="Label1" type="Label" parent="Panels/gold"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 13.0
+margin_top = -6.0
+margin_right = 332.0
+margin_bottom = 81.0
+custom_colors/font_color = Color( 0.921569, 0.921569, 0.921569, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 5 )
+text = "Te ensñaré cómo.
+¿Ves esa carta de oro? Hazle click."
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Panels/gold"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -134.0
+margin_top = -2.0
+margin_right = 134.0
+margin_bottom = 44.0
+custom_colors/font_color = Color( 0.937988, 0.937988, 0.937988, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 1 )
+text = "dominance"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="btn" type="Button" parent="Panels/gold"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -42.0
+margin_top = 91.0
+margin_right = 41.0
+margin_bottom = 207.0
+custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
+custom_fonts/font = SubResource( 3 )
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="gold2" type="Control" parent="Panels"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CutedTexture" type="TextureRect" parent="Panels/gold2"]
+modulate = Color( 0, 0, 0, 0.862745 )
+margin_left = -1032.0
+margin_top = -27.0
+margin_right = 1766.0
+margin_bottom = 612.0
+texture = ExtResource( 12 )
+expand = true
+
+[node name="Label1" type="Label" parent="Panels/gold2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -51.0
+margin_top = -70.0
+margin_right = 268.0
+margin_bottom = 17.0
+custom_colors/font_color = Color( 0.921569, 0.921569, 0.921569, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 5 )
+text = "Observa como haz ganado oro. El oro es la moneda de dominance. Con el puedes pagar todo!"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="btn" type="Button" parent="Panels/gold2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 126.0
+margin_top = 19.0
+margin_right = 201.0
+margin_bottom = 53.0
+custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
+custom_fonts/font = SubResource( 3 )
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Panel" type="NinePatchRect" parent="Panels/gold2/btn"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 32, 32 )
+patch_margin_left = 13
+patch_margin_top = 19
+patch_margin_right = 13
+patch_margin_bottom = 19
+
+[node name="BgButton1" type="TextureRect" parent="Panels/gold2/btn"]
+modulate = Color( 0.92549, 0.92549, 0.92549, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Label" type="Label" parent="Panels/gold2/btn"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 4 )
+text = "OK"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="burn" type="Control" parent="Panels"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CutedTexture" type="TextureRect" parent="Panels/burn"]
+modulate = Color( 0, 0, 0, 0.862745 )
+margin_left = -398.0
+margin_top = -328.0
+margin_right = 1022.0
+margin_bottom = 1088.0
+texture = ExtResource( 12 )
+expand = true
+
+[node name="Label1" type="Label" parent="Panels/burn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -51.0
+margin_top = -70.0
+margin_right = 268.0
+margin_bottom = 17.0
+custom_colors/font_color = Color( 0.921569, 0.921569, 0.921569, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 5 )
+text = "También puedes ganar oro quemando cartas que no nos sirvan en este momento. Ves esa carta de tesoro? Dale al icono de fuego en ella."
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="btn" type="Button" parent="Panels/burn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -76.0
+margin_top = 177.0
+margin_right = -43.0
+margin_bottom = 203.0
+custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
+custom_fonts/font = SubResource( 3 )
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="arrow" type="TextureRect" parent="Panels/burn"]
+margin_left = 380.0
+margin_top = 397.0
+margin_right = 414.0
+margin_bottom = 431.0
+rect_rotation = 89.9999
+texture = ExtResource( 13 )
+expand = true

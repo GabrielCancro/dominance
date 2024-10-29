@@ -505,7 +505,6 @@ pause_mode = 2
 visible = false
 
 [node name="TutorialPopup" parent="." instance=ExtResource( 17 )]
-visible = false
 
 [node name="Transition" parent="." instance=ExtResource( 19 )]
 visible = false
@@ -514,31 +513,3 @@ visible = false
 stream = ExtResource( 28 )
 volume_db = 1.5
 autoplay = true
-
-[node name="Control" type="Control" parent="."]
-visible = false
-modulate = Color( 1, 1, 1, 0.584314 )
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="ColorRect" type="ColorRect" parent="Control"]
-margin_right = 41.0
-margin_bottom = 448.0
-color = Color( 0, 0, 0, 1 )
-
-[node name="ColorRect3" type="ColorRect" parent="Control"]
-margin_right = 804.0
-margin_bottom = 88.0
-color = Color( 0, 0, 0, 1 )
-
-[node name="ColorRect4" type="ColorRect" parent="Control"]
-margin_top = 215.0
-margin_right = 804.0
-margin_bottom = 450.0
-color = Color( 0, 0, 0, 1 )
-
-[node name="ColorRect2" type="ColorRect" parent="Control"]
-margin_left = 175.0
-margin_right = 799.0
-margin_bottom = 448.0
-color = Color( 0, 0, 0, 1 )

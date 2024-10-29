@@ -4,6 +4,7 @@ var StopMouseNode
 var amount = 0
 var main_menu_never_showed = true
 var demo = true
+var tuto = true
 signal end_magic
 
 func _ready():
@@ -16,3 +17,7 @@ func set_stop_mouse(val):
 	if amount<0: amount = 0
 	print("STOP MOUSE ",amount)
 	StopMouseNode.visible = (amount>0)
+
+func clear_stop_mouse():
+	amount = 0
+	set_stop_mouse(false)
