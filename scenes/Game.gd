@@ -22,8 +22,9 @@ func _ready():
 func start_game():
 	CardData.init_card_manager()
 	yield(get_tree().create_timer(.5),"timeout")
-	UpgradeData.apply_upgrades()
-	yield(UpgradeData,"end_apply_upgrades")
+	if !Global.demo: 
+		UpgradeData.apply_upgrades()
+		yield(UpgradeData,"end_apply_upgrades")
 	yield(get_tree().create_timer(.5),"timeout")
 	start_new_turn()
 	yield(get_tree().create_timer(3.5),"timeout")

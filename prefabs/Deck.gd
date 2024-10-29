@@ -16,7 +16,8 @@ var cards = [
 func _ready():
 	randomize()
 	CardData.DeckNode = self
-	cards.shuffle()
+	if Saves.savedData.level==1: cards = ["militia","teasure","gold2","house","wind","wind","market","gold2","teasure","house"]
+	else: cards.shuffle()
 	update_ui()
 	connect("button_down",self,"on_click")
 
