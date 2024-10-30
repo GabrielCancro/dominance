@@ -10,8 +10,9 @@ func _ready():
 	visible = false
 	for ch in $Panels.get_children(): 
 		ch.get_node("btn").connect("button_down",self,"on_click")
-		var lb = ch.get_node_or_null("Label1")
-		if lb: lb.text = Lang.get_string("tutorial_"+ch.name)
+		if ch.name != "all":
+			var lb = ch.get_node_or_null("Label1")
+			if lb: lb.text = Lang.get_string("tutorial_"+ch.name)
 
 func _process(delta):
 	ttl += delta*3

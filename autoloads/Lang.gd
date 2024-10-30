@@ -145,7 +145,39 @@ var Texts = {
 	
 	"tutorial_tower":{
 		"es":"Bienvenido a dominance!\nEsta es tu torre. Tu objetivo es defenderla y cuidarla de los monstruos.",
-		"en":"Welcome!",
+		"en":"Welcome to dominance!\nThis is your tower. Your objective is to defend it and take care of it from monsters.",
+	},
+	"tutorial_gold":{
+		"es":"Te ensñaré cómo.\n¿Ves esa carta de oro? Hazle click.",
+		"en":"I'll show you how.\nSee that gold card? Click it.",
+	},
+	"tutorial_gold2":{
+		"es":"Observa como haz ganado oro. El oro es la moneda de dominance. Con el puedes pagar todo!",
+		"en":"See how you have earned gold. Gold is the currency of dominance. With it you can pay for everything!",
+	},
+	"tutorial_burn":{
+		"es":"También puedes ganar oro quemando cartas que no nos sirvan en este momento. Ves esa carta de tesoro? Dale al icono de fuego en ella.",
+		"en":"You can also earn gold by burning cards that are of no use to us at the moment. See that treasure card? Hit the fire icon on it.",
+	},
+	"tutorial_burn2":{
+		"es":"Cuando quemas una carta ganas una moneda. Quema esa carta de viento tambien para que podamos tener 4 monedas.",
+		"en":"When you burn a card you earn a coin. Burn that wind card too so we can have 4 coins.",
+	},
+	"tutorial_milician":{
+		"es":"Ahora que tenemos 4 monedas podemos pagar para reclutar una milicia. Has clic en la carta de milicia.",
+		"en":"Now that we have 4 coins we can pay to recruit a militia. Click on the militia card.",
+	},
+	"tutorial_turn":{
+		"es":"Cuando no tengas mas cartas que jugar, dale a la hoguera para finalizar tu turno.",
+		"en":"When you have no more cards to play, hit the bonfire to end your turn.",
+	},
+	"tutorial_enemies":{
+		"es":"Un enemigo ha aparecido. Evita que llegue a tu torre.",
+		"en":"An enemy has appeared. Prevent it from reaching your tower.",
+	},
+	"tutorial_days":{
+		"es":"Listo Guerrero! Estás preparado para combatir las oleadas de monstruos. Protege la torre hasta que el verano llegue y lograrás la victoria.",
+		"en":"Ready Warrior! You are ready to fight the waves of monsters. Protect the tower until summer comes and you will achieve victory.",
 	},
 	
 	"win_text":{

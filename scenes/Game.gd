@@ -114,7 +114,10 @@ func tutorial_sequence():
 	yield($TutorialPopup,"close_popup")
 	CardData.hand_cards[0].on_mouse_enter()
 	CardData.hand_cards[0].on_click_card()
+	CardData.hide_card_description(CardData.hand_cards[0])
 	Global.clear_stop_mouse()
+	yield(get_tree().create_timer(.1),"timeout")
+	CardData.hide_card_description(CardData.hand_cards[0])
 	yield($Map,"unit_created")
 	Global.set_stop_mouse(true)
 
