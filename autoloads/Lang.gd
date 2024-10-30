@@ -143,6 +143,11 @@ var Texts = {
 		"es":"El objetivo es resistir el paso de los dias y eliminar a todos los enemigos",
 		"en":"The objective is to resist the passing of the days and eliminate all enemies"},
 	
+	"tutorial_tower":{
+		"es":"Bienvenido a dominance!\nEsta es tu torre. Tu objetivo es defenderla y cuidarla de los monstruos.",
+		"en":"Welcome!",
+	},
+	
 	"win_text":{
 		"es":"Has resistido el ataque, es hora de reagruparse y mejorar nuestro equipamiento",
 		"en":"You have resisted the attack, it's time to regroup and upgrade our equipment"},
@@ -150,6 +155,8 @@ var Texts = {
 }
 
 func get_string(code):
+	if !code in Texts: return code
+	if !Saves.savedData.language in Texts[code]: return code+"_"+Saves.savedData.language
 	return Texts[code][Saves.savedData.language]
 
 func get_card_name(code):

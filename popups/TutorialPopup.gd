@@ -8,11 +8,16 @@ func _ready():
 	$Panels/all/Label2.text = Lang.get_string("tutorial_2")
 	$Panels/all/Label3.text = Lang.get_string("tutorial_3")
 	visible = false
-	for ch in $Panels.get_children(): ch.get_node("btn").connect("button_down",self,"on_click")
+	for ch in $Panels.get_children(): 
+		ch.get_node("btn").connect("button_down",self,"on_click")
+		var lb = ch.get_node_or_null("Label1")
+		if lb: lb.text = Lang.get_string("tutorial_"+ch.name)
 
 func _process(delta):
 	ttl += delta*3
 	$Panels/burn/arrow.rect_position.x += sin(ttl)*0.25
+	$Panels/burn2/arrow.rect_position.x += sin(ttl)*0.25
+	$Panels/milician/arrow.rect_position.y += sin(ttl)*0.25
 
 func show_tuto(code):
 	self.modulate.a = 0

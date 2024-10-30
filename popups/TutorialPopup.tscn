@@ -488,6 +488,7 @@ valign = 1
 autowrap = true
 
 [node name="burn" type="Control" parent="Panels"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -543,3 +544,355 @@ margin_bottom = 431.0
 rect_rotation = 89.9999
 texture = ExtResource( 13 )
 expand = true
+
+[node name="burn2" type="Control" parent="Panels"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CutedTexture" type="TextureRect" parent="Panels/burn2"]
+modulate = Color( 0, 0, 0, 0.862745 )
+margin_left = -231.0
+margin_top = -328.0
+margin_right = 1189.0
+margin_bottom = 1088.0
+texture = ExtResource( 12 )
+expand = true
+
+[node name="Label1" type="Label" parent="Panels/burn2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -121.0
+margin_top = -22.0
+margin_right = 198.0
+margin_bottom = 65.0
+custom_colors/font_color = Color( 0.921569, 0.921569, 0.921569, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 5 )
+text = "Cuando quemas una carta ganas una moneda. Quema esa carta de viento tambien para que podamos tener 4 monedas."
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="btn" type="Button" parent="Panels/burn2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 91.0
+margin_top = 177.0
+margin_right = 124.0
+margin_bottom = 203.0
+custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
+custom_fonts/font = SubResource( 3 )
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="arrow" type="TextureRect" parent="Panels/burn2"]
+margin_left = 547.0
+margin_top = 397.0
+margin_right = 581.0
+margin_bottom = 431.0
+rect_rotation = 89.9999
+texture = ExtResource( 13 )
+expand = true
+
+[node name="milician" type="Control" parent="Panels"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CutedTexture" type="TextureRect" parent="Panels/milician"]
+modulate = Color( 0, 0, 0, 0.862745 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -3510.0
+margin_top = -1309.0
+margin_right = 3479.0
+margin_bottom = 1657.0
+texture = ExtResource( 12 )
+expand = true
+
+[node name="Label1" type="Label" parent="Panels/milician"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -151.5
+margin_top = -67.5
+margin_right = 167.5
+margin_bottom = 19.5
+custom_colors/font_color = Color( 0.921569, 0.921569, 0.921569, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 5 )
+text = "Ahora que tenemos 4 monedas podemos pagar para reclutar una milicia. Has clic en la carta de milicia."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Panels/milician"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -134.0
+margin_top = -2.0
+margin_right = 134.0
+margin_bottom = 44.0
+custom_colors/font_color = Color( 0.937988, 0.937988, 0.937988, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 1 )
+text = "dominance"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="btn" type="Button" parent="Panels/milician"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -208.0
+margin_top = 91.0
+margin_right = -125.0
+margin_bottom = 207.0
+custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
+custom_fonts/font = SubResource( 3 )
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="arrow" type="TextureRect" parent="Panels/milician"]
+margin_left = 214.0
+margin_top = 268.0
+margin_right = 248.0
+margin_bottom = 302.0
+texture = ExtResource( 13 )
+expand = true
+
+[node name="turn" type="Control" parent="Panels"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CutedTexture" type="TextureRect" parent="Panels/turn"]
+modulate = Color( 0, 0, 0, 0.862745 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -482.0
+margin_top = -564.0
+margin_right = 1126.0
+margin_bottom = 652.0
+texture = ExtResource( 12 )
+expand = true
+
+[node name="Label1" type="Label" parent="Panels/turn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 152.0
+margin_top = -116.0
+margin_right = 355.0
+margin_bottom = -29.0
+custom_colors/font_color = Color( 0.921569, 0.921569, 0.921569, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 5 )
+text = "Cuando no tengas mas cartas que jugar, dale a la hoguera para finalizar tu turno."
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="btn" type="Button" parent="Panels/turn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 293.0
+margin_top = -3.0
+margin_right = 361.0
+margin_bottom = 77.0
+custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
+custom_fonts/font = SubResource( 3 )
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="enemies" type="Control" parent="Panels"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CutedTexture" type="TextureRect" parent="Panels/enemies"]
+modulate = Color( 0, 0, 0, 0.862745 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -777.0
+margin_top = -1060.0
+margin_right = 1262.0
+margin_bottom = 977.0
+texture = ExtResource( 12 )
+expand = true
+
+[node name="Label1" type="Label" parent="Panels/enemies"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -33.0
+margin_top = -152.0
+margin_right = 170.0
+margin_bottom = -55.0
+custom_colors/font_color = Color( 0.921569, 0.921569, 0.921569, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 5 )
+text = "Un enemigo ha aparecido. Evita que llegue a tu torre."
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="btn" type="Button" parent="Panels/enemies"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 54.0
+margin_top = -63.0
+margin_right = 129.0
+margin_bottom = -29.0
+custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
+custom_fonts/font = SubResource( 3 )
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Panel" type="NinePatchRect" parent="Panels/enemies/btn"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 32, 32 )
+patch_margin_left = 13
+patch_margin_top = 19
+patch_margin_right = 13
+patch_margin_bottom = 19
+
+[node name="BgButton1" type="TextureRect" parent="Panels/enemies/btn"]
+modulate = Color( 0.92549, 0.92549, 0.92549, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Label" type="Label" parent="Panels/enemies/btn"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 4 )
+text = "OK"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="days" type="Control" parent="Panels"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CutedTexture" type="TextureRect" parent="Panels/days"]
+modulate = Color( 0, 0, 0, 0.862745 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -495.0
+margin_top = -790.0
+margin_right = 1113.0
+margin_bottom = 426.0
+texture = ExtResource( 12 )
+expand = true
+
+[node name="Label1" type="Label" parent="Panels/days"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -183.0
+margin_top = -203.0
+margin_right = 232.0
+margin_bottom = -103.0
+custom_colors/font_color = Color( 0.921569, 0.921569, 0.921569, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 5 )
+text = "Listo Guerrero! Estás preparado para combatir las oleadas de monstruos. Protege la torre hasta que el verano llegue y lograrás la victoria."
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="btn" type="Button" parent="Panels/days"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 173.0
+margin_top = -94.0
+margin_right = 248.0
+margin_bottom = -60.0
+custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
+custom_fonts/font = SubResource( 3 )
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Panel" type="NinePatchRect" parent="Panels/days/btn"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 32, 32 )
+patch_margin_left = 13
+patch_margin_top = 19
+patch_margin_right = 13
+patch_margin_bottom = 19
+
+[node name="BgButton1" type="TextureRect" parent="Panels/days/btn"]
+modulate = Color( 0.92549, 0.92549, 0.92549, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Label" type="Label" parent="Panels/days/btn"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 4 )
+text = "OK"
+align = 1
+valign = 1
+autowrap = true

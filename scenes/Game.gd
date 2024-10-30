@@ -26,30 +26,8 @@ func start_game():
 		UpgradeData.apply_upgrades()
 		yield(UpgradeData,"end_apply_upgrades")
 	yield(get_tree().create_timer(.5),"timeout")
-	
-	if Global.tuto:
-		Global.set_stop_mouse(true)
-#		yield(get_tree().create_timer(.5),"timeout")
-#		$TutorialPopup.show_tuto("tower")
-#		yield($TutorialPopup,"close_popup")
-#		yield(get_tree().create_timer(.7),"timeout")
-#		start_new_turn()
-#		yield(get_tree().create_timer(3.7),"timeout")
-#		$TutorialPopup.show_tuto("gold")
-#		yield($TutorialPopup,"close_popup")
-#		yield(get_tree().create_timer(.3),"timeout")
-#		CardData.hand_cards[2].on_mouse_enter()
-#		CardData.hand_cards[2].on_click_card()
-		yield(get_tree().create_timer(2),"timeout")
-		$TutorialPopup.show_tuto("gold2")
-		yield($TutorialPopup,"close_popup")
-		yield(get_tree().create_timer(2),"timeout")
-		$TutorialPopup.show_tuto("burn")
-		yield($TutorialPopup,"close_popup")
-		CardData.hand_cards[1].on_mouse_burn_enter()
-		CardData.hand_cards[1].on_click_burn()
-		Global.clear_stop_mouse()
-	#$TutorialPopup.show_tuto("all")
+
+	if Global.tuto: tutorial_sequence()
 	else: start_new_turn()
 
 func on_end_turn():
@@ -99,3 +77,57 @@ func check_win():
 		$EndPopup.show_popup(true)
 		return true
 	return false
+
+func tutorial_sequence():
+	Global.set_stop_mouse(true)
+	yield(get_tree().create_timer(.5),"timeout")
+	$TutorialPopup.show_tuto("tower")
+	yield($TutorialPopup,"close_popup")
+	yield(get_tree().create_timer(.7),"timeout")
+	start_new_turn()
+
+	yield(get_tree().create_timer(3.7),"timeout")
+	$TutorialPopup.show_tuto("gold")
+	yield($TutorialPopup,"close_popup")
+	yield(get_tree().create_timer(.3),"timeout")
+	CardData.hand_cards[2].on_mouse_enter()
+	CardData.hand_cards[2].on_click_card()
+
+	yield(get_tree().create_timer(2),"timeout")
+	$TutorialPopup.show_tuto("gold2")
+	yield($TutorialPopup,"close_popup")
+	yield(get_tree().create_timer(2),"timeout")
+
+	$TutorialPopup.show_tuto("burn")
+	yield($TutorialPopup,"close_popup")
+	CardData.hand_cards[1].on_mouse_burn_enter()
+	CardData.hand_cards[1].on_click_burn()
+	yield(get_tree().create_timer(2),"timeout")
+
+	$TutorialPopup.show_tuto("burn2")
+	yield($TutorialPopup,"close_popup")
+	CardData.hand_cards[3].on_mouse_burn_enter()
+	CardData.hand_cards[3].on_click_burn()
+	yield(get_tree().create_timer(2),"timeout")
+
+	$TutorialPopup.show_tuto("milician")
+	yield($TutorialPopup,"close_popup")
+	CardData.hand_cards[0].on_mouse_enter()
+	CardData.hand_cards[0].on_click_card()
+	Global.clear_stop_mouse()
+	yield($Map,"unit_created")
+	Global.set_stop_mouse(true)
+
+	yield(get_tree().create_timer(2),"timeout")
+	$TutorialPopup.show_tuto("turn")
+	yield($TutorialPopup,"close_popup")
+	yield(get_tree().create_timer(1),"timeout")
+	on_end_turn()
+
+	yield(get_tree().create_timer(6),"timeout")
+	$TutorialPopup.show_tuto("enemies")
+	yield($TutorialPopup,"close_popup")
+
+	$TutorialPopup.show_tuto("days")
+	yield($TutorialPopup,"close_popup")
+	Global.clear_stop_mouse()

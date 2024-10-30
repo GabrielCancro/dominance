@@ -33,6 +33,7 @@ func create_no_created_monsters():
 	no_created_monsters = new_no_created_monsters
 
 func add_rand_enemies():
+	if Global.tuto && level==1 && day==2: add_enemy(["slime_small"])
 	if level==1:
 		if day%3==0: add_enemy(["slime_small"])
 	elif level==2:
