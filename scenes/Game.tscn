@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://prefabs/Stash.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefabs/Map.tscn" type="PackedScene" id=2]
@@ -28,6 +28,7 @@
 [ext_resource path="res://assets/ui/ui_quit.png" type="Texture" id=26]
 [ext_resource path="res://assets/font/AbyssinicaSIL-Regular.ttf" type="DynamicFontData" id=27]
 [ext_resource path="res://assets/sfx/music01.ogg" type="AudioStream" id=28]
+[ext_resource path="res://popups/DemoEndPopup.tscn" type="PackedScene" id=29]
 
 [sub_resource type="DynamicFont" id=7]
 size = 20
@@ -504,7 +505,11 @@ visible = false
 pause_mode = 2
 visible = false
 
+[node name="DemoEndPopup" parent="." instance=ExtResource( 29 )]
+visible = false
+
 [node name="TutorialPopup" parent="." instance=ExtResource( 17 )]
+visible = false
 
 [node name="Transition" parent="." instance=ExtResource( 19 )]
 visible = false

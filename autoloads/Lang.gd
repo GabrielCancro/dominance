@@ -183,7 +183,9 @@ var Texts = {
 	"win_text":{
 		"es":"Has resistido el ataque, es hora de reagruparse y mejorar nuestro equipamiento",
 		"en":"You have resisted the attack, it's time to regroup and upgrade our equipment"},
-
+	"end_demo_text":{
+		"es":"Gracias por jugar al DEMO de DOMINANCE, fue un trabajo dificil pero estamos contentos de que lo disfrutes! No dudes en adquirir la version completa del juego con mas cartas, niveles y sistema de mejoras!",
+		"en":""},
 }
 
 func get_string(code):
