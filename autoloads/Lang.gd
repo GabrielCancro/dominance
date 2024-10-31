@@ -184,8 +184,8 @@ var Texts = {
 		"es":"Has resistido el ataque, es hora de reagruparse y mejorar nuestro equipamiento",
 		"en":"You have resisted the attack, it's time to regroup and upgrade our equipment"},
 	"end_demo_text":{
-		"es":"Gracias por jugar al DEMO de DOMINANCE, fue un trabajo dificil pero estamos contentos de que lo disfrutes! No dudes en adquirir la version completa del juego con mas cartas, niveles y sistema de mejoras!",
-		"en":""},
+		"es":"Gracias por jugar al DEMO de DOMINANCE, fue un trabajo dificil pero estamos contentos de que lo disfrutes!\n\nNo dudes en adquirir la version completa del juego con mas cartas, niveles y sistema de mejoras!",
+		"en":"Thank you for playing the DOMINANCE DEMO, it was a difficult job but we are glad you enjoyed it!\n\nDo not hesitate to purchase the full version of the game with more cards, levels and upgrade system!"},
 }
 
 func get_string(code):

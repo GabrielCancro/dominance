@@ -118,7 +118,8 @@ func move_enemies():
 			yield(get_tree().create_timer(.6),"timeout")
 			if $Tower.hp<=0:
 				yield(get_tree().create_timer(1),"timeout")
-				get_node("../EndPopup").show_popup(false)
+				if Global.demo: get_node("../DemoEndPopup").show_popup(false)
+				else: get_node("../EndPopup").show_popup(false)
 				return
 		elif( unit_try_attack(u) ):
 			yield(get_tree().create_timer(.6),"timeout")

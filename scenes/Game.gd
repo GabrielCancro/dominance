@@ -74,7 +74,8 @@ func on_help_game():
 
 func check_win():
 	if $DayCounter.day>=$DayCounter.max_days && $Map.get_units_amount_team(2)<=0:
-		$EndPopup.show_popup(true)
+		if Global.demo: $DemoEndPopup.show_popup(true)
+		else: $EndPopup.show_popup(true)
 		return true
 	return false
 
