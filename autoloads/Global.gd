@@ -4,7 +4,7 @@ var StopMouseNode
 var amount = 0
 var main_menu_never_showed = true
 var demo = true
-var tuto = true
+var tuto = false
 signal end_magic
 
 func _ready():

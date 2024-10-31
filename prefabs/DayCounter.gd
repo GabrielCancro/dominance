@@ -7,6 +7,7 @@ var no_created_monsters = []
 
 func _ready():
 	level = Saves.savedData.level
+	Global.tuto = (level==1)
 	max_days = 21 + (level-1)*5
 	if max_days>41: max_days = 41
 	$TextureProgress/Label4.text = str(max_days-1)
@@ -33,7 +34,7 @@ func create_no_created_monsters():
 	no_created_monsters = new_no_created_monsters
 
 func add_rand_enemies():
-	if Global.tuto && level==1 && day==2: add_enemy(["slime_small"])
+	if Global.tuto && day==2: add_enemy(["slime_small"])
 	if level==1:
 		if day%3==0: add_enemy(["slime_small"])
 	elif level==2:

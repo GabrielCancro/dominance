@@ -7,7 +7,7 @@ var default_data = {
 	"language":"en",
 	"level":1,
 	"days":0,
-	"fullscreen": true
+	"fullscreen": false
 }
 var savedData = {}
 
@@ -15,13 +15,18 @@ func _ready():
 	load_store_data()
 
 func save_store_data():
+	if Global.demo: return
 	var file = File.new()
 	file.open("user://store_app_data.res", File.WRITE)
 	file.store_string(var2str(savedData))
 	file.close()
 	print("SAVE ",savedData)
 
-func load_store_data():     
+func load_store_data():    
+	if Global.demo: 
+		savedData = default_data
+		if("es" in OS.get_locale()): savedData.language = "es"
+		return 
 	var file = File.new()
 	file.open("user://store_app_data.res", File.READ)
 	var loaded_data = str2var(file.get_as_text())
