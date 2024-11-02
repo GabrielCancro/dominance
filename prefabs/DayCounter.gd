@@ -7,7 +7,7 @@ var no_created_monsters = []
 
 func _ready():
 	level = Saves.savedData.level
-	Global.tuto = (level==1)
+	Global.tuto = (level==1 && Saves.savedData.days == 0)
 	max_days = 21 + (level-1)*5
 	if max_days>41: max_days = 41
 	$TextureProgress/Label4.text = str(max_days-1)

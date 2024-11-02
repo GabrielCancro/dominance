@@ -3,7 +3,7 @@ extends Node
 var StopMouseNode
 var amount = 0
 var main_menu_never_showed = true
-var demo = true
+var demo = false
 var tuto = false
 signal end_magic
 
