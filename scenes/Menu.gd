@@ -16,8 +16,6 @@ func _ready():
 	if Saves.savedData.level==1 && Saves.savedData.days == 0:
 		$UpgradesUIButton.visible = false
 		$InvasionUIButton.visible = false
-		$BG/TextureRect.rect_position += Vector2(30,170)
-		$BG/TextureRect2.rect_position += Vector2(-30,170)
 	first_play_effects()
 
 func first_play_effects():

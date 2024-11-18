@@ -399,6 +399,7 @@ volume_db = -4.0
 autoplay = true
 
 [node name="DiferentPath" type="Control" parent="."]
+visible = false
 margin_left = 642.0
 margin_top = 412.0
 margin_right = 642.0
