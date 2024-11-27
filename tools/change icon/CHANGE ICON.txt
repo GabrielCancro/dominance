@@ -1,0 +1,12 @@
+cambiar el nombre del exe antes de cambiar el icono, luego volverle el nombre normal
+
+godot -s CreateIcon.gd customized.ico customized.png
+
+godot -s ReplaceIcon.gd customized.ico MyProject.exe
+
+para borrar el cache de los iconos
+CD /d %userprofile%\AppData\Local
+DEL IconCache.db /a
+EXIT
+
+luego reiniciar explorer.exe
