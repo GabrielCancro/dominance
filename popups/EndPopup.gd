@@ -17,8 +17,7 @@ func show_popup(win=false):
 	Saves.save_store_data()
 	if win: $Label.text = Lang.get_string( "win_game" )
 	else: $Label.text = Lang.get_string( "lose_game" )
-	$lbl_win.text = Lang.get_string( "win_text" )
-	$lbl_win.visible = win
+	$lbl_win.text = Lang.get_string( "end_battle_text" )
 	modulate.a = 0
 	Effects.to_alpha(self,1)
 	visible = true

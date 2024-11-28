@@ -13,6 +13,7 @@ var Texts = {
 	"menu_lang":{"es":"Idioma\nespanol","en":"Language\nenglish"},
 	"menu_scale":{"es":"Escalado","en":"Scale "},
 	"menu_fullscreen":{"es":"Pantalla\ncompleta","en":"Fullscreen"},
+	"menu_credits":{"es":"Creditos","en":"Credits"},
 	"menu_quit":{"es":"Salir","en":"Quit"},
 	"menu_options":{"es":"Opciones","en":"Options"},
 	"menu_upgrades":{"es":"Mejoras","en":"Upgrades"},
@@ -180,9 +181,9 @@ var Texts = {
 		"en":"Ready Warrior! You are ready to fight the waves of monsters. Protect the tower until summer comes and you will achieve victory.",
 	},
 	
-	"win_text":{
-		"es":"Has resistido el ataque, es hora de reagruparse y mejorar nuestro equipamiento",
-		"en":"You have resisted the attack, it's time to regroup and upgrade our equipment"},
+	"end_battle_text":{
+		"es":"Gracias por jugar Dominance! Puedes usar tus puntos de mejora para obtener beneficios.",
+		"en":"Thank you for playing Dominance! You can use your upgrade points to gain benefits."},
 	"end_demo_text":{
 		"es":"Gracias por jugar al DEMO de DOMINANCE, fue un trabajo dificil pero estamos contentos de que lo disfrutes!\n\nNo dudes en adquirir la version completa del juego con mas cartas, niveles y sistema de mejoras!",
 		"en":"Thank you for playing the DOMINANCE DEMO, it was a difficult job but we are glad you enjoyed it!\n\nDo not hesitate to purchase the full version of the game with more cards, levels and upgrade system!"},

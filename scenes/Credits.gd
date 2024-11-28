@@ -2,12 +2,16 @@ extends Control
 
 
 func _ready():
-	preload("res://assets/movies/pk_logo.ogv")
 	$skip.connect("button_down",self,"on_skip")
-	Saves.load_store_data()
-	if Saves.savedData.has("fullscreen"): OS.window_fullscreen = Saves.savedData.fullscreen
+	$Labels.modulate.a = 0
+	var tween = Tween.new()
+	add_child(tween)
 	yield(get_tree().create_timer(.5),"timeout")
-	$VideoPlayer.play()
+	
+	tween.interpolate_property($Labels,"modulate:a",0,1,1.5,Tween.TRANS_QUAD,Tween.EASE_OUT)
+	tween.interpolate_property($Labels,"rect_position:y",-50,0,1.5,Tween.TRANS_QUAD,Tween.EASE_OUT)
+	tween.start()
+	
 	yield(get_tree().create_timer(7),"timeout")
 	on_skip()
 

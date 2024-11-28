@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://prefabs/Upgrade.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/font/AbyssinicaSIL-Regular.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://assets/font/Anton-Regular.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://popups/WoodPanelUI.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/descriptor_m.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -19,7 +20,8 @@ font_data = ExtResource( 9 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 20
-outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+outline_size = 1
+outline_color = Color( 0.258824, 0.313726, 0.423529, 1 )
 extra_spacing_bottom = -2
 font_data = ExtResource( 8 )
 
@@ -197,19 +199,29 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -198.0
-margin_top = 107.0
+margin_top = 105.0
 margin_right = 198.0
-margin_bottom = 204.0
+margin_bottom = 213.0
 color = Color( 0.0980392, 0.109804, 0.12549, 1 )
+
+[node name="Panel" type="NinePatchRect" parent="Descriptor"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 500, 500 )
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
 
 [node name="Label" type="Label" parent="Descriptor"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 5.0
+margin_left = 12.0
 margin_top = -4.0
-margin_right = -5.0
+margin_right = -11.0
 margin_bottom = -4.0
-custom_colors/font_color = Color( 0.807843, 0.807843, 0.807843, 1 )
+custom_colors/font_color = Color( 0.890196, 0.890196, 0.890196, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 5 )
 text = "comienzas la partida con 3 monedas en tu cofre que podras usar en cualquier turnoodras usar en cualquier "
@@ -220,11 +232,11 @@ autowrap = true
 [node name="LabelCost" type="Label" parent="Descriptor"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 165.0
-margin_top = 74.5
-margin_right = 196.0
-margin_bottom = 93.5
-custom_colors/font_color = Color( 0.733333, 0.776471, 0.203922, 1 )
+margin_left = 160.0
+margin_top = 76.5
+margin_right = 191.0
+margin_bottom = 95.5
+custom_colors/font_color = Color( 0.803922, 0.854902, 0.176471, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 4 )
 text = "30"

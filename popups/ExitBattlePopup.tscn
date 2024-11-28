@@ -21,17 +21,17 @@ outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
 extra_spacing_bottom = 4
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=3]
-size = 20
-outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
-extra_spacing_bottom = -2
-font_data = ExtResource( 7 )
-
 [sub_resource type="DynamicFont" id=4]
 size = 20
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=5]
+outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+extra_spacing_bottom = -2
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 27
 outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
 extra_spacing_bottom = -2
 font_data = ExtResource( 7 )
@@ -89,35 +89,6 @@ text = "Si te retiras de esta batalla solo obtendras"
 align = 1
 valign = 1
 autowrap = true
-
-[node name="lbl_days" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -23.5
-margin_top = -47.0
-margin_right = 23.5
-margin_bottom = -33.0
-custom_colors/font_color = Color( 0.870588, 0.929412, 0.12549, 1 )
-custom_constants/line_spacing = -2
-custom_fonts/font = SubResource( 3 )
-text = "+80"
-align = 1
-valign = 1
-autowrap = true
-
-[node name="TextureRect" type="TextureRect" parent="lbl_days"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -47.5
-margin_top = -14.5
-margin_right = -17.5
-margin_bottom = 15.5
-texture = ExtResource( 1 )
-expand = true
 
 [node name="btn_continue" type="Button" parent="."]
 anchor_left = 0.5
@@ -202,3 +173,32 @@ text = "Abandonar partida"
 align = 1
 valign = 1
 autowrap = true
+
+[node name="lbl_days" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -8.5
+margin_top = -35.0
+margin_right = 38.5
+margin_bottom = -9.0
+custom_colors/font_color = Color( 0.870588, 0.929412, 0.12549, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 6 )
+text = "+80"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="lbl_days"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -66.0
+margin_top = -19.5
+margin_right = -24.0
+margin_bottom = 22.5
+texture = ExtResource( 1 )
+expand = true
