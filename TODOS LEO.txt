@@ -1,4 +1,4 @@
-VERSION 0.24
+VERSION 0.25
 
 OK-Falta una opción de ver créditos. Ahí podría ir lo que está al principio, y darle los créditos de la música a Gabi. También se puede aprovechar la pantalla para nombrar a gente externo como los que hicieron testeo o ayudaron a nivelar. Pro principalmente por la música que no se nombra en otro lado.
 
