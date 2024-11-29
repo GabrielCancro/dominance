@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/font/Anton-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://prefabs/UnitDescriptor.gd" type="Script" id=2]
+[ext_resource path="res://assets/ui/ui_icons93x93.png" type="Texture" id=3]
 [ext_resource path="res://assets/heart_m.png" type="Texture" id=5]
 [ext_resource path="res://assets/attack_m.png" type="Texture" id=6]
 [ext_resource path="res://assets/upgrade_m2.png" type="Texture" id=7]
@@ -60,7 +61,15 @@ align = 1
 valign = 1
 autowrap = true
 
+[node name="Sprite" type="Sprite" parent="atk"]
+position = Vector2( -9, 14 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+hframes = 5
+frame = 4
+
 [node name="Sword" type="TextureRect" parent="atk"]
+visible = false
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = -23.0
@@ -85,7 +94,15 @@ align = 1
 valign = 1
 autowrap = true
 
+[node name="Sprite" type="Sprite" parent="hp"]
+position = Vector2( -10, 12 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+hframes = 5
+frame = 3
+
 [node name="Heart" type="TextureRect" parent="hp"]
+visible = false
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = -23.0
