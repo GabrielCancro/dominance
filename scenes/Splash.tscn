@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/Splash.gd" type="Script" id=1]
-[ext_resource path="res://assets/movies/pk_logo.ogv" type="VideoStream" id=2]
+[ext_resource path="res://assets/movies/pkintro.webm" type="VideoStream" id=2]
 
 [node name="Splash" type="Control"]
 anchor_right = 1.0
@@ -17,6 +17,7 @@ color = Color( 0, 0, 0, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 stream = ExtResource( 2 )
+volume_db = -8.67
 
 [node name="skip" type="Button" parent="."]
 anchor_top = 1.0
@@ -24,3 +25,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -93.0
 flat = true
+
+[node name="Tween" type="Tween" parent="."]

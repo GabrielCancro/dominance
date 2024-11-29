@@ -10,7 +10,7 @@ func update_level():
 	for p in $HBoxContainer.get_children():
 		if p.get_index()%2!=0: continue
 		if p.get_index()/2<=Saves.savedData.level-1:
-			p.texture = preload("res://assets/path2.png") 
+			p.texture = preload("res://assets/upgrades/CheckFull.png") 
 	$LabelInvasion.text = "invasion: "+str(Saves.savedData.level)
 	if Saves.savedData.level==5: 
 		$LabelInvasion.text = Lang.get_string("end_battle")

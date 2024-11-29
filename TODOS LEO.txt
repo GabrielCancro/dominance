@@ -29,3 +29,5 @@ OK-El tutorial no empezó. Creo que me leyo como si tuviera partida guardada por
 OK-En la pantalla final, agrandaría las monedas ganadas y daría ahí una pista de que se pueden comprar mejoras.
 
 OK-Después en el menú principal, achicaría un poco el logo para que se despegue del borde superior de la pantalla un poco. 
+
+  -Cambiar rombos pixelados en el menu
