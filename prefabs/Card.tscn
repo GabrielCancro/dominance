@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/card_front.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/font/Anton-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://assets/font/AbyssinicaSIL-Regular.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://assets/money_outlined.png" type="Texture" id=9]
+[ext_resource path="res://assets/fx/card_burn_fx_4x4.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=2]
 extra_spacing_bottom = -5
@@ -31,6 +32,74 @@ font_data = ExtResource( 8 )
 outline_color = Color( 0.231373, 0.196078, 0.196078, 1 )
 extra_spacing_bottom = -5
 font_data = ExtResource( 1 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 137, 190 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 10 )
+region = Rect2( 137, 0, 137, 190 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 10 )
+region = Rect2( 274, 0, 137, 190 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 10 )
+region = Rect2( 411, 0, 137, 190 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 190, 137, 190 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 10 )
+region = Rect2( 137, 190, 137, 190 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 10 )
+region = Rect2( 274, 190, 137, 190 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 10 )
+region = Rect2( 411, 190, 137, 190 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 380, 137, 190 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 10 )
+region = Rect2( 137, 380, 137, 190 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 10 )
+region = Rect2( 274, 380, 137, 190 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 10 )
+region = Rect2( 411, 380, 137, 190 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 570, 137, 190 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 10 )
+region = Rect2( 137, 570, 137, 190 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 10 )
+region = Rect2( 274, 570, 137, 190 )
+
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"loop": false,
+"name": "default",
+"speed": 12.0
+} ]
 
 [node name="Card" type="Control"]
 anchor_left = 0.5
@@ -287,3 +356,9 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0 )
+
+[node name="BurnAnimSprite" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 39, 56 )
+scale = Vector2( 0.642, 0.642 )
+frames = SubResource( 21 )

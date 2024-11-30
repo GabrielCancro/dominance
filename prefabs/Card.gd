@@ -68,3 +68,20 @@ func set_usable_card(val):
 func set_warning(text_code=null):
 	$Warning.visible = (text_code!=null)
 	if $Warning.visible: $Warning.text = Lang.get_string(text_code)
+
+func animate_burn():
+	$DisableMouse.visible = true
+	$BurnAnimSprite.play("default")
+	$BurnAnimSprite.playing = true
+	$BurnAnimSprite.visible = true
+	yield(get_tree().create_timer(.2),"timeout")
+	Sounds.play_sound("burn1")
+	yield($BurnAnimSprite,"animation_finished")
+	$Ico.visible = false
+	$CardFront.visible = false
+	$Title.visible = false
+	$CostGold.visible = false
+	$BurnIco.visible = false
+	$BurnIco2.visible = false
+	$Warning.visible = false
+	Effects.to_alpha(self,0)

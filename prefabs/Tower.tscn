@@ -42,7 +42,7 @@ valign = 1
 autowrap = true
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 28, -34 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 32, -34 )
+scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 4 )
-hframes = 5
+hframes = 4

@@ -17,6 +17,7 @@ func unselect():
 
 func blu_shine():
 	$bg_shine.visible = true
+	$romb2.visible = true
 	#$bg.modulate = Color(1,1,.7,1)
 
 func on_click():

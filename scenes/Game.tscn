@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://prefabs/Stash.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefabs/Map.tscn" type="PackedScene" id=2]
@@ -26,9 +26,12 @@
 [ext_resource path="res://assets/ui/ui_flag1.png" type="Texture" id=24]
 [ext_resource path="res://assets/ui/ui_help.png" type="Texture" id=25]
 [ext_resource path="res://assets/ui/ui_quit.png" type="Texture" id=26]
+[ext_resource path="res://assets/ui/ui_quitH.png" type="Texture" id=27]
 [ext_resource path="res://assets/sfx/music01.ogg" type="AudioStream" id=28]
 [ext_resource path="res://popups/DemoEndPopup.tscn" type="PackedScene" id=29]
 [ext_resource path="res://assets/font/Anton-Regular.ttf" type="DynamicFontData" id=30]
+[ext_resource path="res://assets/ui/ui_helpH.png" type="Texture" id=31]
+[ext_resource path="res://assets/ui/ui_lateral_shadow.png" type="Texture" id=32]
 
 [sub_resource type="DynamicFont" id=7]
 size = 18
@@ -300,6 +303,7 @@ stretch_mode = 5
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 
 [node name="BorderColor" type="TextureRect" parent="EndTurn/BorderColor"]
 modulate = Color( 0.27451, 0.317647, 1, 1 )
@@ -342,6 +346,7 @@ margin_left = 21.0
 margin_top = -6.0
 margin_right = 63.0
 margin_bottom = 60.0
+focus_mode = 0
 custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
 custom_fonts/font = SubResource( 5 )
 text = "X"
@@ -350,18 +355,6 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="BorderColor" type="TextureRect" parent="QuitGame"]
-modulate = Color( 0.27451, 0.317647, 1, 1 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -18.0
-margin_top = -4.0
-margin_right = 18.0
-margin_bottom = 2.0
-texture = ExtResource( 24 )
-expand = true
-stretch_mode = 6
-
 [node name="TextureRect3" type="TextureRect" parent="QuitGame"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -369,7 +362,7 @@ texture = ExtResource( 24 )
 expand = true
 stretch_mode = 6
 
-[node name="TextureRect2" type="TextureRect" parent="QuitGame"]
+[node name="TextureRect2" type="TextureRect" parent="QuitGame/TextureRect3"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -382,11 +375,38 @@ texture = ExtResource( 26 )
 expand = true
 stretch_mode = 6
 
+[node name="BorderColor" type="TextureRect" parent="QuitGame"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -18.0
+margin_top = -4.0
+margin_right = 18.0
+margin_bottom = 2.0
+mouse_filter = 2
+texture = ExtResource( 24 )
+expand = true
+stretch_mode = 6
+
+[node name="TextureHover" type="TextureRect" parent="QuitGame/BorderColor"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -14.5
+margin_top = -4.0
+margin_right = 14.5
+margin_bottom = 24.0
+texture = ExtResource( 27 )
+expand = true
+stretch_mode = 6
+
 [node name="HelpGame" type="Button" parent="."]
 margin_left = 69.0
 margin_top = -6.0
 margin_right = 111.0
 margin_bottom = 60.0
+focus_mode = 0
 custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
 custom_fonts/font = SubResource( 5 )
 text = "X"
@@ -395,18 +415,6 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="BorderColor" type="TextureRect" parent="HelpGame"]
-modulate = Color( 0.27451, 0.317647, 1, 1 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -18.0
-margin_top = -4.0
-margin_right = 18.0
-margin_bottom = 2.0
-texture = ExtResource( 24 )
-expand = true
-stretch_mode = 6
-
 [node name="TextureRect" type="TextureRect" parent="HelpGame"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -414,7 +422,7 @@ texture = ExtResource( 24 )
 expand = true
 stretch_mode = 6
 
-[node name="TextureRect2" type="TextureRect" parent="HelpGame"]
+[node name="TextureRect2" type="TextureRect" parent="HelpGame/TextureRect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -424,6 +432,32 @@ margin_top = -5.0
 margin_right = 14.5
 margin_bottom = 23.0
 texture = ExtResource( 25 )
+expand = true
+stretch_mode = 6
+
+[node name="BorderColor" type="TextureRect" parent="HelpGame"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -18.0
+margin_top = -4.0
+margin_right = 18.0
+margin_bottom = 2.0
+mouse_filter = 2
+texture = ExtResource( 24 )
+expand = true
+stretch_mode = 6
+
+[node name="TextureHover" type="TextureRect" parent="HelpGame/BorderColor"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -14.5
+margin_top = -4.0
+margin_right = 14.5
+margin_bottom = 24.0
+texture = ExtResource( 31 )
 expand = true
 stretch_mode = 6
 
@@ -468,10 +502,10 @@ margin_right = -52.0
 margin_bottom = 73.0
 
 [node name="UnitDescriptor" parent="." instance=ExtResource( 3 )]
-margin_left = 500.0
-margin_top = 56.0
-margin_right = 564.0
-margin_bottom = 114.0
+margin_left = 545.0
+margin_top = 54.0
+margin_right = 609.0
+margin_bottom = 116.0
 
 [node name="Market" parent="." instance=ExtResource( 12 )]
 visible = false
@@ -489,11 +523,13 @@ anchor_bottom = 1.0
 color = Color( 1, 1, 1, 0 )
 
 [node name="b1" type="ColorRect" parent="StopMouse"]
+visible = false
 anchor_right = 1.0
 margin_bottom = 10.0
 color = Color( 0.188235, 0.211765, 0.337255, 1 )
 
 [node name="b2" type="ColorRect" parent="StopMouse"]
+visible = false
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -501,6 +537,7 @@ margin_left = -10.0
 color = Color( 0.188235, 0.211765, 0.337255, 1 )
 
 [node name="b3" type="ColorRect" parent="StopMouse"]
+visible = false
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -508,9 +545,30 @@ margin_top = -10.0
 color = Color( 0.188235, 0.211765, 0.337255, 1 )
 
 [node name="b4" type="ColorRect" parent="StopMouse"]
+visible = false
 anchor_bottom = 1.0
 margin_right = 10.0
 color = Color( 0.188235, 0.211765, 0.337255, 1 )
+
+[node name="L1" type="TextureRect" parent="StopMouse"]
+modulate = Color( 0.188235, 0.211765, 0.337255, 0.52549 )
+anchor_bottom = 1.0
+margin_right = 35.0
+texture = ExtResource( 32 )
+expand = true
+
+[node name="L2" type="TextureRect" parent="StopMouse"]
+modulate = Color( 0.188235, 0.211765, 0.337255, 0.52549 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -35.0
+margin_top = -225.0
+margin_bottom = 225.0
+texture = ExtResource( 32 )
+expand = true
+flip_h = true
 
 [node name="ExitBattlePopup" parent="." instance=ExtResource( 18 )]
 visible = false

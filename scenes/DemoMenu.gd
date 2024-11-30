@@ -3,6 +3,9 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	localizate()
+	Effects.simple_hover_fx($VBox/btn1)
+	Effects.simple_hover_fx($VBox/btn2)
+	Effects.simple_hover_fx($VBox/btn3)
 	$VBox/btn1.connect("button_down",self,"on_click_button",["start"])
 	$VBox/btn2.connect("button_down",self,"on_click_button",["lang"])
 	$VBox/btn3.connect("button_down",self,"on_click_button",["quit"])

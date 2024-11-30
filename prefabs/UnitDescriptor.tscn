@@ -17,7 +17,7 @@ font_data = ExtResource( 1 )
 
 [node name="UnitDescriptor" type="Control"]
 margin_right = 64.0
-margin_bottom = 58.0
+margin_bottom = 62.0
 rect_pivot_offset = Vector2( 32, 72 )
 mouse_filter = 2
 script = ExtResource( 2 )
@@ -30,7 +30,7 @@ anchor_bottom = 0.5
 margin_left = -16.0
 margin_top = 27.0
 margin_right = 16.0
-margin_bottom = 39.0
+margin_bottom = 44.0
 mouse_filter = 2
 texture = ExtResource( 8 )
 expand = true
@@ -49,10 +49,10 @@ expand = true
 [node name="Tween" type="Tween" parent="."]
 
 [node name="atk" type="Label" parent="."]
-margin_left = 28.0
-margin_top = 5.0
-margin_right = 58.0
-margin_bottom = 30.0
+margin_left = 30.0
+margin_top = 6.0
+margin_right = 60.0
+margin_bottom = 31.0
 custom_colors/font_color = Color( 0.937988, 0.937988, 0.937988, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 1 )
@@ -63,10 +63,10 @@ autowrap = true
 
 [node name="Sprite" type="Sprite" parent="atk"]
 position = Vector2( -9, 14 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 3 )
-hframes = 5
-frame = 4
+hframes = 4
+frame = 3
 
 [node name="Sword" type="TextureRect" parent="atk"]
 visible = false
@@ -82,10 +82,10 @@ expand = true
 stretch_mode = 6
 
 [node name="hp" type="Label" parent="."]
-margin_left = 28.0
-margin_top = 27.0
-margin_right = 58.0
-margin_bottom = 52.0
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 60.0
+margin_bottom = 55.0
 custom_colors/font_color = Color( 0.937988, 0.937988, 0.937988, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 1 )
@@ -95,11 +95,11 @@ valign = 1
 autowrap = true
 
 [node name="Sprite" type="Sprite" parent="hp"]
-position = Vector2( -10, 12 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( -10, 14 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 3 )
-hframes = 5
-frame = 3
+hframes = 4
+frame = 2
 
 [node name="Heart" type="TextureRect" parent="hp"]
 visible = false

@@ -2,6 +2,7 @@ extends Control
 
 
 func _ready():
+	Effects.simple_hover_fx($skip)
 	$skip.connect("button_down",self,"on_skip")
 	$Labels.modulate.a = 0
 	var tween = Tween.new()

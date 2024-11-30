@@ -3,10 +3,16 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	localizate()
+	Effects.simple_hover_fx($VBox/btn1)
+	Effects.simple_hover_fx($VBox/btn2)
+	Effects.simple_hover_fx($VBox/btn3)
+	Effects.simple_hover_fx($VBox/btn4)
 	$VBox/btn1.connect("button_down",self,"on_click_button",["start"])
 	$VBox/btn2.connect("button_down",self,"on_click_button",["options"])
 	$VBox/btn3.connect("button_down",self,"on_click_button",["credits"])
-	$VBox/btn4.connect("button_down",self,"on_click_button",["quit"])
+	$VBox/btn4.connect("button_down",self,"on_click_button",["quit"])	
+	Effects.simple_hover_fx($UpgradesUIButton)
+	Effects.simple_hover_fx($InvasionUIButton)
 	$UpgradesUIButton.connect("button_down",self,"on_upgrades_click")
 	$InvasionUIButton.connect("button_down",self,"on_invasion_click")
 	$UpgradesUIButton/Label.text = str(Saves.savedData.days)

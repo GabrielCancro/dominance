@@ -3,6 +3,8 @@ extends Control
 var days = 0
 
 func _ready():
+	Effects.simple_hover_fx($btn_continue)
+	Effects.simple_hover_fx($btn_quit)
 	$btn_continue.connect("button_down",self,"on_back")
 	$btn_quit.connect("button_down",self,"on_quit")
 	visible = false

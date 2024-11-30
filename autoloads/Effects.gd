@@ -95,3 +95,12 @@ func appear_from_bottom(node):
 	tween.interpolate_property(node,"rect_global_position",start_pos,end_pos,1,Tween.TRANS_QUAD,Tween.EASE_OUT)
 	tween.interpolate_property(node,"modulate:a",0,1,1,Tween.TRANS_QUAD,Tween.EASE_OUT)
 	tween.start()
+
+func simple_hover_fx(node):
+	node.connect("mouse_entered",self,"simple_hover_func",[node,true])
+	node.connect("mouse_exited",self,"simple_hover_func",[node,false])
+
+func simple_hover_func(node,val):
+	if val: tween.interpolate_property(node,"rect_scale",null,Vector2(1.1,1.1),.2,Tween.TRANS_QUAD,Tween.EASE_OUT)
+	else: tween.interpolate_property(node,"rect_scale",null,Vector2(1,1),.2,Tween.TRANS_QUAD,Tween.EASE_OUT)
+	tween.start()

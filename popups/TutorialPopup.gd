@@ -4,6 +4,7 @@ signal close_popup
 var ttl = 0.0
 
 func _ready():
+	for ch in $Panels.get_children(): Effects.simple_hover_fx(ch.get_node("btn"))
 	$Panels/all/Label1.text = Lang.get_string("tutorial_1")
 	$Panels/all/Label2.text = Lang.get_string("tutorial_2")
 	$Panels/all/Label3.text = Lang.get_string("tutorial_3")

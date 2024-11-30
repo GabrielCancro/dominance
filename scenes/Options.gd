@@ -2,6 +2,10 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Effects.simple_hover_fx($VBox/btn2)
+	Effects.simple_hover_fx($VBox/btn3)
+	Effects.simple_hover_fx($VBox/btn4)
+	Effects.simple_hover_fx($VBox/btn6)
 	$VBox/btn2.connect("button_down",self,"on_click_button",["lang"])
 	$VBox/btn3.connect("button_down",self,"on_click_button",["fullscreen"])
 	$VBox/btn4.connect("button_down",self,"on_click_button",["clear"])

@@ -1,6 +1,7 @@
 extends Control
 
 func _ready():
+	Effects.simple_hover_fx($btn_menu)
 	$btn_menu.connect("button_down",self,"on_back")
 	visible = false
 	$btn_menu.visible = false

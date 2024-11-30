@@ -113,12 +113,12 @@ func burn_card(card_node):
 	for i in range(hand_cards.size()):
 		if hand_cards[i]!=card_node: continue
 		else:
-			Sounds.play_sound("burn1")
-			DiscardNode.add_card(card_node.data.code)
-			Effects.disappear(card_node,Vector2(0,30))
-			hand_cards[i] = null
-			emit_signal("burn_card")
+			card_node.animate_burn()
 			yield(get_tree().create_timer(.3),"timeout")
+			hand_cards[i] = null
+			DiscardNode.add_card(card_node.data.code)
+			emit_signal("burn_card")
+			yield(get_tree().create_timer(.2),"timeout")
 			TempGoldNode.add_gold(1)
 			break
 	Global.set_stop_mouse(false)

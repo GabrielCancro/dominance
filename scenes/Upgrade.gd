@@ -4,6 +4,7 @@ var current_selected
 
 func _ready():
 	randomize()
+	Effects.simple_hover_fx($btn_menu)
 	$btn_menu.connect("button_down",self,"on_back")
 	$Descriptor.visible = false
 	$lbl_title.text = Lang.get_string("upgrades")

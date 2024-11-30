@@ -13,7 +13,7 @@ func set_target(unit_node):
 	rect_global_position = unit_node.rect_global_position
 	rect_global_position.x -= rect_size.x/2
 	rect_global_position.x += unit_node.rect_size.x/2
-	rect_global_position.y -= 70
+	rect_global_position.y -= 80
 
 func show_panel():
 	$Tween.remove_all()
