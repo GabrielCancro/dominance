@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/ui/ui_btn_bg_1.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Options.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/font/Anton-Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://popups/WoodPanelUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://prefabs/Transition.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/ui/ui_lateral_shadow.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -44,6 +45,26 @@ margin_left = -150.0
 margin_top = -225.0
 margin_right = 150.0
 margin_bottom = 225.0
+
+[node name="L1" type="TextureRect" parent="WoodPanelUi"]
+modulate = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
+anchor_bottom = 1.0
+margin_right = 35.0
+texture = ExtResource( 8 )
+expand = true
+
+[node name="L2" type="TextureRect" parent="WoodPanelUi"]
+modulate = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -35.0
+margin_top = -225.0
+margin_bottom = 225.0
+texture = ExtResource( 8 )
+expand = true
+flip_h = true
 
 [node name="VBox" type="GridContainer" parent="."]
 anchor_left = 0.5
