@@ -2,7 +2,7 @@ VERSION 0.25
 
 OK-Falta una opción de ver créditos. Ahí podría ir lo que está al principio, y darle los créditos de la música a Gabi. También se puede aprovechar la pantalla para nombrar a gente externo como los que hicieron testeo o ayudaron a nivelar. Pro principalmente por la música que no se nombra en otro lado.
 
--En la sección de mejoras, las ya obtenidas podrian tener el icono de rombo (que ya hice y está en el drive) para mostrar que las tenes en lugar del borde amarillo.
+OK-En la sección de mejoras, las ya obtenidas podrian tener el icono de rombo (que ya hice y está en el drive) para mostrar que las tenes en lugar del borde amarillo.
 
 OK-También en esta parte, el pop up que aparece abajo podria ser con el marco que aparece dentro del juego. Si hace falta hago otro.
 
@@ -20,7 +20,7 @@ OK-La tiografía del daño de la torre y la población también. No se si queré
 
 OK-El tutorial no empezó. Creo que me leyo como si tuviera partida guardada porque tenia algunas mejoras y la oleada era la 3. También debería tener una opción para hacer el tutorial de nuevo si se quiere. (SOLO ARRANCA LA PRIMERA PARTIDA)
 
--Podría hacer un Icono de espada y corazón, para el cuadrito de las unidades.
+OK-Podría hacer un Icono de espada y corazón, para el cuadrito de las unidades.
 
 -Algunos texto de descripción de las cartas hay que revisarlos. Nada raro, por ahí se entiende diferente o se pueden reducir. La tipografía de estos está bien, esa es para grandes cuerpos de párrafos.
 
@@ -30,4 +30,4 @@ OK-En la pantalla final, agrandaría las monedas ganadas y daría ahí una pista
 
 OK-Después en el menú principal, achicaría un poco el logo para que se despegue del borde superior de la pantalla un poco. 
 
-  -Cambiar rombos pixelados en el menu
+OK-Cambiar rombos pixelados en el menu

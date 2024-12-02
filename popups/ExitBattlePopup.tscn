@@ -99,9 +99,13 @@ margin_left = -80.0
 margin_top = 60.5
 margin_right = 80.0
 margin_bottom = 110.5
+rect_pivot_offset = Vector2( 80, 25.5 )
 custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
 custom_fonts/font = SubResource( 4 )
 flat = true
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Panel" type="NinePatchRect" parent="btn_continue"]
 visible = false
@@ -141,9 +145,13 @@ margin_left = -80.0
 margin_top = 127.0
 margin_right = 80.0
 margin_bottom = 177.0
+rect_pivot_offset = Vector2( 80, 25 )
 custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
 custom_fonts/font = SubResource( 4 )
 flat = true
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Panel" type="NinePatchRect" parent="btn_quit"]
 visible = false

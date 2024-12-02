@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/ui/ui_btn_bg_1.png" type="Texture" id=2]
@@ -11,10 +11,46 @@
 [ext_resource path="res://popups/WoodPanelUI.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/path1.png" type="Texture" id=10]
 [ext_resource path="res://assets/Title.png" type="Texture" id=11]
+[ext_resource path="res://assets/upgrades/CheckEmpty.png" type="Texture" id=12]
 [ext_resource path="res://prefabs/Transition.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/sfx/ambient.mp3" type="AudioStream" id=15]
 [ext_resource path="res://prefabs/PathBattles.tscn" type="PackedScene" id=16]
 [ext_resource path="res://assets/font/AbyssinicaSIL-Regular.ttf" type="DynamicFontData" id=17]
+
+[sub_resource type="Curve" id=8]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.95229, 79.5092 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=13]
+curve = SubResource( 8 )
+
+[sub_resource type="Curve" id=10]
+_data = [ Vector2( 0.196565, 0.291411 ), 0.0, -0.197395, 0, 0, Vector2( 0.784351, 0.42638 ), -1.92883, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=14]
+curve = SubResource( 10 )
+
+[sub_resource type="ParticlesMaterial" id=12]
+emission_shape = 2
+emission_box_extents = Vector3( 400, 1, 1 )
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+gravity = Vector3( 0, -100, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.25
+angular_velocity = 345.6
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 1.0
+angle = 134.4
+angle_random = 1.0
+angle_curve = SubResource( 13 )
+scale = 0.1
+scale_random = 0.1
+scale_curve = SubResource( 14 )
+color = Color( 0.945098, 1, 0, 0.109804 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 20
@@ -52,6 +88,15 @@ rect_pivot_offset = Vector2( -202, -322 )
 script = ExtResource( 3 )
 
 [node name="WoodPanelUi" parent="." instance=ExtResource( 9 )]
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 399, 466 )
+amount = 25
+lifetime = 3.5
+speed_scale = 0.4
+randomness = 0.5
+process_material = SubResource( 12 )
+texture = ExtResource( 12 )
 
 [node name="Title" type="TextureRect" parent="."]
 modulate = Color( 0.92549, 0.92549, 0.92549, 1 )
@@ -392,7 +437,7 @@ margin_bottom = -9.0
 custom_colors/font_color = Color( 0.643137, 0.643137, 0.643137, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 7 )
-text = "v0.025"
+text = "v027"
 align = 2
 valign = 1
 autowrap = true
