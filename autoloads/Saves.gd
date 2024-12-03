@@ -7,7 +7,8 @@ var default_data = {
 	"language":"en",
 	"level":1,
 	"days":0,
-	"fullscreen": false
+	"fullscreen": false,
+	"mvol": 100
 }
 var savedData = {}
 
@@ -38,6 +39,8 @@ func load_store_data():
 		save_store_data()
 	savedData = loaded_data
 	if !savedData.has("level"): savedData.level = 1
+	if !savedData.has("mvol"): savedData.mvol = 100
+	Sounds.set_vol(savedData.mvol)
 	print("LOAD ",loaded_data)
 #	savedData.level = 60
 #	savedData.days = 100

@@ -17,3 +17,6 @@ func play_sound(id):
 	audio.play()
 	yield(audio,"finished")
 	audio.queue_free()
+
+func set_vol(val):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), (val-100)*0.33 )

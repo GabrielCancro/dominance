@@ -6,10 +6,15 @@ func _ready():
 	Effects.simple_hover_fx($VBox/btn3)
 	Effects.simple_hover_fx($VBox/btn4)
 	Effects.simple_hover_fx($VBox/btn6)
+	Effects.simple_hover_fx($HSlider)
 	$VBox/btn2.connect("button_down",self,"on_click_button",["lang"])
 	$VBox/btn3.connect("button_down",self,"on_click_button",["fullscreen"])
 	$VBox/btn4.connect("button_down",self,"on_click_button",["clear"])
 	$VBox/btn6.connect("button_down",self,"on_click_button",["back"])
+	$HSlider.connect("value_changed",self,"on_change_scroll")
+	$HSlider.connect("drag_ended",self,"on_change_scroll_end")
+	$HSlider.value = Saves.savedData.mvol
+	on_change_scroll($HSlider.value)
 	localizate()
 
 func localizate():
@@ -37,3 +42,13 @@ func on_click_button(code):
 		get_tree().change_scene("res://scenes/Menu.tscn")
 	elif code=="clear":
 		get_tree().change_scene("res://scenes/ClearData.tscn")
+
+func on_change_scroll(val):
+	$HLabel.text = "vol "+str(val)+"%"
+
+func on_change_scroll_end(val):
+	print("END CHANGE ",val)
+	Sounds.set_vol($HSlider.value)
+	Sounds.play_sound("fail1")
+	Saves.savedData.mvol = $HSlider.value
+	Saves.save_store_data()

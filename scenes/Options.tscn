@@ -238,3 +238,31 @@ autowrap = true
 
 [node name="Transition" parent="." instance=ExtResource( 7 )]
 visible = false
+
+[node name="HSlider" type="HSlider" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -54.0
+margin_top = 86.5
+margin_right = 54.0
+margin_bottom = 115.5
+rect_pivot_offset = Vector2( 54, 15 )
+
+[node name="HLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -96.0
+margin_top = 106.0
+margin_right = 100.0
+margin_bottom = 129.0
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 2 )
+text = "vol 100%"
+align = 1
+valign = 1
+autowrap = true
