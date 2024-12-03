@@ -33,6 +33,7 @@ var Texts = {
 	},
 	"end_battle":{"es":"Batalla final","en":"Last Battle"},
 	"endless_mode":{"es":"Sinfin","en":"Endless"},
+	"ui_vol":{"es":"Volumen","en":"Volume"},
 	
 	"back_to_main":{"es":"Volver al menu","en":"Back to menu"},
 	"start":{"es":"Comenzar","en":"Start"},

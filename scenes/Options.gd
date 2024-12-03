@@ -14,7 +14,6 @@ func _ready():
 	$HSlider.connect("value_changed",self,"on_change_scroll")
 	$HSlider.connect("drag_ended",self,"on_change_scroll_end")
 	$HSlider.value = Saves.savedData.mvol
-	on_change_scroll($HSlider.value)
 	localizate()
 
 func localizate():
@@ -24,6 +23,7 @@ func localizate():
 	$VBox/btn3/Label.text = Lang.get_string("menu_fullscreen")
 	$VBox/btn4/Label.text = Lang.get_string("title_clear_data")
 	$VBox/btn6/Label.text = Lang.get_string("back_to_main")
+	on_change_scroll($HSlider.value)
 
 func on_click_button(code):
 	Sounds.play_sound("button1")
@@ -44,7 +44,7 @@ func on_click_button(code):
 		get_tree().change_scene("res://scenes/ClearData.tscn")
 
 func on_change_scroll(val):
-	$HLabel.text = "vol "+str(val)+"%"
+	$HLabel.text = Lang.get_string("ui_vol")+" "+str(val)+"%"
 
 func on_change_scroll_end(val):
 	print("END CHANGE ",val)

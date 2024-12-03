@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/ui/ui_btn_bg_1.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Options.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://popups/WoodPanelUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://prefabs/Transition.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/ui/ui_lateral_shadow.png" type="Texture" id=8]
+[ext_resource path="res://prefabs/GCHSlider.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -25,6 +26,13 @@ size = 40
 outline_color = Color( 0.231373, 0.196078, 0.196078, 1 )
 extra_spacing_char = 4
 font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+outline_size = 2
+outline_color = Color( 0.141176, 0.14902, 0.219608, 1 )
+extra_spacing_top = 1
+extra_spacing_bottom = 1
+font_data = ExtResource( 3 )
 
 [node name="Options" type="Control"]
 anchor_right = 1.0
@@ -239,30 +247,25 @@ autowrap = true
 [node name="Transition" parent="." instance=ExtResource( 7 )]
 visible = false
 
-[node name="HSlider" type="HSlider" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -54.0
-margin_top = 86.5
-margin_right = 54.0
-margin_bottom = 115.5
-rect_pivot_offset = Vector2( 54, 15 )
+[node name="HSlider" parent="." instance=ExtResource( 9 )]
+margin_left = -65.0
+margin_top = 84.5
+margin_right = 65.0
+margin_bottom = 119.5
 
 [node name="HLabel" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -96.0
-margin_top = 106.0
-margin_right = 100.0
-margin_bottom = 129.0
+margin_left = -93.5
+margin_top = 107.5
+margin_right = 93.5
+margin_bottom = 134.5
 custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
 custom_constants/line_spacing = -2
-custom_fonts/font = SubResource( 2 )
-text = "vol 100%"
+custom_fonts/font = SubResource( 4 )
+text = "Volumen 100%"
 align = 1
 valign = 1
 autowrap = true
