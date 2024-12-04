@@ -18,7 +18,7 @@ func _ready():
 func save_store_data():
 	if Global.demo: return
 	var file = File.new()
-	file.open("user://store_app_data.res", File.WRITE)
+	file.open("user://store_app_data_v2.res", File.WRITE)
 	file.store_string(var2str(savedData))
 	file.close()
 	print("SAVE ",savedData)
@@ -29,7 +29,7 @@ func load_store_data():
 		if("es" in OS.get_locale()): savedData.language = "es"
 		return 
 	var file = File.new()
-	file.open("user://store_app_data.res", File.READ)
+	file.open("user://store_app_data_v2.res", File.READ)
 	var loaded_data = str2var(file.get_as_text())
 	file.close()
 	#if(loaded_data && loaded_data.size()!=savedData.size()): loaded_data = null
