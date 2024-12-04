@@ -7,7 +7,7 @@ var default_data = {
 	"language":"en",
 	"level":1,
 	"days":0,
-	"fullscreen": false,
+	"fullscreen": true,
 	"mvol": 100
 }
 var savedData = {}
