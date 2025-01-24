@@ -44,6 +44,7 @@ func get_rnd_card():
 	return Cards[ randi()%Cards.size() ]
 
 func show_card_description(card_node):
+	if !card_descriptor: return
 	card_descriptor.set_target(card_node)
 	card_descriptor.show_panel()
 
