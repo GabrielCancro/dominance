@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://prefabs/UpgradeNew.gd" type="Script" id=2]
+[ext_resource path="res://assets/upgrades/CheckFull.png" type="Texture" id=3]
+[ext_resource path="res://assets/upgrade_m.png" type="Texture" id=4]
+[ext_resource path="res://assets/upgrades/upg_house.jpg" type="Texture" id=5]
+[ext_resource path="res://assets/upgrade_shine.png" type="Texture" id=6]
+[ext_resource path="res://assets/upgrades/CheckEmpty.png" type="Texture" id=7]
+
+[node name="UpgradeNew" type="Button"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 96, 96 )
+focus_mode = 0
+flat = true
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.0
+margin_top = -2.0
+margin_right = 2.0
+margin_bottom = 2.0
+color = Color( 0.796078, 0.796078, 0.796078, 1 )
+
+[node name="bg" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1.0
+margin_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="bg_shine" type="TextureRect" parent="."]
+visible = false
+modulate = Color( 0.972549, 1, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1.0
+margin_bottom = 1.0
+texture = ExtResource( 6 )
+expand = true
+
+[node name="ico" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 7.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -7.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+
+[node name="romb" type="TextureRect" parent="."]
+modulate = Color( 0.915359, 0.919412, 0.933594, 1 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -9.0
+margin_top = -16.0
+margin_right = 9.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 18, 20 )
+texture = ExtResource( 7 )
+expand = true
+
+[node name="romb2" type="TextureRect" parent="."]
+visible = false
+modulate = Color( 0.941176, 0.964706, 0.117647, 1 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -9.0
+margin_top = -16.0
+margin_right = 9.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 18, 20 )
+texture = ExtResource( 3 )
+expand = true

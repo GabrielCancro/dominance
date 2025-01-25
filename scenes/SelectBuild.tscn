@@ -1,0 +1,384 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://assets/font/Anton-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/font/AbyssinicaSIL-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://prefabs/Card.tscn" type="PackedScene" id=4]
+[ext_resource path="res://prefabs/UpgradeNew.tscn" type="PackedScene" id=5]
+[ext_resource path="res://popups/WoodPanelUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/ui/ui_btn_bg_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/descriptor_m.png" type="Texture" id=8]
+[ext_resource path="res://assets/upgrades/CheckEmpty.png" type="Texture" id=9]
+[ext_resource path="res://assets/sun.png" type="Texture" id=10]
+[ext_resource path="res://scenes/SelectBuild.gd" type="Script" id=11]
+
+[sub_resource type="Curve" id=12]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.95229, 79.5092 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 12 )
+
+[sub_resource type="Curve" id=13]
+_data = [ Vector2( 0.196565, 0.291411 ), 0.0, -0.197395, 0, 0, Vector2( 0.784351, 0.42638 ), -1.92883, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=11]
+curve = SubResource( 13 )
+
+[sub_resource type="ParticlesMaterial" id=14]
+emission_shape = 2
+emission_box_extents = Vector3( 400, 1, 1 )
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+gravity = Vector3( 0, -100, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.25
+angular_velocity = 345.6
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 1.0
+angle = 134.4
+angle_random = 1.0
+angle_curve = SubResource( 9 )
+scale = 0.1
+scale_random = 0.1
+scale_curve = SubResource( 11 )
+color = Color( 0.945098, 1, 0, 0.109804 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 40
+outline_color = Color( 0.231373, 0.196078, 0.196078, 1 )
+extra_spacing_char = 4
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 20
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 20
+outline_size = 1
+outline_color = Color( 0.258824, 0.313726, 0.423529, 1 )
+extra_spacing_bottom = -2
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 18
+outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+extra_spacing_top = 1
+extra_spacing_bottom = 1
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 20
+outline_size = 1
+outline_color = Color( 0.258824, 0.313726, 0.423529, 1 )
+extra_spacing_bottom = -2
+font_data = ExtResource( 2 )
+
+[node name="SelectBuild" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 11 )
+
+[node name="WoodPanelUi" parent="." instance=ExtResource( 6 )]
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 399, 466 )
+amount = 25
+lifetime = 3.5
+speed_scale = 0.4
+randomness = 0.5
+process_material = SubResource( 14 )
+texture = ExtResource( 9 )
+
+[node name="lbl_title" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 18.0
+margin_bottom = 78.0
+custom_colors/font_color = Color( 0.658824, 0.658824, 0.658824, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 15 )
+text = "SELECT BUILD"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -136.0
+margin_right = 250.0
+margin_bottom = -24.0
+
+[node name="Card1" parent="HBoxContainer" instance=ExtResource( 4 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 80.0
+margin_bottom = 112.0
+
+[node name="Card2" parent="HBoxContainer" instance=ExtResource( 4 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 84.0
+margin_top = 0.0
+margin_right = 164.0
+margin_bottom = 112.0
+
+[node name="Card3" parent="HBoxContainer" instance=ExtResource( 4 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 168.0
+margin_top = 0.0
+margin_right = 248.0
+margin_bottom = 112.0
+
+[node name="Card4" parent="HBoxContainer" instance=ExtResource( 4 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 252.0
+margin_top = 0.0
+margin_right = 332.0
+margin_bottom = 112.0
+
+[node name="Card5" parent="HBoxContainer" instance=ExtResource( 4 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 336.0
+margin_top = 0.0
+margin_right = 416.0
+margin_bottom = 112.0
+
+[node name="Card6" parent="HBoxContainer" instance=ExtResource( 4 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 420.0
+margin_top = 0.0
+margin_right = 500.0
+margin_bottom = 112.0
+
+[node name="Grid" type="GridContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -252.0
+margin_top = -107.0
+margin_right = 252.0
+margin_bottom = 91.0
+custom_constants/vseparation = 6
+custom_constants/hseparation = 6
+columns = 5
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="upg1" parent="Grid" instance=ExtResource( 5 )]
+margin_right = 96.0
+margin_bottom = 96.0
+
+[node name="upg2" parent="Grid" instance=ExtResource( 5 )]
+margin_left = 102.0
+margin_right = 198.0
+margin_bottom = 96.0
+focus_mode = 2
+
+[node name="upg3" parent="Grid" instance=ExtResource( 5 )]
+margin_left = 204.0
+margin_right = 300.0
+margin_bottom = 96.0
+focus_mode = 2
+
+[node name="upg4" parent="Grid" instance=ExtResource( 5 )]
+margin_left = 306.0
+margin_right = 402.0
+margin_bottom = 96.0
+focus_mode = 2
+
+[node name="upg5" parent="Grid" instance=ExtResource( 5 )]
+margin_left = 408.0
+margin_right = 504.0
+margin_bottom = 96.0
+focus_mode = 2
+
+[node name="upg6" parent="Grid" instance=ExtResource( 5 )]
+margin_top = 102.0
+margin_right = 96.0
+margin_bottom = 198.0
+focus_mode = 2
+
+[node name="upg7" parent="Grid" instance=ExtResource( 5 )]
+margin_left = 102.0
+margin_top = 102.0
+margin_right = 198.0
+margin_bottom = 198.0
+focus_mode = 2
+
+[node name="upg8" parent="Grid" instance=ExtResource( 5 )]
+margin_left = 204.0
+margin_top = 102.0
+margin_right = 300.0
+margin_bottom = 198.0
+focus_mode = 2
+
+[node name="upg9" parent="Grid" instance=ExtResource( 5 )]
+margin_left = 306.0
+margin_top = 102.0
+margin_right = 402.0
+margin_bottom = 198.0
+focus_mode = 2
+
+[node name="upg10" parent="Grid" instance=ExtResource( 5 )]
+margin_left = 408.0
+margin_top = 102.0
+margin_right = 504.0
+margin_bottom = 198.0
+focus_mode = 2
+
+[node name="btn_menu" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -65.5
+margin_top = -84.0
+margin_right = 65.5
+margin_bottom = -19.0
+rect_pivot_offset = Vector2( 65.5, 33 )
+custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
+custom_fonts/font = SubResource( 16 )
+flat = true
+
+[node name="BgButton1" type="TextureRect" parent="btn_menu"]
+modulate = Color( 0.92549, 0.92549, 0.92549, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.0
+margin_bottom = -1.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="Label" type="Label" parent="btn_menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 9.0
+margin_right = -7.0
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 17 )
+text = "Volver al menu"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Descriptor" type="ColorRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -198.0
+margin_top = 105.0
+margin_right = 198.0
+margin_bottom = 213.0
+color = Color( 0.0980392, 0.109804, 0.12549, 1 )
+
+[node name="Panel" type="NinePatchRect" parent="Descriptor"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 500, 500 )
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+
+[node name="Label" type="Label" parent="Descriptor"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = -4.0
+margin_right = -11.0
+margin_bottom = -4.0
+custom_colors/font_color = Color( 0.890196, 0.890196, 0.890196, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 18 )
+text = "comienzas la partida con 3 monedas en tu cofre que podras usar en cualquier turnoodras usar en cualquier "
+align = 1
+valign = 1
+autowrap = true
+
+[node name="LabelCost" type="Label" parent="Descriptor"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 160.0
+margin_top = 76.5
+margin_right = 191.0
+margin_bottom = 95.5
+custom_colors/font_color = Color( 0.803922, 0.854902, 0.176471, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 17 )
+text = "30"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="Descriptor/LabelCost"]
+modulate = Color( 0.92549, 0.92549, 0.92549, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -36.5
+margin_top = -11.0
+margin_right = -11.5
+margin_bottom = 14.0
+texture = ExtResource( 10 )
+expand = true
+
+[node name="lbl_days" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -3.0
+margin_top = 81.0
+margin_right = 28.0
+margin_bottom = 100.0
+custom_colors/font_color = Color( 0.870588, 0.929412, 0.12549, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 19 )
+text = "80"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="lbl_days"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -47.5
+margin_top = -17.5
+margin_right = -12.5
+margin_bottom = 17.5
+texture = ExtResource( 10 )
+expand = true

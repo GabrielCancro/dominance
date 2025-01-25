@@ -18,13 +18,13 @@ min_value = -360.0
 max_value = 360.0
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.95229, 79.5092 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=9]
+[sub_resource type="CurveTexture" id=18]
 curve = SubResource( 12 )
 
 [sub_resource type="Curve" id=13]
 _data = [ Vector2( 0.196565, 0.291411 ), 0.0, -0.197395, 0, 0, Vector2( 0.784351, 0.42638 ), -1.92883, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=11]
+[sub_resource type="CurveTexture" id=19]
 curve = SubResource( 13 )
 
 [sub_resource type="ParticlesMaterial" id=14]
@@ -42,10 +42,10 @@ orbit_velocity_random = 0.0
 linear_accel = 1.0
 angle = 134.4
 angle_random = 1.0
-angle_curve = SubResource( 9 )
+angle_curve = SubResource( 18 )
 scale = 0.1
 scale_random = 0.1
-scale_curve = SubResource( 11 )
+scale_curve = SubResource( 19 )
 color = Color( 0.945098, 1, 0, 0.109804 )
 
 [sub_resource type="DynamicFont" id=15]
@@ -95,6 +95,7 @@ valign = 1
 autowrap = true
 
 [node name="Control" type="Control" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -103,22 +104,6 @@ margin_left = -204.0
 margin_top = -138.0
 margin_right = 204.0
 margin_bottom = 122.0
-
-[node name="P1" parent="Control" instance=ExtResource( 12 )]
-position = Vector2( -153, -54 )
-nodeNeedId = 0
-
-[node name="P2" parent="Control" instance=ExtResource( 12 )]
-position = Vector2( -125, 8 )
-nodeNeedId = 1
-
-[node name="P3" parent="Control" instance=ExtResource( 12 )]
-position = Vector2( -34, -11 )
-nodeNeedId = 2
-
-[node name="P4" parent="Control" instance=ExtResource( 12 )]
-position = Vector2( -2, 58 )
-nodeNeedId = 3
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
 anchor_right = 1.0
@@ -564,15 +549,63 @@ align = 1
 valign = 1
 autowrap = true
 
+[node name="Control2" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="P1" parent="Control2" instance=ExtResource( 12 )]
+position = Vector2( 407, 129 )
+nodeNeedId = 0
+
+[node name="P2" parent="Control2" instance=ExtResource( 12 )]
+position = Vector2( 205, 193 )
+nodeNeedId = 3
+
+[node name="P3" parent="Control2" instance=ExtResource( 12 )]
+position = Vector2( 298, 149 )
+nodeNeedId = 5
+
+[node name="P4" parent="Control2" instance=ExtResource( 12 )]
+position = Vector2( 292, 258 )
+nodeNeedId = 3
+
+[node name="P5" parent="Control2" instance=ExtResource( 12 )]
+position = Vector2( 410, 219 )
+nodeNeedId = 1
+
+[node name="P6" parent="Control2" instance=ExtResource( 12 )]
+position = Vector2( 509, 173 )
+nodeNeedId = 5
+
+[node name="P7" parent="Control2" instance=ExtResource( 12 )]
+position = Vector2( 629, 156 )
+nodeNeedId = 6
+
+[node name="P8" parent="Control2" instance=ExtResource( 12 )]
+position = Vector2( 220, 304 )
+nodeNeedId = 4
+
+[node name="P9" parent="Control2" instance=ExtResource( 12 )]
+position = Vector2( 524, 256 )
+nodeNeedId = 6
+
+[node name="P10" parent="Control2" instance=ExtResource( 12 )]
+position = Vector2( 377, 301 )
+nodeNeedId = 4
+
+[node name="P11" parent="Control2" instance=ExtResource( 12 )]
+position = Vector2( 617, 291 )
+nodeNeedId = 9
+
 [node name="InvasionUIButton" type="Button" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -124.5
-margin_top = -91.0
+margin_top = -97.0
 margin_right = 124.5
-margin_bottom = -12.0
+margin_bottom = -18.0
 flat = true
 __meta__ = {
 "_edit_group_": true

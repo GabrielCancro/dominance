@@ -12,6 +12,7 @@ func _process(delta):
 	var myId = get_index()+1
 	if Engine.editor_hint:
 		$N/sun.rect_rotation += 4 * PI * delta
+		$N/sun.visible = false
 		if !node: $Line2D.points[1] = $Line2D.points[0]
 		else: $Line2D.points[1] = (node as Node2D).global_position - global_position
 		$N/lbl_num.text = str(myId)
