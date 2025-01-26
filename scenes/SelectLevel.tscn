@@ -646,34 +646,46 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="P1" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 234, 187 )
-
-[node name="P10" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 632, 306 )
+position = Vector2( 103, 186 )
 
 [node name="P2" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 320, 148 )
-
-[node name="P3" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 300, 250 )
-
-[node name="P4" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 407, 150 )
+position = Vector2( 172, 187 )
 type = 1
 
+[node name="P3" parent="LevelPath" instance=ExtResource( 12 )]
+position = Vector2( 385, 261 )
+
+[node name="P4" parent="LevelPath" instance=ExtResource( 12 )]
+position = Vector2( 301, 186 )
+
 [node name="P5" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 492, 151 )
+position = Vector2( 300, 262 )
 
 [node name="P6" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 398, 234 )
-type = 2
+position = Vector2( 464, 260 )
+type = 1
 
 [node name="P7" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 468, 289 )
+position = Vector2( 346, 111 )
+
+[node name="P13" parent="LevelPath" instance=ExtResource( 12 )]
+position = Vector2( 595, 106 )
 
 [node name="P8" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 545, 227 )
+position = Vector2( 422, 109 )
+type = 1
+
+[node name="P12" parent="LevelPath" instance=ExtResource( 12 )]
+position = Vector2( 470, 205 )
 
 [node name="P9" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 627, 229 )
+position = Vector2( 508, 106 )
+type = 2
+
+[node name="P11" parent="LevelPath" instance=ExtResource( 12 )]
+position = Vector2( 234, 292 )
+type = 1
+
+[node name="P10" parent="LevelPath" instance=ExtResource( 12 )]
+position = Vector2( 227, 187 )
 type = 2
