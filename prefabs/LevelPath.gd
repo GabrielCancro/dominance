@@ -6,11 +6,15 @@ export(TypeEnum) var type
 
 var close_nodes
 
-func _ready(): pass
+func _ready():
+	$Button.connect("button_down",self,"on_click")
+	set_type()
+	set_close_nodes()
+	connect_close_nodes()
 
 func _process(delta):
+	$N/sun.rect_rotation += 4 * PI * delta
 	if Engine.editor_hint:
-		$N/sun.rect_rotation += 4 * PI * delta
 		set_type()
 		set_close_nodes()
 		connect_close_nodes()
@@ -36,3 +40,8 @@ func connect_close_nodes():
 		if i < close_nodes.size():
 			ln.points[1] = close_nodes[i].global_position - global_position
 		else: ln.points[1] = Vector2(0,9)
+
+func on_click():
+	var arr = []
+	for c in close_nodes: arr.append(c.name)
+	print("CLOSE NODES: ",arr)

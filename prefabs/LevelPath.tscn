@@ -16,6 +16,18 @@ font_data = ExtResource( 2 )
 [node name="LevelPath" type="Node2D"]
 script = ExtResource( 3 )
 
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -18.0
+margin_top = -18.0
+margin_right = 18.0
+margin_bottom = 18.0
+focus_mode = 0
+flat = true
+
 [node name="L" type="Node2D" parent="."]
 
 [node name="L1" type="Line2D" parent="L"]
@@ -57,7 +69,7 @@ margin_top = -25.0
 margin_right = 25.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 50, 50 )
-rect_rotation = 19952.3
+rect_rotation = 22642.9
 rect_pivot_offset = Vector2( 25, 25 )
 mouse_filter = 2
 texture = ExtResource( 4 )

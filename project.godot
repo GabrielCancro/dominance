@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Dominance"
-run/main_scene="res://scenes/SelectBuild.tscn"
+run/main_scene="res://scenes/SelectLevel.tscn"
 boot_splash/image="res://assets/bgblack.png"
 boot_splash/bg_color=Color( 0.0823529, 0.0823529, 0.0823529, 1 )
 config/icon="res://icon.png"
