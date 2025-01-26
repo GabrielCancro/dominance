@@ -568,10 +568,12 @@ nodeNeedId = 5
 [node name="P4" parent="Control2" instance=ExtResource( 12 )]
 position = Vector2( 292, 258 )
 nodeNeedId = 3
+type = 1
 
 [node name="P5" parent="Control2" instance=ExtResource( 12 )]
 position = Vector2( 410, 219 )
 nodeNeedId = 1
+type = 1
 
 [node name="P6" parent="Control2" instance=ExtResource( 12 )]
 position = Vector2( 509, 173 )
@@ -580,6 +582,7 @@ nodeNeedId = 5
 [node name="P7" parent="Control2" instance=ExtResource( 12 )]
 position = Vector2( 629, 156 )
 nodeNeedId = 6
+type = 2
 
 [node name="P8" parent="Control2" instance=ExtResource( 12 )]
 position = Vector2( 220, 304 )
