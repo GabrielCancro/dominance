@@ -15,6 +15,8 @@ font_data = ExtResource( 2 )
 
 [node name="LevelPath" type="Node2D"]
 script = ExtResource( 3 )
+nodeNeedId = -1
+type = 0
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PoolVector2Array( 0, 0, 0, 0 )
@@ -34,7 +36,7 @@ margin_top = -25.0
 margin_right = 25.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 50, 50 )
-rect_rotation = 13017.8
+rect_rotation = 14485.2
 rect_pivot_offset = Vector2( 25, 25 )
 mouse_filter = 2
 texture = ExtResource( 4 )

@@ -23,5 +23,8 @@ func _process(delta):
 		if type == TypeEnum.LEVEL: $N/level.visible = true
 		if type == TypeEnum.SUN: $N/sun.visible = true
 		if type == TypeEnum.CHEST: $N/chest.visible = true
+#		$Line2D.points = [(Vector2(0, 0)]
+#		for u in get_parent().get_children():
+			
 			
 	
