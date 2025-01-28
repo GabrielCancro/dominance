@@ -649,7 +649,7 @@ anchor_bottom = 1.0
 position = Vector2( 103, 186 )
 
 [node name="P2" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 172, 187 )
+position = Vector2( 165, 187 )
 type = 1
 
 [node name="P3" parent="LevelPath" instance=ExtResource( 12 )]

@@ -2,7 +2,9 @@ extends Node2D
 tool
 
 enum TypeEnum {LEVEL, SUN, CHEST}
+enum StateEnum {DISABLE, ENABLE, COMPLETE}
 export(TypeEnum) var type
+export(StateEnum) var state
 
 var close_nodes
 
@@ -25,7 +27,11 @@ func set_type():
 	$N/level.visible = false
 	$N/chest.visible = false
 	if type == TypeEnum.LEVEL: $N/level.visible = true
-	if type == TypeEnum.SUN: $N/sun.visible = true
+	if type == TypeEnum.SUN: 
+		$N/sun.visible = true
+		if state == StateEnum.DISABLE:
+			$N/sun.rect_rotation = 0
+			$N/sun.modulate = Color(.3,.3,.7,1)
 	if type == TypeEnum.CHEST: $N/chest.visible = true
 
 func set_close_nodes():

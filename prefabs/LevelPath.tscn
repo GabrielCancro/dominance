@@ -69,11 +69,27 @@ margin_top = -25.0
 margin_right = 25.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 50, 50 )
-rect_rotation = 22642.9
+rect_rotation = 25617.1
 rect_pivot_offset = Vector2( 25, 25 )
 mouse_filter = 2
 texture = ExtResource( 4 )
 expand = true
+
+[node name="chest" type="TextureRect" parent="N"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -22.0
+margin_top = -22.0
+margin_right = 39.0
+margin_bottom = 19.0
+rect_pivot_offset = Vector2( 25, 25 )
+mouse_filter = 2
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 5
 
 [node name="level" type="TextureRect" parent="N"]
 anchor_left = 0.5
@@ -102,22 +118,6 @@ margin_bottom = 21.0
 rect_pivot_offset = Vector2( 25, 25 )
 mouse_filter = 2
 texture = ExtResource( 6 )
-expand = true
-stretch_mode = 5
-
-[node name="chest" type="TextureRect" parent="N"]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -22.0
-margin_top = -22.0
-margin_right = 39.0
-margin_bottom = 19.0
-rect_pivot_offset = Vector2( 25, 25 )
-mouse_filter = 2
-texture = ExtResource( 5 )
 expand = true
 stretch_mode = 5
 
