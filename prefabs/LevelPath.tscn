@@ -56,6 +56,7 @@ width = 7.0
 default_color = Color( 0.34902, 0.345098, 0.407843, 1 )
 
 [node name="N" type="Node2D" parent="."]
+modulate = Color( 0.3, 0.3, 0.7, 1 )
 z_index = 1
 
 [node name="sun" type="TextureRect" parent="N"]
@@ -69,7 +70,7 @@ margin_top = -25.0
 margin_right = 25.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 50, 50 )
-rect_rotation = 25617.1
+rect_rotation = 27180.3
 rect_pivot_offset = Vector2( 25, 25 )
 mouse_filter = 2
 texture = ExtResource( 4 )

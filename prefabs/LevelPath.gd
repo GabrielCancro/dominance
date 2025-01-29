@@ -15,7 +15,7 @@ func _ready():
 	connect_close_nodes()
 
 func _process(delta):
-	$N/sun.rect_rotation += 4 * PI * delta
+	if type == TypeEnum.SUN && state == StateEnum.ENABLE: $N/sun.rect_rotation += 4 * PI * delta
 	if Engine.editor_hint:
 		set_type()
 		set_close_nodes()
@@ -27,12 +27,11 @@ func set_type():
 	$N/level.visible = false
 	$N/chest.visible = false
 	if type == TypeEnum.LEVEL: $N/level.visible = true
-	if type == TypeEnum.SUN: 
-		$N/sun.visible = true
-		if state == StateEnum.DISABLE:
-			$N/sun.rect_rotation = 0
-			$N/sun.modulate = Color(.3,.3,.7,1)
+	if type == TypeEnum.SUN: $N/sun.visible = true
 	if type == TypeEnum.CHEST: $N/chest.visible = true
+	if state == StateEnum.ENABLE: $N.modulate = Color(1,1,1,1)
+	if state == StateEnum.DISABLE: $N.modulate = Color(.3,.3,.3,1)
+	if state == StateEnum.COMPLETE: $N.modulate = Color(.7,.7,.4,1)
 
 func set_close_nodes():
 	close_nodes = []
@@ -48,6 +47,10 @@ func connect_close_nodes():
 		else: ln.points[1] = Vector2(0,9)
 
 func on_click():
-	var arr = []
-	for c in close_nodes: arr.append(c.name)
-	print("CLOSE NODES: ",arr)
+	if state != StateEnum.ENABLE: return
+	state = StateEnum.COMPLETE
+	set_type()
+	for c in close_nodes:
+		if c.state==StateEnum.DISABLE:
+			c.state=StateEnum.ENABLE
+			c.set_type()
