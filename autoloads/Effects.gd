@@ -108,7 +108,7 @@ func simple_hover_func(node,val):
 func add_sunpoints(amount,pos):
 	for i in range(amount):
 		var n = preload("res://prefabs/effects/fx_sunpoint_getted.tscn").instance()
-		n.rect_global_position = pos
 		n.delay = i*0.1
 		get_node("/root").add_child(n)
+		n.rect_global_position = pos - Vector2(25,25)
 		
