@@ -50,6 +50,7 @@ func on_click():
 	get_node("../../").levelpath_click(self)
 	if state != StateEnum.ENABLE: return
 	state = StateEnum.COMPLETE
+	if type==TypeEnum.SUN: Effects.add_sunpoints(10,global_position)
 	set_type()
 	for c in close_nodes:
 		if c.state==StateEnum.DISABLE:
