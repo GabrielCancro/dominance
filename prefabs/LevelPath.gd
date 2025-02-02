@@ -47,6 +47,7 @@ func connect_close_nodes():
 		else: ln.points[1] = Vector2(0,9)
 
 func on_click():
+	get_node("../../").levelpath_click(self)
 	if state != StateEnum.ENABLE: return
 	state = StateEnum.COMPLETE
 	set_type()
