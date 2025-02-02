@@ -93,6 +93,12 @@ randomness = 0.5
 process_material = SubResource( 14 )
 texture = ExtResource( 1 )
 
+[node name="fx_sunpoint_getted" parent="." instance=ExtResource( 15 )]
+margin_left = -346.0
+margin_top = 67.5
+margin_right = -290.0
+margin_bottom = 126.5
+
 [node name="lbl_title" type="Label" parent="."]
 anchor_right = 1.0
 margin_top = 18.0
@@ -688,12 +694,6 @@ margin_bottom = -450.0
 [node name="P1" parent="LevelPath" instance=ExtResource( 12 )]
 position = Vector2( 135, 202 )
 state = 1
-
-[node name="fx_sunpoint_getted" parent="LevelPath/P1" instance=ExtResource( 15 )]
-margin_left = -81.0
-margin_top = 90.5
-margin_right = -25.0
-margin_bottom = 149.5
 
 [node name="P2" parent="LevelPath" instance=ExtResource( 12 )]
 position = Vector2( 197, 203 )
