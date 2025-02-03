@@ -49,8 +49,10 @@ func connect_close_nodes():
 func on_click():
 	get_node("../../").levelpath_click(self)
 	if state != StateEnum.ENABLE: return
+	if state==StateEnum.ENABLE:
+		if type==TypeEnum.SUN: Effects.add_sunpoints(10,global_position)
+		if type==TypeEnum.CHEST: get_node("../../UI/UpgradeGetted").show()
 	state = StateEnum.COMPLETE
-	if type==TypeEnum.SUN: Effects.add_sunpoints(10,global_position)
 	set_type()
 	for c in close_nodes:
 		if c.state==StateEnum.DISABLE:
