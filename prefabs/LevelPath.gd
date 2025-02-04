@@ -9,6 +9,7 @@ export(StateEnum) var state
 var close_nodes
 
 func _ready():
+	Saves.savedData.language = "en"
 	$Button.connect("button_down",self,"on_click")
 	set_type()
 	set_close_nodes()
@@ -26,12 +27,17 @@ func set_type():
 	$N/sun.visible = false
 	$N/level.visible = false
 	$N/chest.visible = false
-	if type == TypeEnum.LEVEL: $N/level.visible = true
-	if type == TypeEnum.SUN: $N/sun.visible = true
-	if type == TypeEnum.CHEST: $N/chest.visible = true
-	if state == StateEnum.ENABLE: $N.modulate = Color(1,1,1,1)
+	$N.modulate = Color(1,1,1,1)
 	if state == StateEnum.DISABLE: $N.modulate = Color(.3,.3,.3,1)
-	if state == StateEnum.COMPLETE: $N.modulate = Color(.7,.7,.4,1)
+	if type == TypeEnum.LEVEL: $N/level.visible = true
+	if type == TypeEnum.SUN: 
+		$N/sun.visible = true
+		if state == StateEnum.COMPLETE: $N.modulate = Color(.3,.3,.7,1)
+	if type == TypeEnum.CHEST: 
+		$N/chest.visible = true
+		if state == StateEnum.COMPLETE: $N.modulate = Color(.7,.7,.3,1)
+	$N/level/ico.visible = (state != StateEnum.COMPLETE)
+	$N/level/tower.visible = (state == StateEnum.COMPLETE)
 
 func set_close_nodes():
 	close_nodes = []
@@ -48,14 +54,18 @@ func connect_close_nodes():
 
 func on_click():
 	if state != StateEnum.ENABLE: return
-	get_node("../../").levelpath_click(type)
-	if type==TypeEnum.SUN: Effects.add_sunpoints(10,global_position)
+	state = StateEnum.COMPLETE
+	get_node("../../").levelpath_click(self)
+	set_type()
+	if type==TypeEnum.LEVEL: 
+		Effects.appear_from_bottom($N/level/tower)
+		yield(get_tree().create_timer(.5),"timeout")
+	if type==TypeEnum.SUN: 
+		Effects.add_sunpoints(10,global_position)
 	if type==TypeEnum.CHEST: 
 		get_node("../../UI/UpgradeGetted").show()
 		yield(get_node("../../UI/UpgradeGetted"),"on_close")
 		get_node("../../UI/UpgradeGetted").show()
-	state = StateEnum.COMPLETE
-	set_type()
 	for c in close_nodes:
 		if c.state==StateEnum.DISABLE:
 			c.state=StateEnum.ENABLE

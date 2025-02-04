@@ -105,6 +105,7 @@ func simple_hover_func(node,val):
 	else: tween.interpolate_property(node,"rect_scale",null,Vector2(1,1),.2,Tween.TRANS_QUAD,Tween.EASE_OUT)
 	tween.start()
 
+signal add_sunpoints_effect_end
 func add_sunpoints(amount,pos):
 	for i in range(amount):
 		var n = preload("res://prefabs/effects/fx_sunpoint_getted.tscn").instance()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/ui/level_romb.png" type="Texture" id=1]
 [ext_resource path="res://assets/font/Anton-Regular.ttf" type="DynamicFontData" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/ui/ui_sun.png" type="Texture" id=4]
 [ext_resource path="res://assets/stash2.png" type="Texture" id=5]
 [ext_resource path="res://assets/tower_2b.png" type="Texture" id=6]
+[ext_resource path="res://assets/ui/level.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -56,7 +57,7 @@ width = 7.0
 default_color = Color( 0.34902, 0.345098, 0.407843, 1 )
 
 [node name="N" type="Node2D" parent="."]
-modulate = Color( 0.3, 0.3, 0.7, 1 )
+modulate = Color( 0.3, 0.3, 0.3, 1 )
 z_index = 1
 
 [node name="sun" type="TextureRect" parent="N"]
@@ -107,7 +108,23 @@ mouse_filter = 2
 texture = ExtResource( 1 )
 expand = true
 
+[node name="ico" type="TextureRect" parent="N/level"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -21.5
+margin_top = -23.0
+margin_right = 21.5
+margin_bottom = 29.0
+rect_pivot_offset = Vector2( 25, 25 )
+mouse_filter = 2
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 5
+
 [node name="tower" type="TextureRect" parent="N/level"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
