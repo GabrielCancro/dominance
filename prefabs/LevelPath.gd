@@ -51,7 +51,10 @@ func on_click():
 	if state != StateEnum.ENABLE: return
 	if state==StateEnum.ENABLE:
 		if type==TypeEnum.SUN: Effects.add_sunpoints(10,global_position)
-		if type==TypeEnum.CHEST: get_node("../../UI/UpgradeGetted").show()
+		if type==TypeEnum.CHEST: 
+			get_node("../../UI/UpgradeGetted").show()
+			yield(get_node("../../UI/UpgradeGetted"),"on_close")
+			get_node("../../UI/UpgradeGetted").show()
 	state = StateEnum.COMPLETE
 	set_type()
 	for c in close_nodes:

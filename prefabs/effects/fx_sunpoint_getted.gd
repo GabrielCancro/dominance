@@ -8,3 +8,6 @@ func _ready():
 	$Tween.interpolate_property(self,"rect_global_position",null,Vector2(0,0),.8,Tween.TRANS_LINEAR,Tween.EASE_OUT,delay)
 	$Tween.interpolate_property(self,"rect_scale",Vector2(1.2,1.2),Vector2(1,1),.7,Tween.TRANS_LINEAR,Tween.EASE_OUT,delay)
 	$Tween.start()
+	yield($Tween,"tween_completed")
+	var node = get_node_or_null("SelectLevel")
+	if node: node.update_add_sunpoint(+1)

@@ -25,6 +25,14 @@ func get_non_obtained_upgrades():
 		arr.erase(k)
 	return arr
 
+func get_one_non_obtained_upgrade():
+	var arr = UPGRADES.keys().duplicate()
+	for k in Saves.savedData.upgrades:
+		arr.erase(k)
+	arr.shuffle()
+	if arr.size()<=0: return null
+	else: return arr[0]
+
 func get_upg_data(code):
 	var data = UPGRADES[code]
 	data["desc"] = Lang.get_string(code)
