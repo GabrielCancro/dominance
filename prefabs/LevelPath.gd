@@ -47,14 +47,13 @@ func connect_close_nodes():
 		else: ln.points[1] = Vector2(0,9)
 
 func on_click():
-	get_node("../../").levelpath_click(self)
 	if state != StateEnum.ENABLE: return
-	if state==StateEnum.ENABLE:
-		if type==TypeEnum.SUN: Effects.add_sunpoints(10,global_position)
-		if type==TypeEnum.CHEST: 
-			get_node("../../UI/UpgradeGetted").show()
-			yield(get_node("../../UI/UpgradeGetted"),"on_close")
-			get_node("../../UI/UpgradeGetted").show()
+	get_node("../../").levelpath_click(type)
+	if type==TypeEnum.SUN: Effects.add_sunpoints(10,global_position)
+	if type==TypeEnum.CHEST: 
+		get_node("../../UI/UpgradeGetted").show()
+		yield(get_node("../../UI/UpgradeGetted"),"on_close")
+		get_node("../../UI/UpgradeGetted").show()
 	state = StateEnum.COMPLETE
 	set_type()
 	for c in close_nodes:
