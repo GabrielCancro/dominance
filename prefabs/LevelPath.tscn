@@ -57,11 +57,11 @@ width = 7.0
 default_color = Color( 0.34902, 0.345098, 0.407843, 1 )
 
 [node name="N" type="Node2D" parent="."]
-modulate = Color( 0.3, 0.3, 0.3, 1 )
 z_index = 1
 
-[node name="sun" type="TextureRect" parent="N"]
+[node name="SUN_DISABLE" type="TextureRect" parent="N"]
 visible = false
+modulate = Color( 0.145098, 0.145098, 0.145098, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -77,7 +77,59 @@ mouse_filter = 2
 texture = ExtResource( 4 )
 expand = true
 
-[node name="chest" type="TextureRect" parent="N"]
+[node name="SUN_ENABLE" type="TextureRect" parent="N"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 25.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 50, 50 )
+rect_rotation = 27420.0
+rect_pivot_offset = Vector2( 25, 25 )
+mouse_filter = 2
+texture = ExtResource( 4 )
+expand = true
+
+[node name="SUN_COMPLETE" type="TextureRect" parent="N"]
+visible = false
+modulate = Color( 0.137255, 0.313726, 0.168627, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 25.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 50, 50 )
+rect_rotation = 27180.3
+rect_pivot_offset = Vector2( 25, 25 )
+mouse_filter = 2
+texture = ExtResource( 4 )
+expand = true
+
+[node name="CHEST_DISABLE" type="TextureRect" parent="N"]
+visible = false
+modulate = Color( 0.203922, 0.203922, 0.203922, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -22.0
+margin_top = -22.0
+margin_right = 39.0
+margin_bottom = 19.0
+rect_pivot_offset = Vector2( 25, 25 )
+mouse_filter = 2
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+
+[node name="CHEST_ENABLE" type="TextureRect" parent="N"]
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -93,7 +145,25 @@ texture = ExtResource( 5 )
 expand = true
 stretch_mode = 5
 
-[node name="level" type="TextureRect" parent="N"]
+[node name="CHEST_COMPLETE" type="TextureRect" parent="N"]
+visible = false
+modulate = Color( 0.109804, 0.521569, 0.188235, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -22.0
+margin_top = -22.0
+margin_right = 39.0
+margin_bottom = 19.0
+rect_pivot_offset = Vector2( 25, 25 )
+mouse_filter = 2
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+
+[node name="LEVEL_DISABLE" type="TextureRect" parent="N"]
+modulate = Color( 0.243137, 0.243137, 0.243137, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -108,7 +178,7 @@ mouse_filter = 2
 texture = ExtResource( 1 )
 expand = true
 
-[node name="ico" type="TextureRect" parent="N/level"]
+[node name="ico" type="TextureRect" parent="N/LEVEL_DISABLE"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -123,8 +193,55 @@ texture = ExtResource( 7 )
 expand = true
 stretch_mode = 5
 
-[node name="tower" type="TextureRect" parent="N/level"]
+[node name="LEVEL_ENABLE" type="TextureRect" parent="N"]
 visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 25.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 50, 50 )
+rect_pivot_offset = Vector2( 25, 25 )
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+
+[node name="ico" type="TextureRect" parent="N/LEVEL_ENABLE"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -21.5
+margin_top = -23.0
+margin_right = 21.5
+margin_bottom = 29.0
+rect_pivot_offset = Vector2( 25, 25 )
+mouse_filter = 2
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 5
+
+[node name="LEVEL_COMPLETE" type="TextureRect" parent="N"]
+visible = false
+modulate = Color( 0.705882, 0.72549, 0.533333, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 25.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 50, 50 )
+rect_pivot_offset = Vector2( 25, 25 )
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+
+[node name="tower" type="TextureRect" parent="N/LEVEL_COMPLETE"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

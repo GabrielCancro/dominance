@@ -692,7 +692,7 @@ margin_bottom = -450.0
 
 [node name="P1" parent="LevelPath" instance=ExtResource( 12 )]
 position = Vector2( 135, 202 )
-state = 1
+state = 2
 
 [node name="P2" parent="LevelPath" instance=ExtResource( 12 )]
 position = Vector2( 197, 203 )

@@ -744,44 +744,33 @@ __meta__ = {
 }
 
 [node name="P1" parent="Levels" instance=ExtResource( 14 )]
-nodeNeedId = 0
 
 [node name="P2" parent="Levels" instance=ExtResource( 14 )]
 position = Vector2( -202, 64 )
-nodeNeedId = 3
 
 [node name="P3" parent="Levels" instance=ExtResource( 14 )]
 position = Vector2( -109, 20 )
-nodeNeedId = 5
 
 [node name="P4" parent="Levels" instance=ExtResource( 14 )]
 position = Vector2( -115, 129 )
-nodeNeedId = 3
 
 [node name="P5" parent="Levels" instance=ExtResource( 14 )]
 position = Vector2( 3, 90 )
-nodeNeedId = 1
 
 [node name="P6" parent="Levels" instance=ExtResource( 14 )]
 position = Vector2( 102, 44 )
-nodeNeedId = 5
 
 [node name="P7" parent="Levels" instance=ExtResource( 14 )]
 position = Vector2( 222, 27 )
-nodeNeedId = 6
 
 [node name="P8" parent="Levels" instance=ExtResource( 14 )]
 position = Vector2( -187, 175 )
-nodeNeedId = 4
 
 [node name="P9" parent="Levels" instance=ExtResource( 14 )]
 position = Vector2( 117, 127 )
-nodeNeedId = 6
 
 [node name="P10" parent="Levels" instance=ExtResource( 14 )]
 position = Vector2( -30, 172 )
-nodeNeedId = 4
 
 [node name="P11" parent="Levels" instance=ExtResource( 14 )]
 position = Vector2( 210, 162 )
-nodeNeedId = 9

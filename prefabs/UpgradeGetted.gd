@@ -10,12 +10,17 @@ func _ready():
 func show():
 	var code = UpgradeData.get_one_non_obtained_upgrade()
 	var data = UpgradeData.get_upg_data(code)
+	if !code in Saves.savedData.upgrades_unlocked:
+		Saves.savedData.upgrades_unlocked.append(code)
 	$Control/ico.texture = data.texture
 	$Control/Label.text = data.desc
 	$Control/lbl_title.text = Lang.get_string("ui_upgrade_unlocked")
+	$Control/Button.disabled = true
 	modulate.a = 0
 	Effects.appear_from_bottom(self)
 	visible = true
+	yield(get_tree().create_timer(.5),"timeout")
+	$Control/Button.disabled = false
 
 func on_click_ok():
 	Effects.to_alpha(self,0)

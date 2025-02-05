@@ -72,7 +72,7 @@ func on_button_down(upg_node):
 
 func on_back():
 	Sounds.play_sound("button1")
-	get_tree().change_scene("res://scenes/Menu.tscn")
+	get_tree().change_scene("res://scenes/SelectLevel.tscn")
 
 func unlock_new_upgrade():
 	var upgs = UpgradeData.get_non_obtained_upgrades()

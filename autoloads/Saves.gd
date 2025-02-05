@@ -6,6 +6,7 @@ var default_data = {
 	"resume":null,
 	"language":"en",
 	"level":1,
+	"levelpath":{},
 	"days":0,
 	"fullscreen": true,
 	"mvol": 100

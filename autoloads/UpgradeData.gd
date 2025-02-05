@@ -21,14 +21,11 @@ func add_upgrade(code):
 
 func get_non_obtained_upgrades():
 	var arr = UPGRADES.keys().duplicate()
-	for k in Saves.savedData.upgrades:
-		arr.erase(k)
+	for k in Saves.savedData.upgrades_unlocked: arr.erase(k)
 	return arr
 
 func get_one_non_obtained_upgrade():
-	var arr = UPGRADES.keys().duplicate()
-	for k in Saves.savedData.upgrades:
-		arr.erase(k)
+	var arr = get_non_obtained_upgrades()
 	arr.shuffle()
 	if arr.size()<=0: return null
 	else: return arr[0]
