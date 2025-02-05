@@ -42,6 +42,7 @@ func connect_close_nodes():
 		else: ln.points[1] = Vector2(0,9)
 
 func on_click():
+	Global.current_level = name
 	if type == TypeEnum.LEVEL && state == StateEnum.COMPLETE: get_tree().change_scene("res://scenes/SelectBuild.tscn")
 	if state != StateEnum.ENABLE: return
 	state = StateEnum.COMPLETE

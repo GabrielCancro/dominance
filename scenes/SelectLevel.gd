@@ -4,6 +4,7 @@ func _ready():
 	Effects.connect("add_sunpoints_effect_end",self,"add_sunpoints",[1])
 	add_sunpoints()
 	load_levelPath()
+	
 
 func levelpath_click(node):
 	print(node.name)
@@ -25,7 +26,7 @@ func load_levelPath():
 			node.state = state
 			node.set_type()
 	for node in $LevelPath.get_children():
-		node.update_connected_states()
+			node.update_connected_states()
 
 func _exit_tree():
 	save_levelPath()

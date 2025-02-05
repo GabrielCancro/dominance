@@ -111,5 +111,5 @@ func add_sunpoints(amount,pos):
 		var n = preload("res://prefabs/effects/fx_sunpoint_getted.tscn").instance()
 		n.delay = i*0.1
 		get_node("/root").add_child(n)
-		n.rect_global_position = pos - Vector2(25,25)
+		n.rect_global_position = pos# - Vector2(25,25)
 		

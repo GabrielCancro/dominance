@@ -1,9 +1,8 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/font/Anton-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/font/AbyssinicaSIL-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://prefabs/Card.tscn" type="PackedScene" id=4]
 [ext_resource path="res://prefabs/UpgradeNew.tscn" type="PackedScene" id=5]
 [ext_resource path="res://popups/WoodPanelUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/ui/ui_btn_bg_1.png" type="Texture" id=7]
@@ -105,77 +104,6 @@ text = "SELECT BUILD"
 align = 1
 valign = 1
 autowrap = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -250.0
-margin_top = -136.0
-margin_right = 250.0
-margin_bottom = -24.0
-
-[node name="Card1" parent="HBoxContainer" instance=ExtResource( 4 )]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 80.0
-margin_bottom = 112.0
-
-[node name="Card2" parent="HBoxContainer" instance=ExtResource( 4 )]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 84.0
-margin_top = 0.0
-margin_right = 164.0
-margin_bottom = 112.0
-
-[node name="Card3" parent="HBoxContainer" instance=ExtResource( 4 )]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 168.0
-margin_top = 0.0
-margin_right = 248.0
-margin_bottom = 112.0
-
-[node name="Card4" parent="HBoxContainer" instance=ExtResource( 4 )]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 252.0
-margin_top = 0.0
-margin_right = 332.0
-margin_bottom = 112.0
-
-[node name="Card5" parent="HBoxContainer" instance=ExtResource( 4 )]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 336.0
-margin_top = 0.0
-margin_right = 416.0
-margin_bottom = 112.0
-
-[node name="Card6" parent="HBoxContainer" instance=ExtResource( 4 )]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 420.0
-margin_top = 0.0
-margin_right = 500.0
-margin_bottom = 112.0
 
 [node name="Grid" type="GridContainer" parent="."]
 anchor_left = 0.5

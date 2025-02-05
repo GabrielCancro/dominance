@@ -3,18 +3,22 @@
 [ext_resource path="res://prefabs/effects/fx_sunpoint_getted.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/ui_sun.png" type="Texture" id=2]
 
-[node name="fx_sunpoint_getted" type="TextureRect"]
+[node name="fx_sunpoint_getted" type="Control"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -400.0
 margin_top = -225.0
-margin_right = -350.0
-margin_bottom = -175.0
+margin_right = -400.0
+margin_bottom = -225.0
 rect_pivot_offset = Vector2( 25, 25 )
-texture = ExtResource( 2 )
-expand = true
 script = ExtResource( 1 )
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.255556, 0.255556 )
+z_index = 999
+z_as_relative = false
+texture = ExtResource( 2 )

@@ -1,4 +1,4 @@
-extends TextureRect
+extends Control
 
 var delay = 0
 func _ready():

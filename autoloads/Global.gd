@@ -5,6 +5,7 @@ var amount = 0
 var main_menu_never_showed = true
 var demo = false
 var tuto = false
+var current_level
 signal end_magic
 
 func _ready():

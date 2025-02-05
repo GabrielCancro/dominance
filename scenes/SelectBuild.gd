@@ -1,19 +1,17 @@
 extends Control
 
 var current_selected
-var points = 40
+var points
 
 func _ready():
 	randomize()
+	points = Saves.savedData.days
 	Effects.simple_hover_fx($btn_menu)
 	$btn_menu.connect("button_down",self,"on_back")
 	$Descriptor.visible = false
 	$lbl_title.text = Lang.get_string("select_start_build")
+	$lbl_title.text += " "+Global.current_level
 	$btn_menu/Label.text = Lang.get_string("back_to_main")
-	#Saves.savedData.days = 50
-#	if Saves.savedData.upgrades_unlocked.size()<=0:
-#		unlock_new_upgrade()
-#		unlock_new_upgrade()
 	update_ui()
 
 func update_ui():
