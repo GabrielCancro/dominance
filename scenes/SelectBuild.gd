@@ -7,10 +7,12 @@ func _ready():
 	randomize()
 	points = Saves.savedData.days
 	Effects.simple_hover_fx($btn_menu)
+	Effects.simple_hover_fx($btn_start)
 	$btn_menu.connect("button_down",self,"on_back")
+	$btn_start.connect("button_down",self,"on_start")
 	$Descriptor.visible = false
 	$lbl_title.text = Lang.get_string("select_start_build")
-	$lbl_title.text += " "+Global.current_level
+	$lbl_title.text += " "+LevelManager.current_level
 	$btn_menu/Label.text = Lang.get_string("back_to_main")
 	update_ui()
 
@@ -71,6 +73,10 @@ func on_button_down(upg_node):
 func on_back():
 	Sounds.play_sound("button1")
 	get_tree().change_scene("res://scenes/SelectLevel.tscn")
+
+func on_start():
+	Sounds.play_sound("button1")
+	get_tree().change_scene("res://scenes/Game.tscn")
 
 func unlock_new_upgrade():
 	var upgs = UpgradeData.get_non_obtained_upgrades()

@@ -27,6 +27,7 @@ Lang="*res://autoloads/Lang.gd"
 Global="*res://autoloads/Global.gd"
 Saves="*res://autoloads/Saves.gd"
 UpgradeData="*res://autoloads/UpgradeData.gd"
+LevelManager="*res://autoloads/LevelManager.gd"
 
 [display]
 
@@ -72,7 +73,3 @@ texture={
 [physics]
 
 common/enable_pause_aware_picking=true
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"

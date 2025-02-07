@@ -1,6 +1,6 @@
 extends Control
 
-var grid_size = Vector2(8,3)
+var grid_size = 5
 var unit_code_to_create = ""
 var team_unit_to_select
 signal end_all_moves
@@ -8,12 +8,21 @@ signal selected_unit(unit)
 signal unit_created
 
 func _ready():
-	yield(get_tree().create_timer(.5),"timeout")
+	$Grid.columns = grid_size
+	for c in $Grid.get_children(): c.visible = (c.get_index()<grid_size*3)
+	
+#	for c in $Grid.get_children(): if c.visible: c.rect_min_size.x *= 8.0 / grid_size
+
+	$Grid.rect_size.x = 0
+	$Grid.rect_position.x += $Grid/c0.rect_size.x * 0.5 * (8-grid_size)
+	if grid_size<8: $Grid.rect_position.x -= 20
+	
 	$CreateButtons/btn1.connect("button_down",self,"create_unit_left",[1])
 	$CreateButtons/btn2.connect("button_down",self,"create_unit_left",[2])
 	$CreateButtons/btn3.connect("button_down",self,"create_unit_left",[3])
 	$CreateButtons.visible = false
 	$CreateButtons/AnimationPlayer.play("Nueva Animación")
+	yield(get_tree().create_timer(.5),"timeout")
 #	add_unit("wolf",5,3)
 #	add_unit("orc",6,2)
 #	add_unit("slime_small",7,1)
@@ -29,14 +38,14 @@ func _ready():
 func get_grid_node(pos):
 	if pos.x<=0: return null
 	if pos.y<=0: return null
-	if pos.x>8: return null
+	if pos.x>grid_size: return null
 	if pos.y>3: return null
-	var grid_node = $Grid.get_child((pos.x-1)+(pos.y-1)*grid_size.x)
+	var grid_node = $Grid.get_child((pos.x-1)+(pos.y-1)*grid_size)
 	return grid_node
 
 func add_unit(type,x,y):
 	var unit = UnitManager.create_new_unit(type)
-	if x==8: Effects.fx_add_enemy(unit)
+	if x==grid_size: Effects.fx_add_enemy(unit)
 	$Units.add_child(unit)
 	unit.map_position = Vector2(x,y)
 	unit.rect_global_position = get_grid_node(unit.map_position).rect_global_position
@@ -48,8 +57,8 @@ func add_enemy_rnd_line(type):
 	var arr = [1,2,3]
 	arr.shuffle()
 	for i in range(arr.size()):
-		if !check_unit_pos(Vector2(8,arr[i]),null): 
-			add_unit(type,8,arr[i])
+		if !check_unit_pos(Vector2(grid_size,arr[i]),null): 
+			add_unit(type,grid_size,arr[i])
 			return true
 	return false
 
@@ -75,7 +84,7 @@ func unit_try_attack(unit):
 func unit_push(unit):
 	var unit_to_push = check_unit_pos(unit.map_position,unit);
 	if unit_to_push:
-		if(unit_to_push.map_position.x==8): 
+		if(unit_to_push.map_position.x>=grid_size): 
 			unit_to_push.queue_free()
 			return
 		move_to(unit_to_push,unit_to_push.map_position+Vector2(1,0),true)
