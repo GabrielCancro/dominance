@@ -1,7 +1,6 @@
 extends Control
 
-var grid_size = 5
-var unit_code_to_create = ""
+var grid_size = 8
 var team_unit_to_select
 signal end_all_moves
 signal selected_unit(unit)
@@ -9,31 +8,25 @@ signal unit_created
 
 func _ready():
 	$Grid.columns = grid_size
-	for c in $Grid.get_children(): c.visible = (c.get_index()<grid_size*3)
-	
+	for c in $Grid.get_children(): c.visible = (c.get_index()<grid_size*3)	
 #	for c in $Grid.get_children(): if c.visible: c.rect_min_size.x *= 8.0 / grid_size
 
 	$Grid.rect_size.x = 0
 	$Grid.rect_position.x += $Grid/c0.rect_size.x * 0.5 * (8-grid_size)
 	if grid_size<8: $Grid.rect_position.x -= 20
 	
-	$CreateButtons/btn1.connect("button_down",self,"create_unit_left",[1])
-	$CreateButtons/btn2.connect("button_down",self,"create_unit_left",[2])
-	$CreateButtons/btn3.connect("button_down",self,"create_unit_left",[3])
-	$CreateButtons.visible = false
-	$CreateButtons/AnimationPlayer.play("Nueva Animación")
 	yield(get_tree().create_timer(.5),"timeout")
-#	add_unit("wolf",5,3)
-#	add_unit("orc",6,2)
-#	add_unit("slime_small",7,1)
-#	add_unit("slime",7,2)
-#	add_unit("slime_big",8,1)
-#	add_unit("wolf",8,3)
-#	add_unit("militia",1,1)
-#	add_unit("militia",1,2)
-#	add_unit("militia",1,3)
-#	add_unit("soldier",2,2)
-#	add_unit("soldier",2,3)
+	add_unit("wolf",5,3)
+	add_unit("orc",6,2)
+	add_unit("slime_small",7,1)
+	add_unit("slime",7,2)
+	add_unit("slime_big",8,1)
+	add_unit("wolf",8,3)
+	add_unit("militia",1,1)
+	add_unit("militia",1,2)
+	add_unit("militia",1,3)
+	add_unit("soldier",2,2)
+	add_unit("soldier",2,3)
 
 func get_grid_node(pos):
 	if pos.x<=0: return null
@@ -97,13 +90,10 @@ func check_unit_pos(pos,ignoreNode=null):
 			return u
 	return null
 
-func create_unit_left(line):
-	var u = add_unit(unit_code_to_create,1,line);
+func create_unit_left(line,code):
+	var u = add_unit(code,1,line);
 	unit_push(u);
 	Sounds.play_sound("unit1")
-	$CreateButtons.visible = false
-	Global.set_stop_mouse(true)
-	emit_signal("unit_created")
 
 func get_unit_around(unit):
 	var en = check_unit_pos(unit.map_position+Vector2(-1,0));
@@ -156,11 +146,7 @@ func attack_tower(unit):
 	Effects.move_to_yoyo(unit,dest)
 	$Tower.damage(unit.data.atk)
 
-func show_create_unit_ui(unit_code):
-	yield(get_tree().create_timer(.2),"timeout")
-	Global.set_stop_mouse(false)
-	unit_code_to_create = unit_code
-	$CreateButtons.visible = true
+
 
 func show_select_unit_panel(team = -1):
 	Global.set_stop_mouse(false)
@@ -181,3 +167,6 @@ func on_unit_click(unit):
 		$SelectUnitPanel.visible = false
 		Global.set_stop_mouse(true)
 		emit_signal("selected_unit",unit)
+
+func get_first_cell_x_position():
+	return $Grid/c0.rect_global_position.x

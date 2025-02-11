@@ -22,8 +22,9 @@ func condition_card_soldier(card_node):
 		return false
 	
 func use_card_soldier(card_node):
-	get_node("/root/Game/Map").show_create_unit_ui(card_node.data.code)
-	yield(get_node("/root/Game/Map"),"unit_created")
+	var CUP = get_node("/root/Game/CreateUnitPanel")
+	CUP.show_ui(card_node.data.code)
+	yield(CUP,"close")
 	emit_signal("end_usage")
 
 func warning_card_militia(card_node):
