@@ -1,23 +1,39 @@
 shader_type canvas_item;
-//render_mode unshaded; // optional
 
-// Noise texture
-uniform sampler2D noise_texture: repeat_enable, filter_nearest;
-// Fog density
-uniform float density: hint_range(0.0, 1.0) = 0.25;
-// Fog speed
-uniform vec2 speed = vec2(0.02, 0.01);
+// Amount of detail.
+uniform int octaves = 4;
 
+// Opacity of the output fog.
+uniform float starting_amplitude: hint_range(0.0, 1.0) = 0.5;
 
-// Called for every pixel the material is visible on
+// Rate of pattern within the fog.
+uniform float starting_frequency = 1.0;
+
+// Shift towards transparency (clamped) for sparser fog.
+uniform float shift: hint_range(-1.0, 0.0) = -0.2;
+
+// Direction and speed of travel.
+uniform vec2 velocity = vec2(1.0, 1.0);
+
+// Color of the fog.
+uniform vec4 fog_color: hint_color = vec4(0.0, 0.0, 0.0, 1.0);
+
+// Noise texture; OpenSimplexNoise is great, but any filtered texture is fine.
+uniform sampler2D noise;
+
+float rand(vec2 uv) {
+	float amplitude = starting_amplitude;
+	float frequency = starting_frequency;
+	float output = 0.0;
+	for (int i = 0; i < octaves; i++) {
+		output += texture(noise, uv * frequency).x * amplitude;
+		amplitude /= 2.0;
+		frequency *= 2.0;
+	}
+	return clamp(output + shift, 0.0, 1.0);
+}
+
 void fragment() {
-	// Make the fog slowly move
-	vec2 uv = UV + speed * TIME;
-	// Sample the noise texture
-	float noise = texture(noise_texture, uv).r;
-	// Convert the noise from the (0.0, 1.0) range to the (-1.0, 1.0) range
-	// and clamp it between 0.0 and 1.0 again
-	float fog = clamp(noise * 2.0 - 1.0, 0.0, 1.0);
-	// Apply the fog effect
-	COLOR.a *= fog * density;
+	vec2 motion = vec2(rand(UV + TIME * starting_frequency * velocity));
+	COLOR = mix(vec4(0.0), fog_color, rand(UV + motion));
 }
