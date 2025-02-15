@@ -64,7 +64,7 @@ func use_card_wind(card_node):
 	randomize()
 	for u in get_node("/root/Game/Map/Units").get_children():
 		if u.data.team==1: continue
-		if u.map_position.x>=LevelManager.get_current_level_data().grid_size: continue
+		if u.map_position.x>=LevelManager.current_level_data.grid_size: continue
 		if get_node("/root/Game/Map").check_unit_pos(u.map_position+Vector2(1,0)): continue
 		Effects.shine(u)
 		var th = preload("res://prefabs/magics/MagicWind.tscn").instance()

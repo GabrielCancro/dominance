@@ -1,21 +1,128 @@
 extends Node
 
-var current_level
+var current_level_data
 var is_rain = false
 var is_fog = false
 
-var LEVELS
+var no_created_monsters = []
 
+var LEVELS = {
+	"P1":{"total_days":20,"grid_size":5, "rain":3, "fog":2},
+	"P1m":[ {"c":"day.1","m":["sn"]},{"c":"every.3","m":["ss","wf"]}]
+}
 
 func _ready():
 	pass # Replace with function body.
 
-func get_current_level_data():
-	return {"name":current_level,"grid_size":5}
+func set_current_level(code):
+	no_created_monsters = []
+	current_level_data = LEVELS[code].duplicate()
+	current_level_data["name"] = code
+	return current_level_data
+
+func create_no_created_monsters():
+	var new_no_created_monsters = []
+	for m in no_created_monsters:
+		var created = get_node("/root/Game/Map").add_enemy_rnd_line(m)
+		if !created: new_no_created_monsters.append(m)
+	no_created_monsters = new_no_created_monsters
+
+func create_monsters():
+#	if Global.tuto && day==2: add_enemy(["slime_small"])
+	var day = get_node("/root/Game/DayCounter").day
+	var statments = LEVELS[current_level_data.name+"m"]
+	for st in statments:
+		var cs = st.c.split(".")
+		if cs[0]=="day" && day==int(cs[1]): add_enemy(st.m)
+		if cs[0]=="every" && day%int(cs[1])==0: add_enemy(st.m)
+#		if day%3==0: add_enemy(["slime_small"])
+#	elif level==2:
+#		if day==2: add_enemy(["slime_small"])
+#		if day==10: add_enemy(["slime_small","slime"])
+#		if day%4==0: add_enemy(["slime_small"])
+#		if day%7==0: add_enemy(["slime"])
+#	elif level==3:
+#		if day==6: add_enemy(["wolf"])
+#		if day==10: add_enemy(["wolf"])
+#		if day==18: add_enemy(["wolf"])
+#		if day%4==0: add_enemy(["slime","slime_small"])
+#		if day%7==0: add_enemy(["slime_small","slime","wolf"])
+#	elif level==4:
+#		if day%3==0: add_enemy(["slime","slime_small"])
+#		if day%7==0: add_enemy(["slime","wolf"])
+#		if day%15==0: add_enemy(["slime_big"])
+#	elif level==5:
+#		if day==1: add_enemy(["slime_small"])
+#		if day==10: add_enemy(["orc"])
+#		if day==18: add_enemy(["orc"])
+#		if day%3==0: add_enemy(["slime","slime_small"])
+#		if day%7==0: add_enemy(["slime","wolf"])
+#		if day%15==0: add_enemy(["slime_big","orc"])
+#	else:
+#		if day%3==0: add_enemy(["slime_small","wolf"])
+#		if day%5==0: add_enemy(["slime","wolf"])
+#		if day%9==0: add_enemy(["slime_big","orc"])
+
+func add_enemy(arr):
+	randomize()
+	arr.shuffle()
+	var unit_name = UnitManager.get_name_by_smallkeys(arr[0])
+	var created = get_node("/root/Game/Map").add_enemy_rnd_line(unit_name)
+	if !created: no_created_monsters.append(unit_name)
 
 func check_rain():
-	if get_node("/root/Game/DayCounter").day==2:
-		return 2
+	if !"rain" in current_level_data: return false
+	var DC = get_node("/root/Game/DayCounter")
+	var Rain = get_node("/root/Game/Rain")
+	if DC.day >= LevelManager.current_level_data.rain && !is_rain:
+		is_rain = true
+		Rain.modulate.a = 0
+		Effects.to_alpha_slow(Rain,1)
+		Rain.visible = true
+		return true
+	return false
 
-func get_current_fog_day():
-	return 1
+func check_fog():
+	if !"fog" in current_level_data: return false
+	var DC = get_node("/root/Game/DayCounter")
+	var Fog = get_node("/root/Game/Fog")
+	if DC.day >= LevelManager.current_level_data.fog && !is_rain:
+		is_fog = true
+		Fog.modulate.a = 0
+		Effects.to_alpha_slow(Fog,1)
+		Fog.visible = true
+		return true
+	return false
+
+func shot_prob_thunders():
+	#return amount of thunders
+	if !is_rain: return 0
+	randomize()
+	var total_delay = 1.0
+	for u in get_node("/root/Game/Map/Units").get_children():
+		if(randf()>.20): continue
+		var dy = rand_range(.3,.6)
+		throw_delay_thunder(dy,u)
+		total_delay += dy
+	return total_delay
+
+func throw_delay_thunder(delay,unit):
+	var mapNode = get_node("/root/Game/Map")
+	var th = preload("res://prefabs/magics/MagicThundre.tscn").instance()
+	yield(get_tree().create_timer(delay),"timeout")
+	mapNode.add_child(th)
+	th.start_magic(unit)
+
+func add_debug_units():
+	yield(get_tree().create_timer(.5),"timeout")
+#	add_unit("wolf",5,3)
+#	add_unit("orc",6,2)
+#	add_unit("slime_small",7,1)
+#	add_unit("slime",7,2)
+#	add_unit("slime_big",8,1)
+#	add_unit("wolf",8,3)
+#	add_unit("militia",1,1)
+#	add_unit("militia",1,2)
+#	add_unit("militia",1,3)
+#	add_unit("soldier",2,2)
+#	add_unit("soldier",2,3)

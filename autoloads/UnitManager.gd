@@ -3,15 +3,14 @@ extends Node
 var unit_descriptor
 var TowerNode
 var UnitData = {
-	"slime":{"atk":1,"hp":3,"spd":2, "img":null, "team":2},
-	"slime_small":{"atk":1,"hp":2,"spd":2, "img":null, "team":2},
-	"slime_big":{"atk":1,"hp":5,"spd":1, "img":null, "team":2},
-	"wolf":{"atk":1,"hp":2,"spd":3, "img":null, "team":2},
-	"orc":{"atk":1,"hp":5,"spd":2, "img":null, "team":2},
-	"militia":{"atk":1,"hp":2,"spd":1, "img":null, "team":1},
-	"soldier":{"atk":1,"hp":4,"spd":1, "img":null, "team":1}
+	"slime":{"sk":"sn","atk":1,"hp":3,"spd":2, "img":null, "team":2},
+	"slime_small":{"sk":"ss","atk":1,"hp":2,"spd":2, "img":null, "team":2},
+	"slime_big":{"sk":"sb","atk":1,"hp":5,"spd":1, "img":null, "team":2},
+	"wolf":{"sk":"wf","atk":1,"hp":2,"spd":3, "img":null, "team":2},
+	"orc":{"sk":"or","atk":1,"hp":5,"spd":2, "img":null, "team":2},
+	"militia":{"ml":"sn","atk":1,"hp":2,"spd":1, "img":null, "team":1},
+	"soldier":{"sl":"sn","atk":1,"hp":4,"spd":1, "img":null, "team":1}
 }
-
 
 func _ready():
 	init_units()
@@ -35,3 +34,7 @@ func show_unit_description(unit_node):
 func hide_unit_description(unit_node):
 	if unit_descriptor && unit_descriptor.unit_target == unit_node:
 		unit_descriptor.hide_panel()
+
+func get_name_by_smallkeys(sk):
+	for u in UnitData:
+		if sk==UnitData[u].sk: return UnitData[u].name

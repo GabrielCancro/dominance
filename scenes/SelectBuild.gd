@@ -12,7 +12,7 @@ func _ready():
 	$btn_start.connect("button_down",self,"on_start")
 	$Descriptor.visible = false
 	$lbl_title.text = Lang.get_string("select_start_build")
-	$lbl_title.text += " "+LevelManager.current_level
+	$lbl_title.text += " "+LevelManager.current_level_data.name
 	$btn_menu/Label.text = Lang.get_string("back_to_main")
 	update_ui()
 

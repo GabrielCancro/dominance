@@ -14,19 +14,7 @@ func _ready():
 	$Grid.rect_size.x = 0
 	$Grid.rect_position.x += $Grid/c0.rect_size.x * 0.5 * (8-grid_size)
 	if grid_size<8: $Grid.rect_position.x -= 20
-	
-	yield(get_tree().create_timer(.5),"timeout")
-	add_unit("wolf",5,3)
-	add_unit("orc",6,2)
-	add_unit("slime_small",7,1)
-	add_unit("slime",7,2)
-	add_unit("slime_big",8,1)
-	add_unit("wolf",8,3)
-	add_unit("militia",1,1)
-	add_unit("militia",1,2)
-	add_unit("militia",1,3)
-	add_unit("soldier",2,2)
-	add_unit("soldier",2,3)
+	LevelManager.add_debug_units()
 
 func get_grid_node(pos):
 	if pos.x<=0: return null
