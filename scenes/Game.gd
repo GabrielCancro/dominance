@@ -64,6 +64,11 @@ func start_new_turn():
 		Effects.to_alpha_slow($Rain,1)
 		$Rain.visible = true
 		yield(get_tree().create_timer(1),"timeout")
+	if $DayCounter.day == LevelManager.get_current_fog_day():
+		$Fog.modulate.a = 0
+		Effects.to_alpha_slow($Fog,1)
+		$Fog.visible = true
+		yield(get_tree().create_timer(1),"timeout")
 	$EndTurn.modulate = Color(1,1,1,1)
 	CardData.get_cards()
 
