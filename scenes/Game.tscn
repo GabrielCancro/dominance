@@ -139,6 +139,7 @@ margin_right = -213.0
 margin_bottom = 22.0
 
 [node name="Fog" type="ColorRect" parent="."]
+visible = false
 material = SubResource( 10 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -146,6 +147,7 @@ mouse_filter = 2
 color = Color( 0, 0, 0, 0 )
 
 [node name="Rain" type="ColorRect" parent="."]
+visible = false
 material = SubResource( 9 )
 anchor_right = 1.0
 anchor_bottom = 1.0

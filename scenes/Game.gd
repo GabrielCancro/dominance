@@ -59,6 +59,11 @@ func start_new_turn():
 		$RegionBottom/Stash.add_stash_gold(1)
 		yield(get_tree().create_timer(1),"timeout")
 	lastDayEnded = ($DayCounter.day==$DayCounter.max_days)
+	if $DayCounter.day == LevelManager.get_current_rain_day():
+		$Rain.modulate.a = 0
+		Effects.to_alpha_slow($Rain,1)
+		$Rain.visible = true
+		yield(get_tree().create_timer(1),"timeout")
 	$EndTurn.modulate = Color(1,1,1,1)
 	CardData.get_cards()
 

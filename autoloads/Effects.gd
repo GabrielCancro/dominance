@@ -30,6 +30,10 @@ func disappear(node,to=Vector2(0,0)):
 func to_alpha(node,to=1):
 	tween.interpolate_property(node,"modulate:a",node.modulate.a,to,.2,Tween.TRANS_QUAD,Tween.EASE_OUT)
 	tween.start()
+
+func to_alpha_slow(node,to=1):
+	tween.interpolate_property(node,"modulate:a",node.modulate.a,to,1,Tween.TRANS_QUAD,Tween.EASE_OUT)
+	tween.start()
 	
 func to_scale(node,to=1):
 	tween.interpolate_property(node,"rect_scale",node.rect_scale,Vector2(to,to),.2,Tween.TRANS_LINEAR,Tween.EASE_IN)
