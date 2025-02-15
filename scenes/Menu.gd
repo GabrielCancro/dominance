@@ -54,7 +54,7 @@ func localizate():
 func on_click_button(code):
 	Sounds.play_sound("button1")
 	if code=="start":
-		get_tree().change_scene("res://scenes/Game.tscn")
+		get_tree().change_scene("res://scenes/SelectLevel.tscn")
 	elif code=="options":
 		get_tree().change_scene("res://scenes/Options.tscn")
 	elif code=="credits":

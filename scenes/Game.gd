@@ -54,15 +54,16 @@ func on_end_turn():
 func start_new_turn():
 	Sounds.play_sound("turn1")
 	$DayCounter.add_day()
-	yield(get_tree().create_timer(1),"timeout")
-	if(Saves.savedData.upgrades.find("upg_gold_five_days")!=-1 && $DayCounter.day%5==0 && !lastDayEnded):
+	yield(get_tree().create_timer(.5),"timeout")
+	var tdl = LevelManager.shot_prob_thunders()
+	if tdl>0: yield(get_tree().create_timer(tdl),"timeout")
+	yield(get_tree().create_timer(.5),"timeout")
+	if(LevelManager.current_upgrades.find("upg_gold_five_days")!=-1 && $DayCounter.day%5==0 && !lastDayEnded):
 		$RegionBottom/Stash.add_stash_gold(1)
 		yield(get_tree().create_timer(1),"timeout")
 	lastDayEnded = ($DayCounter.day==$DayCounter.max_days)
 	if LevelManager.check_rain(): yield(get_tree().create_timer(1),"timeout")
 	if LevelManager.check_fog(): yield(get_tree().create_timer(1),"timeout")
-	var tdl = LevelManager.shot_prob_thunders()
-	if tdl>0: yield(get_tree().create_timer(tdl),"timeout")
 	$EndTurn.modulate = Color(1,1,1,1)
 	CardData.get_cards()
 

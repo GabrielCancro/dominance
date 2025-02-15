@@ -40,7 +40,7 @@ func get_amount_unobtained():
 	return UPGRADES.keys().size()-get_non_obtained_upgrades().size()
 
 func apply_upgrades():
-	for u in Saves.savedData.upgrades:
+	for u in LevelManager.current_upgrades:
 		print("CHECK "+u)
 		if has_method("apply_"+u): 
 			print("APPLY "+u)

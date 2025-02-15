@@ -39,6 +39,7 @@ func damage(dam):
 		yield(get_tree().create_timer(.5),"timeout")
 		get_node("/root/Game/Houses")._update_houses(false,1)
 		Effects.disappear(self)
+		CardData.update_cards_warnings()
 
 func update_hp(show=false):
 	if show: hp_timer = 1.5

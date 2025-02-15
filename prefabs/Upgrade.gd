@@ -5,6 +5,7 @@ signal on_select(node)
 
 func _ready():
 	connect("button_down",self,"on_click")
+	unselect()
 
 func set_data(_code):
 	code = _code

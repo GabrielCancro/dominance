@@ -1,6 +1,7 @@
 extends Node
 
 var current_level_data
+var current_upgrades = []
 var is_rain = false
 var is_fog = false
 
@@ -8,7 +9,7 @@ var no_created_monsters = []
 
 var LEVELS = {
 	"P1":{"total_days":20,"grid_size":5, "rain":3, "fog":2},
-	"P1m":[ {"c":"day.1","m":["sn"]},{"c":"every.3","m":["ss","wf"]}]
+	"P1m":[ {"c":"day.2","m":["ss"]},{"c":"every.4","m":["ss"]}]
 }
 
 func _ready():
@@ -16,6 +17,8 @@ func _ready():
 
 func set_current_level(code):
 	no_created_monsters = []
+	is_rain = false
+	is_fog = false
 	current_level_data = LEVELS[code].duplicate()
 	current_level_data["name"] = code
 	return current_level_data
@@ -98,13 +101,13 @@ func shot_prob_thunders():
 	#return amount of thunders
 	if !is_rain: return 0
 	randomize()
-	var total_delay = 1.0
+	var total_delay = 0.0
 	for u in get_node("/root/Game/Map/Units").get_children():
 		if(randf()>.20): continue
 		var dy = rand_range(.3,.6)
-		throw_delay_thunder(dy,u)
 		total_delay += dy
-	return total_delay
+		throw_delay_thunder(total_delay,u)
+	return total_delay+.5
 
 func throw_delay_thunder(delay,unit):
 	var mapNode = get_node("/root/Game/Map")

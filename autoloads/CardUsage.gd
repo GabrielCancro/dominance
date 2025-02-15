@@ -87,9 +87,10 @@ func condition_card_advance(card_node):
 	else: return true
 
 func use_card_advance(card_node):
+	var SelectUnitPanel = get_node("/root/Game/SelectUnitPanel")
 	var mapNode = get_node("/root/Game/Map")
-	mapNode.show_select_unit_panel(1)
-	var unit = yield(mapNode,"selected_unit")
+	SelectUnitPanel.show_ui(1)
+	var unit = yield(SelectUnitPanel,"selected_unit")
 	Effects.shine(unit)
 	yield(get_tree().create_timer(.7),"timeout")
 	var moved = mapNode.move_to(unit,unit.map_position+Vector2(1,0))
@@ -105,9 +106,10 @@ func condition_card_thundre(card_node):
 	return true
 
 func use_card_thundre(card_node):
+	var SelectUnitPanel = get_node("/root/Game/SelectUnitPanel")
 	var mapNode = get_node("/root/Game/Map")
-	mapNode.show_select_unit_panel(2)
-	var unit = yield(mapNode,"selected_unit")
+	SelectUnitPanel.show_ui(2)
+	var unit = yield(SelectUnitPanel,"selected_unit")
 	var th = preload("res://prefabs/magics/MagicThundre.tscn").instance()
 	mapNode.add_child(th)
 	th.start_magic(unit)
@@ -153,9 +155,10 @@ func condition_card_heal(card_node):
 	return true
 
 func use_card_heal(card_node):
+	var SelectUnitPanel = get_node("/root/Game/SelectUnitPanel")
 	var mapNode = get_node("/root/Game/Map")
-	mapNode.show_select_unit_panel(1)
-	var unit = yield(mapNode,"selected_unit")
+	SelectUnitPanel.show_ui(1)
+	var unit = yield(SelectUnitPanel,"selected_unit")
 	Effects.shine(unit)
 	Sounds.play_sound("healt1")
 	yield(get_tree().create_timer(.3),"timeout")
@@ -170,9 +173,10 @@ func condition_card_explode(card_node):
 	return true
 	
 func use_card_explode(card_node):
+	var SelectUnitPanel = get_node("/root/Game/SelectUnitPanel")
 	var mapNode = get_node("/root/Game/Map")
-	mapNode.show_select_unit_panel(2)
-	var unit = yield(mapNode,"selected_unit")
+	mapNode.show_ui(2)
+	var unit = yield(SelectUnitPanel,"selected_unit")
 	var th = preload("res://prefabs/magics/MagicFire.tscn").instance()
 	mapNode.add_child(th)
 	th.start_magic(unit)

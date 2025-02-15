@@ -19,11 +19,11 @@ func set_target(card_node):
 
 func show_panel():
 	$Tween.remove_all()
-	$Tween.interpolate_property(self,"modulate:a",modulate.a,1,.2)
+	$Tween.interpolate_property(self,"modulate:a",modulate.a,1,.1)
 	$Tween.start()
 
 func hide_panel():
 	$Tween.remove_all()
-	$Tween.interpolate_property(self,"modulate:a",modulate.a,0,.2)
+	$Tween.interpolate_property(self,"modulate:a",modulate.a,0,.1)
 	$Tween.start()
 	yield($Tween,"tween_all_completed")

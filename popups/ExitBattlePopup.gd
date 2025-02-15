@@ -11,30 +11,18 @@ func _ready():
 
 func show_popup():
 	Global.set_stop_mouse(false)
-	days = get_node("/root/Game/DayCounter").day
-	days = max(0,days-5)
-	days = floor(days*0.5)
-	$lbl_days.text = str(days)
-	
-	$Label.text = Lang.get_string( "exit_battle_title" )
-	$Label2.text = Lang.get_string( "exit_battle_text" )
+	$lb_title.text = Lang.get_string( "exit_battle_title" )
+	$lb_desc.text = Lang.get_string( "exit_battle_text" )
 	$btn_continue/Label.text = Lang.get_string( "exit_battle_continue" )
 	$btn_quit/Label.text = Lang.get_string( "exit_battle_quit" )
-
 	Effects.to_alpha(self,1)
 	visible = true
-	
-	if Global.demo:
-		$Label2.visible = false
-		$lbl_days.visible = false
 
 func on_back():
 	Sounds.play_sound("button1")
 	visible = false
 
 func on_quit():
-	Saves.savedData.days += days
-	Saves.save_store_data()
 	Sounds.play_sound("button1")
 	if Global.demo: get_tree().change_scene("res://scenes/DemoMenu.tscn")
 	else: get_tree().change_scene("res://scenes/Menu.tscn")

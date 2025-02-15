@@ -105,7 +105,7 @@ func use_card(card_node):
 				Effects.disappear(card_node,Vector2(0,-20))
 				hand_cards[hand_cards.find(card_node)] = null
 				DiscardNode.add_card(code)
-	yield(get_tree().create_timer(.4),"timeout")
+	yield(get_tree().create_timer(.2),"timeout")
 	update_cards_warnings()
 	Global.set_stop_mouse(false)
 

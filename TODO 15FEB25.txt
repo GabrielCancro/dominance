@@ -1,0 +1,11 @@
+Agregar:
+
+PathLevel
+Rain
+Fog
+Webs
+
+CARTA
+
+
+--Que se delete el save si no es esta version

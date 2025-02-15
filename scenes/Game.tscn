@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://prefabs/Stash.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefabs/Map.tscn" type="PackedScene" id=2]
@@ -35,6 +35,7 @@
 [ext_resource path="res://assets/fx/rain_and_snow_shader.gdshader" type="Shader" id=33]
 [ext_resource path="res://prefabs/CreateUnitPanel.tscn" type="PackedScene" id=34]
 [ext_resource path="res://assets/fx/fog_shader.gdshader" type="Shader" id=35]
+[ext_resource path="res://prefabs/SelectUnitPanel.tscn" type="PackedScene" id=36]
 
 [sub_resource type="OpenSimplexNoise" id=11]
 
@@ -184,16 +185,6 @@ texture = ExtResource( 10 )
 expand = true
 stretch_mode = 5
 
-[node name="Deck" parent="RegionBottom" instance=ExtResource( 8 )]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -307.0
-margin_top = -42.5
-margin_right = -227.0
-margin_bottom = 69.5
-
 [node name="DiscardSlot" type="TextureRect" parent="RegionBottom"]
 modulate = Color( 0.529412, 0.529412, 0.529412, 0.819608 )
 anchor_left = 0.5
@@ -226,16 +217,6 @@ text = "Discards"
 align = 1
 valign = 1
 autowrap = true
-
-[node name="Discard" parent="RegionBottom" instance=ExtResource( 13 )]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 228.0
-margin_top = -42.5
-margin_right = 308.0
-margin_bottom = 69.5
 
 [node name="HandCards" type="HBoxContainer" parent="RegionBottom"]
 anchor_left = 0.5
@@ -294,6 +275,26 @@ rect_min_size = Vector2( 80, 112 )
 texture = ExtResource( 10 )
 expand = true
 stretch_mode = 5
+
+[node name="Deck" parent="RegionBottom" instance=ExtResource( 8 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -307.0
+margin_top = -42.5
+margin_right = -227.0
+margin_bottom = 69.5
+
+[node name="Discard" parent="RegionBottom" instance=ExtResource( 13 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 228.0
+margin_top = -42.5
+margin_right = 308.0
+margin_bottom = 69.5
 
 [node name="Stash" parent="RegionBottom" instance=ExtResource( 1 )]
 anchor_left = 0.5
@@ -550,21 +551,26 @@ margin_top = 3.0
 margin_right = -52.0
 margin_bottom = 73.0
 
+[node name="Market" parent="." instance=ExtResource( 12 )]
+visible = false
+
+[node name="CreateUnitPanel" parent="." instance=ExtResource( 34 )]
+visible = false
+
+[node name="SelectUnitPanel" parent="." instance=ExtResource( 36 )]
+visible = false
+
+[node name="CardDescriptor" parent="." instance=ExtResource( 7 )]
+margin_left = 218.0
+margin_top = 34.0
+margin_right = 438.0
+margin_bottom = 126.0
+
 [node name="UnitDescriptor" parent="." instance=ExtResource( 3 )]
 margin_left = 545.0
 margin_top = 54.0
 margin_right = 609.0
 margin_bottom = 116.0
-
-[node name="Market" parent="." instance=ExtResource( 12 )]
-visible = false
-
-[node name="CardDescriptor" parent="." instance=ExtResource( 7 )]
-visible = false
-margin_left = 218.0
-margin_top = 34.0
-margin_right = 438.0
-margin_bottom = 126.0
 
 [node name="StopMouse" type="ColorRect" parent="."]
 visible = false
@@ -621,9 +627,6 @@ expand = true
 flip_h = true
 
 [node name="ExitBattlePopup" parent="." instance=ExtResource( 18 )]
-visible = false
-
-[node name="CreateUnitPanel" parent="." instance=ExtResource( 34 )]
 visible = false
 
 [node name="EndPopup" parent="." instance=ExtResource( 16 )]

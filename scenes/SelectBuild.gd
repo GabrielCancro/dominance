@@ -29,7 +29,6 @@ func update_ui():
 		upg.connect("mouse_exited",self,"on_mouse_exited",[upg])
 		upg.connect("button_down",self,"on_button_down",[upg])
 		upg.set_data(code)
-#		if(Saves.savedData.upgrades.find(code)!=-1): upg.set_chossen(true)
 		if (Saves.savedData.upgrades_unlocked.find(code)!=-1): upg.modulate = Color(1,1,1,1)
 		else: upg.modulate = Color(.1,.1,.1,.5)
 
@@ -39,10 +38,8 @@ func on_mouse_entered(upg_node):
 	current_selected = upg_node
 	upg_node.set_hover(true)
 	$Descriptor.visible = true
-	$Descriptor/LabelCost.visible = true
 	$Descriptor/Label.text = UpgradeData.get_upg_data(upg_node.code).desc
 	$Descriptor/LabelCost.text = str(UpgradeData.get_upg_data(upg_node.code).cost)
-	if Saves.savedData.upgrades.find(upg_node.code)!=-1: $Descriptor/LabelCost.visible = false
 
 func on_mouse_exited(upg_node):
 	if(!is_instance_valid(upg_node) || upg_node.modulate.a<1): return
@@ -52,7 +49,6 @@ func on_mouse_exited(upg_node):
 		$Descriptor.visible = false
 
 func on_button_down(upg_node):
-	if(Saves.savedData.upgrades.find(upg_node.code)!=-1): return
 	if(upg_node.modulate.a<1): return
 	if(current_selected!=upg_node): return
 	
@@ -75,12 +71,15 @@ func on_back():
 	get_tree().change_scene("res://scenes/SelectLevel.tscn")
 
 func on_start():
+	LevelManager.current_upgrades = []
+	for upg_node in $Grid.get_children(): 
+		if !upg_node.chossen: continue
+		LevelManager.current_upgrades.append(upg_node.code)
 	Sounds.play_sound("button1")
 	get_tree().change_scene("res://scenes/Game.tscn")
 
 func unlock_new_upgrade():
 	var upgs = UpgradeData.get_non_obtained_upgrades()
-	for u in Saves.savedData.upgrades_unlocked: upgs.erase(u)
 	if upgs.size()<=0: return
 	upgs.shuffle()
 	Saves.savedData.upgrades_unlocked.append(upgs[0])

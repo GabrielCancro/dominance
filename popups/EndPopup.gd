@@ -8,17 +8,15 @@ func _ready():
 
 func show_popup(win=false):
 	Global.set_stop_mouse(false)
-	var days = get_node("/root/Game/DayCounter").day
-	if !win: days = floor(days*.5)
-	$lbl_days.text = str(days)
-	if win: 
+	if win:
 		Sounds.play_sound("win1")
-		Saves.savedData.level += 1
-	Saves.savedData.days += days
-	Saves.save_store_data()
-	if win: $Label.text = Lang.get_string( "win_game" )
-	else: $Label.text = Lang.get_string( "lose_game" )
-	$lbl_win.text = Lang.get_string( "end_battle_text" )
+		Saves.savedData["levelPath"][LevelManager.current_level_data.name] = 2 #COMPLETED
+		Saves.save_store_data()
+		$lb_title.text = Lang.get_string( "win_game" )
+		$lb_text.text = Lang.get_string( "end_battle_win_text" )
+	else: 
+		$lb_title.text = Lang.get_string( "lose_game" )
+		$lb_text.text = Lang.get_string( "end_battle_lose_text" )
 	modulate.a = 0
 	Effects.to_alpha(self,1)
 	visible = true

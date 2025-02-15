@@ -1,12 +1,13 @@
 extends Control
 
-var grid_size = 8
+var grid_size
 var team_unit_to_select
 signal end_all_moves
-signal selected_unit(unit)
+signal unit_clicked(unit)
 signal unit_created
 
 func _ready():
+	grid_size = LevelManager.current_level_data.grid_size
 	$Grid.columns = grid_size
 	for c in $Grid.get_children(): c.visible = (c.get_index()<grid_size*3)	
 #	for c in $Grid.get_children(): if c.visible: c.rect_min_size.x *= 8.0 / grid_size
@@ -26,11 +27,11 @@ func get_grid_node(pos):
 
 func add_unit(type,x,y):
 	var unit = UnitManager.create_new_unit(type)
-	if x==grid_size: Effects.fx_add_enemy(unit)
+	if unit.data.team==2: Effects.fx_add_enemy(unit)
 	$Units.add_child(unit)
 	unit.map_position = Vector2(x,y)
 	unit.rect_global_position = get_grid_node(unit.map_position).rect_global_position
-	unit.get_node("UnitArea").connect("button_down",self,"on_unit_click",[unit])
+	unit.get_node("UnitArea").connect("button_down",self,"on_unit_clicked",[unit])
 	get_node("/root/Game/Houses")._update_houses()
 	return unit
 
@@ -39,7 +40,11 @@ func add_enemy_rnd_line(type):
 	arr.shuffle()
 	for i in range(arr.size()):
 		if !check_unit_pos(Vector2(grid_size,arr[i]),null): 
-			add_unit(type,grid_size,arr[i])
+			var xpos = grid_size
+			if LevelManager.is_fog: 
+				randomize()
+				xpos = 2+randi()%(grid_size-2)
+			add_unit(type,xpos,arr[i])
 			return true
 	return false
 
@@ -134,27 +139,14 @@ func attack_tower(unit):
 	Effects.move_to_yoyo(unit,dest)
 	$Tower.damage(unit.data.atk)
 
-
-
-func show_select_unit_panel(team = -1):
-	Global.set_stop_mouse(false)
-	team_unit_to_select = team
-	$SelectUnitPanel/Label.text = Lang.get_string("select_unit_team_"+str(team))
-	$SelectUnitPanel.visible = true
-
 func get_units_amount_team(_team):
 	var count = 0
 	for u in $Units.get_children():
 		if u.data.team==_team: count += 1
 	return count
 
-func on_unit_click(unit):
-	print(unit.data)
-	if !$SelectUnitPanel.visible: return
-	if team_unit_to_select==-1 || unit.data.team==team_unit_to_select:
-		$SelectUnitPanel.visible = false
-		Global.set_stop_mouse(true)
-		emit_signal("selected_unit",unit)
-
 func get_first_cell_x_position():
 	return $Grid/c0.rect_global_position.x
+
+func on_unit_clicked(unit):
+	emit_signal("unit_clicked",unit)

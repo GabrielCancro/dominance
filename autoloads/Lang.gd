@@ -21,7 +21,7 @@ var Texts = {
 	"lose_game":{"es":"Fuiste derrotado","en":"You were defeated"},
 	"win_game":{"es":"Has resistido","en":"You have survived"},
 	"exit_battle_title":{"es":"Abandonar partida","en":"Retreat from battle"},
-	"exit_battle_text":{"es":"Si te retiras de esta batalla solo obtendras","en":"If you withdraw from this battle you will only get"},
+	"exit_battle_text":{"es":"¿Deseas retirarte de esta batalla?","en":"Do you wish to withdraw from this battle?"},
 	"exit_battle_continue":{"es":"Continuar jugando","en":"Continue playing"},
 	"exit_battle_quit":{"es":"Abandonar partida","en":"Quit battle"},
 	"title_clear_data":{"es":"Borrar datos","en":"Clear data"},
@@ -184,9 +184,12 @@ var Texts = {
 		"en":"Ready Warrior! You are ready to fight the waves of monsters. Protect the tower until summer comes and you will achieve victory.",
 	},
 	
-	"end_battle_text":{
+	"end_battle_win_text":{
 		"es":"Gracias por jugar Dominance! Puedes usar tus puntos de mejora para obtener beneficios.",
 		"en":"Thank you for playing Dominance! You can use your upgrade points to gain benefits."},
+	"end_battle_lose_text":{
+		"es":"No dudes en volver a intentarlo, recuerda combinar tus mejoras para sacar ventaja!",
+		"en":"Don't hesitate to try again, remember to combine your upgrades to get the upper hand!"},
 	"end_demo_text":{
 		"es":"Gracias por jugar al DEMO de DOMINANCE, fue un trabajo dificil pero estamos contentos de que lo disfrutes!\n\nNo dudes en adquirir la version completa del juego con mas cartas, niveles y sistema de mejoras!",
 		"en":"Thank you for playing the DOMINANCE DEMO, it was a difficult job but we are glad you enjoyed it!\n\nDo not hesitate to purchase the full version of the game with more cards, levels and upgrade system!"},

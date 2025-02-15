@@ -1,15 +1,15 @@
 extends Node
 
-var default_data = { 
-	"upgrades":[], 
+var last_version = 32
+var default_data = {
 	"upgrades_unlocked":[], 
 	"resume":null,
 	"language":"en",
-	"level":1,
 	"levelpath":{},
 	"days":0,
 	"fullscreen": true,
-	"mvol": 100
+	"mvol": 100,
+	"version":0
 }
 var savedData = {}
 
@@ -20,6 +20,7 @@ func save_store_data():
 	if Global.demo: return
 	var file = File.new()
 	file.open("user://store_app_data_v2.res", File.WRITE)
+	savedData.version = last_version
 	file.store_string(var2str(savedData))
 	file.close()
 	print("SAVE ",savedData)
@@ -33,18 +34,18 @@ func load_store_data():
 	file.open("user://store_app_data_v2.res", File.READ)
 	var loaded_data = str2var(file.get_as_text())
 	file.close()
-	#if(loaded_data && loaded_data.size()!=savedData.size()): loaded_data = null
 	if(!loaded_data): 
 		loaded_data = default_data.duplicate(true)
 		if("es" in OS.get_locale()): loaded_data.language = "es"
 		save_store_data()
+	
+#	not load if is an old version
+	if !"version" in savedData: return
+	if savedData.version<last_version: return
+	
 	savedData = loaded_data
-	if !savedData.has("level"): savedData.level = 1
-	if !savedData.has("mvol"): savedData.mvol = 100
 	Sounds.set_vol(savedData.mvol)
 	print("LOAD ",loaded_data)
-#	savedData.level = 60
-#	savedData.days = 100
 
 func now_date():
 	var now = OS.get_date() 
