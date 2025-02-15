@@ -25,9 +25,9 @@ func save_store_data():
 	file.close()
 	print("SAVE ",savedData)
 
-func load_store_data():    
+func load_store_data():  
+	savedData = default_data  
 	if Global.demo: 
-		savedData = default_data
 		if("es" in OS.get_locale()): savedData.language = "es"
 		return 
 	var file = File.new()
@@ -35,8 +35,8 @@ func load_store_data():
 	var loaded_data = str2var(file.get_as_text())
 	file.close()
 	if(!loaded_data): 
-		loaded_data = default_data.duplicate(true)
-		if("es" in OS.get_locale()): loaded_data.language = "es"
+		savedData = default_data.duplicate(true)
+		if("es" in OS.get_locale()): savedData.language = "es"
 		save_store_data()
 	
 #	not load if is an old version

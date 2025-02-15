@@ -16,12 +16,6 @@ func _ready():
 	$UpgradesUIButton.connect("button_down",self,"on_upgrades_click")
 	$InvasionUIButton.connect("button_down",self,"on_invasion_click")
 	$UpgradesUIButton/Label.text = str(Saves.savedData.days)
-	$InvasionUIButton/Label.text = str(Saves.savedData.level)
-	if Saves.savedData.level>5: 
-		$InvasionUIButton/Label.text = Lang.get_string("endless_mode")+" "+str(Saves.savedData.level-5)
-	if Saves.savedData.level==1 && Saves.savedData.days == 0:
-		$UpgradesUIButton.visible = false
-		$InvasionUIButton.visible = false
 	first_play_effects()
 
 func first_play_effects():
@@ -49,7 +43,6 @@ func localizate():
 	$VBox/btn4/Label.text = Lang.get_string("menu_quit")
 	$UpgradesUIButton/lbl_title.text = Lang.get_string("menu_upgrades")
 	$InvasionUIButton/lbl_title.text = Lang.get_string("menu_invasion")
-	$InvasionUIButton/PathBattles.update_level()
 
 func on_click_button(code):
 	Sounds.play_sound("button1")
