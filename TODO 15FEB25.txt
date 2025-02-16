@@ -8,4 +8,8 @@ Webs
 CARTA
 
 
---Que se delete el save si no es esta version
+OK -Que se delete el save si no es esta version
+-armar los niveles
+-hacer que el slime big sea corte boss
+-añadir enemigo araña (cada vez que aparece te añade carta de telaraña al mazo)
+-añadir arquero
