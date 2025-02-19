@@ -7,10 +7,15 @@ export(TypeEnum) var type
 export(StateEnum) var state
 
 var close_nodes
+var link_dist = 80
+
+signal on_hint(val)
 
 func _ready():
 	Saves.savedData.language = "en"
 	$Button.connect("button_down",self,"on_click")
+	$Button.connect("mouse_entered",self,"on_hint",[true])
+	$Button.connect("mouse_exited",self,"on_hint",[false])
 	set_type()
 	set_close_nodes()
 	connect_close_nodes()
@@ -31,7 +36,7 @@ func set_close_nodes():
 	close_nodes = []
 	for lp in get_parent().get_children():
 		var dist = position.distance_to(lp.position)
-		if dist>20 && dist<100: close_nodes.append(lp)
+		if dist>20 && dist<link_dist: close_nodes.append(lp)
 
 func connect_close_nodes():
 	for ln in $L.get_children():
@@ -66,3 +71,6 @@ func update_connected_states():
 		if c.state==StateEnum.DISABLE:
 			c.state=StateEnum.ENABLE
 			c.set_type()
+
+func on_hint(val):
+	emit_signal("on_hint",val)

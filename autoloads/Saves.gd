@@ -9,7 +9,7 @@ var default_data = {
 	"days":0,
 	"fullscreen": true,
 	"mvol": 100,
-	"version":0
+	"version":last_version
 }
 var savedData = {}
 

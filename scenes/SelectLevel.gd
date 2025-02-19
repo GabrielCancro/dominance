@@ -25,7 +25,13 @@ func load_levelPath():
 			node.state = state
 			node.set_type()
 	for node in $LevelPath.get_children():
-			node.update_connected_states()
+		node.connect("on_hint",self,"level_hint_hover",[node])
+		node.update_connected_states()
 
 func _exit_tree():
 	save_levelPath()
+
+func level_hint_hover(val,node):
+	$UI/LevelHint.rect_global_position = node.global_position + Vector2(0,-15)
+	if val: $UI/LevelHint.show_level_data(node)
+	else: $UI/LevelHint.visible = false

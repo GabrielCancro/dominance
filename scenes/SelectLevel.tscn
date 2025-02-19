@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/upgrades/CheckEmpty.png" type="Texture" id=1]
+[ext_resource path="res://prefabs/LevelHint.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/font/Anton-Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://popups/WoodPanelUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/ui/ui_btn_bg_1.png" type="Texture" id=8]
@@ -223,6 +224,9 @@ autowrap = true
 [node name="UpgradeGetted" parent="UI" instance=ExtResource( 16 )]
 visible = false
 
+[node name="LevelHint" parent="UI" instance=ExtResource( 2 )]
+visible = false
+
 [node name="LevelPath" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -230,47 +234,74 @@ margin_right = -800.0
 margin_bottom = -450.0
 
 [node name="P1" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 135, 202 )
+position = Vector2( 127, 218 )
 state = 1
 
 [node name="P2" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 197, 203 )
-type = 1
+position = Vector2( 273, 177 )
 
 [node name="P3" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 417, 277 )
+position = Vector2( 304, 247 )
 
 [node name="P4" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 333, 202 )
+position = Vector2( 189, 306 )
 
 [node name="P5" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 332, 278 )
+position = Vector2( 350, 183 )
 
 [node name="P6" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 496, 276 )
-type = 1
+position = Vector2( 374, 282 )
 
 [node name="P7" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 378, 127 )
-
-[node name="P13" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 627, 122 )
+position = Vector2( 510, 288 )
 
 [node name="P8" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 454, 125 )
-type = 1
-
-[node name="P12" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 502, 221 )
+position = Vector2( 495, 172 )
 
 [node name="P9" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 540, 122 )
-type = 2
-
-[node name="P11" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 266, 308 )
-type = 1
+position = Vector2( 619, 222 )
 
 [node name="P10" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 259, 203 )
+position = Vector2( 619, 158 )
+
+[node name="P11" parent="LevelPath" instance=ExtResource( 12 )]
+position = Vector2( 619, 291 )
+
+[node name="P12" parent="LevelPath" instance=ExtResource( 12 )]
+position = Vector2( 698, 222 )
+
+[node name="S1" parent="LevelPath" instance=ExtResource( 12 )]
+position = Vector2( 179, 169 )
+type = 1
+
+[node name="S2" parent="LevelPath" instance=ExtResource( 12 )]
+position = Vector2( 257, 287 )
+type = 1
+
+[node name="S3" parent="LevelPath" instance=ExtResource( 12 )]
+position = Vector2( 440, 266 )
+type = 1
+
+[node name="S4" parent="LevelPath" instance=ExtResource( 12 )]
+position = Vector2( 540, 222 )
+type = 1
+
+[node name="S5" parent="LevelPath" instance=ExtResource( 12 )]
+position = Vector2( 666, 114 )
+type = 1
+
+[node name="C1" parent="LevelPath" instance=ExtResource( 12 )]
+position = Vector2( 209, 219 )
+type = 2
+
+[node name="C2" parent="LevelPath" instance=ExtResource( 12 )]
+position = Vector2( 148, 366 )
+type = 2
+
+[node name="C3" parent="LevelPath" instance=ExtResource( 12 )]
+position = Vector2( 418, 151 )
+type = 2
+
+[node name="C4" parent="LevelPath" instance=ExtResource( 12 )]
+position = Vector2( 667, 335 )
 type = 2
