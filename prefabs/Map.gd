@@ -15,6 +15,7 @@ func _ready():
 	$Grid.rect_size.x = 0
 	$Grid.rect_position.x += $Grid/c0.rect_size.x * 0.5 * (8-grid_size)
 	if grid_size<8: $Grid.rect_position.x -= 20
+	yield(get_tree().create_timer(.5),"timeout")
 	LevelManager.add_debug_units()
 
 func get_grid_node(pos):
@@ -29,6 +30,7 @@ func add_unit(type,x,y):
 	var unit = UnitManager.create_new_unit(type)
 	if unit.data.team==2: Effects.fx_add_enemy(unit)
 	$Units.add_child(unit)
+	if x>grid_size: x=grid_size
 	unit.map_position = Vector2(x,y)
 	unit.rect_global_position = get_grid_node(unit.map_position).rect_global_position
 	unit.get_node("UnitArea").connect("button_down",self,"on_unit_clicked",[unit])
@@ -61,11 +63,20 @@ func move_to(unit,pos,forced=false):
 func unit_try_attack(unit):
 	var obj = get_unit_around(unit)
 	if is_instance_valid(obj) && !obj.is_dead: 
-		var dest = unit.rect_global_position+(obj.rect_global_position-unit.rect_global_position)/2
-		Effects.move_to_yoyo(unit,dest)
-		obj.damage(unit.data.atk)
+		swap_attacks(unit,obj)
 		return true
 	else: return false
+
+func swap_attacks(ua,ub):
+	var mov = (ub.rect_global_position-ua.rect_global_position)/2
+	Effects.move_to_yoyo(ua,ua.rect_global_position+mov)
+	ub.damage(ua.data.atk,false)
+	yield(get_tree().create_timer(.6),"timeout")
+	Effects.move_to_yoyo(ub,ub.rect_global_position-mov)
+	ua.damage(ub.data.atk,false)
+	yield(get_tree().create_timer(.8),"timeout")
+	ua.check_dead()
+	ub.check_dead()
 
 func unit_push(unit):
 	var unit_to_push = check_unit_pos(unit.map_position,unit);
@@ -105,6 +116,7 @@ func move_enemies():
 		if u.is_dead: continue
 		if u.data.team!=2: continue
 		var just_attack = false
+		#ATACAR TORRE
 		if u.map_position.x<=1:
 			attack_tower(u)
 			yield(get_tree().create_timer(.6),"timeout")
@@ -114,14 +126,14 @@ func move_enemies():
 				else: get_node("../EndPopup").show_popup(false)
 				return
 		elif( unit_try_attack(u) ):
-			yield(get_tree().create_timer(.6),"timeout")
+			yield(get_tree().create_timer(1.2),"timeout")
 		else:
 			for i in range(u.data.spd):
 				var is_moving = move_to(u,u.map_position+Vector2(-1,0))
 				if is_moving: yield(get_tree().create_timer(.4),"timeout")
 			yield(get_tree().create_timer(.3),"timeout")
 			if unit_try_attack(u): 
-				yield(get_tree().create_timer(.3),"timeout")
+				yield(get_tree().create_timer(1.2),"timeout")
 	yield(get_tree().create_timer(.3),"timeout")
 	move_allies()
 
@@ -131,7 +143,7 @@ func move_allies():
 		if u.is_dead: continue
 		if u.data.team!=1: continue
 		if( unit_try_attack(u) ):
-			yield(get_tree().create_timer(.6),"timeout")
+			yield(get_tree().create_timer(1.2),"timeout")
 	emit_signal("end_all_moves")
 
 func attack_tower(unit):
