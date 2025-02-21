@@ -62,21 +62,25 @@ func move_to(unit,pos,forced=false):
 
 func unit_try_attack(unit):
 	var obj = get_unit_around(unit)
-	if is_instance_valid(obj) && !obj.is_dead: 
+	if is_instance_valid(obj) && !obj.is_dead && unit.have_attack:
 		swap_attacks(unit,obj)
 		return true
 	else: return false
 
 func swap_attacks(ua,ub):
 	var mov = (ub.rect_global_position-ua.rect_global_position)/2
-	Effects.move_to_yoyo(ua,ua.rect_global_position+mov)
-	ub.damage(ua.data.atk,false)
-	yield(get_tree().create_timer(.6),"timeout")
-	Effects.move_to_yoyo(ub,ub.rect_global_position-mov)
-	ua.damage(ub.data.atk,false)
-	yield(get_tree().create_timer(.8),"timeout")
-	ua.check_dead()
+	if(ua.have_attack):
+		ua.have_attack = false
+		Effects.move_to_yoyo(ua,ua.rect_global_position+mov)
+		ub.damage(ua.data.atk,false)
+		yield(get_tree().create_timer(.6),"timeout")
+	if(ub.have_attack):
+		ub.have_attack = false
+		Effects.move_to_yoyo(ub,ub.rect_global_position-mov)
+		ua.damage(ub.data.atk,false)
+		yield(get_tree().create_timer(.8),"timeout")
 	ub.check_dead()
+	ua.check_dead()
 
 func unit_push(unit):
 	var unit_to_push = check_unit_pos(unit.map_position,unit);
@@ -109,6 +113,10 @@ func get_unit_around(unit):
 	if !en: en = check_unit_pos(unit.map_position+Vector2(0,+1));
 	if(en && unit.data.team==en.data.team): en = null
 	return en
+
+func restore_units_attack():
+	for u in $Units.get_children():
+		u.have_attack = true
 
 func move_enemies():
 	for u in $Units.get_children():

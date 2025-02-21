@@ -44,6 +44,7 @@ func on_end_turn():
 			yield(get_tree().create_timer(.1),"timeout")
 	yield(get_tree().create_timer(.5),"timeout")
 	CardData.TempGoldNode.set_gold(0)
+	$Map.restore_units_attack()
 	yield(get_tree().create_timer(.5),"timeout")
 	$Map.move_enemies()
 	yield($Map,"end_all_moves")

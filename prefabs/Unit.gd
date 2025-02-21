@@ -4,6 +4,7 @@ var map_position = Vector2(0,0)
 var is_dead = false
 var data
 var hp_timer = 0
+var have_attack = true
 
 func _ready():
 	randomize()

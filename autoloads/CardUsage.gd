@@ -91,6 +91,7 @@ func use_card_advance(card_node):
 	var mapNode = get_node("/root/Game/Map")
 	SelectUnitPanel.show_ui(1)
 	var unit = yield(SelectUnitPanel,"selected_unit")
+	unit.have_attack = true
 	Effects.shine(unit)
 	yield(get_tree().create_timer(.7),"timeout")
 	var moved = mapNode.move_to(unit,unit.map_position+Vector2(1,0))
