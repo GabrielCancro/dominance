@@ -227,3 +227,8 @@ func use_card_torment(card_node):
 		if enemies.size()<=0: break
 	yield(get_tree().create_timer(.4),"timeout")
 	emit_signal("end_usage")
+
+func condition_card_cobweb(card_node): return true
+func use_card_cobweb(card_node): 
+	yield(get_tree().create_timer(.4),"timeout")
+	emit_signal("end_usage")
