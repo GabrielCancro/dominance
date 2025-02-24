@@ -1,19 +1,15 @@
-FIXEAR DONDE APARECEN LAS UNIDADES PARA QUE NO SE PISEN
+OK- FIXEAR DONDE APARECEN LAS UNIDADES PARA QUE NO SE PISEN
+OK-PathLevel
+OK-event Rain
+OK-event Fog
+OK-event Webs
+OK-Que se delete el save si no es esta version
+OK-info de clima
 
-Agregar:
+WIP-añadir carta telaraña
 
-PathLevel
-Rain
-Fog
-Webs
-
-CARTA
-
-
-OK -Que se delete el save si no es esta version
--armar los niveles
--hacer que el slime big sea corte boss
--añadir enemigo araña (cada vez que aparece te añade carta de telaraña al mazo)
--añadir carta telaraña
--info de clima
--añadir arquero
+TODO-armar los niveles
+TODO-hacer que el slime big sea corte boss
+TODO-añadir enemigo araña
+TODO-añadir arquero unidad
+TODO-añadir arquero carta
