@@ -27,10 +27,14 @@ func get_grid_node(pos):
 	return grid_node
 
 func add_unit(type,x,y):
+	if x>grid_size: x=grid_size
+	if check_unit_pos(Vector2(x,y),null): 
+		print(" FAIL ",type,x,y)
+		return null
+	print(" SUCCES ",type,x,y)
 	var unit = UnitManager.create_new_unit(type)
 	if unit.data.team==2: Effects.fx_add_enemy(unit)
 	$Units.add_child(unit)
-	if x>grid_size: x=grid_size
 	unit.map_position = Vector2(x,y)
 	unit.rect_global_position = get_grid_node(unit.map_position).rect_global_position
 	unit.get_node("UnitArea").connect("button_down",self,"on_unit_clicked",[unit])
@@ -38,16 +42,19 @@ func add_unit(type,x,y):
 	return unit
 
 func add_enemy_rnd_line(type):
-	var arr = [1,2,3]
+	var arr = []
+	var minx = grid_size
+	if LevelManager.is_fog: minx = 2
+	for x in range(minx,grid_size):
+		arr.append([x,1])
+		arr.append([x,2])
+		arr.append([x,3])
 	arr.shuffle()
 	for i in range(arr.size()):
-		if !check_unit_pos(Vector2(grid_size,arr[i]),null): 
-			var xpos = grid_size
-			if LevelManager.is_fog: 
-				randomize()
-				xpos = 2+randi()%(grid_size-2)
-			add_unit(type,xpos,arr[i])
-			return true
+		if check_unit_pos(Vector2(arr[i][0],arr[i][1]),null): continue
+		var xpos = grid_size
+		add_unit(type,arr[i][0],arr[i][1])
+		return true
 	return false
 
 func move_to(unit,pos,forced=false):
