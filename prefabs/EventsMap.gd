@@ -29,5 +29,5 @@ func on_mouse_hover(btn,val):
 		$Panel.rect_global_position.x = btn.rect_global_position.x+btn.rect_size.x/2-$Panel.rect_size.x/2
 		$Panel.visible = true
 	else:
-		btn.modulate.a = Color(1,1,1,1)
+		btn.modulate = Color(1,1,1,1)
 		$Panel.visible = false
