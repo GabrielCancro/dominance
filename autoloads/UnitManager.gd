@@ -8,6 +8,7 @@ var UnitData = {
 	"slime_big":{"sk":"sb","atk":1,"hp":5,"spd":1, "img":null, "team":2},
 	"wolf":{"sk":"wf","atk":1,"hp":2,"spd":3, "img":null, "team":2},
 	"orc":{"sk":"or","atk":1,"hp":5,"spd":2, "img":null, "team":2},
+	"spider":{"sk":"sp","atk":1,"hp":2,"spd":2, "img":null, "team":2},
 	"militia":{"ml":"sn","atk":1,"hp":2,"spd":1, "img":null, "team":1},
 	"soldier":{"sl":"sn","atk":1,"hp":4,"spd":1, "img":null, "team":1}
 }

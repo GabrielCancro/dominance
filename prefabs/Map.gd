@@ -39,6 +39,7 @@ func add_unit(type,x,y):
 	unit.rect_global_position = get_grid_node(unit.map_position).rect_global_position
 	unit.get_node("UnitArea").connect("button_down",self,"on_unit_clicked",[unit])
 	get_node("/root/Game/Houses")._update_houses()
+	if type=="spider": get_node("/root/Game/EventsMap").add_web_card()
 	return unit
 
 func add_enemy_rnd_line(type):

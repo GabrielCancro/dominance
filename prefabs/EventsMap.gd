@@ -19,7 +19,8 @@ func show_rain():
 	$Rain.visible = true
 	$HBox/btn_rain.visible = true
 
-func show_web():
+func add_web_card():
+	get_node("/root/Game/RegionBottom/Deck").add_card_up("cobweb")
 	$HBox/btn_web.visible = true
 
 func on_mouse_hover(btn,val):
