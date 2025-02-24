@@ -197,6 +197,16 @@ var Texts = {
 	"end_demo_text":{
 		"es":"Gracias por jugar al DEMO de DOMINANCE, fue un trabajo dificil pero estamos contentos de que lo disfrutes!\n\nNo dudes en adquirir la version completa del juego con mas cartas, niveles y sistema de mejoras!",
 		"en":"Thank you for playing the DOMINANCE DEMO, it was a difficult job but we are glad you enjoyed it!\n\nDo not hesitate to purchase the full version of the game with more cards, levels and upgrade system!"},
+
+	"eventmap_btn_rain":{
+		"es":"¡Llueve! Los rayos pueden caer en cualquier lugar, dañando unidades al azar",
+		"en":"It's raining! Lightning can strike anywhere, damaging units at random"},
+	"eventmap_btn_fog":{
+		"es":"La espeza niebla cubre el suelo, las unidades enemigas aparecen en cualquier casillero",
+		"en":"The fog covers the ground, enemy units appear in any square"},
+	"eventmap_btn_web":{
+		"es":"Telarañas! Cada vez que aparece una araña se añade una carta de estorbo a tu mazo",
+		"en":"Cobwebs! Every time a spider appears, a hindrance card is added to your deck"},
 }
 
 func get_string(code):

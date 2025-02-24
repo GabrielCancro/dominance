@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://prefabs/Stash.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefabs/Map.tscn" type="PackedScene" id=2]
@@ -32,40 +32,9 @@
 [ext_resource path="res://assets/font/Anton-Regular.ttf" type="DynamicFontData" id=30]
 [ext_resource path="res://assets/ui/ui_helpH.png" type="Texture" id=31]
 [ext_resource path="res://assets/ui/ui_lateral_shadow.png" type="Texture" id=32]
-[ext_resource path="res://assets/fx/rain_and_snow_shader.gdshader" type="Shader" id=33]
+[ext_resource path="res://prefabs/EventsMap.tscn" type="PackedScene" id=33]
 [ext_resource path="res://prefabs/CreateUnitPanel.tscn" type="PackedScene" id=34]
-[ext_resource path="res://assets/fx/fog_shader.gdshader" type="Shader" id=35]
 [ext_resource path="res://prefabs/SelectUnitPanel.tscn" type="PackedScene" id=36]
-
-[sub_resource type="OpenSimplexNoise" id=11]
-
-[sub_resource type="NoiseTexture" id=12]
-seamless = true
-noise = SubResource( 11 )
-
-[sub_resource type="ShaderMaterial" id=10]
-shader = ExtResource( 35 )
-shader_param/octaves = 4
-shader_param/starting_amplitude = 1.0
-shader_param/starting_frequency = 0.7
-shader_param/shift = -0.059
-shader_param/velocity = Vector2( 0.01, 0 )
-shader_param/fog_color = Color( 0.54902, 0.54902, 0.54902, 0.45098 )
-shader_param/noise = SubResource( 12 )
-
-[sub_resource type="ShaderMaterial" id=9]
-shader = ExtResource( 33 )
-shader_param/rain_amount = 200.0
-shader_param/near_rain_length = 0.01
-shader_param/far_rain_length = 0.087
-shader_param/near_rain_width = 0.172
-shader_param/far_rain_width = 0.428
-shader_param/near_rain_transparency = 0.833
-shader_param/far_rain_transparency = 0.451
-shader_param/rain_color = Color( 0.870588, 0.894118, 1, 1 )
-shader_param/base_rain_speed = 0.609
-shader_param/additional_rain_speed = 0.833
-shader_param/slant = 0.227
 
 [sub_resource type="DynamicFont" id=7]
 size = 18
@@ -139,21 +108,7 @@ margin_top = -108.0
 margin_right = -213.0
 margin_bottom = 22.0
 
-[node name="Fog" type="ColorRect" parent="."]
-visible = false
-material = SubResource( 10 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 2
-color = Color( 0, 0, 0, 0 )
-
-[node name="Rain" type="ColorRect" parent="."]
-visible = false
-material = SubResource( 9 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 2
-color = Color( 0, 0, 0, 0.160784 )
+[node name="EventsMap" parent="." instance=ExtResource( 33 )]
 
 [node name="RegionBottom" type="ColorRect" parent="."]
 anchor_top = 1.0
@@ -561,10 +516,10 @@ visible = false
 visible = false
 
 [node name="CardDescriptor" parent="." instance=ExtResource( 7 )]
-margin_left = 218.0
-margin_top = 34.0
-margin_right = 438.0
-margin_bottom = 126.0
+margin_left = 347.0
+margin_top = 147.0
+margin_right = 567.0
+margin_bottom = 239.0
 
 [node name="UnitDescriptor" parent="." instance=ExtResource( 3 )]
 margin_left = 545.0

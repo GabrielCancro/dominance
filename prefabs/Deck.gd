@@ -8,7 +8,6 @@ var cards = [
 	"gold2","gold2",
 	"teasure","teasure",
 	"house","house",
-	"cobweb","cobweb",
 #	"explode","explode",
 #	"thundre","thundre",
 ]

@@ -76,24 +76,18 @@ func add_enemy(arr):
 func check_rain():
 	if !"rain" in current_level_data: return false
 	var DC = get_node("/root/Game/DayCounter")
-	var Rain = get_node("/root/Game/Rain")
 	if DC.day >= LevelManager.current_level_data.rain && !is_rain:
 		is_rain = true
-		Rain.modulate.a = 0
-		Effects.to_alpha_slow(Rain,1)
-		Rain.visible = true
+		get_node("/root/Game/EventsMap").show_rain()
 		return true
 	return false
 
 func check_fog():
 	if !"fog" in current_level_data: return false
 	var DC = get_node("/root/Game/DayCounter")
-	var Fog = get_node("/root/Game/Fog")
 	if DC.day >= LevelManager.current_level_data.fog && !is_rain:
 		is_fog = true
-		Fog.modulate.a = 0
-		Effects.to_alpha_slow(Fog,1)
-		Fog.visible = true
+		get_node("/root/Game/EventsMap").show_fog()
 		return true
 	return false
 

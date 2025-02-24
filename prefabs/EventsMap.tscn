@@ -1,0 +1,232 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/fx/fog_shader.gdshader" type="Shader" id=1]
+[ext_resource path="res://assets/fx/rain_and_snow_shader.gdshader" type="Shader" id=2]
+[ext_resource path="res://prefabs/EventsMap.gd" type="Script" id=3]
+[ext_resource path="res://assets/font/AbyssinicaSIL-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/descriptor_m.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/ui_arrow.png" type="Texture" id=6]
+[ext_resource path="res://assets/ui/ui_btn_oval.png" type="Texture" id=7]
+
+[sub_resource type="OpenSimplexNoise" id=11]
+
+[sub_resource type="NoiseTexture" id=12]
+seamless = true
+noise = SubResource( 11 )
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = ExtResource( 1 )
+shader_param/octaves = 4
+shader_param/starting_amplitude = 1.0
+shader_param/starting_frequency = 0.7
+shader_param/shift = -0.059
+shader_param/velocity = Vector2( 0.01, 0 )
+shader_param/fog_color = Color( 0.54902, 0.54902, 0.54902, 0.45098 )
+shader_param/noise = SubResource( 12 )
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = ExtResource( 2 )
+shader_param/rain_amount = 200.0
+shader_param/near_rain_length = 0.01
+shader_param/far_rain_length = 0.087
+shader_param/near_rain_width = 0.172
+shader_param/far_rain_width = 0.428
+shader_param/near_rain_transparency = 0.833
+shader_param/far_rain_transparency = 0.451
+shader_param/rain_color = Color( 0.870588, 0.894118, 1, 1 )
+shader_param/base_rain_speed = 0.609
+shader_param/additional_rain_speed = 0.833
+shader_param/slant = 0.227
+
+[sub_resource type="DynamicFont" id=14]
+size = 18
+outline_size = 1
+outline_color = Color( 0.180392, 0.2, 0.282353, 1 )
+extra_spacing_bottom = -2
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 18
+outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+extra_spacing_bottom = -2
+font_data = ExtResource( 4 )
+
+[node name="EventsMap" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="Fog" type="ColorRect" parent="."]
+visible = false
+material = SubResource( 10 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0 )
+
+[node name="Rain" type="ColorRect" parent="."]
+visible = false
+material = SubResource( 9 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.160784 )
+
+[node name="HBox" type="HBoxContainer" parent="."]
+margin_left = 128.0
+margin_right = 331.0
+margin_bottom = 46.0
+
+[node name="btn_rain" type="Button" parent="HBox"]
+margin_right = 60.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 60, 0 )
+rect_pivot_offset = Vector2( 30, 23 )
+focus_mode = 0
+text = "R"
+flat = true
+
+[node name="img" type="TextureRect" parent="HBox/btn_rain"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="lb" type="Label" parent="HBox/btn_rain"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -31.0
+margin_top = -25.5
+margin_right = 31.0
+margin_bottom = 25.5
+custom_colors/font_color = Color( 0.443137, 0.466667, 0.529412, 1 )
+custom_colors/font_color_shadow = Color( 0.180392, 0.2, 0.282353, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/line_spacing = -2
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 1
+custom_fonts/font = SubResource( 14 )
+text = "RAIN"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="btn_fog" type="Button" parent="HBox"]
+margin_left = 64.0
+margin_right = 124.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 60, 0 )
+rect_pivot_offset = Vector2( 30, 23 )
+focus_mode = 0
+text = "R"
+flat = true
+
+[node name="img" type="TextureRect" parent="HBox/btn_fog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="lb" type="Label" parent="HBox/btn_fog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 9.0
+margin_right = -10.0
+custom_colors/font_color = Color( 0.443137, 0.466667, 0.529412, 1 )
+custom_colors/font_color_shadow = Color( 0.180392, 0.2, 0.282353, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/line_spacing = -2
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 1
+custom_fonts/font = SubResource( 14 )
+text = "FOG"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="btn_web" type="Button" parent="HBox"]
+margin_left = 128.0
+margin_right = 188.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 60, 0 )
+rect_pivot_offset = Vector2( 30, 23 )
+focus_mode = 0
+text = "R"
+flat = true
+
+[node name="img" type="TextureRect" parent="HBox/btn_web"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="lb" type="Label" parent="HBox/btn_web"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 9.0
+margin_right = -10.0
+custom_colors/font_color = Color( 0.443137, 0.466667, 0.529412, 1 )
+custom_colors/font_color_shadow = Color( 0.180392, 0.2, 0.282353, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/line_spacing = -2
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 1
+custom_fonts/font = SubResource( 14 )
+text = "COBWEB"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Panel" type="Control" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -311.0
+margin_top = 73.0
+margin_right = -91.0
+margin_bottom = 163.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Arrow" type="TextureRect" parent="Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -34.5
+margin_top = -22.0
+margin_right = 34.5
+margin_bottom = 3.0
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+flip_h = true
+flip_v = true
+
+[node name="bg" type="NinePatchRect" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -317, 13 )
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 500, 500 )
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+
+[node name="Desc" type="Label" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 9.0
+margin_right = -10.0
+custom_colors/font_color = Color( 0.937988, 0.937988, 0.937988, 1 )
+custom_colors/font_color_shadow = Color( 0.134232, 0.191834, 0.296875, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/line_spacing = -2
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 1
+custom_fonts/font = SubResource( 13 )
+text = "Llueve! En cada pueden caer rayos que dañen a unidades de forma aleatoria"
+align = 1
+valign = 1
+autowrap = true
