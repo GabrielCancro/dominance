@@ -1,15 +1,22 @@
-OK-FIXEAR DONDE APARECEN LAS UNIDADES PARA QUE NO SE PISEN
-OK-PathLevel
-OK-event Rain
-OK-event Fog
-OK-event Webs
-OK-Que se delete el save si no es esta version
-OK-info de clima
 
-WIP-añadir carta telaraña
-TODO-añadir enemigo araña
+DOMINANCE UPDATE:
 
-TODO-armar los niveles
-TODO-hacer que el slime big sea corte boss
-TODO-añadir arquero unidad
-TODO-añadir arquero carta
+OK-Fix units spawn to not overlap
+OK-PathLevel implementation
+OK-Event Rain (fx + implementation)
+OK-Event Fog (fx + implementation)
+OK-Event Web (fx + implementation)
+OK-Delete saves with old versions
+OK-Add hint to Events
+OK-Add hint to LevelPath with extra info
+
+WIP-Add cobweb card
+WIP-Add spider enemy
+
+TODO-Make new levels
+TODO-Make new big slime feature
+TODO-Add archery card
+TODO-Implement archer unit
+TODO-Add archery upgrade
+TODO-Improve Heal card to 2 hearts
+TODO-Add Art to new units/events/cards/upgrades
