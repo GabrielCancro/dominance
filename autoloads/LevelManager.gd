@@ -13,6 +13,7 @@ var LEVELS = {
 }
 
 func _ready():
+	LEVELS["P1m"].append({"c":"day.1","m":["sp"]})
 	pass # Replace with function body.
 
 func set_current_level(code):
@@ -35,6 +36,7 @@ func create_monsters():
 	var day = get_node("/root/Game/DayCounter").day
 	var statments = LEVELS[current_level_data.name+"m"]
 	for st in statments:
+		print(st," DAY ",day)
 		var cs = st.c.split(".")
 		if cs[0]=="day" && day==int(cs[1]): add_enemy(st.m)
 		if cs[0]=="every" && day%int(cs[1])==0: add_enemy(st.m)
@@ -113,8 +115,8 @@ func throw_delay_thunder(delay,unit):
 func add_debug_units():
 	yield(get_tree().create_timer(.5),"timeout")
 	var m = get_node("/root/Game/Map")
-	m.add_unit("spider",4,3)
-	m.add_unit("spider",5,2)
+#	m.add_unit("spider",4,3)
+#	m.add_unit("spider",5,2)
 #	m.add_unit("wolf",5,3)
 #	m.add_unit("orc",6,2)
 #	m.add_unit("slime_small",7,1)

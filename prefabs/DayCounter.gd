@@ -8,7 +8,7 @@ var no_created_monsters = []
 func _ready():
 	Global.tuto = false#(level==1 && Saves.savedData.days == 0)
 	max_days = LevelManager.current_level_data.total_days
-	$TextureProgress/Label4.text = str(max_days-1)
+	$TextureProgress/Label4.text = str(max_days)
 	$TextureProgress.value = 9999
 
 func add_day():

@@ -26,10 +26,6 @@ func add_card(code,_shuffle=false):
 	if _shuffle: cards.shuffle()
 	update_ui()
 
-func add_card_up(code):
-	cards.push_front(code)
-	update_ui()
-
 func pull_card():
 	var c = cards.pop_front()
 	update_ui()

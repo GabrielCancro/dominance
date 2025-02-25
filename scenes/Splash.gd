@@ -12,5 +12,7 @@ func _ready():
 	on_skip()
 
 func on_skip():
-	if Global.demo: get_tree().change_scene("res://scenes/DemoMenu.tscn")
-	else: get_tree().change_scene("res://scenes/Menu.tscn")
+#	if Global.demo: get_tree().change_scene("res://scenes/DemoMenu.tscn")
+#	else: get_tree().change_scene("res://scenes/Menu.tscn")
+	LevelManager.set_current_level("P1")
+	get_tree().change_scene("res://scenes/Game.tscn")

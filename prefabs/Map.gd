@@ -45,12 +45,13 @@ func add_unit(type,x,y):
 func add_enemy_rnd_line(type):
 	var arr = []
 	var minx = grid_size
-	if LevelManager.is_fog: minx = 2
-	for x in range(minx,grid_size):
+	if LevelManager.is_fog: minx = 3
+	for x in range(minx,grid_size+1):
 		arr.append([x,1])
 		arr.append([x,2])
 		arr.append([x,3])
 	arr.shuffle()
+	print("TRY INSERT ",type," IN POS ",arr[0])
 	for i in range(arr.size()):
 		if check_unit_pos(Vector2(arr[i][0],arr[i][1]),null): continue
 		var xpos = grid_size

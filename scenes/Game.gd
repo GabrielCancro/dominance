@@ -1,5 +1,6 @@
 extends Control
 
+var first_day = true
 var lastDayEnded = false
 
 func _ready():
@@ -53,8 +54,11 @@ func on_end_turn():
 	start_new_turn()
 
 func start_new_turn():
-	Sounds.play_sound("turn1")
-	$DayCounter.add_day()
+	if(first_day):
+		first_day = false
+	else:
+		Sounds.play_sound("turn1")
+		$DayCounter.add_day()
 	yield(get_tree().create_timer(.5),"timeout")
 	var tdl = LevelManager.shot_prob_thunders()
 	if tdl>0: yield(get_tree().create_timer(tdl),"timeout")
