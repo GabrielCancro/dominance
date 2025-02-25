@@ -107,8 +107,8 @@ var Texts = {
 		"en":"A sequence of up to three thunderclaps hits three different enemy units"},
 	"card_cobweb_name":{"es":"Telaraña","en":"Cobweb"},
 	"card_cobweb_desc":{
-		"es":"Esta carta es un estorbo, al pagar su coste y usarla se destruye y retira de tu mazo",
-		"en":"This card is a hindrance, when you pay its cost and use it, it is destroyed and removed from your deck"},
+		"es":"Estorbo, al pagar su coste y usarla se destruye y retira de tu mazo",
+		"en":"Hindrance, when you pay cost and use it, is removed from your deck"},
 	
 	"upg_stash":{
 		"es":"Empiezas la partida con cinco monedas en tu alijo",
