@@ -22,7 +22,7 @@ var Cards = [
 	{"code":"explode", "ico":null, "cost":6, "burn":true},
 	{"code":"train", "ico":null, "cost":3, "burn":true},
 	{"code":"torment", "ico":null, "cost":6, "burn":true},
-	{"code":"cobweb", "ico":null, "cost":2, "burn":false, "exclude_market":true},
+	{"code":"cobweb", "ico":null, "cost":2, "burn":false, "destroy_on_use":true},
 ]
 
 signal use_card(code)
@@ -105,7 +105,8 @@ func use_card(card_node):
 				yield(get_tree().create_timer(.2),"timeout")
 				Effects.disappear(card_node,Vector2(0,-20))
 				hand_cards[hand_cards.find(card_node)] = null
-				DiscardNode.add_card(code)
+				if "destroy_on_use" in card_node.data && card_node.data.destroy_on_use: pass
+				else: DiscardNode.add_card(code)
 	yield(get_tree().create_timer(.2),"timeout")
 	update_cards_warnings()
 	Global.set_stop_mouse(false)

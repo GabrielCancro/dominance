@@ -65,3 +65,4 @@ func on_click_card(card_node):
 
 func _get_market_rnd_card():
 	return market_cards[ randi()%market_cards.size() ]
+
