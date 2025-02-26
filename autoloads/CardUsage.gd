@@ -89,7 +89,7 @@ func condition_card_advance(card_node):
 func use_card_advance(card_node):
 	var SelectUnitPanel = get_node("/root/Game/SelectUnitPanel")
 	var mapNode = get_node("/root/Game/Map")
-	SelectUnitPanel.show_ui(1)
+	SelectUnitPanel.show_ui(["ally"])
 	var unit = yield(SelectUnitPanel,"selected_unit")
 	unit.have_attack = true
 	Effects.shine(unit)
@@ -109,7 +109,7 @@ func condition_card_thundre(card_node):
 func use_card_thundre(card_node):
 	var SelectUnitPanel = get_node("/root/Game/SelectUnitPanel")
 	var mapNode = get_node("/root/Game/Map")
-	SelectUnitPanel.show_ui(2)
+	SelectUnitPanel.show_ui(["enemy"])
 	var unit = yield(SelectUnitPanel,"selected_unit")
 	var th = preload("res://prefabs/magics/MagicThundre.tscn").instance()
 	mapNode.add_child(th)
@@ -150,7 +150,8 @@ func use_card_chest(card_node):
 	emit_signal("end_usage")
 
 func condition_card_heal(card_node):
-	if get_node("/root/Game/Map").get_units_amount_team(1)<=0:
+	var map = get_node("/root/Game/Map")
+	if !map.have_any_ally_without_max_heal():
 		Sounds.play_sound("fail1")
 		return false
 	return true
@@ -158,12 +159,12 @@ func condition_card_heal(card_node):
 func use_card_heal(card_node):
 	var SelectUnitPanel = get_node("/root/Game/SelectUnitPanel")
 	var mapNode = get_node("/root/Game/Map")
-	SelectUnitPanel.show_ui(1)
+	SelectUnitPanel.show_ui(["ally","damaged"])
 	var unit = yield(SelectUnitPanel,"selected_unit")
 	Effects.shine(unit)
 	Sounds.play_sound("healt1")
 	yield(get_tree().create_timer(.3),"timeout")
-	unit.add_hp(1)
+	unit.add_hp(unit.data.hpm-unit.data.hp)
 	yield(get_tree().create_timer(.7),"timeout")
 	emit_signal("end_usage")
 
@@ -176,7 +177,7 @@ func condition_card_explode(card_node):
 func use_card_explode(card_node):
 	var SelectUnitPanel = get_node("/root/Game/SelectUnitPanel")
 	var mapNode = get_node("/root/Game/Map")
-	mapNode.show_ui(2)
+	SelectUnitPanel.show_ui(["enemy"])
 	var unit = yield(SelectUnitPanel,"selected_unit")
 	var th = preload("res://prefabs/magics/MagicFire.tscn").instance()
 	mapNode.add_child(th)

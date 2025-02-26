@@ -10,13 +10,14 @@ OK-Delete saves with old versions
 OK-Add hint to Events
 OK-Add hint to LevelPath with extra info
 
-WIP-Add cobweb card
-WIP-Add spider enemy
+OK-Add cobweb card
+OK-Add spider enemy
+TODO-Improve Heal card to 2 hearts
 
 TODO-Make new levels
 TODO-Make new big slime feature
 TODO-Add archery card
 TODO-Implement archer unit
 TODO-Add archery upgrade
-TODO-Improve Heal card to 2 hearts
+
 TODO-Add Art to new units/events/cards/upgrades

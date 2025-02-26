@@ -3,9 +3,7 @@ extends Node
 var Texts = {
 	"market":{"es":"Mercado","en":"Market"},
 	"cost":{"es":"Costo","en":"Cost"},
-	"select_unit_team_-1":{"es":"Elige una unidad","en":"Choose a unit"},
-	"select_unit_team_1":{"es":"Elige un aliado","en":"Choose a ally"},
-	"select_unit_team_2":{"es":"Elige un enemigo","en":"Choose a enemy"},
+	"select_target":{"es":"Elige una unidad","en":"Choose a unit"},
 	"end_turn_button":{"es":"Finalizar Turno","en":"End Turn"},
 	"discards_slot":{"es":"Descarte","en":"Discards"},
 	"stash_empty":{"es":"Vacio","en":"Empty"},
@@ -90,9 +88,9 @@ var Texts = {
 		"Descarta TODA tu mano y obtienes por cada carta excepto esta, una moneda para tu alijo",
 		"en":"Discard your ENTIRE hand and for each card except this one you get a coin for your stash"},
 	"card_heal_name":{"es":"Sanar","en":"Heal"},
-	"card_heal_desc":{"es":
-		"Aumenta en un punto la vida a una de tus unidades",
-		"en":"Increases the health of one of your units by one point"},
+	"card_heal_desc":{
+		"es":"Cura todos lo puntos de vida de una unidad",
+		"en":"Heals all hit points of a unit"},
 	"card_explode_name":{"es":"Explotar","en":"Explode"},
 	"card_explode_desc":{
 		"es":"Una fuerte explosion de fuego hire a un enemigo central y a cualquier unidad cercana a el",

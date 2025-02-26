@@ -174,6 +174,11 @@ func get_units_amount_team(_team):
 		if u.data.team==_team: count += 1
 	return count
 
+func have_any_ally_without_max_heal():
+	for u in $Units.get_children(): 
+		if u.data.team==1 && u.data.hp<u.data.hpm: return true
+	return false
+
 func get_first_cell_x_position():
 	return $Grid/c0.rect_global_position.x
 
