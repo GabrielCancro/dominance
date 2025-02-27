@@ -18,6 +18,8 @@ func _ready():
 	CardData.DeckNode = self
 	if LevelManager.current_level_data.name=="P1": cards = ["militia","teasure","gold2","wind","house","wind","market","gold2","teasure"]
 	else: cards.shuffle()
+	cards.append("heal")
+	cards.append("heal")
 	update_ui()
 	connect("button_down",self,"on_click")
 

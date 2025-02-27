@@ -164,7 +164,7 @@ func use_card_heal(card_node):
 	Effects.shine(unit)
 	Sounds.play_sound("healt1")
 	yield(get_tree().create_timer(.3),"timeout")
-	unit.add_hp(unit.data.hpm-unit.data.hp)
+	unit.add_hp(min(2,unit.data.hpm-unit.data.hp))
 	yield(get_tree().create_timer(.7),"timeout")
 	emit_signal("end_usage")
 

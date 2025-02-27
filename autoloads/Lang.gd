@@ -89,8 +89,8 @@ var Texts = {
 		"en":"Discard your ENTIRE hand and for each card except this one you get a coin for your stash"},
 	"card_heal_name":{"es":"Sanar","en":"Heal"},
 	"card_heal_desc":{
-		"es":"Cura todos lo puntos de vida de una unidad",
-		"en":"Heals all hit points of a unit"},
+		"es":"Cura hasta 2 puntos de vida de una unidad",
+		"en":"Heals up to 2 hit points of a unit"},
 	"card_explode_name":{"es":"Explotar","en":"Explode"},
 	"card_explode_desc":{
 		"es":"Una fuerte explosion de fuego hire a un enemigo central y a cualquier unidad cercana a el",
