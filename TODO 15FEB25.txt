@@ -21,3 +21,5 @@ TODO-Implement archer unit
 TODO-Add archery upgrade
 
 TODO-Add Art to new units/events/cards/upgrades
+
+ACORDARSE DE SACAR LAS CARTAS DE HEAL DEL MAZO!!!
