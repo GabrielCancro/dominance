@@ -116,4 +116,8 @@ func add_sunpoints(amount,pos):
 		n.delay = i*0.1
 		get_node("/root").add_child(n)
 		n.rect_global_position = pos# - Vector2(25,25)
-		
+
+func spawn_arrow(nodeA,nodeB):
+	var n = preload("res://prefabs/effects/fx_arrow.tscn").instance()
+	get_node("/root").add_child(n)
+	n.set_from_to(nodeA,nodeB)

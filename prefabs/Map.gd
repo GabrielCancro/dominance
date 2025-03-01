@@ -113,6 +113,9 @@ func create_unit_left(line,code):
 	Sounds.play_sound("unit1")
 
 func get_unit_around(unit):
+#	var ran = 1
+#	for x in range(ran): for y in range(ran):
+	
 	var en = check_unit_pos(unit.map_position+Vector2(-1,0));
 	if(en && unit.data.team==en.data.team): en = null
 	if !en: en = check_unit_pos(unit.map_position+Vector2(+1,0));

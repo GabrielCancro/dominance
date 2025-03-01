@@ -145,3 +145,7 @@ func tutorial_sequence():
 	$TutorialPopup.show_tuto("days")
 	yield($TutorialPopup,"close_popup")
 	Global.clear_stop_mouse()
+
+func _input(event):
+	if event.is_action_pressed("ui_accept"):
+		Effects.spawn_arrow($RegionBottom/Stash,$EndTurn)

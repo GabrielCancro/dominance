@@ -10,7 +10,8 @@ var UnitData = {
 	"orc":{"sk":"or","atk":1,"hp":5,"spd":2, "img":null, "team":2},
 	"spider":{"sk":"sp","atk":1,"hp":2,"spd":2, "img":null, "team":2},
 	"militia":{"ml":"sn","atk":1,"hp":2,"spd":1, "img":null, "team":1},
-	"soldier":{"sl":"sn","atk":1,"hp":4,"spd":1, "img":null, "team":1}
+	"soldier":{"sl":"sn","atk":1,"hp":4,"spd":1, "img":null, "team":1},
+	"archer":{"sl":"ar","atk":1,"hp":2,"spd":1, "img":null, "team":1},
 }
 
 func _ready():
