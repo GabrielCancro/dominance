@@ -34,12 +34,12 @@ func damage(dam,check_dead=true):
 	Sounds.play_sound("hit1")
 	Effects.shake(self,1,.3)
 	Effects.colorization(self,Color(1,.2,.2,1))
+	if data.hp<=0: is_dead = true 
 	update_hp(true)
 	if check_dead: check_dead()
 
 func check_dead():
-	if data.hp<=0:
-		is_dead = true 
+	if is_dead: 
 		yield(get_tree().create_timer(.5),"timeout")
 		get_node("/root/Game/Houses")._update_houses(false,1)
 		Effects.disappear(self)
