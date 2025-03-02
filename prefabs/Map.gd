@@ -7,6 +7,7 @@ signal unit_clicked(unit)
 signal unit_created
 
 func _ready():
+	randomize()
 	grid_size = LevelManager.current_level_data.grid_size
 	$Grid.columns = grid_size
 	for c in $Grid.get_children(): c.visible = (c.get_index()<grid_size*3)	
@@ -101,8 +102,12 @@ func swap_attacks(ua,ub):
 func range_attack(ua,ub):
 	print("RNGED ATTACK")
 	Effects.spawn_arrow(ua,ub)
-	yield(get_tree().create_timer(.5),"timeout")
-	ub.damage(ua.data.atk,true)
+	yield(get_tree().create_timer(.2),"timeout")
+	if randf()<.5: 
+		yield(get_tree().create_timer(.3),"timeout")
+		ub.damage(ua.data.atk,true)
+	else: 
+		Effects.move_to_yoyo(ub,ub.rect_global_position+Vector2(20,-10))
 
 func unit_push(unit):
 	var unit_to_push = check_unit_pos(unit.map_position,unit);
