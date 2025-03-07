@@ -107,6 +107,10 @@ var Texts = {
 	"card_cobweb_desc":{
 		"es":"Estorbo, al pagar su coste y usarla se destruye y retira de tu mazo",
 		"en":"Hindrance, when you pay cost and use it, is removed from your deck"},
+	"card_train_arc_name":{"es":"Arqueria","en":"Archery"},
+	"card_train_arc_desc":{
+		"es":"Mejora una de tus milicias convitiendola en un arquero",
+		"en":"Upgrade one of your militias by turning it into an archer"},
 	
 	"upg_stash":{
 		"es":"Empiezas la partida con cinco monedas en tu alijo",

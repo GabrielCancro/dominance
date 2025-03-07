@@ -70,6 +70,7 @@ func start_new_turn():
 	if LevelManager.check_rain(): yield(get_tree().create_timer(1),"timeout")
 	if LevelManager.check_fog(): yield(get_tree().create_timer(1),"timeout")
 	$EndTurn.modulate = Color(1,1,1,1)
+	if check_win(): return
 	CardData.get_cards()
 
 func on_click_market():

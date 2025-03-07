@@ -66,14 +66,14 @@ func use_card_wind(card_node):
 		if u.data.team==1: continue
 		if u.map_position.x>=LevelManager.current_level_data.grid_size: continue
 		if get_node("/root/Game/Map").check_unit_pos(u.map_position+Vector2(1,0)): continue
+		if(randf()<.25): continue
 		Effects.shine(u)
 		var th = preload("res://prefabs/magics/MagicWind.tscn").instance()
 		get_node("/root/Game/Map").add_child(th)
 		th.start_magic(u)
 		yield(get_tree().create_timer(.4),"timeout")
-		if(randf()<.50): 
-			get_node("/root/Game/Map").move_to(u,u.map_position+Vector2(1,0))
-			yield(get_tree().create_timer(.4),"timeout")
+		get_node("/root/Game/Map").move_to(u,u.map_position+Vector2(1,0))
+		yield(get_tree().create_timer(.4),"timeout")
 		if(randf()<.50): 
 			get_node("/root/Game/Map").move_to(u,u.map_position+Vector2(1,0))
 			yield(get_tree().create_timer(.4),"timeout")
@@ -185,21 +185,19 @@ func use_card_explode(card_node):
 	yield(th,"end_magic")
 	emit_signal("end_usage")
 
-var aux_unit
-func condition_card_train(card_node):
-	for u in get_node("/root/Game/Map/Units").get_children():
-		if u.data.team==2: continue
-		if u.data.name!="militia": continue
-		aux_unit = u
-		return true
-	return false
+func condition_card_train(card_node): 
+	return get_node("/root/Game/Map").have_militias()
 
 func use_card_train(card_node):
-	var pos = aux_unit.map_position
+	var SelectUnitPanel = get_node("/root/Game/SelectUnitPanel")
+	var mapNode = get_node("/root/Game/Map")
+	SelectUnitPanel.show_ui(["militia"])
+	var unit = yield(SelectUnitPanel,"selected_unit")
+	var pos = unit.map_position
 	yield(get_tree().create_timer(.3),"timeout")
-	Effects.to_alpha(aux_unit,0)
+	Effects.to_alpha(unit,0)
 	yield(get_tree().create_timer(.8),"timeout")
-	aux_unit.queue_free()
+	unit.queue_free()
 	yield(get_tree().create_timer(.2),"timeout")
 	Sounds.play_sound("unit1")
 	var new_unit = get_node("/root/Game/Map").add_unit("soldier",pos.x,pos.y)
@@ -232,4 +230,24 @@ func use_card_torment(card_node):
 func condition_card_cobweb(card_node): return true
 func use_card_cobweb(card_node): 
 	yield(get_tree().create_timer(.4),"timeout")
+	emit_signal("end_usage")
+
+func condition_card_train_arc(card_node):
+	return get_node("/root/Game/Map").have_militias()
+
+func use_card_train_arc(card_node):
+	var SelectUnitPanel = get_node("/root/Game/SelectUnitPanel")
+	var mapNode = get_node("/root/Game/Map")
+	SelectUnitPanel.show_ui(["militia"])
+	var unit = yield(SelectUnitPanel,"selected_unit")
+	var pos = unit.map_position
+	yield(get_tree().create_timer(.3),"timeout")
+	Effects.to_alpha(unit,0)
+	yield(get_tree().create_timer(.8),"timeout")
+	unit.queue_free()
+	yield(get_tree().create_timer(.2),"timeout")
+	Sounds.play_sound("unit1")
+	var new_unit = get_node("/root/Game/Map").add_unit("archer",pos.x,pos.y)
+	Effects.shine(new_unit)
+	yield(get_tree().create_timer(.6),"timeout")
 	emit_signal("end_usage")

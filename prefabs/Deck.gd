@@ -16,10 +16,11 @@ var cards = [
 func _ready():
 	randomize()
 	CardData.DeckNode = self
-	if LevelManager.current_level_data.name=="P1": cards = ["militia","teasure","gold2","wind","house","wind","market","gold2","teasure"]
+	if LevelManager.current_level_data.name=="P1": pass#cards = ["militia","teasure","gold2","wind","house","wind","market","gold2","teasure"]
 	else: cards.shuffle()
 	cards.append("heal")
-	cards.append("heal")
+	cards.append("train")
+	cards.append("train_arc")
 	update_ui()
 	connect("button_down",self,"on_click")
 

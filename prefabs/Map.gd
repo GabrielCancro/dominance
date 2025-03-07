@@ -29,9 +29,9 @@ func get_grid_node(pos):
 
 func add_unit(type,x,y):
 	if x>grid_size: x=grid_size
-	if check_unit_pos(Vector2(x,y),null): 
-		print(" FAIL ",type,x,y)
-		return null
+#	if check_unit_pos(Vector2(x,y),null): 
+#		print(" FAIL ",type,x,y)
+#		return null
 	print(" SUCCES ",type,x,y)
 	var unit = UnitManager.create_new_unit(type)
 	if unit.data.team==2: Effects.fx_add_enemy(unit)
@@ -216,6 +216,11 @@ func get_units_amount_team(_team):
 func have_any_ally_without_max_heal():
 	for u in $Units.get_children(): 
 		if u.data.team==1 && u.data.hp<u.data.hpm: return true
+	return false
+
+func have_militias():
+	for u in $Units.get_children(): 
+		if u.data.team==1 && u.data.name=="militia": return true
 	return false
 
 func get_first_cell_x_position():

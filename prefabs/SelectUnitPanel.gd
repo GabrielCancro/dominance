@@ -23,6 +23,7 @@ func on_unit_clicked(unit):
 		if t=="ally" && unit.data.team!=1: return false
 		if t=="enemy" && unit.data.team!=2: return false
 		if t=="damaged" && unit.data.hp>=unit.data.hpm: return false
+		if t=="militia" && unit.data.team!=1 && unit.data.name!="militia": return false
 	emit_signal("selected_unit",unit)
 	hide_ui()
 
