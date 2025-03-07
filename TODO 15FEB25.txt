@@ -1,3 +1,7 @@
+REVISSAR:
+cartas del tutorial en DECK
+unidades iniciales en LevelManager
+
 
 DOMINANCE UPDATE:
 
