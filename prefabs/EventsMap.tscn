@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/fx/fog_shader.gdshader" type="Shader" id=1]
 [ext_resource path="res://assets/fx/rain_and_snow_shader.gdshader" type="Shader" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/descriptor_m.png" type="Texture" id=5]
 [ext_resource path="res://assets/ui/ui_arrow.png" type="Texture" id=6]
 [ext_resource path="res://assets/ui/ui_btn_oval.png" type="Texture" id=7]
+[ext_resource path="res://assets/sfx/rain.ogg" type="AudioStream" id=8]
 
 [sub_resource type="OpenSimplexNoise" id=11]
 
@@ -231,3 +232,6 @@ text = "Llueve! En cada pueden caer rayos que dañen a unidades de forma aleator
 align = 1
 valign = 1
 autowrap = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
