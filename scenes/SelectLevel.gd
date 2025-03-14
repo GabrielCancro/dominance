@@ -1,6 +1,10 @@
 extends Control
 
 func _ready():
+	$UI/Button.connect("button_down",self,"unlock_all_debug")
+	$UI/btn_menu.connect("button_down",self,"on_back_click")
+	$UI/btn_menu/Label.text = Lang.get_string("back_to_main")
+	$UI/lbl_title.text = Lang.get_string("select_level")
 	Effects.connect("add_sunpoints_effect_end",self,"add_sunpoints",[1])
 	add_sunpoints()
 	load_levelPath()
@@ -35,3 +39,12 @@ func level_hint_hover(val,node):
 	$UI/LevelHint.rect_global_position = node.global_position + Vector2(0,-15)
 	if val: $UI/LevelHint.show_level_data(node)
 	else: $UI/LevelHint.visible = false
+
+func unlock_all_debug():
+	for node in $LevelPath.get_children():
+		if node.state==0: 
+			node.state=1
+			node.set_type()
+
+func on_back_click():
+	get_tree().change_scene("res://scenes/Menu.tscn")

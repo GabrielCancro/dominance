@@ -117,13 +117,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -252.0
-margin_top = -107.0
-margin_right = 252.0
-margin_bottom = 91.0
+margin_left = -303.0
+margin_top = -104.0
+margin_right = 303.0
+margin_bottom = 94.0
 custom_constants/vseparation = 6
 custom_constants/hseparation = 6
-columns = 5
+columns = 6
 __meta__ = {
 "_edit_group_": true
 }
@@ -157,33 +157,39 @@ margin_bottom = 96.0
 focus_mode = 2
 
 [node name="upg6" parent="Grid" instance=ExtResource( 5 )]
+margin_left = 510.0
+margin_right = 606.0
+margin_bottom = 96.0
+focus_mode = 2
+
+[node name="upg7" parent="Grid" instance=ExtResource( 5 )]
 margin_top = 102.0
 margin_right = 96.0
 margin_bottom = 198.0
 focus_mode = 2
 
-[node name="upg7" parent="Grid" instance=ExtResource( 5 )]
+[node name="upg8" parent="Grid" instance=ExtResource( 5 )]
 margin_left = 102.0
 margin_top = 102.0
 margin_right = 198.0
 margin_bottom = 198.0
 focus_mode = 2
 
-[node name="upg8" parent="Grid" instance=ExtResource( 5 )]
+[node name="upg9" parent="Grid" instance=ExtResource( 5 )]
 margin_left = 204.0
 margin_top = 102.0
 margin_right = 300.0
 margin_bottom = 198.0
 focus_mode = 2
 
-[node name="upg9" parent="Grid" instance=ExtResource( 5 )]
+[node name="upg10" parent="Grid" instance=ExtResource( 5 )]
 margin_left = 306.0
 margin_top = 102.0
 margin_right = 402.0
 margin_bottom = 198.0
 focus_mode = 2
 
-[node name="upg10" parent="Grid" instance=ExtResource( 5 )]
+[node name="upg11" parent="Grid" instance=ExtResource( 5 )]
 margin_left = 408.0
 margin_top = 102.0
 margin_right = 504.0

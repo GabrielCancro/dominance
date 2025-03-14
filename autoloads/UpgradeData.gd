@@ -13,6 +13,7 @@ var UPGRADES = {
 	"upg_market_gold":{"cost":20},
 	"upg_magics":{"cost":15},
 	"upg_train":{"cost":15},
+	"upg_train_arc":{"cost":15},
 }
 
 func add_upgrade(code):
@@ -79,3 +80,6 @@ func apply_upg_magics():
 
 func apply_upg_train():
 	get_node("/root/Game/RegionBottom/Deck").add_card("train",true)
+
+func apply_upg_train_arc():
+	get_node("/root/Game/RegionBottom/Deck").add_card("train_arc",true)

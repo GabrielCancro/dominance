@@ -34,6 +34,7 @@ var Texts = {
 	"ui_vol":{"es":"Volumen","en":"Volume"},
 	"ui_upgrade_unlocked":{"es":"NUEVA MEJORA OBTENIDA","en":"NEW UPGRADE UNLOCKED"},
 	"select_start_build":{"es":"ELIGE TUS MEJORAS","en":"SELECT UPGRADES"},
+	"select_level":{"es":"ELIGE UN NIVEL","en":"SELECT LEVEL"},
 	
 	"back_to_main":{"es":"Volver al menu","en":"Back to menu"},
 	"start":{"es":"Comenzar","en":"Start"},
@@ -142,6 +143,9 @@ var Texts = {
 	"upg_train":{
 		"es":"Agrega la carta Entrenar a tu mazo, esta carta te permite convertir milicias en soldados mas resistentes",
 		"en":"Add the Train card to your deck, this card allows you to convert militias into more resistant soldiers"},
+	"upg_train_arc":{
+		"es":"Agrega la carta Arqueria a tu mazo, esta carta te permite convertir milicias en arqueros a distancia",
+		"en":"Add the Archery card to your deck, this card allows you to convert militias into ranged archers"},
 	
 	"tutorial_1":{
 		"es":"En cada turno recibes cinco cartas, cada una de ellas con efectos diferentes",

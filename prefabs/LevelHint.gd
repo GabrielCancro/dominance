@@ -10,7 +10,7 @@ func show_level_data(node):
 	if node.type!=0: return
 	if !node.name in LevelManager.LEVELS: return
 	LevelData = LevelManager.LEVELS[node.name]
-	$Panel/Desc.text = str(LevelData.total_days)+" days"
+	$Panel/Desc.text = node.name+" "+str(LevelData.total_days)+" days"
 	$Panel/Desc.text += "\nground 3x"+str(LevelData.grid_size)
 	$Panel/Desc.text += "\n"+get_weather()
 	$Panel/Desc.text += "\n"+"mostly slimes"

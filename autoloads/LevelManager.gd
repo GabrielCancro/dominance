@@ -38,7 +38,7 @@ var LEVELS = {
 	"P5m":[ 
 		{"c":"day.2","m":["sn"]},
 		{"c":"every.3","m":["wf","ss","sp","sp"]},
-		{"c":"every.5","m":["wf","sn","sp"]},
+		{"c":"every.5","m":["wf","sn","sp"]}],
 #	"P3":{"total_days":20,"grid_size":5, "rain":3, "fog":2},
 #	"P3m":[ {"c":"day.2","m":["ss"]},{"c":"every.4","m":["ss"]}],
 
@@ -161,14 +161,14 @@ func add_debug_units():
 #	m.add_unit("spider",5,2)
 #	m.add_unit("wolf",5,3)
 #	m.add_unit("orc",6,2)
-	m.add_unit("slime_small",4,1)
-	m.add_unit("slime_small",4,2)
-	m.add_unit("slime_small",4,3)
+#	m.add_unit("slime_small",4,1)
+#	m.add_unit("slime_small",4,2)
+#	m.add_unit("slime_small",4,3)
 #	m.add_unit("slime",7,2)
 #	m.add_unit("slime_big",8,1)
 #	m.add_unit("wolf",8,3)
-	m.add_unit("militia",1,1)
-	m.add_unit("militia",1,2)
-	m.add_unit("militia",1,3)
-	m.add_unit("militia",2,2)
+#	m.add_unit("militia",1,1)
+#	m.add_unit("militia",1,2)
+#	m.add_unit("militia",1,3)
+#	m.add_unit("militia",2,2)
 #	m.add_unit("soldier",2,3)

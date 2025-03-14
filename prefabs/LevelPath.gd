@@ -12,7 +12,6 @@ var link_dist = 80
 signal on_hint(val)
 
 func _ready():
-	Saves.savedData.language = "en"
 	$Button.connect("button_down",self,"on_click")
 	$Button.connect("mouse_entered",self,"on_hint",[true])
 	$Button.connect("mouse_exited",self,"on_hint",[false])
@@ -47,18 +46,20 @@ func connect_close_nodes():
 		else: ln.points[1] = Vector2(0,9)
 
 func on_click():
-	LevelManager.set_current_level(name)
-	if type == TypeEnum.LEVEL && state == StateEnum.COMPLETE: get_tree().change_scene("res://scenes/SelectBuild.tscn")
+	if type == TypeEnum.LEVEL && state == StateEnum.COMPLETE:
+		LevelManager.set_current_level(name)
+		get_tree().change_scene("res://scenes/SelectBuild.tscn")
 	if state != StateEnum.ENABLE: return
-	state = StateEnum.COMPLETE
+	if type!=TypeEnum.LEVEL: state = StateEnum.COMPLETE
 	get_node("../../").levelpath_click(self)
 	set_type()
 	if type==TypeEnum.LEVEL: 
+		LevelManager.set_current_level(name)
 		Effects.appear_from_bottom($N/LEVEL_COMPLETE/tower)
 		yield(get_tree().create_timer(.5),"timeout")
 		get_tree().change_scene("res://scenes/SelectBuild.tscn")
 	if type==TypeEnum.SUN: 
-		Effects.add_sunpoints(10,global_position)
+		Effects.add_sunpoints(15,global_position)
 	if type==TypeEnum.CHEST: 
 		get_node("../../UI/UpgradeGetted").show()
 		yield(get_node("../../UI/UpgradeGetted"),"on_close")
