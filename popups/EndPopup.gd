@@ -31,4 +31,4 @@ func show_end_button():
 
 func on_back():
 	Sounds.play_sound("button1")
-	get_tree().change_scene("res://scenes/Menu.tscn")
+	get_tree().change_scene("res://scenes/SelectLevel.tscn")

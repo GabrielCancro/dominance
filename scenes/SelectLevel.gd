@@ -41,10 +41,12 @@ func level_hint_hover(val,node):
 	else: $UI/LevelHint.visible = false
 
 func unlock_all_debug():
+	Sounds.play_sound("button1")
 	for node in $LevelPath.get_children():
 		if node.state==0: 
 			node.state=1
 			node.set_type()
 
 func on_back_click():
+	Sounds.play_sound("button1")
 	get_tree().change_scene("res://scenes/Menu.tscn")

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/selectlevel.ogg-10460bbce80179ed5e785aa3169f060c.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/selectlevel.ogg"
+dest_files=[ "res://.import/selectlevel.ogg-10460bbce80179ed5e785aa3169f060c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

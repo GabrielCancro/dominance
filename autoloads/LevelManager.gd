@@ -55,7 +55,7 @@ var LEVELS = {
 }
 
 func _ready():
-	LEVELS["P1m"].append({"c":"day.1","m":["sp"]})
+#	LEVELS["P1m"].append({"c":"day.1","m":["sp"]})
 	pass # Replace with function body.
 
 func set_current_level(code):

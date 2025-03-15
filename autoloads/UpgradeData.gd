@@ -14,6 +14,7 @@ var UPGRADES = {
 	"upg_magics":{"cost":15},
 	"upg_train":{"cost":15},
 	"upg_train_arc":{"cost":15},
+	"upg_chest":{"cost":12},
 }
 
 func add_upgrade(code):
@@ -83,3 +84,7 @@ func apply_upg_train():
 
 func apply_upg_train_arc():
 	get_node("/root/Game/RegionBottom/Deck").add_card("train_arc",true)
+
+func apply_upg_chest():
+	get_node("/root/Game/RegionBottom/Deck").cards.erase("teasure")
+	get_node("/root/Game/RegionBottom/Deck").add_card("chest",true)

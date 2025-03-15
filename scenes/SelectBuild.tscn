@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/font/Anton-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/font/AbyssinicaSIL-Regular.ttf" type="DynamicFontData" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/upgrades/CheckEmpty.png" type="Texture" id=9]
 [ext_resource path="res://assets/sun.png" type="Texture" id=10]
 [ext_resource path="res://scenes/SelectBuild.gd" type="Script" id=11]
+[ext_resource path="res://assets/sfx/ambient.mp3" type="AudioStream" id=12]
 
 [sub_resource type="Curve" id=12]
 min_value = -360.0
@@ -90,6 +91,11 @@ anchor_bottom = 1.0
 script = ExtResource( 11 )
 
 [node name="WoodPanelUi" parent="." instance=ExtResource( 6 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -4.0
+autoplay = true
 
 [node name="Particles2D" type="Particles2D" parent="."]
 position = Vector2( 399, 466 )
@@ -193,6 +199,13 @@ focus_mode = 2
 margin_left = 408.0
 margin_top = 102.0
 margin_right = 504.0
+margin_bottom = 198.0
+focus_mode = 2
+
+[node name="upg12" parent="Grid" instance=ExtResource( 5 )]
+margin_left = 510.0
+margin_top = 102.0
+margin_right = 606.0
 margin_bottom = 198.0
 focus_mode = 2
 

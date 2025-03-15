@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sunpoint.ogg-25d0fe6e1c6d3dc2aaaebda205b52c57.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/sunpoint.ogg"
+dest_files=[ "res://.import/sunpoint.ogg-25d0fe6e1c6d3dc2aaaebda205b52c57.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

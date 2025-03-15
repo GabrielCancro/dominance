@@ -109,6 +109,7 @@ margin_left = -68.5
 margin_top = -33.0
 margin_right = 68.5
 margin_bottom = 17.0
+focus_mode = 0
 flat = true
 __meta__ = {
 "_edit_group_": true

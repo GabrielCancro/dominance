@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/openchest.ogg-97f3e3ffddbb996b86868a4bd9384b55.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/openchest.ogg"
+dest_files=[ "res://.import/openchest.ogg-97f3e3ffddbb996b86868a4bd9384b55.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

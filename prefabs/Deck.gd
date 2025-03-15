@@ -2,7 +2,7 @@ extends Button
 
 #var cards = ["soldier","soldier","market","gold","gold","gold","wind"]
 var cards = [
-	"wind","wind",
+	"wind",
 	"militia","militia",
 	"market",
 	"gold2","gold2",
@@ -16,7 +16,7 @@ var cards = [
 func _ready():
 	randomize()
 	CardData.DeckNode = self
-	if LevelManager.current_level_data.name=="P1": cards = ["militia","teasure","gold2","wind","house","wind","market","gold2","teasure"]
+	if LevelManager.current_level_data.name=="P1": cards = ["militia","teasure","gold2","wind","house","militia","market","gold2","house","teasure"]
 	else: cards.shuffle()
 #	cards.append("heal")
 #	cards.append("train")

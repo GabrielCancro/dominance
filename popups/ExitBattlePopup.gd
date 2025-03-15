@@ -25,4 +25,4 @@ func on_back():
 func on_quit():
 	Sounds.play_sound("button1")
 	if Global.demo: get_tree().change_scene("res://scenes/DemoMenu.tscn")
-	else: get_tree().change_scene("res://scenes/Menu.tscn")
+	else: get_tree().change_scene("res://scenes/SelectLevel.tscn")

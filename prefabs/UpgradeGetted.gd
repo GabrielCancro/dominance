@@ -17,13 +17,14 @@ func show():
 	$Control/lbl_title.text = Lang.get_string("ui_upgrade_unlocked")
 	$Control/Button.disabled = true
 	modulate.a = 0
-	Effects.appear_from_bottom(self)
+	Effects.appear_from_bottom(self,.5)
 	visible = true
-	yield(get_tree().create_timer(.5),"timeout")
+	yield(get_tree().create_timer(.6),"timeout")
 	$Control/Button.disabled = false
 
 func on_click_ok():
+	$Control/Button.disabled = true
 	Effects.to_alpha(self,0)
-	yield(get_tree().create_timer(.5),"timeout")
+	yield(get_tree().create_timer(.6),"timeout")
 	visible = false
 	emit_signal("on_close")

@@ -146,6 +146,10 @@ var Texts = {
 	"upg_train_arc":{
 		"es":"Agrega la carta Arqueria a tu mazo, esta carta te permite convertir milicias en arqueros a distancia",
 		"en":"Add the Archery card to your deck, this card allows you to convert militias into ranged archers"},
+	"upg_chest":{
+		"es":"Remplaza una de tus cartas Tesoro por una carta de Cofre que almacena mas oro para tu alijo",
+		"en":"Replaces one of your Treasure cards with a Chest card that stores more gold for your stash"},
+	
 	
 	"tutorial_1":{
 		"es":"En cada turno recibes cinco cartas, cada una de ellas con efectos diferentes",

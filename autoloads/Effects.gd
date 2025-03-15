@@ -93,11 +93,11 @@ func fx_add_enemy(node):
 	tween.interpolate_property(node,"modulate:a",0,1,.5,Tween.TRANS_QUAD,Tween.EASE_OUT)
 	tween.start()
 	
-func appear_from_bottom(node):
+func appear_from_bottom(node,time=1):
 	var start_pos = node.rect_global_position + Vector2(0,+20)
 	var end_pos = node.rect_global_position
-	tween.interpolate_property(node,"rect_global_position",start_pos,end_pos,1,Tween.TRANS_QUAD,Tween.EASE_OUT)
-	tween.interpolate_property(node,"modulate:a",0,1,1,Tween.TRANS_QUAD,Tween.EASE_OUT)
+	tween.interpolate_property(node,"rect_global_position",start_pos,end_pos,time,Tween.TRANS_QUAD,Tween.EASE_OUT)
+	tween.interpolate_property(node,"modulate:a",0,1,time,Tween.TRANS_QUAD,Tween.EASE_OUT)
 	tween.start()
 
 func simple_hover_fx(node):

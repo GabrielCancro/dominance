@@ -55,12 +55,16 @@ func on_click():
 	set_type()
 	if type==TypeEnum.LEVEL: 
 		LevelManager.set_current_level(name)
+		$Button.disabled = true
 		Effects.appear_from_bottom($N/LEVEL_COMPLETE/tower)
-		yield(get_tree().create_timer(.5),"timeout")
+		$N/LEVEL_COMPLETE.visible = true
+		Sounds.play_sound("selectlevel")
+		yield(get_tree().create_timer(.8),"timeout")
 		get_tree().change_scene("res://scenes/SelectBuild.tscn")
 	if type==TypeEnum.SUN: 
 		Effects.add_sunpoints(15,global_position)
 	if type==TypeEnum.CHEST: 
+		Sounds.play_sound("openchest")
 		get_node("../../UI/UpgradeGetted").show()
 		yield(get_node("../../UI/UpgradeGetted"),"on_close")
 		get_node("../../UI/UpgradeGetted").show()
