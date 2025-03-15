@@ -18,6 +18,7 @@ func show_rain():
 	Effects.to_alpha_slow($Rain,1)
 	$Rain.visible = true
 	$HBox/btn_rain.visible = true
+	$AudioStreamPlayer.play()
 
 func add_web_card():
 	get_node("/root/Game/RegionBottom/Deck").add_card("cobweb",true)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
+[ext_resource path="res://prefabs/grass_grid_cell.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefabs/Tower.tscn" type="PackedScene" id=2]
 [ext_resource path="res://prefabs/Map.gd" type="Script" id=3]
 
@@ -9,769 +10,133 @@ margin_bottom = 141.0
 script = ExtResource( 3 )
 
 [node name="Grid" type="GridContainer" parent="."]
-modulate = Color( 0.796078, 0.796078, 0.796078, 0.588235 )
 margin_right = 498.0
 margin_bottom = 140.0
 custom_constants/vseparation = -2
 custom_constants/hseparation = -2
 columns = 8
 
-[node name="c0" type="Control" parent="Grid"]
-margin_right = 64.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 64, 48 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="c0" parent="Grid" instance=ExtResource( 1 )]
 
-[node name="b1" type="ColorRect" parent="Grid/c0"]
-anchor_right = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b2" type="ColorRect" parent="Grid/c0"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b3" type="ColorRect" parent="Grid/c0"]
-anchor_bottom = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b4" type="ColorRect" parent="Grid/c0"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="c1" type="Control" parent="Grid"]
+[node name="c1" parent="Grid" instance=ExtResource( 1 )]
 margin_left = 62.0
 margin_right = 126.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 64, 48 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="b1" type="ColorRect" parent="Grid/c1"]
-anchor_right = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b2" type="ColorRect" parent="Grid/c1"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b3" type="ColorRect" parent="Grid/c1"]
-anchor_bottom = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b4" type="ColorRect" parent="Grid/c1"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="c2" type="Control" parent="Grid"]
+[node name="c2" parent="Grid" instance=ExtResource( 1 )]
 margin_left = 124.0
 margin_right = 188.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 64, 48 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="b1" type="ColorRect" parent="Grid/c2"]
-anchor_right = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b2" type="ColorRect" parent="Grid/c2"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b3" type="ColorRect" parent="Grid/c2"]
-anchor_bottom = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b4" type="ColorRect" parent="Grid/c2"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="c3" type="Control" parent="Grid"]
+[node name="c3" parent="Grid" instance=ExtResource( 1 )]
 margin_left = 186.0
 margin_right = 250.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 64, 48 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="b1" type="ColorRect" parent="Grid/c3"]
-anchor_right = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b2" type="ColorRect" parent="Grid/c3"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b3" type="ColorRect" parent="Grid/c3"]
-anchor_bottom = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b4" type="ColorRect" parent="Grid/c3"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="c4" type="Control" parent="Grid"]
+[node name="c4" parent="Grid" instance=ExtResource( 1 )]
 margin_left = 248.0
 margin_right = 312.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 64, 48 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="b1" type="ColorRect" parent="Grid/c4"]
-anchor_right = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b2" type="ColorRect" parent="Grid/c4"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b3" type="ColorRect" parent="Grid/c4"]
-anchor_bottom = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b4" type="ColorRect" parent="Grid/c4"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="c5" type="Control" parent="Grid"]
+[node name="c5" parent="Grid" instance=ExtResource( 1 )]
 margin_left = 310.0
 margin_right = 374.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 64, 48 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="b1" type="ColorRect" parent="Grid/c5"]
-anchor_right = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b2" type="ColorRect" parent="Grid/c5"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b3" type="ColorRect" parent="Grid/c5"]
-anchor_bottom = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b4" type="ColorRect" parent="Grid/c5"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="c6" type="Control" parent="Grid"]
+[node name="c6" parent="Grid" instance=ExtResource( 1 )]
 margin_left = 372.0
 margin_right = 436.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 64, 48 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="b1" type="ColorRect" parent="Grid/c6"]
-anchor_right = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b2" type="ColorRect" parent="Grid/c6"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b3" type="ColorRect" parent="Grid/c6"]
-anchor_bottom = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b4" type="ColorRect" parent="Grid/c6"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="c7" type="Control" parent="Grid"]
+[node name="c7" parent="Grid" instance=ExtResource( 1 )]
 margin_left = 434.0
 margin_right = 498.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 64, 48 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="b1" type="ColorRect" parent="Grid/c7"]
-anchor_right = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b2" type="ColorRect" parent="Grid/c7"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b3" type="ColorRect" parent="Grid/c7"]
-anchor_bottom = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b4" type="ColorRect" parent="Grid/c7"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="c8" type="Control" parent="Grid"]
+[node name="c8" parent="Grid" instance=ExtResource( 1 )]
 margin_top = 46.0
-margin_right = 64.0
 margin_bottom = 94.0
-rect_min_size = Vector2( 64, 48 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="b1" type="ColorRect" parent="Grid/c8"]
-anchor_right = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b2" type="ColorRect" parent="Grid/c8"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b3" type="ColorRect" parent="Grid/c8"]
-anchor_bottom = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b4" type="ColorRect" parent="Grid/c8"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="c9" type="Control" parent="Grid"]
+[node name="c9" parent="Grid" instance=ExtResource( 1 )]
 margin_left = 62.0
 margin_top = 46.0
 margin_right = 126.0
 margin_bottom = 94.0
-rect_min_size = Vector2( 64, 48 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="b1" type="ColorRect" parent="Grid/c9"]
-anchor_right = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b2" type="ColorRect" parent="Grid/c9"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b3" type="ColorRect" parent="Grid/c9"]
-anchor_bottom = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b4" type="ColorRect" parent="Grid/c9"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="c10" type="Control" parent="Grid"]
+[node name="c10" parent="Grid" instance=ExtResource( 1 )]
 margin_left = 124.0
 margin_top = 46.0
 margin_right = 188.0
 margin_bottom = 94.0
-rect_min_size = Vector2( 64, 48 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="b1" type="ColorRect" parent="Grid/c10"]
-anchor_right = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b2" type="ColorRect" parent="Grid/c10"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b3" type="ColorRect" parent="Grid/c10"]
-anchor_bottom = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b4" type="ColorRect" parent="Grid/c10"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="c11" type="Control" parent="Grid"]
+[node name="c11" parent="Grid" instance=ExtResource( 1 )]
 margin_left = 186.0
 margin_top = 46.0
 margin_right = 250.0
 margin_bottom = 94.0
-rect_min_size = Vector2( 64, 48 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="b1" type="ColorRect" parent="Grid/c11"]
-anchor_right = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b2" type="ColorRect" parent="Grid/c11"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b3" type="ColorRect" parent="Grid/c11"]
-anchor_bottom = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b4" type="ColorRect" parent="Grid/c11"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="c12" type="Control" parent="Grid"]
+[node name="c12" parent="Grid" instance=ExtResource( 1 )]
 margin_left = 248.0
 margin_top = 46.0
 margin_right = 312.0
 margin_bottom = 94.0
-rect_min_size = Vector2( 64, 48 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="b1" type="ColorRect" parent="Grid/c12"]
-anchor_right = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b2" type="ColorRect" parent="Grid/c12"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b3" type="ColorRect" parent="Grid/c12"]
-anchor_bottom = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b4" type="ColorRect" parent="Grid/c12"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="c13" type="Control" parent="Grid"]
+[node name="c13" parent="Grid" instance=ExtResource( 1 )]
 margin_left = 310.0
 margin_top = 46.0
 margin_right = 374.0
 margin_bottom = 94.0
-rect_min_size = Vector2( 64, 48 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="b1" type="ColorRect" parent="Grid/c13"]
-anchor_right = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b2" type="ColorRect" parent="Grid/c13"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b3" type="ColorRect" parent="Grid/c13"]
-anchor_bottom = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b4" type="ColorRect" parent="Grid/c13"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="c14" type="Control" parent="Grid"]
+[node name="c14" parent="Grid" instance=ExtResource( 1 )]
 margin_left = 372.0
 margin_top = 46.0
 margin_right = 436.0
 margin_bottom = 94.0
-rect_min_size = Vector2( 64, 48 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="b1" type="ColorRect" parent="Grid/c14"]
-anchor_right = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b2" type="ColorRect" parent="Grid/c14"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b3" type="ColorRect" parent="Grid/c14"]
-anchor_bottom = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b4" type="ColorRect" parent="Grid/c14"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="c15" type="Control" parent="Grid"]
+[node name="c15" parent="Grid" instance=ExtResource( 1 )]
 margin_left = 434.0
 margin_top = 46.0
 margin_right = 498.0
 margin_bottom = 94.0
-rect_min_size = Vector2( 64, 48 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="b1" type="ColorRect" parent="Grid/c15"]
-anchor_right = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b2" type="ColorRect" parent="Grid/c15"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b3" type="ColorRect" parent="Grid/c15"]
-anchor_bottom = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b4" type="ColorRect" parent="Grid/c15"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="c16" type="Control" parent="Grid"]
+[node name="c16" parent="Grid" instance=ExtResource( 1 )]
 margin_top = 92.0
-margin_right = 64.0
 margin_bottom = 140.0
-rect_min_size = Vector2( 64, 48 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="b1" type="ColorRect" parent="Grid/c16"]
-anchor_right = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b2" type="ColorRect" parent="Grid/c16"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b3" type="ColorRect" parent="Grid/c16"]
-anchor_bottom = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b4" type="ColorRect" parent="Grid/c16"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="c17" type="Control" parent="Grid"]
+[node name="c17" parent="Grid" instance=ExtResource( 1 )]
 margin_left = 62.0
 margin_top = 92.0
 margin_right = 126.0
 margin_bottom = 140.0
-rect_min_size = Vector2( 64, 48 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="b1" type="ColorRect" parent="Grid/c17"]
-anchor_right = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b2" type="ColorRect" parent="Grid/c17"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b3" type="ColorRect" parent="Grid/c17"]
-anchor_bottom = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b4" type="ColorRect" parent="Grid/c17"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="c18" type="Control" parent="Grid"]
+[node name="c18" parent="Grid" instance=ExtResource( 1 )]
 margin_left = 124.0
 margin_top = 92.0
 margin_right = 188.0
 margin_bottom = 140.0
-rect_min_size = Vector2( 64, 48 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="b1" type="ColorRect" parent="Grid/c18"]
-anchor_right = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b2" type="ColorRect" parent="Grid/c18"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b3" type="ColorRect" parent="Grid/c18"]
-anchor_bottom = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b4" type="ColorRect" parent="Grid/c18"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="c19" type="Control" parent="Grid"]
+[node name="c19" parent="Grid" instance=ExtResource( 1 )]
 margin_left = 186.0
 margin_top = 92.0
 margin_right = 250.0
 margin_bottom = 140.0
-rect_min_size = Vector2( 64, 48 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="b1" type="ColorRect" parent="Grid/c19"]
-anchor_right = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b2" type="ColorRect" parent="Grid/c19"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b3" type="ColorRect" parent="Grid/c19"]
-anchor_bottom = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b4" type="ColorRect" parent="Grid/c19"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="c20" type="Control" parent="Grid"]
+[node name="c20" parent="Grid" instance=ExtResource( 1 )]
 margin_left = 248.0
 margin_top = 92.0
 margin_right = 312.0
 margin_bottom = 140.0
-rect_min_size = Vector2( 64, 48 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="b1" type="ColorRect" parent="Grid/c20"]
-anchor_right = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b2" type="ColorRect" parent="Grid/c20"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b3" type="ColorRect" parent="Grid/c20"]
-anchor_bottom = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b4" type="ColorRect" parent="Grid/c20"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="c21" type="Control" parent="Grid"]
+[node name="c21" parent="Grid" instance=ExtResource( 1 )]
 margin_left = 310.0
 margin_top = 92.0
 margin_right = 374.0
 margin_bottom = 140.0
-rect_min_size = Vector2( 64, 48 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="b1" type="ColorRect" parent="Grid/c21"]
-anchor_right = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b2" type="ColorRect" parent="Grid/c21"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b3" type="ColorRect" parent="Grid/c21"]
-anchor_bottom = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b4" type="ColorRect" parent="Grid/c21"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="c22" type="Control" parent="Grid"]
+[node name="c22" parent="Grid" instance=ExtResource( 1 )]
 margin_left = 372.0
 margin_top = 92.0
 margin_right = 436.0
 margin_bottom = 140.0
-rect_min_size = Vector2( 64, 48 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="b1" type="ColorRect" parent="Grid/c22"]
-anchor_right = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b2" type="ColorRect" parent="Grid/c22"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b3" type="ColorRect" parent="Grid/c22"]
-anchor_bottom = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b4" type="ColorRect" parent="Grid/c22"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="c23" type="Control" parent="Grid"]
+[node name="c23" parent="Grid" instance=ExtResource( 1 )]
 margin_left = 434.0
 margin_top = 92.0
 margin_right = 498.0
 margin_bottom = 140.0
-rect_min_size = Vector2( 64, 48 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="b1" type="ColorRect" parent="Grid/c23"]
-anchor_right = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b2" type="ColorRect" parent="Grid/c23"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -2.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b3" type="ColorRect" parent="Grid/c23"]
-anchor_bottom = 1.0
-rect_min_size = Vector2( 2, 2 )
-
-[node name="b4" type="ColorRect" parent="Grid/c23"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -2.0
-rect_min_size = Vector2( 2, 2 )
 
 [node name="Units" type="Control" parent="."]
 anchor_right = 1.0

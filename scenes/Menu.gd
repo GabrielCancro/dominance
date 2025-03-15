@@ -15,7 +15,15 @@ func _ready():
 	Effects.simple_hover_fx($InvasionUIButton)
 	$UpgradesUIButton.connect("button_down",self,"on_upgrades_click")
 	$InvasionUIButton.connect("button_down",self,"on_invasion_click")
-	$UpgradesUIButton/Label.text = str(Saves.savedData.days)
+	$UpgradesUIButton/Label.text = str(Saves.savedData.upgrades_unlocked.size())+"/"+str(UpgradeData.UPGRADES.keys().size())
+	var winlevels = 0
+	var totallevels = 0
+	for l in Saves.savedData.levelPath.keys():
+		print(l,": ",Saves.savedData.levelPath[l])
+		if l.rfind("P")!=-1:
+			totallevels += 1
+			if Saves.savedData.levelPath[l]>1: winlevels += 1
+	$InvasionUIButton/Label.text = str(winlevels)+"/"+str(totallevels)
 	first_play_effects()
 
 func first_play_effects():
@@ -42,7 +50,7 @@ func localizate():
 	$VBox/btn4/Label.text = Lang.get_string("menu_quit")
 	$VBox/btn4/Label.text = Lang.get_string("menu_quit")
 	$UpgradesUIButton/lbl_title.text = Lang.get_string("menu_upgrades")
-	$InvasionUIButton/lbl_title.text = Lang.get_string("menu_invasion")
+	$InvasionUIButton/lbl_title.text = Lang.get_string("menu_invasions")
 
 func on_click_button(code):
 	Sounds.play_sound("button1")

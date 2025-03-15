@@ -1,0 +1,38 @@
+[gd_scene format=2]
+
+[node name="grass_grid_cell" type="Control"]
+modulate = Color( 0.738281, 0.738281, 0.738281, 0.776471 )
+margin_right = 64.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 64, 48 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="b1" type="ColorRect" parent="."]
+anchor_right = 1.0
+rect_min_size = Vector2( 2, 2 )
+
+[node name="b2" type="ColorRect" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -2.0
+rect_min_size = Vector2( 2, 2 )
+
+[node name="b3" type="ColorRect" parent="."]
+anchor_bottom = 1.0
+rect_min_size = Vector2( 2, 2 )
+
+[node name="b4" type="ColorRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.0
+rect_min_size = Vector2( 2, 2 )
+
+[node name="b5" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 2, 2 )
