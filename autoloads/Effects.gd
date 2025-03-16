@@ -120,4 +120,6 @@ func add_sunpoints(amount,pos):
 func spawn_arrow(nodeA,nodeB):
 	var n = preload("res://prefabs/effects/fx_arrow.tscn").instance()
 	get_node("/root").add_child(n)
+	if "data" in nodeA && nodeA.data.name == "slime_big": 
+		n.get_node("Sprite").texture = preload("res://assets/fx/slimeball.png")
 	n.set_from_to(nodeA,nodeB)

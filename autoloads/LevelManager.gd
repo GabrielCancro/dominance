@@ -9,36 +9,54 @@ var no_created_monsters = []
 
 var LEVELS = {
 	"P1":{"total_days":15,"grid_size":5},
-	"P1m":[
-		{"c":"day.2","m":["ss"]},
+	"P1m":[#{"c":"day.1","m":["sb"]},
+		{"c":"day.2","m":["ss"]},{"c":"day.15","m":["ss"]},
 		{"c":"every.4","m":["ss"]}],
 
 	"P2":{"total_days":20,"grid_size":6},
 	"P2m":[ 
-		{"c":"day.2","m":["ss"]},
+		{"c":"day.2","m":["ss"]},{"c":"day.20","m":["sn"]},
 		{"c":"day.4","m":["sn"]},
 		{"c":"every.5","m":["ss"]},
 		{"c":"every.6","m":["sn"]}],
 
 	"P3":{"total_days":25,"grid_size":7, "rain":6},
 	"P3m":[ 
-		{"c":"day.2","m":["sn"]},
+		{"c":"day.2","m":["sn"]},{"c":"day.10","m":["sn"]},
 		{"c":"every.4","m":["wf"]},
 		{"c":"every.6","m":["ss"]},
 		{"c":"every.7","m":["sn"]}],
 	
-	"P4":{"total_days":25,"grid_size":7, "rain":3, "fog":2},
+	"P4":{"total_days":20,"grid_size":7, "fog":2},
 	"P4m":[ 
-		{"c":"day.2","m":["wf"]},
+		{"c":"day.2","m":["wf"]},{"c":"day.10","m":["ss"]},{"c":"day.20","m":["wf"]},
 		{"c":"every.4","m":["wf","ss"]},
 		{"c":"every.6","m":["wf"]},
 		{"c":"every.8","m":["wf"]}],
 	
-	"P5":{"total_days":25,"grid_size":7, "rain":3, "fog":2},
+	"P5":{"total_days":25,"grid_size":7, "fog":2},
 	"P5m":[ 
 		{"c":"day.2","m":["sn"]},
 		{"c":"every.3","m":["wf","ss","sp","sp"]},
 		{"c":"every.5","m":["wf","sn","sp"]}],
+	
+	"P6":{"total_days":20,"grid_size":7, "fog":10},
+	"P6m":[ {"c":"every.2","m":["wf","ss","sn","sp"]}],
+	
+	"P7":{"total_days":25,"grid_size":7, "rain":10},
+	"P7m":[
+		{"c":"day.1","m":["wf"]},
+		{"c":"every.3","m":["ss"]},
+		{"c":"every.4","m":["or"]},
+		{"c":"every.4","m":["wf"]}],
+	
+	"P8":{"total_days":20,"grid_size":7, "rain":1,"fog":1},
+	"P8m":[ {"c":"every.2","m":["wf","sp"]}],
+	
+	"P9":{"total_days":20,"grid_size":7, "rain":5,"fog":13},
+	"P9m":[ {"c":"day.1","m":["sa"]},{"c":"day.8","m":["sb"]},
+			{"c":"day.16","m":["sb"]},
+			{"c":"every.3","m":["ss","sn","sp"]}],
 #	"P3":{"total_days":20,"grid_size":5, "rain":3, "fog":2},
 #	"P3m":[ {"c":"day.2","m":["ss"]},{"c":"every.4","m":["ss"]}],
 

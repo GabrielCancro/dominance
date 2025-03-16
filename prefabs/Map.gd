@@ -46,7 +46,9 @@ func add_unit(type,x,y):
 func add_enemy_rnd_line(type):
 	var arr = []
 	var minx = grid_size
-	if LevelManager.is_fog: minx = 3
+	if LevelManager.is_fog: 
+		minx = 3
+		if type=="slime_big": minx = grid_size-1
 	for x in range(minx,grid_size+1):
 		arr.append([x,1])
 		arr.append([x,2])
