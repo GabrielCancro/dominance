@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/badge.svg-678f1ac754aff36d0792585ceaf11cc7.stex"
+path="res://.import/badge.svg-cc8a28494e5c62e3de7dc8ee10eb5942.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/badge.svg"
-dest_files=[ "res://.import/badge.svg-678f1ac754aff36d0792585ceaf11cc7.stex" ]
+source_file="res://assets/badge.svg"
+dest_files=[ "res://.import/badge.svg-cc8a28494e5c62e3de7dc8ee10eb5942.stex" ]
 
 [params]
 
