@@ -136,10 +136,14 @@ texture = ExtResource( 13 )
 expand = true
 
 [node name="lbl_sunpoints" type="Label" parent="UI"]
-margin_left = 38.0
-margin_top = 39.0
-margin_right = 75.0
-margin_bottom = 58.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -362.0
+margin_top = -186.0
+margin_right = -325.0
+margin_bottom = -167.0
 custom_colors/font_color = Color( 0.870588, 0.929412, 0.12549, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 20 )
@@ -299,88 +303,88 @@ valign = 1
 autowrap = true
 
 [node name="LevelPath" type="Control" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = -800.0
-margin_bottom = -450.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 
 [node name="P1" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 127, 218 )
+position = Vector2( -289, -14 )
 state = 1
 
 [node name="P2" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 273, 177 )
+position = Vector2( -143, -55 )
 
 [node name="P3" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 304, 247 )
+position = Vector2( -112, 15 )
 
 [node name="P4" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 189, 306 )
+position = Vector2( -227, 74 )
 
 [node name="P5" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 350, 183 )
+position = Vector2( -66, -49 )
 
 [node name="P6" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 374, 282 )
+position = Vector2( -42, 50 )
 
 [node name="P7" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 510, 288 )
+position = Vector2( 94, 56 )
 
 [node name="P8" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 495, 172 )
+position = Vector2( 79, -60 )
 
 [node name="P9" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 619, 222 )
+position = Vector2( 203, -10 )
 
 [node name="P10" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 619, 158 )
+position = Vector2( 211, -74 )
 
 [node name="P11" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 619, 291 )
+position = Vector2( 211, 59 )
 
 [node name="P12" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 698, 222 )
+position = Vector2( 282, -10 )
 
 [node name="S1" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 179, 169 )
+position = Vector2( -237, -63 )
 type = 1
 
 [node name="S2" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 257, 287 )
+position = Vector2( -159, 55 )
 type = 1
 
 [node name="S3" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 440, 266 )
+position = Vector2( 24, 34 )
 type = 1
 
 [node name="S4" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 540, 222 )
+position = Vector2( 124, -10 )
 type = 1
 
 [node name="S5" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 666, 114 )
+position = Vector2( 250, -118 )
 type = 1
 
 [node name="C1" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 209, 219 )
+position = Vector2( -207, -13 )
 type = 2
 
 [node name="C2" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 148, 366 )
+position = Vector2( -268, 134 )
 type = 2
 
 [node name="C3" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 418, 151 )
+position = Vector2( 2, -81 )
 type = 2
 
 [node name="C4" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 541, 350 )
+position = Vector2( 125, 118 )
 type = 2
 
 [node name="C5" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 531, 121 )
+position = Vector2( 115, -111 )
 type = 2
 
 [node name="C6" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 667, 335 )
+position = Vector2( 251, 103 )
 type = 2

@@ -16,20 +16,18 @@ func _ready():
 	$Button.connect("mouse_entered",self,"on_hint",[true])
 	$Button.connect("mouse_exited",self,"on_hint",[false])
 	set_type()
-	set_close_nodes()
-	connect_close_nodes()
 
 func _process(delta):
 	if type == TypeEnum.SUN && state == StateEnum.ENABLE: $N/SUN_ENABLE.rect_rotation += 4 * PI * delta
 	if Engine.editor_hint:
 		set_type()
-		set_close_nodes()
-		connect_close_nodes()
 
 func set_type():
 	for n in $N.get_children(): n.visible = false
 	var node = $N.get_node_or_null(["LEVEL","SUN","CHEST"][type]+"_"+["DISABLE","ENABLE","COMPLETE"][state])
 	if node: node.visible = true
+	set_close_nodes()
+	connect_close_nodes()
 
 func set_close_nodes():
 	close_nodes = []
@@ -41,9 +39,14 @@ func connect_close_nodes():
 	for ln in $L.get_children():
 		if ln==self: continue
 		var i = ln.get_index()
-		if i < close_nodes.size():
+		if i < close_nodes.size() && close_nodes[i].global_position.x>=global_position.x:
 			ln.points[1] = close_nodes[i].global_position - global_position
-		else: ln.points[1] = Vector2(0,9)
+			if state==StateEnum.COMPLETE || close_nodes[i].state==StateEnum.COMPLETE: 
+				ln.default_color = Color(.20,.30,.20,.8)
+			else: 
+				ln.default_color = Color(.35,.35,.40,.8)
+		else: 
+			ln.points[1] = Vector2(0,9)
 
 func on_click():
 	if type == TypeEnum.LEVEL && state == StateEnum.COMPLETE:
@@ -60,7 +63,9 @@ func on_click():
 		$N/LEVEL_COMPLETE.visible = true
 		Sounds.play_sound("selectlevel")
 		yield(get_tree().create_timer(.8),"timeout")
-		get_tree().change_scene("res://scenes/SelectBuild.tscn")
+		Global.tuto = (name=="P1")
+		if Global.tuto: get_tree().change_scene("res://scenes/Game.tscn")
+		else: get_tree().change_scene("res://scenes/SelectBuild.tscn")
 	if type==TypeEnum.SUN: 
 		Effects.add_sunpoints(15,global_position)
 	if type==TypeEnum.CHEST: 

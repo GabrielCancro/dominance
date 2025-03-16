@@ -10,7 +10,7 @@ var no_created_monsters = []
 var LEVELS = {
 	"P1":{"total_days":15,"grid_size":5},
 	"P1m":[#{"c":"day.1","m":["sb"]},
-		{"c":"day.2","m":["ss"]},{"c":"day.15","m":["ss"]},
+		{"c":"day.1","m":["ss"]},{"c":"day.15","m":["ss"]},
 		{"c":"every.4","m":["ss"]}],
 
 	"P2":{"total_days":20,"grid_size":6},
@@ -41,7 +41,8 @@ var LEVELS = {
 		{"c":"every.5","m":["wf","sn","sp"]}],
 	
 	"P6":{"total_days":20,"grid_size":7, "fog":10},
-	"P6m":[ {"c":"every.2","m":["wf","ss","sn","sp"]}],
+	"P6m":[ {"c":"day.2","m":["wf"]},
+		   {"c":"every.3","m":["wf","ss","sn","sp"]}],
 	
 	"P7":{"total_days":25,"grid_size":7, "rain":10},
 	"P7m":[
@@ -54,22 +55,24 @@ var LEVELS = {
 	"P8m":[ {"c":"every.2","m":["wf","sp"]}],
 	
 	"P9":{"total_days":20,"grid_size":7, "rain":5,"fog":13},
-	"P9m":[ {"c":"day.1","m":["sa"]},{"c":"day.8","m":["sb"]},
-			{"c":"day.16","m":["sb"]},
+	"P9m":[ {"c":"day.1","m":["sn"]},{"c":"day.8","m":["sb"]},
 			{"c":"every.3","m":["ss","sn","sp"]}],
-#	"P3":{"total_days":20,"grid_size":5, "rain":3, "fog":2},
-#	"P3m":[ {"c":"day.2","m":["ss"]},{"c":"every.4","m":["ss"]}],
-
-#4- size:7 turns:25 rain enemies:slime_small many wolfs
-#5- size:7 turns:25 none enemies:slime_small wolfs slime_normal spider
-#6- size:7 turns:25 fog enemies:slime_normal wolfs
-#7- size:8 turns:20 fog enemies:spiders
-#8- size:8 turns:30 rain enemies:slime_small slime_normal wolf orc
-#9- size:8 turns:30 rain fog enemies:slime_small slime_normal wolf orc spider
-#10- size:5 turns:20 fog enemies:wolf orc
-#11- size:8 turns:30 rain enemies:slime_boss
-#12- size:8 turns:30 rain fog enemies:slime_small slime_normal wolf orc spider
-
+	
+	"P10":{"total_days":10,"grid_size":7},
+	"P10m":[{"c":"every.1","m":["ss","sn","sp","wf"]}],
+	
+	"P11":{"total_days":20,"grid_size":7, "rain":5,},
+	"P11m":[{"c":"day.1","m":["sp"]}, 
+		{"c":"every.3","m":["ss","sn","sp","wf"]},
+		{"c":"every.5","m":["or"]},
+		{"c":"every.8","m":["sb"]}],
+	
+	"P12":{"total_days":25,"grid_size":7,"fog":6,"rain":15},
+	"P12m":[{"c":"day.1","m":["sp"]}, 
+		{"c":"every.2","m":["ss","sn","sp","wf"]},
+		{"c":"every.5","m":["or"]},
+		{"c":"every.8","m":["sb"]}]
+	
 }
 
 func _ready():

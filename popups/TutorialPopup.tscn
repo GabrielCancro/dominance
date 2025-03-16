@@ -559,10 +559,14 @@ __meta__ = {
 }
 
 [node name="arrow" type="TextureRect" parent="Panels/burn"]
-margin_left = 380.0
-margin_top = 397.0
-margin_right = 414.0
-margin_bottom = 431.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = 172.0
+margin_right = 14.0
+margin_bottom = 206.0
 rect_rotation = 89.9999
 texture = ExtResource( 13 )
 expand = true
@@ -622,10 +626,14 @@ __meta__ = {
 }
 
 [node name="arrow" type="TextureRect" parent="Panels/burn2"]
-margin_left = 547.0
-margin_top = 397.0
-margin_right = 581.0
-margin_bottom = 431.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 147.0
+margin_top = 172.0
+margin_right = 181.0
+margin_bottom = 206.0
 rect_rotation = 89.9999
 texture = ExtResource( 13 )
 expand = true
@@ -668,22 +676,6 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Label" type="Label" parent="Panels/milician"]
-visible = false
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -134.0
-margin_top = -2.0
-margin_right = 134.0
-margin_bottom = 44.0
-custom_colors/font_color = Color( 0.937988, 0.937988, 0.937988, 1 )
-custom_constants/line_spacing = -2
-custom_fonts/font = SubResource( 1 )
-text = "dominance"
-align = 1
-valign = 1
-autowrap = true
-
 [node name="btn" type="Button" parent="Panels/milician"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -702,10 +694,14 @@ __meta__ = {
 }
 
 [node name="arrow" type="TextureRect" parent="Panels/milician"]
-margin_left = 214.0
-margin_top = 268.0
-margin_right = 248.0
-margin_bottom = 302.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -186.0
+margin_top = 43.0
+margin_right = -152.0
+margin_bottom = 77.0
 texture = ExtResource( 13 )
 expand = true
 
@@ -720,9 +716,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -482.0
+margin_left = -724.0
 margin_top = -564.0
-margin_right = 1126.0
+margin_right = 1358.0
 margin_bottom = 652.0
 texture = ExtResource( 12 )
 expand = true
@@ -774,9 +770,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -777.0
+margin_left = -1905.0
 margin_top = -1060.0
-margin_right = 1262.0
+margin_right = 2159.0
 margin_bottom = 977.0
 texture = ExtResource( 12 )
 expand = true
@@ -786,10 +782,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -33.0
-margin_top = -152.0
-margin_right = 170.0
-margin_bottom = -55.0
+margin_left = -195.0
+margin_top = -212.0
+margin_right = 8.0
+margin_bottom = -115.0
 custom_colors/font_color = Color( 0.921569, 0.921569, 0.921569, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 5 )
@@ -805,10 +801,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 54.0
-margin_top = -63.0
-margin_right = 129.0
-margin_bottom = -29.0
+margin_left = -91.0
+margin_top = -120.0
+margin_right = -16.0
+margin_bottom = -86.0
 rect_pivot_offset = Vector2( 38, 19 )
 custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
 custom_fonts/font = SubResource( 3 )
@@ -855,9 +851,9 @@ anchor_bottom = 1.0
 modulate = Color( 0, 0, 0, 0.862745 )
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -895.0
+margin_left = -1252.0
 margin_top = -565.0
-margin_right = 713.0
+margin_right = 1065.0
 margin_bottom = 651.0
 texture = ExtResource( 12 )
 expand = true

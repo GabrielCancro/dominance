@@ -17,13 +17,10 @@ func _ready():
 	$InvasionUIButton.connect("button_down",self,"on_invasion_click")
 	$UpgradesUIButton/Label.text = str(Saves.savedData.upgrades_unlocked.size())+"/"+str(UpgradeData.UPGRADES.keys().size())
 	var winlevels = 0
-	var totallevels = 0
-	for l in Saves.savedData.levelPath.keys():
-		print(l,": ",Saves.savedData.levelPath[l])
-		if l.rfind("P")!=-1:
-			totallevels += 1
-			if Saves.savedData.levelPath[l]>1: winlevels += 1
-	$InvasionUIButton/Label.text = str(winlevels)+"/"+str(totallevels)
+	if "levelPath" in Saves.savedData:
+		for l in Saves.savedData.levelPath.keys():
+			if l.rfind("P")!=-1 && Saves.savedData.levelPath[l]>1: winlevels += 1
+	$InvasionUIButton/Label.text = str(winlevels)+"/"+str(LevelManager.LEVELS.keys().size()/2)
 	first_play_effects()
 
 func first_play_effects():

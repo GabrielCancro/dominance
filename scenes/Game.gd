@@ -130,10 +130,10 @@ func tutorial_sequence():
 	Global.clear_stop_mouse()
 	yield(get_tree().create_timer(.1),"timeout")
 	CardData.hide_card_description(CardData.hand_cards[0])
-	yield($Map,"unit_created")
+	yield($CreateUnitPanel,"close")
 	Global.set_stop_mouse(true)
 
-	yield(get_tree().create_timer(2),"timeout")
+	yield(get_tree().create_timer(1),"timeout")
 	$TutorialPopup.show_tuto("turn")
 	yield($TutorialPopup,"close_popup")
 	yield(get_tree().create_timer(1),"timeout")
