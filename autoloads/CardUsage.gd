@@ -96,7 +96,8 @@ func use_card_advance(card_node):
 	yield(get_tree().create_timer(.7),"timeout")
 	var moved = mapNode.move_to(unit,unit.map_position+Vector2(1,0))
 	if moved: yield(get_tree().create_timer(.4),"timeout")
-	mapNode.unit_try_attack(unit)
+	var enemy = mapNode.unit_try_attack(unit)
+	enemy.have_attack = false
 	yield(get_tree().create_timer(.7),"timeout")
 	emit_signal("end_usage")
 

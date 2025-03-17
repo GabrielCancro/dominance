@@ -15,7 +15,7 @@ var Cards = [
 	{"code":"gold2", "ico":null, "cost":0, "burn":false},
 	{"code":"teasure", "ico":null, "cost":3, "burn":true},
 	{"code":"house", "ico":null, "cost":4, "burn":true},
-	{"code":"advance", "ico":null, "cost":4, "burn":true},
+	{"code":"advance", "ico":null, "cost":2, "burn":true},
 	{"code":"thundre", "ico":null, "cost":4, "burn":true},
 	{"code":"chest", "ico":null, "cost":0, "burn":true},
 	{"code":"heal", "ico":null, "cost":3, "burn":true},

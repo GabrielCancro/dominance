@@ -77,14 +77,14 @@ func unit_try_attack(unit):
 	var obj = get_unit_around(unit)
 	if obj: 
 		swap_attacks(unit,obj)
-		return true
+		return obj
 		
 	if "range" in unit.data:
 		obj = get_unit_ranged(unit)
 		if obj:
 			range_attack(unit,obj)
-			return true
-	return false
+			return obj
+	return null
 
 func swap_attacks(ua,ub):
 	var mov = (ub.rect_global_position-ua.rect_global_position)/2
@@ -208,6 +208,7 @@ func attack_tower(unit):
 	var dest = unit.rect_global_position+($Tower.rect_global_position-unit.rect_global_position)/2
 	Effects.move_to_yoyo(unit,dest)
 	$Tower.damage(unit.data.atk)
+	unit.have_attack = false
 
 func get_units_amount_team(_team):
 	var count = 0

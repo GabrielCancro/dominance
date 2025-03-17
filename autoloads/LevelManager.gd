@@ -150,7 +150,7 @@ func check_rain():
 func check_fog():
 	if !"fog" in current_level_data: return false
 	var DC = get_node("/root/Game/DayCounter")
-	if DC.day >= LevelManager.current_level_data.fog && !is_rain:
+	if DC.day >= LevelManager.current_level_data.fog && !is_fog:
 		is_fog = true
 		get_node("/root/Game/EventsMap").show_fog()
 		return true

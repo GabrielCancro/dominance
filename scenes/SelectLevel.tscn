@@ -316,25 +316,25 @@ state = 1
 position = Vector2( -143, -55 )
 
 [node name="P3" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( -112, 15 )
+position = Vector2( -64, -47 )
 
 [node name="P4" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( -227, 74 )
+position = Vector2( -160, 57 )
 
 [node name="P5" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( -66, -49 )
+position = Vector2( -57, 59 )
 
 [node name="P6" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( -42, 50 )
+position = Vector2( 76, -58 )
 
 [node name="P7" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 94, 56 )
+position = Vector2( 86, 43 )
 
 [node name="P8" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 79, -60 )
+position = Vector2( 149, 107 )
 
 [node name="P9" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 203, -10 )
+position = Vector2( 197, -7 )
 
 [node name="P10" parent="LevelPath" instance=ExtResource( 12 )]
 position = Vector2( 211, -74 )
@@ -343,22 +343,22 @@ position = Vector2( 211, -74 )
 position = Vector2( 211, 59 )
 
 [node name="P12" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 282, -10 )
+position = Vector2( 275, -10 )
 
 [node name="S1" parent="LevelPath" instance=ExtResource( 12 )]
 position = Vector2( -237, -63 )
 type = 1
 
 [node name="S2" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( -159, 55 )
+position = Vector2( -223, 84 )
 type = 1
 
 [node name="S3" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 24, 34 )
+position = Vector2( 12, 24 )
 type = 1
 
 [node name="S4" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 124, -10 )
+position = Vector2( 126, -8 )
 type = 1
 
 [node name="S5" parent="LevelPath" instance=ExtResource( 12 )]
@@ -370,7 +370,7 @@ position = Vector2( -207, -13 )
 type = 2
 
 [node name="C2" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( -268, 134 )
+position = Vector2( -104, 9 )
 type = 2
 
 [node name="C3" parent="LevelPath" instance=ExtResource( 12 )]
@@ -378,7 +378,7 @@ position = Vector2( 2, -81 )
 type = 2
 
 [node name="C4" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 125, 118 )
+position = Vector2( 71, 107 )
 type = 2
 
 [node name="C5" parent="LevelPath" instance=ExtResource( 12 )]
@@ -386,5 +386,5 @@ position = Vector2( 115, -111 )
 type = 2
 
 [node name="C6" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 251, 103 )
+position = Vector2( 259, 109 )
 type = 2
