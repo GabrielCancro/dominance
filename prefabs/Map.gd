@@ -17,7 +17,7 @@ func _ready():
 	$Grid.rect_position.x += $Grid/c0.rect_size.x * 0.5 * (8-grid_size)
 	if grid_size<8: $Grid.rect_position.x -= 20
 	yield(get_tree().create_timer(.5),"timeout")
-	LevelManager.add_debug_units()
+	if Global.debug: LevelManager.add_debug_units()
 
 func get_grid_node(pos):
 	if pos.x<=0: return null

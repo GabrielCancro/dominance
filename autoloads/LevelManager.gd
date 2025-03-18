@@ -7,7 +7,7 @@ var is_fog = false
 
 var no_created_monsters = []
 
-var LEVELS = {
+var LEVELS = { # a:after day :condition day/every m:monster array
 	"P1":{"total_days":15,"grid_size":5},
 	"P1m":[#{"c":"day.1","m":["sb"]},
 		{"c":"day.1","m":["ss"]},{"c":"day.15","m":["ss"]},
@@ -41,14 +41,18 @@ var LEVELS = {
 		{"c":"every.5","m":["wf","sn","sp"]}],
 	
 	"P6":{"total_days":20,"grid_size":7, "fog":10},
-	"P6m":[ {"c":"day.2","m":["wf"]},
-		   {"c":"every.3","m":["wf","ss","sn","sp"]}],
+	"P6m":[ 
+		{"c":"day.2","m":["wf"]},
+		{"c":"every.3","m":["wf","ss","sn","sp"]},
+		{"a":10,"c":"every.2","m":["wf","ss","sn","sp"]},
+		{"c":"day.20","m":["wf"]},
+		{"c":"day.20","m":["wf"]}],
 	
 	"P7":{"total_days":25,"grid_size":7, "rain":10},
 	"P7m":[
 		{"c":"day.1","m":["wf"]},
 		{"c":"every.3","m":["ss"]},
-		{"c":"every.4","m":["or"]},
+		{"c":"every.6","m":["or"]},
 		{"c":"every.4","m":["wf"]}],
 	
 	"P8":{"total_days":20,"grid_size":7, "rain":1,"fog":1},
@@ -101,8 +105,13 @@ func create_monsters():
 	for st in statments:
 		print(st," DAY ",day)
 		var cs = st.c.split(".")
-		if cs[0]=="day" && day==int(cs[1]): add_enemy(st.m)
-		if cs[0]=="every" && day%int(cs[1])==0: add_enemy(st.m)
+		if "a" in st && day<st["a"]: continue
+		if cs[0]=="day" && day==int(cs[1]): 
+			add_enemy(st.m)
+			yield(get_tree().create_timer(.3),"timeout")
+		if cs[0]=="every" && day%int(cs[1])==0: 
+			add_enemy(st.m)
+			yield(get_tree().create_timer(.3),"timeout")
 #		if day%3==0: add_enemy(["slime_small"])
 #	elif level==2:
 #		if day==2: add_enemy(["slime_small"])

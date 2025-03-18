@@ -7,6 +7,8 @@ func _ready():
 	Sounds.set_audio_scene(self)
 	CardData.HandBoxNode = $RegionBottom/HandCards
 	Global.StopMouseNode = $StopMouse
+	$DebugMenu.visible = Global.debug
+	$DebugMenu/Button.connect("button_down",self,"on_debug")
 	$EndTurn.connect("button_down",self,"on_end_turn")
 	$QuitGame.connect("button_down",self,"on_quit_game")
 	Effects.add_mouse_focuser($QuitGame,$QuitGame/BorderColor)
@@ -147,6 +149,9 @@ func tutorial_sequence():
 	yield($TutorialPopup,"close_popup")
 	Global.clear_stop_mouse()
 
-func _input(event):
-	if event.is_action_pressed("ui_accept"):
-		Effects.spawn_arrow($RegionBottom/Stash,$EndTurn)
+#func _input(event):
+#	if event.is_action_pressed("ui_accept"):
+#		Effects.spawn_arrow($RegionBottom/Stash,$EndTurn)
+
+func on_debug():
+	$EndPopup.show_popup(true)

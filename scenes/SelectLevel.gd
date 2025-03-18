@@ -2,6 +2,7 @@ extends Control
 
 func _ready():
 	$UI/Button.connect("button_down",self,"unlock_all_debug")
+	$UI/Button.visible = Global.debug
 	$UI/btn_menu.connect("button_down",self,"on_back_click")
 	$UI/btn_menu/Label.text = Lang.get_string("back_to_main")
 	$UI/lbl_title.text = Lang.get_string("select_level")

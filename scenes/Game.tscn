@@ -581,6 +581,9 @@ texture = ExtResource( 32 )
 expand = true
 flip_h = true
 
+[node name="TutorialPopup" parent="." instance=ExtResource( 17 )]
+visible = false
+
 [node name="ExitBattlePopup" parent="." instance=ExtResource( 18 )]
 visible = false
 
@@ -591,9 +594,6 @@ visible = false
 [node name="DemoEndPopup" parent="." instance=ExtResource( 29 )]
 visible = false
 
-[node name="TutorialPopup" parent="." instance=ExtResource( 17 )]
-visible = false
-
 [node name="Transition" parent="." instance=ExtResource( 19 )]
 visible = false
 
@@ -601,3 +601,15 @@ visible = false
 stream = ExtResource( 28 )
 volume_db = 1.5
 autoplay = true
+
+[node name="DebugMenu" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Button" type="Button" parent="DebugMenu"]
+margin_left = 337.0
+margin_top = 5.0
+margin_right = 419.0
+margin_bottom = 32.0
+text = "WIN GAME"
