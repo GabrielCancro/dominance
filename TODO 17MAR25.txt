@@ -2,6 +2,11 @@ REVISSAR:
 cartas del tutorial en DECK
 unidades iniciales en LevelManager
 
+
+TODO-ver localizacion de los eventos de mapa
+TODO-terminar de probar niveles
+
+
 OK-Hacer araña arte (carta y unidad)
 OK-Hacer upgrade archer
 OK-El level P1 se reinicia en el level path??
