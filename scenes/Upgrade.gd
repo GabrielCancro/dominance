@@ -28,8 +28,8 @@ func update_ui():
 		upg.connect("mouse_exited",self,"on_mouse_exited",[upg])
 #		upg.connect("button_down",self,"on_button_down",[upg])
 		upg.set_data(code)
-		if (Saves.savedData.upgrades_unlocked.find(code)!=-1): upg.modulate.a = 1
-		else: upg.modulate.a = .3
+		if (Saves.savedData.upgrades_unlocked.find(code)!=-1): upg.modulate = Color(1,1,1,1)
+		else: upg.modulate = Color(.1,.1,.1,.5)
 
 func on_mouse_entered(upg_node):
 	if(upg_node.modulate.a<1): return

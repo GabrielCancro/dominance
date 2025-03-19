@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://popups/ExitBattlePopup.gd" type="Script" id=3]
 [ext_resource path="res://assets/UbuntuTitleFont.ttf" type="DynamicFontData" id=4]
@@ -6,11 +6,11 @@
 [ext_resource path="res://popups/WoodPanelUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/font/AbyssinicaSIL-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://assets/font/Anton-Regular.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://assets/ui/ui_lateral_shadow.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
-outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+outline_size = 5
+outline_color = Color( 0.129412, 0.152941, 0.196078, 1 )
 extra_spacing_bottom = -2
 font_data = ExtResource( 8 )
 
@@ -37,37 +37,26 @@ script = ExtResource( 3 )
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.901961 )
+color = Color( 0.392157, 0.392157, 0.392157, 0.705882 )
 
 [node name="WoodPanelUi" parent="." instance=ExtResource( 6 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -177.5
-margin_top = -225.0
-margin_right = 177.5
-margin_bottom = 225.0
+margin_left = -177.0
+margin_top = -155.0
+margin_right = 178.0
+margin_bottom = 77.0
 
-[node name="L1" type="TextureRect" parent="WoodPanelUi"]
-modulate = Color( 0.027451, 0.027451, 0.027451, 1 )
-anchor_bottom = 1.0
-margin_right = 35.0
-texture = ExtResource( 9 )
-expand = true
-
-[node name="L2" type="TextureRect" parent="WoodPanelUi"]
-modulate = Color( 0.027451, 0.027451, 0.027451, 1 )
-anchor_left = 1.0
-anchor_top = 0.5
+[node name="ColorRect" type="ColorRect" parent="WoodPanelUi"]
 anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -35.0
-margin_top = -225.0
-margin_bottom = 225.0
-texture = ExtResource( 9 )
-expand = true
-flip_h = true
+anchor_bottom = 1.0
+margin_left = 13.0
+margin_top = 15.0
+margin_right = -13.0
+margin_bottom = -16.0
+color = Color( 0, 0, 0, 0.478431 )
 
 [node name="lb_title" type="Label" parent="."]
 anchor_left = 0.5
@@ -75,13 +64,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -206.0
-margin_top = -216.5
+margin_top = -194.0
 margin_right = 206.0
-margin_bottom = -125.5
+margin_bottom = -103.0
 custom_colors/font_color = Color( 0.937988, 0.937988, 0.937988, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 1 )
-text = "abandonar partida"
+text = "Abandonar partida"
 align = 1
 valign = 1
 autowrap = true
@@ -92,13 +81,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -133.5
-margin_top = -115.0
+margin_top = -116.5
 margin_right = 133.5
-margin_bottom = 25.0
+margin_bottom = 23.5
 custom_colors/font_color = Color( 0.831373, 0.831373, 0.831373, 1 )
 custom_constants/line_spacing = -2
 custom_fonts/font = SubResource( 6 )
-text = "Gracias por jugar a dominance, fue un trabajo dificil pero estamos contentos de que lo disfrutes!"
+text = "¿Deseas retirarte de esta batalla?"
 align = 1
 valign = 1
 autowrap = true
@@ -108,10 +97,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -80.0
-margin_top = 60.5
-margin_right = 80.0
-margin_bottom = 110.5
+margin_left = 4.0
+margin_top = 45.0
+margin_right = 164.0
+margin_bottom = 95.0
 rect_pivot_offset = Vector2( 80, 25.5 )
 custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
 custom_fonts/font = SubResource( 4 )
@@ -143,10 +132,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -80.0
-margin_top = 127.0
-margin_right = 80.0
-margin_bottom = 177.0
+margin_left = -165.0
+margin_top = 45.5
+margin_right = -5.0
+margin_bottom = 95.5
 rect_pivot_offset = Vector2( 80, 25 )
 custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
 custom_fonts/font = SubResource( 4 )

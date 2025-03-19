@@ -13,10 +13,12 @@ func show_popup(win=false):
 		Saves.savedData["levelPath"][LevelManager.current_level_data.name] = 2 #COMPLETED
 		Saves.save_store_data()
 		$lb_title.text = Lang.get_string( "win_game" )
-		$lb_text.text = Lang.get_string( "end_battle_win_text" )
+		$lb_desc.text = Lang.get_string( "end_battle_win_text" )
+		$ColorRect.color + Color(.9,.9,.5,.3)
 	else: 
 		$lb_title.text = Lang.get_string( "lose_game" )
-		$lb_text.text = Lang.get_string( "end_battle_lose_text" )
+		$lb_desc.text = Lang.get_string( "end_battle_lose_text" )
+		$ColorRect.color + Color(.4,.4,.4,.7)
 	modulate.a = 0
 	Effects.to_alpha(self,1)
 	visible = true

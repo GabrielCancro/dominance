@@ -12,18 +12,19 @@ func show_level_data(node):
 	if !node.name in LevelManager.LEVELS: return
 	LevelData = LevelManager.LEVELS[node.name]
 	LevelEnemies = LevelManager.LEVELS[node.name+"m"]
-	$Panel/Desc.text = "Level "+node.name.right(1)
-	$Panel/Desc.text += "\n"+str(LevelData.total_days)+" days"
-	$Panel/Desc.text += "\nground 3x"+str(LevelData.grid_size)
+	$Panel/Desc.text = Lang.get_string("level")+" "+node.name.right(1)
+	$Panel/Desc.text += "\n"+str(LevelData.total_days)+" "+Lang.get_string("days")
+	$Panel/Desc.text += "\n"+Lang.get_string("ground")+" 3x"+str(LevelData.grid_size)
 	$Panel/Desc.text += "\n"+get_weather()
 	$Panel/Desc.text += "\n"
 	set_enemies()
 	visible = true
 
 func get_weather():
-	var s = "good weather"
-	if "rain" in LevelData: s= "rain"
-	if "fog" in LevelData && "fog" in LevelData: s= "rain and fog"
+	var s = Lang.get_string("good_weather")
+	if "rain" in LevelData: s= Lang.get_string("rain")
+	if "fog" in LevelData: s= Lang.get_string("fog")
+	if "rain" in LevelData && "fog" in LevelData: s= Lang.get_string("rain")+" & "+Lang.get_string("fog")
 	return s
 
 func set_enemies():

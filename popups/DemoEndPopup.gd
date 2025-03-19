@@ -9,10 +9,10 @@ func _ready():
 func show_popup(win=false):
 	Global.set_stop_mouse(false)
 	if win: Sounds.play_sound("win1")
-	if win: $Label.text = Lang.get_string( "win_game" )
-	else: $Label.text = Lang.get_string( "lose_game" )
-	$lbl_msg.text = Lang.get_string( "end_demo_text" )
-	$lbl_msg.visible = win
+	if win: $lb_title.text = Lang.get_string( "win_game" )
+	else: $lb_title.text = Lang.get_string( "lose_game" )
+	$lbl_desc.text = Lang.get_string( "end_demo_text" )
+	$lbl_desc.visible = win
 	modulate.a = 0
 	Effects.to_alpha(self,1)
 	visible = true

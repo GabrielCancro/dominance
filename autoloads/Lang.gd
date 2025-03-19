@@ -43,6 +43,12 @@ var Texts = {
 	"upgrades":{"es":"Mejoras","en":"Upgrades"},
 	"need_houses":{"es":"Faltan Casas","en":"Need Houses"},
 	"max_houses":{"es":"Máximo Alcanzado","en":"Max Builded"},
+	"level":{"es":"Nivel","en":"Level"},
+	"ground":{"es":"terreno","en":"ground"},
+	"days":{"es":"días","en":"days"},
+	"good_weather":{"es":"buen clima","en":"good weather"},
+	"rain":{"es":"lluvia","en":"rain"},
+	"fog":{"es":"niebla","en":"fog"},
 	
 	"card_soldier_name":{"es":"Soldado","en":"Soldier"},
 	"card_soldier_desc":{"es":

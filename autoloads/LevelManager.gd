@@ -56,7 +56,10 @@ var LEVELS = { # a:after day :condition day/every m:monster array
 		{"c":"every.4","m":["wf"]}],
 	
 	"P8":{"total_days":20,"grid_size":7, "rain":1,"fog":1},
-	"P8m":[ {"c":"every.2","m":["wf","sp"]}],
+	"P8m":[ 
+		{"c":"day.19","m":["wf","sp"]},
+		{"c":"every.2","m":["wf","sp"]},
+		],
 	
 	"P9":{"total_days":20,"grid_size":7, "rain":5,"fog":13},
 	"P9m":[ {"c":"day.1","m":["sn"]},{"c":"day.8","m":["sb"]},

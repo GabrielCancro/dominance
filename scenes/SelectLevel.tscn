@@ -331,16 +331,16 @@ position = Vector2( 76, -58 )
 position = Vector2( 86, 43 )
 
 [node name="P8" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 149, 107 )
+position = Vector2( 152, 104 )
 
 [node name="P9" parent="LevelPath" instance=ExtResource( 12 )]
 position = Vector2( 197, -7 )
 
 [node name="P10" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 211, -74 )
+position = Vector2( 209, 56 )
 
 [node name="P11" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 211, 59 )
+position = Vector2( 207, -73 )
 
 [node name="P12" parent="LevelPath" instance=ExtResource( 12 )]
 position = Vector2( 275, -10 )
@@ -378,7 +378,7 @@ position = Vector2( 2, -81 )
 type = 2
 
 [node name="C4" parent="LevelPath" instance=ExtResource( 12 )]
-position = Vector2( 71, 107 )
+position = Vector2( 76, 109 )
 type = 2
 
 [node name="C5" parent="LevelPath" instance=ExtResource( 12 )]

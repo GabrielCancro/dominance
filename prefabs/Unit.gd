@@ -44,6 +44,7 @@ func check_dead():
 		get_node("/root/Game/Houses")._update_houses(false,1)
 		Effects.disappear(self)
 		CardData.update_cards_warnings()
+		if data.team==2: get_node("/root/Game").check_win()
 
 func update_hp(show=false):
 	if show: hp_timer = 1.5
