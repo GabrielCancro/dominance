@@ -2,9 +2,9 @@ REVISSAR:
 cartas del tutorial en DECK
 unidades iniciales en LevelManager
 
-Hacer araña arte (carta y unidad)
-Hacer upgrade archer
-El level P1 se reinicia en el level path??
+OK-Hacer araña arte (carta y unidad)
+OK-Hacer upgrade archer
+OK-El level P1 se reinicia en el level path??
 
 DOMINANCE UPDATE:
 
@@ -29,5 +29,3 @@ OK-Add archery upgrade
 OK-RAIN SFX
 
 TODO-Add Art to new units/events/cards/upgrades
-
-ACORDARSE DE SACAR LAS CARTAS DE HEAL DEL MAZO!!!
