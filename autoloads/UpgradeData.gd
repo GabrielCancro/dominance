@@ -3,18 +3,18 @@ extends Node
 signal end_apply_upgrades
 
 var UPGRADES = {
-	"upg_stash":{"cost":15},
+	"upg_stash":{"cost":10},
 	"upg_house":{"cost":10},
-	"upg_heal":{"cost":15},
-	"upg_militia_gold":{"cost":17},
+	"upg_heal":{"cost":10},
+	"upg_militia_gold":{"cost":15},
 	"upg_gold_five_days":{"cost":10},
-	"upg_thundre_gold":{"cost":17},
-	"upg_soldier_gold":{"cost":17},
-	"upg_market_gold":{"cost":17},
+	"upg_thundre_gold":{"cost":15},
+	"upg_soldier_gold":{"cost":15},
+	"upg_market_gold":{"cost":15},
 	"upg_magics":{"cost":15},
 	"upg_train":{"cost":15},
 	"upg_train_arc":{"cost":15},
-	"upg_chest":{"cost":13},
+	"upg_chest":{"cost":10},
 }
 
 func add_upgrade(code):
