@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/fx/fog_shader.gdshader" type="Shader" id=1]
 [ext_resource path="res://assets/fx/rain_and_snow_shader.gdshader" type="Shader" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://assets/ui/ui_arrow.png" type="Texture" id=6]
 [ext_resource path="res://assets/ui/ui_btn_oval.png" type="Texture" id=7]
 [ext_resource path="res://assets/sfx/rain.ogg" type="AudioStream" id=8]
+[ext_resource path="res://assets/web.png" type="Texture" id=9]
+[ext_resource path="res://assets/rain.png" type="Texture" id=10]
+[ext_resource path="res://assets/fog.png" type="Texture" id=11]
 
 [sub_resource type="OpenSimplexNoise" id=11]
 
@@ -89,12 +92,24 @@ text = "R"
 flat = true
 
 [node name="img" type="TextureRect" parent="HBox/btn_rain"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 7 )
 expand = true
 
+[node name="img2" type="TextureRect" parent="HBox/btn_rain"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = 8.0
+margin_right = -5.0
+margin_bottom = 11.0
+texture = ExtResource( 10 )
+expand = true
+
 [node name="lb" type="Label" parent="HBox/btn_rain"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -126,12 +141,24 @@ text = "R"
 flat = true
 
 [node name="img" type="TextureRect" parent="HBox/btn_fog"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 7 )
 expand = true
 
+[node name="img2" type="TextureRect" parent="HBox/btn_fog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = 11.0
+texture = ExtResource( 11 )
+expand = true
+
 [node name="lb" type="Label" parent="HBox/btn_fog"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 9.0
@@ -155,16 +182,41 @@ margin_bottom = 46.0
 rect_min_size = Vector2( 60, 0 )
 rect_pivot_offset = Vector2( 30, 23 )
 focus_mode = 0
-text = "R"
 flat = true
 
 [node name="img" type="TextureRect" parent="HBox/btn_web"]
+visible = false
+modulate = Color( 0.921569, 0.921569, 0.921569, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 2.0
+margin_bottom = 13.0
 texture = ExtResource( 7 )
 expand = true
 
+[node name="img2" type="TextureRect" parent="HBox/btn_web"]
+modulate = Color( 1, 1, 1, 0.686275 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 2.0
+margin_right = -3.0
+margin_bottom = 16.0
+texture = ExtResource( 9 )
+expand = true
+
+[node name="img3" type="TextureRect" parent="HBox/btn_web"]
+modulate = Color( 0, 0, 0, 0.686275 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.0
+margin_right = -4.0
+margin_bottom = 15.0
+texture = ExtResource( 9 )
+expand = true
+
 [node name="lb" type="Label" parent="HBox/btn_web"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 9.0
@@ -185,9 +237,10 @@ autowrap = true
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -311.0
-margin_top = 73.0
+margin_top = 74.0
 margin_right = -91.0
-margin_bottom = 163.0
+margin_bottom = 164.0
+mouse_filter = 2
 __meta__ = {
 "_edit_group_": true
 }
