@@ -78,7 +78,7 @@ var LEVELS = { # a:after day :condition day/every m:monster array
 	"P12m":[{"c":"day.2","m":["sp"]}, 
 		{"a":5,"c":"every.2","m":["ss","sn","sp","wf"]},
 		{"c":"every.5","m":["or"]},
-		{"c":"every.8","m":["sb"]}]
+		{"c":"every.10","m":["sb"]}]
 	
 }
 

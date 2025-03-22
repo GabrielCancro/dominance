@@ -16,7 +16,7 @@ func _process(delta):
 	#look_at(global_position+Vector2((dest_pos.x - start_pos.x)/time,(top-offsety)/time))
 	rotation_degrees = (progress*2-1)*top
 	global_position.y = start_pos.y + (dest_pos.y - start_pos.y) * progress -top + offsety 
-	if abs(dest_pos.x-global_position.x)<=10: 
+	if progress>=1: 
 		set_process(false)
 		Effects.to_alpha(self,0)
 		yield(get_tree().create_timer(.5),"timeout")

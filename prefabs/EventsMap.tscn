@@ -240,7 +240,7 @@ margin_left = -311.0
 margin_top = 74.0
 margin_right = -91.0
 margin_bottom = 164.0
-mouse_filter = 2
+mouse_filter = 1
 __meta__ = {
 "_edit_group_": true
 }
