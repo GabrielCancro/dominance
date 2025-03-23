@@ -7,6 +7,7 @@ func _ready():
 	$UI/btn_menu/Label.text = Lang.get_string("back_to_main")
 	$UI/lbl_title.text = Lang.get_string("select_level")
 	Effects.connect("add_sunpoints_effect_end",self,"add_sunpoints",[1])
+	Effects.simple_hover_fx($UI/btn_menu)
 	add_sunpoints()
 	load_levelPath()
 

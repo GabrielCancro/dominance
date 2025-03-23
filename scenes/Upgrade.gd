@@ -9,10 +9,6 @@ func _ready():
 	$Descriptor.visible = false
 	$lbl_title.text = Lang.get_string("upgrades")
 	$btn_menu/Label.text = Lang.get_string("back_to_main")
-	#Saves.savedData.days = 50
-	if Saves.savedData.upgrades_unlocked.size()<=0:
-		unlock_new_upgrade()
-		unlock_new_upgrade()
 	update_ui()
 
 func update_ui():
