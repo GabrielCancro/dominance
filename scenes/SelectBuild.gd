@@ -23,7 +23,7 @@ func update_ui():
 		upg.queue_free()
 	
 	for code in UpgradeData.UPGRADES.keys():
-		var upg = preload("res://prefabs/UpgradeNew.tscn").instance()
+		var upg = load("res://prefabs/UpgradeNew.tscn").instance()
 		$Grid.add_child(upg)
 		upg.connect("mouse_entered",self,"on_mouse_entered",[upg])
 		upg.connect("mouse_exited",self,"on_mouse_exited",[upg])

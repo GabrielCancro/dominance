@@ -26,7 +26,7 @@ func init_units():
 		data.img = load("res://assets/units/"+k+".png")
 
 func create_new_unit(code):
-	var unit_node = preload("res://prefabs/Unit.tscn").instance()
+	var unit_node = load("res://prefabs/Unit.tscn").instance()
 	unit_node.set_data( UnitData[code] )
 	return unit_node
 

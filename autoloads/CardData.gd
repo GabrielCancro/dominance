@@ -61,7 +61,7 @@ func _card_deck_to_hand():
 		else:
 			#print("CREATE NEW CARD")
 			Sounds.play_sound("card1")
-			var new_card = preload("res://prefabs/Card.tscn").instance()
+			var new_card = load("res://prefabs/Card.tscn").instance()
 			get_node("/root/Game/RegionBottom").add_child(new_card)
 			new_card.rect_global_position = DeckNode.rect_global_position
 			new_card.set_data( DeckNode.pull_card() )

@@ -68,7 +68,7 @@ func use_card_wind(card_node):
 		if get_node("/root/Game/Map").check_unit_pos(u.map_position+Vector2(1,0)): continue
 		if(randf()<.25): continue
 		Effects.shine(u)
-		var th = preload("res://prefabs/magics/MagicWind.tscn").instance()
+		var th = load("res://prefabs/magics/MagicWind.tscn").instance()
 		get_node("/root/Game/Map").add_child(th)
 		th.start_magic(u)
 		yield(get_tree().create_timer(.4),"timeout")
@@ -112,7 +112,7 @@ func use_card_thundre(card_node):
 	var mapNode = get_node("/root/Game/Map")
 	SelectUnitPanel.show_ui(["enemy"])
 	var unit = yield(SelectUnitPanel,"selected_unit")
-	var th = preload("res://prefabs/magics/MagicThundre.tscn").instance()
+	var th = load("res://prefabs/magics/MagicThundre.tscn").instance()
 	mapNode.add_child(th)
 	th.start_magic(unit)
 	yield(th,"end_magic")
@@ -180,7 +180,7 @@ func use_card_explode(card_node):
 	var mapNode = get_node("/root/Game/Map")
 	SelectUnitPanel.show_ui(["enemy"])
 	var unit = yield(SelectUnitPanel,"selected_unit")
-	var th = preload("res://prefabs/magics/MagicFire.tscn").instance()
+	var th = load("res://prefabs/magics/MagicFire.tscn").instance()
 	mapNode.add_child(th)
 	th.start_magic(unit)
 	yield(th,"end_magic")
@@ -220,7 +220,7 @@ func use_card_torment(card_node):
 	enemies.shuffle()
 	for i in range(3):
 		yield(get_tree().create_timer(.2),"timeout")
-		var th = preload("res://prefabs/magics/MagicThundre.tscn").instance()
+		var th = load("res://prefabs/magics/MagicThundre.tscn").instance()
 		mapNode.add_child(th)
 		th.start_magic(enemies.pop_front())
 		yield(get_tree().create_timer(.3),"timeout")

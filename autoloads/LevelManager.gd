@@ -182,7 +182,7 @@ func shot_prob_thunders():
 
 func throw_delay_thunder(delay,unit):
 	var mapNode = get_node("/root/Game/Map")
-	var th = preload("res://prefabs/magics/MagicThundre.tscn").instance()
+	var th = load("res://prefabs/magics/MagicThundre.tscn").instance()
 	yield(get_tree().create_timer(delay),"timeout")
 	mapNode.add_child(th)
 	th.start_magic(unit)

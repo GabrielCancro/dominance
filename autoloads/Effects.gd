@@ -1,8 +1,9 @@
 extends Node
 
-onready var tween = Tween.new()
+var tween
 
-func _ready():
+func initialize_effects():
+	tween = Tween.new()
 	add_child(tween)
 
 func move_to(node,dest):
@@ -75,12 +76,12 @@ func scaled_from(node):
 	tween.start()
 
 func spark_light(pos):
-	var node = preload("res://prefabs/effects/fx_shine_light.tscn").instance()
+	var node = load("res://prefabs/effects/fx_shine_light.tscn").instance()
 	get_node("/root").add_child(node)
 	node.rect_position = pos
 
 func rectangle_shine_fx(node):
-	var fx = preload("res://prefabs/effects/fx_rect_light.tscn").instance()
+	var fx = load("res://prefabs/effects/fx_rect_light.tscn").instance()
 	get_node("/root").add_child(fx)
 	fx.set_effect(node)
 
@@ -112,14 +113,14 @@ func simple_hover_func(node,val):
 signal add_sunpoints_effect_end
 func add_sunpoints(amount,pos):
 	for i in range(amount):
-		var n = preload("res://prefabs/effects/fx_sunpoint_getted.tscn").instance()
+		var n = load("res://prefabs/effects/fx_sunpoint_getted.tscn").instance()
 		n.delay = i*0.1
 		get_node("/root").add_child(n)
 		n.rect_global_position = pos# - Vector2(25,25)
 
 func spawn_arrow(nodeA,nodeB):
-	var n = preload("res://prefabs/effects/fx_arrow.tscn").instance()
+	var n = load("res://prefabs/effects/fx_arrow.tscn").instance()
 	get_node("/root").add_child(n)
 	if "data" in nodeA && nodeA.data.name == "slime_big": 
-		n.get_node("Sprite").texture = preload("res://assets/fx/slimeball.png")
+		n.get_node("Sprite").texture = load("res://assets/fx/slimeball.png")
 	n.set_from_to(nodeA,nodeB)

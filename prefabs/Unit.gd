@@ -50,8 +50,8 @@ func update_hp(show=false):
 	if show: hp_timer = 1.5
 	for h in $Hpbar.get_children():
 		h.visible = h.get_index()<data.hpm
-		if h.get_index()<data.hp: h.texture = preload("res://assets/heart_m.png")
-		else: h.texture = preload("res://assets/heart_slot_m.png")
+		if h.get_index()<data.hp: h.texture = load("res://assets/heart_m.png")
+		else: h.texture = load("res://assets/heart_slot_m.png")
 
 func add_hp(val):
 	data.hp += val

@@ -22,7 +22,7 @@ func show_rain():
 
 func add_web_card():
 	get_node("/root/Game/RegionBottom/Deck").add_card("cobweb",true)
-	var node = preload("res://prefabs/effects/fx_cobweb_fade.tscn").instance()
+	var node = load("res://prefabs/effects/fx_cobweb_fade.tscn").instance()
 	get_node("/root/Game/RegionBottom").add_child(node)
 	$HBox/btn_web.visible = true
 

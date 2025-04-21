@@ -9,7 +9,7 @@ var debug = false
 signal end_magic
 
 func _ready():
-	Input.set_custom_mouse_cursor( preload("res://assets/cursor.png") )
+	Input.set_custom_mouse_cursor( load("res://assets/cursor.png") )
 
 func set_stop_mouse(val):
 	if !StopMouseNode: return

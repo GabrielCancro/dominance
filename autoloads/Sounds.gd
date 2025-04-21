@@ -3,8 +3,8 @@ extends Node
 var scene
 
 func _ready():
-	preload("res://assets/sfx/music01.ogg")
-	preload("res://assets/sfx/ambient.mp3")
+	load("res://assets/sfx/music01.ogg")
+	load("res://assets/sfx/ambient.mp3")
 	pass
 
 func set_audio_scene(_scene):
