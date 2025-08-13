@@ -8,6 +8,7 @@ export(StateEnum) var state
 
 var close_nodes
 var link_dist = 80
+var is_hover = false
 
 signal on_hint(val)
 
@@ -49,6 +50,7 @@ func connect_close_nodes():
 			ln.points[1] = Vector2(0,9)
 
 func on_click():
+	if !is_hover: return
 	if type == TypeEnum.LEVEL && state == StateEnum.COMPLETE:
 		LevelManager.set_current_level(name)
 		get_tree().change_scene("res://scenes/SelectBuild.tscn")
@@ -83,4 +85,5 @@ func update_connected_states():
 			c.set_type()
 
 func on_hint(val):
+	is_hover = val
 	emit_signal("on_hint",val)

@@ -6,6 +6,7 @@ var main_menu_never_showed = true
 var demo = false
 var tuto = false
 var debug = false
+var mobile = true
 signal end_magic
 
 func _ready():

@@ -15,6 +15,10 @@ func _ready():
 	$HSlider.connect("drag_ended",self,"on_change_scroll_end")
 	$HSlider.value = Saves.savedData.mvol
 	localizate()
+	if Global.mobile:
+		$VBox/btn3.visible = false
+		$HSlider.visible = false
+		$HLabel.visible = false
 
 func localizate():
 	#$VBox/btn1/Label.text = Lang.get_string("menu_start_game")
