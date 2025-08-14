@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Política de Privacidad – Dominance</title>
+  <meta name="description" content="Política de privacidad de Dominance (Android). No se recopilan datos.">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #60a5fa;
+      --border: #1f2937;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; }
+    .wrap { max-width: 900px; margin: 40px auto; padding: 0 16px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+    h1, h2 { line-height: 1.2; margin: 0 0 12px; }
+    p { line-height: 1.7; margin: 0 0 12px; }
+    ul { margin: 0 0 12px 20px; }
+    .muted { color: var(--muted); }
+    .lang-switch { display: flex; gap: 8px; margin-bottom: 16px; }
+    button { background: transparent; border: 1px solid var(--border); color: var(--text); padding: 8px 12px; border-radius: 999px; cursor: pointer; }
+    button.active { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(96,165,250,.25) inset; }
+    .section { display: none; }
+    .section.active { display: block; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .footer { margin-top: 16px; font-size: 0.9rem; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" role="article" aria-labelledby="title">
+      <div class="lang-switch" role="tablist" aria-label="Language Switch">
+        <button id="esBtn" role="tab" aria-controls="es" aria-selected="true" class="active">Español</button>
+        <button id="enBtn" role="tab" aria-controls="en" aria-selected="false">English</button>
+      </div>
+
+      <section id="es" class="section active" lang="es" role="tabpanel" aria-labelledby="esBtn">
+        <h1 id="title">Política de Privacidad – Dominance</h1>
+        <p class="muted">Fecha de entrada en vigor: 13 de agosto de 2025</p>
+
+        <p>El juego <strong>Dominance</strong> respeta la privacidad de los usuarios. Este juego <strong>no recopila, almacena ni comparte</strong> ningún tipo de información personal o técnica del jugador.</p>
+        <ul>
+          <li>No se solicitan datos personales (por ejemplo: nombre, correo electrónico, ubicación, cámara o micrófono).</li>
+          <li>No se utilizan cookies ni tecnologías de seguimiento.</li>
+          <li>No se emplean servicios de análisis ni publicidad de terceros.</li>
+        </ul>
+
+        <h2>Menores de edad</h2>
+        <p>Este juego puede ser usado por personas de cualquier edad. Dado que no se recopilan datos, no se solicita consentimiento parental ni se procesan datos de menores.</p>
+
+        <h2>Cambios en esta política</h2>
+        <p>Si en el futuro se introducen funciones que impliquen el uso de datos, esta política se actualizará y se informará a través de la descripción de la aplicación y/o una actualización del juego.</p>
+
+        <h2>Contacto</h2>
+        <p>Si tienes preguntas, puedes escribir a: <a href="mailto:your-email@example.com" class="mono">your-email@example.com</a></p>
+
+        <div class="footer muted">
+          <p>Última actualización: 13 de agosto de 2025</p>
+        </div>
+      </section>
+
+      <section id="en" class="section" lang="en" role="tabpanel" aria-labelledby="enBtn">
+        <h1>Privacy Policy – Dominance</h1>
+        <p class="muted">Effective date: August 13, 2025</p>
+
+        <p>The game <strong>Dominance</strong> respects users’ privacy. This game <strong>does not collect, store, or share</strong> any personal or technical information from players.</p>
+        <ul>
+          <li>No personal data is requested (e.g., name, email address, location, camera, or microphone).</li>
+          <li>No cookies or tracking technologies are used.</li>
+          <li>No third-party analytics or advertising services are implemented.</li>
+        </ul>
+
+        <h2>Children</h2>
+        <p>This game may be used by people of any age. Since no data is collected, no parental consent is required and no children’s data is processed.</p>
+
+        <h2>Changes to this policy</h2>
+        <p>If future features require data usage, this policy will be updated and disclosed via the app description and/or a game update.</p>
+
+        <h2>Contact</h2>
+        <p>If you have any questions, contact: <a href="mailto:your-email@example.com" class="mono">your-email@example.com</a></p>
+
+        <div class="footer muted">
+          <p>Last updated: August 13, 2025</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const esBtn = document.getElementById('esBtn');
+    const enBtn = document.getElementById('enBtn');
+    const es = document.getElementById('es');
+    const en = document.getElementById('en');
+
+    function setLang(lang) {
+      if (lang === 'es') {
+        es.classList.add('active');
+        en.classList.remove('active');
+        esBtn.classList.add('active');
+        enBtn.classList.remove('active');
+        esBtn.setAttribute('aria-selected', 'true');
+        enBtn.setAttribute('aria-selected', 'false');
+        document.documentElement.lang = 'es';
+        document.title = 'Política de Privacidad – Dominance';
+      } else {
+        en.classList.add('active');
+        es.classList.remove('active');
+        enBtn.classList.add('active');
+        esBtn.classList.remove('active');
+        enBtn.setAttribute('aria-selected', 'true');
+        esBtn.setAttribute('aria-selected', 'false');
+        document.documentElement.lang = 'en';
+        document.title = 'Privacy Policy – Dominance';
+      }
+    }
+
+    esBtn.addEventListener('click', () => setLang('es'));
+    enBtn.addEventListener('click', () => setLang('en'));
+  </script>
+</body>
+</html>
