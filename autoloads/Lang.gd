@@ -37,6 +37,7 @@ var Texts = {
 	"select_level":{"es":"ELIGE UN NIVEL","en":"SELECT LEVEL"},
 	
 	"back_to_main":{"es":"Volver al menu","en":"Back to menu"},
+	"play":{"es":"Jugar","en":"Play"},
 	"start":{"es":"Comenzar","en":"Start"},
 	"ok":{"es":"Ok","en":"Ok"},
 	"points":{"es":"Puntos","en":"Points"},

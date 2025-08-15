@@ -14,6 +14,7 @@ func _ready():
 	$lbl_title.text = Lang.get_string("select_start_build")
 	$lbl_title.text += " "+LevelManager.current_level_data.name
 	$btn_menu/Label.text = Lang.get_string("back_to_main")
+	$btn_start/lbl_title.text = Lang.get_string("play")
 	update_ui()
 
 func update_ui():

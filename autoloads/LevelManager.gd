@@ -102,6 +102,7 @@ func create_no_created_monsters():
 	no_created_monsters = new_no_created_monsters
 
 func create_monsters():
+	add_debug_units()
 #	if Global.tuto && day==2: add_enemy(["slime_small"])
 	var day = get_node("/root/Game/DayCounter").day
 	var statments = LEVELS[current_level_data.name+"m"]
@@ -190,18 +191,19 @@ func throw_delay_thunder(delay,unit):
 func add_debug_units():
 	yield(get_tree().create_timer(.5),"timeout")
 	var m = get_node("/root/Game/Map")
-#	m.add_unit("spider",4,3)
-#	m.add_unit("spider",5,2)
-#	m.add_unit("wolf",5,3)
+	m.add_unit("spider",4,3)
+	m.add_unit("spider",5,2)
+	m.add_unit("wolf",5,3)
 #	m.add_unit("orc",6,2)
 #	m.add_unit("slime_small",4,1)
 #	m.add_unit("slime_small",4,2)
-#	m.add_unit("slime_small",4,3)
-#	m.add_unit("slime",7,2)
-#	m.add_unit("slime_big",8,1)
+	m.add_unit("slime_small",4,3)
+	m.add_unit("slime",7,2)
+	m.add_unit("slime_big",8,1)
 #	m.add_unit("wolf",8,3)
-#	m.add_unit("militia",1,1)
-#	m.add_unit("militia",1,2)
-#	m.add_unit("militia",1,3)
+	m.add_unit("militia",1,1)
+	m.add_unit("militia",2,2)
+	m.add_unit("militia",2,3)
 #	m.add_unit("militia",2,2)
 #	m.add_unit("soldier",2,3)
+	get_node("/root/Game/EventsMap").show_fog()
