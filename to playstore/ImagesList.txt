@@ -1,0 +1,18 @@
+OK icono 512x512 png
+OK grafico de funciones (banner promocional) 1024x500
+X video de youtube
+
+X mobile 2 a 8 imagenes png/jpg 16:9 entre 320px y 3840px
+Para promociones como minimo 4 de 16:9 con al menos 1080x1920px
+
+X tablet 7" hasta 8 16:9 entre 320px y 3840px
+X tablet 10" hasta 8 16:9 entre 1080px y 7680px
+
+
+Juego de estrategia por turnos con cartas. Sobrevive y defiende tu aldea.
+
+Dominance es un juego de estrategia por turnos y cartas donde tendrás que sobrevivir y defender la pequeña aldea a toda costa. Una amplia variedad de cartas con mecánicas únicas, reclutamiento de unidades, mejoras y hechizos que deberás combinar para resistir el paso del tiempo.
+
+Turn-based card strategy game. Survive and defend your village.
+
+Dominance is a turn-based strategy card game where you must survive and defend your small village at all costs. A wide variety of cards with unique mechanics, unit recruitment, upgrades, and spells must be combined to stand the test of time.

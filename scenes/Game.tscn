@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://prefabs/Stash.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefabs/Map.tscn" type="PackedScene" id=2]
@@ -34,7 +34,9 @@
 [ext_resource path="res://assets/ui/ui_lateral_shadow.png" type="Texture" id=32]
 [ext_resource path="res://prefabs/EventsMap.tscn" type="PackedScene" id=33]
 [ext_resource path="res://prefabs/CreateUnitPanel.tscn" type="PackedScene" id=34]
+[ext_resource path="res://assets/ui/ui_btn_bg_1.png" type="Texture" id=35]
 [ext_resource path="res://prefabs/SelectUnitPanel.tscn" type="PackedScene" id=36]
+[ext_resource path="res://assets/font/AbyssinicaSIL-Regular.ttf" type="DynamicFontData" id=37]
 
 [sub_resource type="DynamicFont" id=7]
 size = 18
@@ -61,6 +63,17 @@ font_data = ExtResource( 6 )
 [sub_resource type="DynamicFont" id=1]
 size = 24
 font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 20
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 15
+outline_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+extra_spacing_top = 1
+extra_spacing_bottom = 1
+font_data = ExtResource( 37 )
 
 [node name="Game" type="Control"]
 anchor_right = 1.0
@@ -614,3 +627,35 @@ margin_left = -41.0
 margin_right = 41.0
 margin_bottom = 27.0
 text = "WIN GAME"
+
+[node name="btn_skip_tuto" type="Button" parent="."]
+visible = false
+margin_left = 519.0
+margin_top = -21.0
+margin_right = 670.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 140, 55 )
+rect_pivot_offset = Vector2( 70, 28 )
+custom_colors/font_color = Color( 0.796078, 0.796078, 0.796078, 1 )
+custom_fonts/font = SubResource( 9 )
+flat = true
+
+[node name="BgButton1" type="TextureRect" parent="btn_skip_tuto"]
+modulate = Color( 0.92549, 0.92549, 0.92549, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 35 )
+expand = true
+
+[node name="Label" type="Label" parent="btn_skip_tuto"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 16.0
+margin_bottom = -1.0
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 10 )
+text = "SKIP TUTORIAL"
+align = 1
+valign = 1
+autowrap = true

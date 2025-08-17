@@ -21,6 +21,11 @@ func _ready():
 	Effects.add_mouse_focuser($EndTurn,$EndTurn/BorderColor)
 	$RegionBottom/DiscardSlot/Label.text = Lang.get_string("discards_slot")
 	start_game()
+	#skip tuto button
+	if LevelManager.current_level_data.name=="P1":
+		$btn_skip_tuto.visible = true
+		Effects.simple_hover_fx($btn_skip_tuto)
+		$btn_skip_tuto.connect("button_down",self,"on_click_skip_tuto")
 
 func start_game():
 	CardData.init_card_manager()
@@ -154,4 +159,7 @@ func tutorial_sequence():
 #		Effects.spawn_arrow($RegionBottom/Stash,$EndTurn)
 
 func on_debug():
+	$EndPopup.show_popup(true)
+
+func on_click_skip_tuto():
 	$EndPopup.show_popup(true)

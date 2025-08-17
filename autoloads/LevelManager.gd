@@ -102,7 +102,7 @@ func create_no_created_monsters():
 	no_created_monsters = new_no_created_monsters
 
 func create_monsters():
-	add_debug_units()
+#	add_debug_units()
 #	if Global.tuto && day==2: add_enemy(["slime_small"])
 	var day = get_node("/root/Game/DayCounter").day
 	var statments = LEVELS[current_level_data.name+"m"]
